@@ -1,0 +1,80 @@
+h1{
+  margin:0 auto;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 2 columnas */
+  grid-template-rows: repeat(2, auto);   /* 2 filas */
+  gap: 20px; /* espacio entre tarjetas */
+  max-width: 700px; 
+  margin: -5 auto; /* centrar en la página */
+  padding: 20px;
+  justify-items: center; /* centra las tarjetas dentro de cada celda */
+}
+
+
+
+.card {
+  position: relative;
+  width: 300px;
+  height: 200px;
+  background: linear-gradient(-50deg, #ffffff 0%, #ffffff 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card__image {
+  width: 60%;
+  height: 100%;
+  object-fit: contain; /* ¡Este es el cambio clave! */
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+  transform: rotate(-0deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-50deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #fff;
+  opacity: 0;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 24px;
+  color: #333;
+  font-weight: 700;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 14px;
+  color: #777;
+  line-height: 1.4;
+}
+
+.card:hover .card__image {
+  scale: 0;
+  transform: rotate(-50deg);
+}
+       

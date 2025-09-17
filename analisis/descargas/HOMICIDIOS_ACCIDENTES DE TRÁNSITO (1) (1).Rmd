@@ -1,0 +1,885 @@
+---
+title: "HOMICIDIOS POR ACCIDENTES DE TRÁNSITO OCURRIDOS EN COLOMBIA"
+author: "TAD-9"
+date: "2025-09-07"
+output: 
+  html_document:
+   toc: true 
+   toc_depth: 3 
+   toc_float: true
+   collapsed: true
+   smooth_scroll: true
+   theme: journal 
+   highlight: kate
+   df_print: paged
+   code_folding: show
+---
+
+```{=html}
+<style>
+body {
+  font-family: Arial, sans-serif;
+  color: black; /* Texto normal negro */
+  font-size: 18px; /* Tamaño general del texto */
+  text-align: justify;
+  background-color: #F0F0F0;
+}
+
+h1, h2, h3 {
+    color: #98100B; /* Color de los títulos */
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 28px; /* Títulos principales */
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px; /* Subtítulos */
+  text-align: left;
+}
+
+h3 {
+  font-size: 20px; /* Sub-subtítulos */
+}
+
+
+</style>
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# INTRODUCCIÓN
+
+Hoy en día, la seguridad vial en el país enfrenta numerosas limitaciones y desafíos; lo qué genera consecuencias lamentables cómo homicidios, a causa de accidentes de tránsito. Esta problemática, no sólo afecta a quiénes infringen las normas, sino también a personas que aún cumpliendo con las reglas, terminan involucradas en situaciones no deseadas y con múltiples consecuencias.
+
+Por esta razón, el objetivo del presente informe, será analizar el comportamiento vial en todo el país, y seguidamente, enfocarnos sólo en la ciudad de Barranquilla; de tal manera, que esto nos ayude a tomar medidas que se encuentren a nuestro alcance, y así poder generar un cambio significativo en nuestra ciudad.
+
+Para el siguiente análisis estadístico, se hará uso de una base de datos relaccionada con los homicidios presentados en Colombia a causa de los accidentes de tránsito (2018-2025); y una base de datos relacionada con los accidentes presentados y las víctimas de estos accidentes de tránsito, en la ciudad de Barranquilla; tomando también el mismo período (2018-2025).
+
+### DESCRIPCIÓN GENERAL DE LOS DATOS
+
+Base de datos: Homicidios por accidentes de tránsito en Colombia (2018-2025).
+
+Dentro de esta base de datos, se podrán apreciar variables como los departamentos, municipios, regiones, e incluso los días, meses y años, dónde ocurrieron los homicidios; asimismo, el tipo de vehículo (identificado con nombre: “ARMAS MEDIO”), por el cuál ocurrió el homicidio. Cabe aclarar, qué hay registros dónde no se reportó el tipo de vehículo; asimismo, los registros sólo se encuentran hasta el mes de Julio del 2025.
+
+Base de datos: Accidentalidad y víctimas por accidentes de tránsito en Barranquilla(2018-2025).
+
+Dentro de esta base de datos, se podrán encontrar variables como la fecha en que se presentaron los accidentes; la dirección donde ocurrió el accidente; la clase de accidente; clase de vehículo; la cantidad de accidentes; la cantidad de víctimas involucradas; el sexo de la víctima; gravedad del accidente; y la condición de la víctima en el momento que ocurrió el accidente; entre otras. En esta base de datos, también los registros se encuentran incompletos; en este caso, hasta el mes de abril.
+
+# ANÁLISIS
+
+Para el siguiente informe analítico, se mostrarán los siguientes parámetros:
+
+A NIVEL NACIONAL(COLOMBIA):
+
+"HOMICIDIOS POR ACCIDENTES DE TRÁNSITO(2018-2025)"
+
+1.  Homicidios presentados (2018-2025).
+
+2.  Homicidios presentados por región (2018-2025).
+
+3.  Municipios con mayor incidencia de homicidios (2018-2025).
+
+4.  Homicidios presentados en los meses de cada año (2018-2025).
+
+5.  Homicidios promedio por meses (2018-2025).
+
+6.  Homicidios presentados por días de la semana (2018-2025)
+
+7.  Homicidios presentados por arma medio (2018-2025).
+
+A NIVEL MUNICIPAL (BARRANQUILLA):
+
+"ACCIDENTALIDAD Y VÍCTIMAS POR ACCIDENTES DE TRÁNSITO(2018-20225)"
+
+1.   Accidentes presentados por año (2018-2025).
+2.  Víctimas afectadas por año (2018-2025).
+3.  Promedio de accidentalidad por meses (2018-2025).
+4.  Victimas promedio por meses (2018-2025).
+5.  Promedio de accidentalidad por días de la semana (2018-2025).
+
+A continuación, encontrarás las librerías que se trabajaron a lo largo del informe, y su correspondiente función; asimismo, las bases de datos que fueron importadas.
+
+```{r}
+library(tidyverse) #colección de paquetes para manipular, analizar y visualizar datos.
+library(scales)#paquete con funciones para formatear números, porcentaje, ejes de gráfico, etc.
+library(readxl)#paquete para leer archivo de excel
+library(dplyr)#paquete de manipulación de datos
+library(ggrepel)
+library(htmltools)#Evita que las etiquetas en los gráficos se sobrepongan.
+library(stringr)# Cambiar fuente global y color de texto en ggplot
+library(leaflet)
+#library(sf)
+
+
+theme_update(
+  text = element_text(family = "Arial", colour = "black", size = 17) # Texto más grande en gráficos
+)
+
+BD_Homicidios <- read_xlsx("C:/Users/CORE I5/Downloads/Homicidios accidentes de transito (2020-2025) (1).xlsx", 
+  sheet = "HOMICIDIO")#importamos la base de datos
+
+
+
+ACCD_ACT <- read_xlsx("C:/Users/CORE I5/Downloads/ACCIDENTALIDAD Y VICTIMAS.xlsx", 
+    sheet = "ACCIDENTALIDAD" )
+
+VIC_ACT <- read_xlsx("C:/Users/CORE I5/Downloads/ACCIDENTALIDAD Y VICTIMAS.xlsx", 
+    sheet = "VICTIMAS" )
+```
+
+### NOMBRE DE LAS COLUMNAS TRABAJADAS
+
+Aquí podrás observar cuáles fueron las columnas que se trabajaron; así mismo, se eliminaron columnas en blanco que se encontraban en la base de datos.
+
+```{r}
+#HOMICIDIOS POR ACCIDENTES DE TRÁNSITO
+colnames(BD_Homicidios)#nombre de las columnas
+BD_Homicidios <- BD_Homicidios %>%
+  select(-...17,-...18,-...19,-...20,-...21)#eliminar columnas vacías
+colnames(BD_Homicidios)
+
+#ACCIDENTABILIDAD POR ACCIDENTES DE TRÁNSITO
+colnames(ACCD_ACT)
+#VICTIMAS POR ACCIDENTES DE TRÁNSITO
+colnames(VIC_ACT)
+
+```
+
+## 
+
+# HOMICIDIOS POR ACCIDENTES DE TRÁNSITO(2018-2025)
+
+### HOMICIDIOS PRESENTADOS (2018-2025)
+
+A partir del gráfico, se puede observar cómo en el año 2019, los homicidios alcanzaron su punto más alto con un total de 12.108 homicidios. Sin embargo, para el año 2020 comienza a descender, manteniendose los homicidios con una cantidad estable desde el año 2021 hasta el año 2024, con un promedio de 7.311 homicidios; asimismo, el año en qué se presentó un mayor declive, corresponde al año 2021 con un total de 6.999 homicidios; hecho que podría explicarse por la pandemia COVID-19, dónde para ese año, aún nos encontrabamos bajo medidas de aislamiento. Aunque pareciese que el año 2025 fue el que tuvo un mayor descenso, hay que recordar, como se mencionó en la introducción; que los datos registrados para este año, sólo se encuentran hasta el mes de Julio.
+
+```{r fig.height=10, fig.width=20, fig.align='center'}
+Tab_homicidios1 <- BD_Homicidios %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>%
+  arrange(desc(CANTIDAD_HOMICIDIOS)) %>%
+  rename(AÑOS=AÑO, CANTIDAD_DE_HOMICIDIOS = CANTIDAD_HOMICIDIOS)
+
+titulo <- str_wrap("CANTIDAD DE HOMICIDIOS (2018-2025)")
+  
+  ggplot(Tab_homicidios1,aes( x = AÑOS, y = CANTIDAD_DE_HOMICIDIOS))+#inicia el gráfico indicando los ejes
+  geom_line(aes(group = 1), color="#DE403B", size=4)+#Dibuja línea para conectar puntos
+    geom_label(aes(label=label_comma(big.mark = ".",decimal.mark = ",")(CANTIDAD_DE_HOMICIDIOS)),#etiquetas de texto sobre cada punto
+               vjust=-0.5,#se ajusta el texto verticalmente
+               hjust=0.5,#se ajusta el texto horizontalmente
+               size=10,#tamaño de texto
+               fill= "#1C2C4E",#fondo de las etiquetas
+               color ="white")+ #color del texto
+    geom_point(size=8)+#puntos en cada valor
+     scale_x_continuous(breaks=unique(Tab_homicidios1$AÑOS),
+                     labels=unique(Tab_homicidios1$AÑOS))+#muestra los años como texto
+    labs(title=titulo, #nombre del titulo de gráfico y ejes.
+         x=NULL,
+         y = NULL)+
+  scale_y_continuous(limits = c(2000,15000),
+                     breaks = seq(2000,15000, by = 5000),
+                     labels=label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y
+     theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+   
+  
+```
+
+### HOMICIDIOS PRESENTADOS POR REGIÓN(2018-2025)
+
+En el gráfico, se puede apreciar que existe una mayor incidencia de esta siniestralidad vial, en la región Andina con un total de 32.861 homicidios; esto podría explicarse debido a qué la región Andina cuenta con la mayor cantidad de habitantes, en comparación con las demás regiones; siendo las grandes ciudades como Bogota, Medellin, Cali y Bucaramanga las que cuentan con una mayor cantidad de habitantes. Así mismo, en la Región Andina se confluyen los principales ejes de transporte. En contraste, la región con una menor cantidad de homicidios, es la región Insular, posiblemente porque esta región en su mayoría, corresponde a un conjunto de islas, cayos o islotes.
+
+```{r fig.height=10 , fig.width=20, fig.align='center'}
+Hom_por_region <- BD_Homicidios %>%
+  group_by(REGION) %>%
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop")
+
+
+ggplot(Hom_por_region,aes(reorder(x = REGION, -CANTIDAD_HOMICIDIOS), y = CANTIDAD_HOMICIDIOS))+#inicia el gráfico
+  geom_col(fill= "#DE403B")+
+   scale_y_continuous(limits = c(0,35000),
+                      breaks = seq(0,35000, by = 5000),
+                      labels = label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y 
+  geom_text(aes(label=label_comma(big.mark = ".", decimal.mark = ",")      (CANTIDAD_HOMICIDIOS)),#etiquetas de texto sobre cada punto
+            vjust=-0.5,#ajusta texto verticalmente
+            size= 12)+#ajusta texto horizontalmente
+  labs(title = "CANTIDAD DE HOMICIDIOS POR REGIÓN",#noombre del titulo y ejes del gráfico
+       x = NULL,
+       y = NULL)+
+  theme_minimal()+# aspecto más limpio para el gráfico
+  theme(
+    panel.grid.major = element_blank(),#elimina líneas de cuadrículas
+    panel.grid.minor = element_blank(),
+    plot.title = element_text(size = 35, hjust= 0.5),#ajusta título 
+    axis.text.x = element_text(size = 25, color = "#1C2C4E"),
+    axis.text.y = element_text(size = 25,  color = "#1C2C4E"),
+    axis.line = element_line(color= "black")
+  )
+
+```
+
+### MUNICIPIOS CON MAYOR INCIDENCIA DE HOMICIDIOS
+
+Gracias al gráfico, podemos observar el comportamiento de 10 municipios con una mayor cantidad de homicidios, presentándose la cantidad más alta, en el Municipio de Bogota, con un total de 4.923 homicidios, siguiéndole los municipios de Antioquia y Valle, con un total de 3.060 y 2.495 homicidios respectivamente. Estos 3 municipios que presentan una mayor incidencia de esta siniestralidad, responden a la región Andina; y cómo fue mencionado en el análisis anterior de esta región, esta es la que posee una mayor cantidad de habitantes,siendo una de las razones, la emigración por motivos laborales. Asimismo, la mayor incidencia en el municipio de Bogota, podría explicarse porque es la ciudad en dónde se presenta una mayor circulación tanto de vehículos, cómo de habitantes. En contraste, el municipio con una menor cantidad de homicidios, es Montería, con un total de 686 homicidios.
+
+```{r fig.width=20, fig.height=10}
+
+Tabla_top_10 <- BD_Homicidios %>%
+  group_by(MUNICIPIO)%>%
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups="drop")%>%
+  arrange(desc(CANTIDAD_HOMICIDIOS))%>%
+  top_n(10)%>% 
+  mutate(MUNICIPIO = fct_reorder(MUNICIPIO,CANTIDAD_HOMICIDIOS, .desc=TRUE))
+
+title_2 <- str_wrap("CANTIDAD DE HOMICIDIOS POR MUNICIPIOS
+                    (TOP 10)-(2018-2025)", width=40)
+
+colores_graf <- c("#180302","#420705","#6D0C08","#98100B","#C2150F","#ED1E18","#F0433D","#F46C67","#F79592","#FABFBD")
+  
+ggplot(Tabla_top_10,aes(reorder(x =MUNICIPIO, CANTIDAD_HOMICIDIOS), y = CANTIDAD_HOMICIDIOS, fill = MUNICIPIO))+
+  geom_bar(stat = "identity")+
+  coord_flip()+
+  labs(title = title_2,
+       x = NULL,
+       y = NULL)+
+  geom_text(aes(label = label_comma(big.mark = ".", decimal.mark = ",")(CANTIDAD_HOMICIDIOS)),
+            size=12,
+            hjust= -0.3,
+           )+
+  scale_fill_manual(values = colores_graf)+
+  scale_y_continuous(limits = c(0,5500),
+                     breaks = seq(0,5500, by = 1500),
+                     labels = label_comma(big.mark = ".", decimal.mark = "                                 ,"))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    legend.position = "none",
+    axis.line = element_line(color = "black")
+  )
+
+```
+
+### HOMICIDIOS PRESENTADOS EN LOS MESES DE CADA AÑO
+
+#### AÑO 2018-2019
+
+A partir de este primer gráfico, se puede apreciar que hubo una mayor cantidad de homicidios en el mes de diciembre, en los dos años; en el año 2018 este mes presentó un total de 640 homicidios; y en el año 2019, qué justamente comenzó a presentarse un ascenso en la cantidad de muertes por accidentes de tránsito, surgió un total de 1.306 homicidios para este mismo mes. Asimismo, podemos inferir gracias al gráfico, que en el año 2018, el mes de abril presentó una menor cantidad de homicidios con un total de 437 casos; y para el año 2019, el mes que presentó una menor cantidad de homicidios, fue febrero , con un total de 872 casos registrados.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE") 
+
+tabla_mes_1819 <- BD_Homicidios %>% 
+  filter(AÑO %in% c(2018,2019))%>%
+  mutate(AÑO = as.character(AÑO))%>%
+  group_by(AÑO, NOM_MES)%>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))%>%
+  mutate(AÑO = factor(AÑO, levels = c("2018","2019")))
+ 
+
+title_3 <- str_wrap("CANTIDAD DE HOMICIDIOS POR MESES(2018-2019) ", width=35)
+
+colores_graf_3 <- c("#420705","#DE403B")
+
+ggplot(tabla_mes_1819,aes(x=NOM_MES, y=CANTIDAD_HOMICIDIOS, color=AÑO)) +
+  geom_line(aes(group=AÑO),size= 4) +
+  geom_label_repel(aes(label= label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=8,
+            vjust= 1,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8)+
+  scale_color_manual(values= colores_graf_3)+
+  scale_y_continuous(limits = c(0,1500),
+                     breaks = seq(0,1500, by = 200),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_3,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+
+
+```
+
+#### AÑO 2020-2022
+
+Para este gráfico, se mostraron los años desde el 2020 hasta el 2022, con el fin de evaluar el comportamiento vial en este tiempo, que correspondió a la pandemia mejor conocida como COVID-19. Se puede apreciar que en el año 2020, fue para el mes de Marzo en dónde se presentó una mayor cantidad de homicidios con un total de 1.186 casos; sin embargo, para el mes de abril se presentó un descenso abrupto con un total de 335 homicidios, siendo el mes con una menor cantidad de casos en este mismo año, posiblemente porque en este mes, se presentaba un aislamiento definitivo a causa de la pandemia. Aunque, después de este mes, comienza a incrementarse la cantidad de homicidios por accidentes de tránsito. Para el año 2021 y 2022, se puede apreciar cómo la cantidad qué venía presentándose, empezó a disminuir; en el año 2021, el mes qué presentó una mayor cantidad de homicidios, fue septiembre con un total de 666 casos, mientras qué el mes que presentó una menor cantidad fue mayo con un total de 514 homicidios. Finalmente para el año 2022, dónde la pandemia ya se encontraba finalizando, empieza otra vez el incremento de la cantidad de homicidios, siendo el mes de diciembre el que presentó una mayor cantidad con un total de 776 casos, y siendo el mes de febrero el que presentó una menor cantidad con un total de 529 casos.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE") 
+
+
+tabla_mes_2022 <- BD_Homicidios %>% 
+  filter(AÑO %in% c(2020,2021,2022))%>%
+  mutate(AÑO = as.character(AÑO))%>%
+  group_by(AÑO, NOM_MES)%>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))%>%
+  mutate(AÑO = factor(AÑO, levels = c("2020","2021","2022")))
+ 
+title_4 <- str_wrap("CANTIDAD DE HOMICIDIOS POR MESES(2020-2022) ", width=35)
+
+colores_graf_4 <- c("#420705","#DE403B","#F46C67")
+
+ggplot(tabla_mes_2022,aes(x=NOM_MES, y=CANTIDAD_HOMICIDIOS, color=AÑO)) +
+  geom_line(aes(group=AÑO),size= 4) +
+  geom_label_repel(aes(label= label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=9,
+            vjust= 0.5,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8)+
+  scale_color_manual(values = colores_graf_4)+
+  scale_y_continuous(limits = c(200,1500),
+                     breaks = seq(200,1500, by = 100),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_4,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+```
+
+#### AÑO 2023-2024
+
+A partir de este gráfico, se puede apreciar que el año 2023 presenta una mayor cantidad de homicidios en el mes de diciembre con un total de 743 casos, mientras qué para el año 2024, este mes disminuye en cantidad, presentando un total de 630 casos.En contraste, para el año 2024, el mes dónde se presenta una mayor cantidad de casos, es septiembre con un total de 675 homicidios. Y, los meses dónde se presentaron una menor cantidad de homicidios, fue en el mes de enero para el año 2023 con un total de 568 casos; y el mes de noviembre para el año 2024, con un total de 505 casos.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE","DICIEMBRE") 
+
+tabla_mes_2325 <- BD_Homicidios %>% 
+  filter(AÑO %in% c(2023,2024))%>%
+  mutate(AÑO = as.character(AÑO))%>%
+  group_by(AÑO, NOM_MES)%>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))%>%
+   mutate(AÑO = fct_reorder(AÑO, CANTIDAD_HOMICIDIOS,.desc=TRUE))
+
+title_5 <- str_wrap("CANTIDAD DE HOMICIDIOS POR MESES(2023-2024) ", width=35)
+
+colores_graf_4 <- c("#420705","#DE403B","#F46C67")
+
+ggplot(tabla_mes_2325,aes(x=NOM_MES, y=CANTIDAD_HOMICIDIOS, color=AÑO)) +
+  geom_line(aes(group=AÑO),size= 4) +
+  geom_label_repel(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=9,
+            vjust= 1,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8)+
+  scale_color_manual(values = colores_graf_4)+
+  scale_y_continuous(limits = c(300,900),
+                     breaks = seq(300,900, by = 300),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_5,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+```
+
+#### AÑO 2025
+
+Debido a qué los registros del año 2025 se encuentran incompletos, se realizó el análisis de este gráfico aparte. Se puede apreciar que para este año, hasta el momento, se presentó una mayor cantidad de homicidios en el mes de junio con un total de 734 casos; cantidad mayor a comparación del año 2024 en dónde se presentaron en este mismo mes un total de 595 casos. Asimismo, hasta el momento, el mes qué ha presentado una menor cantidad de homicidios, es febrero con un total de 432 casos, presentando una mejoría en comparación con este mismo mes del año 2024, dónde hubo un total de 540 homicidios.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+ orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE")  
+ 
+tabla_mes_25 <- BD_Homicidios %>% 
+  filter(AÑO == 2025) %>% 
+  group_by(AÑO, NOM_MES) %>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups= "drop")%>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))
+
+title_10 <- str_wrap("CANTIDAD DE HOMICIDIOS POR MESES (2025)", width=35)
+
+ggplot(tabla_mes_25, aes(x = NOM_MES, y = CANTIDAD_HOMICIDIOS))+
+  geom_line(aes(group = 1), size= 4, color="#DE403B")+
+  geom_point(size=8) +
+   geom_label(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=10,
+            vjust= -0.5,
+            hjust= 0.5,
+            fill = "#1C2C4E",
+            color ="white")+
+  scale_y_continuous(limits = c(400,850),
+                     breaks = seq(400,850, by = 200),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_10,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1,color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color="black"))
+
+
+
+```
+
+#### HOMICIDIOS PROMEDIO POR MESES(2018-2025)
+
+A partir de este gráfico, podemos inferir que en todos los años, el mes que presentó una mayor cantidad de homicidios, fue diciembre con un promedio de 830 casos, posiblemente por las fechas de las fiestas de Navidad y año nuevo, en dónde el flujo vehicular aumenta. En contraste, el mes que presenta una menor cantidad de homicidios, es abril con un promedio de 582 casos.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE") 
+
+tabla_mes_PROM <- BD_Homicidios %>% 
+  group_by(AÑO, NOM_MES) %>%
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  group_by(NOM_MES) %>%
+  summarise(CANTIDAD_PROM = round(mean(CANTIDAD_HOMICIDIOS),0), .groups = "drop")%>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))
+
+ 
+
+title_3 <- str_wrap("CANTIDAD PROMEDIO DE HOMICIDIOS POR MESES (2018-2025) ", width=35)
+
+
+ggplot(tabla_mes_PROM,aes(x=NOM_MES, y= CANTIDAD_PROM)) +
+  geom_line(aes(group=1),size= 4, color= "#DE403B") +
+  geom_label_repel(aes(label= CANTIDAD_PROM ),
+            size=8,
+            vjust= 1,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8)+
+  scale_y_continuous(limits = c(0,1500),
+                     breaks = seq(0,1500, by = 200))+
+  labs(title = title_3,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+
+
+
+```
+
+### HOMICIDIOS PRESENTADOS POR DÍAS DE LA SEMANA(2018-2025)
+
+A partir de los 2 gráficos presentados, se puede apreciar que los días sábado y domingo, son los días en que ocurren una mayor cantidad de homicidios; lo cuál podría explicarse por ocio nocturno, consumo de alcohol, entre otras, debido a que son los días en que muchos suelen descansar y salir de la rutina.
+
+Para el año 2018, el día de la semana con una mayor cantidad de homicidios, es el domingo, con un total de 1.244 casos presentados; mientras que el día que presenta una menor cantidad, corresponde al día miércoles con un total de 696 casos.
+
+Para los años siguientes, se continua presentando una mayor incidencia en el día domingo, incrementandose la cantidad de homicidios, pasando de 1.244 en el 2018, a 2.614 casos en el 2019. Para el año 2020 y 2021, vuelve a disminuir la cantidad con un total de 1.971 y 1.590 ,respetivamente. Para el año 2022 se presenta un total de 1.758 homicidios; para el año 2023, un total de 1.696 homicidios; para el año 2024, se presenta un total de 1.604 casos; y finalmente, para el año 2025 se ha presentado hasta ahora, una mayor cantidad de homicidios con un total de 932
+
+```{r fig.width=20, fig.height=20}
+
+library(stringr)
+
+
+
+orden_dias <- c("LUNES", "MARTES", "MIÉRCOLES", 
+                "JUEVES", "VIERNES", "SÁBADO", "DOMINGO")
+
+
+tabla_dias <- BD_Homicidios %>% 
+  group_by(AÑO, `DIA _SEMANA`) %>% 
+  summarise(CANTIDAD_HOMICIDIOS_2 = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(DIA_ORDENADO = factor(`DIA _SEMANA`, levels = orden_dias))
+
+
+tabla_18_21 <- tabla_dias %>%
+  filter(AÑO >= 2018 & AÑO <= 2021) %>%
+  mutate(DIA_ORDENADO = factor(DIA_ORDENADO, levels = orden_dias))
+
+
+tabla_22_25 <- tabla_dias %>%
+  filter(AÑO >= 2022 & AÑO <= 2025) %>%
+  mutate(DIA_ORDENADO = factor(DIA_ORDENADO, levels = orden_dias))
+
+
+
+graficar_tabla_horizontal <- function(tabla, titulo) {
+  ggplot(tabla, aes(x = DIA_ORDENADO, y = CANTIDAD_HOMICIDIOS_2, fill = `DIA _SEMANA`)) +
+    geom_col() +
+    geom_text(aes(label = CANTIDAD_HOMICIDIOS_2),
+              position = position_stack(vjust = 0.5),
+              size = 7, fontface = "bold", color = "white") +
+    facet_wrap(~AÑO, scales = "free_x") +
+    scale_x_discrete(drop = FALSE) +
+    scale_fill_manual(values = colores_graf) +
+    labs(title = titulo, x = NULL, y = NULL) +
+    coord_flip() +
+    theme_minimal() +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.text.y = element_text(size = 25, color = "#1C2C4E"),
+      axis.text.x = element_blank(),
+      axis.ticks.x = element_blank(),
+      strip.text = element_text(size = 25, color = "#1C2C4E"),
+      plot.title = element_text(size = 35, hjust = 0.5),
+      axis.line = element_line(color = "black"),
+      legend.text = element_blank(),
+      legend.title = element_blank(),
+      legend.key = element_blank(),
+      legend.position = "none"
+    )
+
+}
+
+grafico_18_21 <- graficar_tabla_horizontal(tabla_18_21, "Homicidios por Día de la Semana (2018-2021)")
+
+
+grafico_22_25 <- graficar_tabla_horizontal(tabla_22_25, "Homicidios por Día de la Semana (2022-2025)")
+
+
+grafico_18_21
+grafico_22_25
+
+
+
+
+```
+
+### HOMICIDIOS PRESENTADOS POR ARMA MEDIO(2018-2025)
+
+Gracias al siguiente gráfico, se puede inferir que el medio por el cuál se frecuentó una mayor cantidad de homicidios, fue el vehículo con un 49.68%, mientras que los medios que se registraron con una menor cantidad de homicidios, es el tren con un 0.08% y la bicicleta con un 0.6%, posiblemente porque en su mayoría, la gente acostumbra a usar medios motorizados.
+
+```{r fig.width=20, fig.height=15, fig.align='center'}
+tabla_gen <- BD_Homicidios %>% 
+  filter(`ARMAS MEDIO` != "NO REPORTADO")%>%
+  group_by(`ARMAS MEDIO`) %>% 
+  summarise(CANTIDAD_H = sum(CANTIDAD), .groups ="drop")%>% 
+  mutate(PORCENTAJE = round(CANTIDAD_H/ sum(CANTIDAD_H)*100,2)) %>%
+  mutate(`ARMAS MEDIO` = fct_reorder(`ARMAS MEDIO`,CANTIDAD_H, .desc = TRUE))
+
+title_12 <- str_wrap("PORCENTAJE DE HOMICIDIOS POR TIPO DE ARMA MEDIO(2018-2025)- (Sacando los que no fueron reportados)", width=45)
+
+colores_graf_2 <- c("#180302","#420705","#98100B","#ED1E18","#F79592")
+  
+
+ggplot(tabla_gen, aes(x = "", y = PORCENTAJE, fill = `ARMAS MEDIO`))+
+  geom_bar(stat = "identity", width = 5)+
+  coord_polar("y", start = 1)+
+  geom_text_repel(aes(label = paste0(PORCENTAJE, "%")),
+            size = 12,
+            color = "white",
+            position = position_stack(vjust=0.5)
+             )+
+  theme_minimal()+
+  theme_void()+
+  labs(title= title_12)+
+  scale_fill_manual(values = colores_graf_2) +
+  theme(
+    legend.text = element_text(size = 25),
+    legend.title = element_blank(),
+    legend.key.size = unit(1, "cm"),
+    plot.title = element_text(size= 35, hjust=0.5)
+  )
+```
+
+# ACCIDENTALIDAD Y VÍCTIMAS POR ACCIDENTES DE TRÁNSITO(2018-2025)
+
+### ACCIDENTES PRESENTADOS POR AÑO(2018-2025)
+
+```{r fig.height=10, fig.width=20, fig.align='center'}
+Tab_accd_1 <- ACCD_ACT %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_ACCIDENTES_T = sum(CANTIDAD_ACCIDENTES), .groups = "drop") %>%
+  arrange(desc(CANTIDAD_ACCIDENTES_T)) 
+
+
+titulo_acc_1 <- str_wrap("CANTIDAD DE ACCIDENTES (2018-2025)")
+  
+  ggplot(Tab_accd_1,aes( x = AÑO, y = CANTIDAD_ACCIDENTES_T))+#inicia el gráfico indicando los ejes
+  geom_line(aes(group = 1), color="#DE403B", size=4)+#Dibuja línea para conectar puntos
+    geom_label(aes(label=label_comma(big.mark = ".",decimal.mark = ",")(CANTIDAD_ACCIDENTES_T)),#etiquetas de texto sobre cada punto
+               vjust=-0.5,#se ajusta el texto verticalmente
+               hjust=0.5,#se ajusta el texto horizontalmente
+               size=10,#tamaño de texto
+               fill= "#1C2C4E",#fondo de las etiquetas
+               color ="white")+ #color del texto
+    geom_point(size=8)+#puntos en cada valor
+     scale_x_continuous(breaks=unique(Tab_accd_1$AÑO),
+                     labels=unique(Tab_accd_1$AÑO))+#muestra los años como texto
+    labs(title=titulo_acc_1, #nombre del titulo de gráfico y ejes.
+         x=NULL,
+         y = NULL)+
+  scale_y_continuous(limits = c(400,13000),
+                     breaks = seq(400,13000, by = 5000),
+                     labels=label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y
+     theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+   
+  
+```
+
+## VICTIMAS AFECTADAS POR AÑO(2018-2025)
+
+```{r fig.height=10, fig.width=20, fig.align='center'}
+Tab_vic_1 <- VIC_ACT %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_VICTIMAS_T = sum(CANTIDAD_VICTIMAS), .groups = "drop") %>%
+  arrange(desc(CANTIDAD_VICTIMAS_T)) 
+
+
+titulo_vic_1 <- str_wrap("CANTIDAD DE VICTIMAS (2018-2025)")
+  
+  ggplot(Tab_vic_1,aes( x = AÑO, y = CANTIDAD_VICTIMAS_T))+#inicia el gráfico indicando los ejes
+  geom_line(aes(group = 1), color="#DE403B", size=4)+#Dibuja línea para conectar puntos
+    geom_label(aes(label=label_comma(big.mark = ".",decimal.mark = ",")(CANTIDAD_VICTIMAS_T)),#etiquetas de texto sobre cada punto
+               vjust=-0.5,#se ajusta el texto verticalmente
+               hjust=0.5,#se ajusta el texto horizontalmente
+               size=10,#tamaño de texto
+               fill= "#1C2C4E",#fondo de las etiquetas
+               color ="white")+ #color del texto
+    geom_point(size=8)+#puntos en cada valor
+     scale_x_continuous(breaks=unique(Tab_accd_1$AÑO),
+                     labels=unique(Tab_accd_1$AÑO))+#muestra los años como texto
+    labs(title=titulo_vic_1, #nombre del titulo de gráfico y ejes.
+         x=NULL,
+         y = NULL)+
+  scale_y_continuous(limits = c(400,4000),
+                     breaks = seq(400,4000, by = 2000),
+                     labels=label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y
+     theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+
+
+```
+
+## PROMEDIO DE ACCIDENTALIDAD POR MESES(2018-2025)
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE")
+
+Tab_accd_2 <- ACCD_ACT %>% group_by(AÑO, MES) %>% summarise(CANTIDAD_ACCIDENTES = sum(CANTIDAD_ACCIDENTES), .groups = "drop") %>% group_by(MES) %>% summarise(CANTIDAD_PROM_ACCIDENTES = round(mean(CANTIDAD_ACCIDENTES),0), .groups = "drop")%>% mutate(MES = factor(MES, levels = orden_meses))
+
+titulo_acc_2 <- str_wrap("CANTIDAD PROMEDIO DE ACCIDENTALIDAD POR MESES (2018-2025) ", width=35)
+
+ggplot(Tab_accd_2,aes(x=MES, y= CANTIDAD_PROM_ACCIDENTES)) + 
+  geom_line(aes(group=1),size= 4, color= "#DE403B") + 
+  geom_label_repel(aes(label= CANTIDAD_PROM_ACCIDENTES ), 
+                   size=8, 
+                   vjust= 1,                  
+                   hjust = 0.5, 
+                   fill= "#1C2C4E", 
+                   color = "white" )+ 
+  geom_point(size=8)+ 
+  scale_y_continuous(limits = c(400,800), 
+                     breaks = seq(400,800, by = 200))+ 
+  labs(title = titulo_acc_2, 
+       x = NULL, 
+       y = NULL)+ 
+  theme_minimal()+ 
+  theme( panel.grid.major = element_blank(), 
+         panel.grid.minor = element_blank(), 
+         axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"), 
+         axis.text.y = element_text(size = 25, color ="#1C2C4E"), 
+         plot.title = element_text(size = 35, hjust = 0.5), 
+         axis.line = element_line(color = "black"), 
+         legend.text = element_text(size=25), 
+         legend.key.size = unit(1, "cm"),
+         legend.title = element_text(size= 28))
+
+
+```
+
+## VICTIMAS PROMEDIO POR MESES(2018-2025)
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",                   "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE")   
+
+Tab_vic_2 <- VIC_ACT %>%   
+  group_by(AÑO, MES) %>%   
+  summarise(CANTIDAD_VICTIMAS = sum(CANTIDAD_VICTIMAS), 
+            .groups = "drop") %>%    
+  group_by(MES) %>%   
+  summarise(CANTIDAD_PROM_VICTIMAS = round(mean(CANTIDAD_VICTIMAS),0), .groups = "drop")%>%    
+  mutate(MES = factor(MES, levels = orden_meses))   
+
+ titulo_vic_2 <- str_wrap("CANTIDAD PROMEDIO DE VICTIMAS POR MESES (2018-2025) ", width=35)  
+ 
+ ggplot(Tab_vic_2,aes(x=MES, y= CANTIDAD_PROM_VICTIMAS)) +  
+   geom_line(aes(group=1),size= 4, color= "#DE403B") +   
+   geom_label_repel(aes(label= CANTIDAD_PROM_VICTIMAS ),             size=8,             vjust= 1, 
+            hjust = 0.5,fill= "#1C2C4E",      
+            color = "white")+   
+   geom_point(size=8)+   
+   scale_y_continuous(limits = c(0,400),                     
+                      breaks = seq(0,400, by = 200))+   
+   labs(title = titulo_vic_2,        
+        x = NULL,         
+        y = NULL)+   
+   theme_minimal()+   
+   theme( panel.grid.major = element_blank(),     
+          panel.grid.minor = element_blank(), 
+          axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),    
+          axis.text.y = element_text(size = 25, color ="#1C2C4E"),    
+          plot.title = element_text(size = 35, hjust = 0.5),   
+          axis.line = element_line(color = "black"),  
+          legend.text = element_text(size=25),   
+          legend.key.size = unit(1, "cm"),     legend.title = element_text(size= 28))
+
+```
+
+## PROMEDIO DE ACCIDENTALIDAD POR DÍAS DE LA SEMANA(2018-2025)
+
+```{r fig.width=20, fig.height=10, fig.align='center'}
+
+orden_diass <- c("LUNES","MARTES", "MIÉRCOLES", "JUEVES","VIERNES","SÁBADO","DOMINGO")
+
+names(ACCD_ACT)[3] <- "DIA_SEMANA"
+Tab_accd_3 <- ACCD_ACT %>% 
+  group_by(AÑO, DIA_SEMANA)%>% 
+  summarise(CANTIDAD_DE_ACCIDENTES = sum(CANTIDAD_ACCIDENTES), .groups ="drop", )%>%
+  group_by(DIA_SEMANA)%>%
+  summarise(CANTIDAD_PROM_ACC = mean(CANTIDAD_DE_ACCIDENTES))%>%
+  mutate(DIA_SEMANA = factor(DIA_SEMANA, levels = orden_dias))
+ 
+titulo_acc_3 <- str_wrap("CANTIDAD PROMEDIO DE ACCIDENTALIDAD POR DÍA DE LA SEMANA(2018-2025)", width=40)
+
+colores_graf <- c("#180302","#420705","#6D0C08","#98100B","#C2150F","#ED1E18","#F0433D","#F46C67","#F79592","#FABFBD")
+  
+ggplot(Tab_accd_3,aes(x =DIA_SEMANA, y = CANTIDAD_PROM_ACC , fill = DIA_SEMANA))+
+  geom_col()+
+  labs(title = titulo_acc_3,
+       x = NULL,
+       y = NULL)+
+  geom_text(aes(label = label_comma(big.mark = ".", decimal.mark = ",")(CANTIDAD_PROM_ACC)),
+            size=12,
+            hjust= 0.5,
+            vjust = -0.5
+           )+
+  scale_fill_manual(values = colores_graf)+
+  scale_y_continuous(limits = c(0,1500),
+                     breaks = seq(0,1500, by = 500),
+                     labels = label_comma(big.mark = ".", decimal.mark = "                                 ,"))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    legend.position = "none",
+    axis.line = element_line(color = "black")
+  )
+```
+
+## CONCLUSIONES
+
+A modo de cierre, con los parámetros analizados anteriormente, se observó cómo en el período 2018-2025, el año 2019 presentó una mayor incidencia de homicidios por accidentes de tránsito, con un total de 12.108 homicidios, teniendo un mayor declive para el año 2021 con un total de 6.999 casos, posiblemente por encontrarnos bajo medidas de aislamiento a causa del COVID-19. Por esta misma razón,para el año 2020, se mostró una menor cantidad de homicidios en el mes de abril con un total de 335 casos, debido a qué el para el mes anterior, el 25 de marzo, se había ordenado el aislamiento obligatorio en todo el país. Asimismo, el mes que siempre presentó una mayor incidencia de homicidios por accidentes de tránsito, fue diciembre con un promedio de 830 casos, mientras qué abril fue el mes que presentó una menor cantidad con un promedio de 582 casos. Además, se pudo apreciar que el arma medio por el cuál se presentaron una mayor incidencia, fue el vehículo con un 49.68%. Finalmente, se pudo apreciar que los días en que se presentó una mayor incidencia a nivel general, corresponden a los fines de semana, posiblemente por ser los días en que la población normalmente sale
+
+## BIBLIOGRAFÍA
+
+UNIVERSIDAD DE ANTIOQUIA. (s.f.). Covid-19: así se pasó del encierro a la normalidad.
+
+Wikipedia. (s.f.). DISTRIBUCIÓN DE LA POBLACIÓN POR REGIONES . <https://es.wikipedia.org/wiki/Regi%C3%B3n_insular_de_Colombia>
+
+DANE . (s.f.). DISTRIBUCIÓN DE LA POBLACIÓN POR REGIONES .
