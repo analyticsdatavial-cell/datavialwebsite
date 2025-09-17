@@ -1,0 +1,481 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  background-color: #F0F0F0;
+  color: #2E4975; /* azul más claro */
+  line-height: 1.6; 
+}
+
+header {
+    background-color: #2E4975;
+    color: white;
+    height: 15%;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 1%;
+}
+
+#start {
+    display: flex;
+    align-items: center;
+}
+
+#title {
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+    margin-left: 8%;
+    padding-top: 0;
+}
+
+nav ul {
+  --gap: 2rem; /* valor de separación entre li */
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li {
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Línea centrada en el espacio entre elementos pero a la izquierda */
+nav > ul > li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  margin-right: calc(var(--gap) / 2);
+  width: 1px;
+  background-color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li:hover > a {
+  color: #ffb74d; /* COLOCAR COLOR AMARILLO SOLO EN EL MENU PRINCIPAL */
+}
+
+/* SUBMENU */
+nav ul .submenu {
+  display: none;
+  position: absolute;          /* Se posiciona en relación al <li> padre */
+  top: 100%;                   /* Lo coloca justo debajo del <li> principal */
+  left: 0;                     /* Alinea el submenú al lado izquierdo del padre */
+  background: #e0e0e0;         /* Color de fondo gris claro para el submenú */
+  padding: 0;                  /* Quita el espacio interno (padding) del <ul> */
+  margin: 0;                   /* Quita márgenes del <ul> del submenú */
+  list-style: none;            /* Elimina viñetas o bullets de la lista */
+  min-width: 180px;            /* Asegura que el submenú tenga un ancho mínimo */
+  z-index: 1000;               /* Lo coloca encima de otros elementos en la página */
+}
+
+nav ul .submenu li {
+  position: relative; /* Necesario para que funcione el ::after */
+  transition: background-color 0.3s ease;
+}
+
+nav ul .submenu li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;               
+  left: 50%;               
+  transform: translateX(-50%);
+  width: 85%;              /* << aquí controlas el ancho de la línea */
+  height: 1px;             
+  background-color: #000;  
+}
+
+nav ul .submenu li:last-child::after {
+  content: none;           /* Quita la línea del último */
+}
+
+nav ul .submenu a {
+  color: #000000;                  /* El texto de las opciones del submenú será negro */
+  font-weight: 500;             /* Peso medio en la tipografía (un poco más gruesa que normal) */
+  padding: 0.75rem 1rem;        /* Espaciado interno arriba/abajo (0.75rem) y a los lados (1rem) */
+  display: block;               /* Hace que el enlace ocupe todo el ancho disponible (clickeable en toda el área) */
+  transition: color 0.2s ease;
+}
+
+nav ul .submenu li:hover {
+  background-color: #cacaca;
+}
+
+nav ul .submenu a:hover {
+  color: #2E4975;
+}
+
+/* Mostrar submenu al hacer hover */
+nav li:hover > .submenu,
+nav li:has(.submenu:hover) > .submenu {
+  display: block;  /* Se mantiene visible incluso si pasas por el submenu */
+}
+
+.sub {
+  display: flex;
+  align-items: center;   /* centra verticalmente texto e imagen */
+  gap: 0.5rem;           /* espacio entre la imagen y el texto */
+}
+
+.sub img {
+  flex-shrink: 0;        /* evita que la imagen se deforme o reduzca */
+}
+
+#btn {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    width: 50px; /* o el valor que uses */
+    height: 50px;
+    background: transparent; /* no blanco */
+    padding: 0;
+    border: none;
+}
+
+#btn img {
+  max-width: 70%; /* ajusta según necesites */
+  max-height: 70%;
+} 
+
+/* CONTENEDOR DEL VIDEO PRINCIPAL 
+.video-container video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+} */
+
+
+footer {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 0.2rem;
+  background-color: #2E4975;
+  color: white;
+  overflow: visible;
+  height: auto; /* let content determine height */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* 🔽 Arrow image (remains floating at the top) */
+footer img.borde {
+  position: absolute;
+  top: 0;
+  left: 7%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 60px;
+  height: 60px;
+}
+
+/* 🔽 Footer columns */
+.footer-col {
+  flex: 1 1 30%;
+  min-width: 250px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.contact {
+  list-style: none;
+  font-size: 23px;
+}
+
+/* 🔽 Redes logos */
+.logos {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.logos li {
+  display: inline-block;
+}
+
+/* 🔽 Bottom text and arrow */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}   
+
+/* ☺☻☺☺☻↓↓↓↓AQUI EMPIEZA EL CONTENIDO DE ALDAIR MALDONADO↓↓↓↓☺☻☺☺☻  */
+/*estilo de la info de analisis descriptivo*/
+    .contenido_analisis {
+     
+      
+      text-align: center;
+      padding: 50px 150px 50px;
+      
+      background-color: #e1e1e1de;
+    }
+
+    .titulo_analisis {
+      
+      font-size: 40px;
+      font-weight: bold;
+      
+      color: #60A560;
+     
+    }
+
+    .texto_analisis {
+      
+      font-size: 20px;
+      
+      text-align: justify;
+      font-weight: bold;
+    }
+
+    /* Sección general */
+    section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 500px;
+      padding: 30px;
+      margin: 40px;
+      margin-bottom: 30px;
+      position: relative;
+      overflow: hidden;
+      
+      border-radius: 12px;
+      background-color: #f1f8e9;
+      transition: all 0.6s ease;
+    }
+
+    .contenido {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      z-index: 2;
+      gap: 30px;
+    }
+
+    .texto {
+      width: 50%;
+      max-width: 500px;
+      text-align: left;
+      
+    }
+
+    .texto h2 {
+      font-size: 2rem;
+      color: #60A560;
+      margin-bottom: 15px;
+      transition: transform 0.3s;
+    }
+
+    .texto p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;  
+      transition: transform 0.3s;
+    }
+
+    /* Animacion de movimiento de texto hacia la derecha*/
+     .texto h2, p:hover {
+      transform: translateX(20px);
+
+    }
+
+    .imagen-derecha {
+      width: 50%;
+      height: 70%;
+      transition: 0.5s;
+      cursor: pointer;
+    }
+
+    /* Animacion de movimiento de imagen hacia la derecha*/
+     .imagen-derecha:hover {
+      transform: translateY(-20px);
+    }
+
+    .imagen-derecha img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+
+    /* ==========================
+       EFECTOS
+    ========================== */
+
+    /* 1. Sección 1 → transición verde esmeralda */
+    .seccion1::before {
+      content: "";
+      position: absolute;
+      top: 0; 
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, #96ca97a8,#49d73ca8, #2e8b57);
+      transition: left 0.8s ease;
+      z-index: 1;
+    }
+    .seccion1:hover::before {
+      left: 0;
+    }
+    .seccion1:not(:hover)::before {
+      left: 100%;
+      transition: left 0.8s ease;
+    }
+
+    /* 2. Sección 2 → transición verde esmeralda izquierda → derecha */
+.seccion2::before {
+  content: "";
+  position: absolute;
+  top: 0; 
+  right: -100%;   /* inicia fuera por la derecha */
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, #96ca97a8, #49d73ca8, #2e8b57);
+  transition: right 0.8s ease;
+  z-index: 1;
+}
+.seccion2:hover::before {
+  right: 0;       /* entra hacia la izquierda */
+}
+.seccion2:not(:hover)::before {
+  right: 100%;    /* sale de izquierda a derecha */
+  transition: right 0.8s ease;
+}
+
+
+    /* Animación con scroll */
+    .hidden {
+      opacity: 0;
+      transform: translateY(70px);
+      transition: all 1.3s ease-out;
+    }
+
+    .show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+   /* Estilos para la sección de descargas */
+.download-section {
+    margin: 50px auto;
+    display: block;
+    text-align: center;
+    background-color: #e1e1e1de;
+    min-height: 300px;
+    padding: 50px 150px 50px;
+  }
+
+  .download-section h2 {
+    text-align: center;
+    color: #60A560;
+    margin-bottom: 25px;
+    font-size: 40px;
+  }
+
+  .download-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;   /* responsive */
+    gap: 15px;
+  }
+
+  .download-buttons button {
+    min-width: 220px;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    background: linear-gradient(90deg, #60A560, #60A560);
+    color: #fff;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    display: flex;              /* para organizar imagen + texto */
+    align-items: center;        /* centra verticalmente */
+    justify-content: center;    /* centra horizontalmente */
+    gap: 10px;                  /* espacio entre imagen y texto */
+  }
+
+  .download-buttons button img {
+    width: 24px;    /* ajusta el tamaño del ícono */
+    height: 24px;   /* se mantiene cuadrado */
+    object-fit: contain; /* se adapta sin deformarse */
+  }
+
+  .download-buttons button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+  }
+
+  /* Submenús estilo dropdown */
+    .submenu {
+      display: none;
+      flex-direction: column;
+      background: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      margin-top: 2px;
+      text-align: left;
+      width: 100%;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+
+    .submenu a {
+      color: #2E4975;
+      text-decoration: none;
+      padding: 10px 15px;
+      font-size: 14px;
+      display: block;
+      transition: background 0.2s;
+    }
+
+    .submenu a:hover {
+      background: #60A560;
+      color: #fff;
+    }
