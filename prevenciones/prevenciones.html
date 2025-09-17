@@ -1,174 +1,304 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>DataVial</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="../images/favicon.png">
+  <title>DataVial</title>
 </head>
-<body>
+
+<body background="">
   <main>
     <header>
-        <div id="start">
+      <div id="start">
         <img id="logo" src="../images/favicon.png" alt="LOGO DE DATAVIAL">
-            <h1 id="title">DataVialAnalytics</h1>
-        </div>
-    <nav>
-<ul>
-  <li>
-    <a href="../inicio/index.html" class="active">INICIO</a>
-    <ul class="submenu">
-      <li><a href="../inicio/index.html#sobre">Sobre el Proyecto</a></li>
-      <li><a href="../inicio/index.html#objetivo">Objetivos</a></li>
-      <li><a href="../inicio/index.html#metodologia">Metodología</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="../nosotros/nosotros.html">QUIENES SOMOS</a>
-    <ul class="submenu">
-      <li><a href="../nosotros/nosotros.html#equipo">Equipo del Proyecto</a></li>
-      <li><a href="../nosotros/nosotros.html#front">FRONTEND TEAM</a></li>
-      <li><a href="../nosotros/nosotros.html#end">BACKEND TEAM</a></li> 
-    </ul>
-  </li>
-  <li>
-    <a href="../analisis/analisis.html">ANALISIS</a>
-    <ul class="submenu">
-      <li><a href="#consulta1">CONSULTA 1</a></li>
-      <li><a href="#consulta2">CONSULTA 2</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="../prevenciones/prevenciones.html">PREVENCIONES</a>
-    <ul class="submenu">
-      <li><a href="#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
-      <li class="sub"><img src="../images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="#conductores">Conductores</a></li>
-      <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="#peatones">Peatones</a></li>
-      <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="#ciclistas">Ciclistas</a></li>
-    </ul>
-  </li>
-  <li>
-    <a href="../recursos/recursos.html">RECURSOS EDUCATIVOS</a>
-    <ul class="submenu">
-      <li><a href="../recursos/recursos.html#videos">Videos</a></li>
-      <li><a href="../recursos/recursos.html#señales">Señales de transito</a></li> 
-      <li><a href="../recursos/recursos.html#interactivo">Sección Interactiva</a></li>
-    </ul>
-  </li>
-  <li><a href="../noticias/noticias.html">NOTICIAS</a></li>
-  <button id="btn"><img src="../images/lupa.png" alt="BOTON DE BUSQUEDA"></button>
-</ul>
-        </nav>
+        <h1 id="title">DataVialAnalytics</h1>
+      </div>
+      <nav>
+        <ul>
+          <li>
+            <a href="../index.html">INICIO</a>
+            <ul class="submenu">
+              <li><a href="#sobre">Sobre el Proyecto</a></li>
+              <li><a href="#objetivo">Objetivos</a></li>
+              <li><a href="#metodologia">Metodología</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../nosotros/nosotros.html">QUIENES SOMOS</a>
+            <ul class="submenu">
+              <li><a href="#equipo">Equipo del Proyecto</a></li>
+              <li><a href="#front">FRONTEND TEAM</a></li>
+              <li><a href="#end">BACKEND TEAM</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../analisis/analisis.html">ANALISIS</a>
+            <ul class="submenu">
+              <li><a href="#consulta1">CONSULTA 1</a></li>
+              <li><a href="#consulta2">CONSULTA 2</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../prevenciones/prevenciones.html" style="color: red;">PREVENCIONES</a>
+            <ul class="submenu">
+              <li><a href="#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
+              <li class="sub"><img src="../images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a
+                  href="#conductores">Conductores</a></li>
+              <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a
+                  href="#peatones">Peatones</a></li>
+              <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a
+                  href="#ciclistas">Ciclistas</a></li>
+            </ul>
+          </li>
+          <li>
+            <a href="../recursos/recursos.html">RECURSOS EDUCATIVOS</a>
+            <ul class="submenu">
+              <li><a href="#siniestralidad">Todo sobre siniestralidad (PDF)</a></li>
+              <li><a href="#videos">Videos</a></li>
+              <li><a href="#informes">Informes</a></li>
+              <li><a href="#interactivo">Sección Interactiva</a></li>
+            </ul>
+          </li>
+          <button id="btn"><img src="../images/lupa.png" id="button" alt="BOTON DE BUSQUEDA"></button>
+        </ul>
+      </nav>
     </header>
-    <div class="content-container">
-    <h1 id="cultura">Cultura de Movilidad en Barranquilla</h1>
-    <p>La cultura de movilidad en Barranquilla ha evolucionado con un enfoque en la seguridad vial y la modernización de la infraestructura. La ciudad ha logrado reducir la accidentalidad y promueve la educación vial para todos los actores: conductores, motociclistas, ciclistas y peatones. También se ha incentivado el uso de la bicicleta como medio de transporte sostenible y se están explorando opciones para un sistema de metro.</p>
 
-    <div class="rules-container">
-        <div class="rule-card verde">
-            <h3 class="rule-title">Lo Que Se Debe Hacer</h3>
-            <div class="rule-content">
-                <span class="color-circle"></span>
-                <div class="rule-list">
-                    <ul>
-                        <li><strong>Respetar los semáforos y las señales de tránsito:</strong> Acatar las indicaciones luminosas y las señales verticales y horizontales (pare, ceda el paso, cruce peatonal).</li>
-                        <li><strong>Conducir a la defensiva:</strong> Mantener una distancia prudente con otros vehículos y estar atento a los peatones y otros actores viales.</li>
-                        <li><strong>Utilizar el cinturón de seguridad:</strong> Este es un requisito obligatorio para todos los ocupantes del vehículo.</li>
-                        <li><strong>Portar los documentos en regla:</strong> Tener al día la licencia de conducción, la tarjeta de propiedad del vehículo, el SOAT (Seguro Obligatorio de Accidentes de Tránsito) y la revisión técnico-mecánica y de gases.</li>
-                        <li><strong>Usar las ciclorrutas:</strong> Si se moviliza en bicicleta, utilizar los carriles exclusivos habilitados para este fin.</li>
-                        <li><strong>Ser un peatón ejemplar:</strong> Utilizar los puentes peatonales, cruzar en las cebras y no caminar por las vías destinadas a los vehículos.</li>
-                        <li><strong>Conducir con precaución en zonas escolares:</strong> Reducir la velocidad y estar alerta a los niños y jóvenes que cruzan la vía.</li>
-                    </ul>
-                </div>
+    <center>
+      <div style="background-color: #b5b5b5; color:white;"><br>
+        <h1>¡BIENVENIDO NAVEGANTE!</h1><br>
+      </div> <br>
+      <b>Tu Futuro es Ahora</b><br>
+      Aprovecha tu curiosidad para construir un mejor camino.<br> Ser un buen ciudadano no es aburrido, es la misión más
+      importante. <br><br>
+
+      <b>Usa tu energía para inspirar a otros y haz de la seguridad tu mejor superpoder.</b>
+      <br><br>
+      <img src="imagenes/sparki enseña.png" alt="" width="500px" height="250px" class="imagen">
+    </center>
+
+    <br><br>
+    <div class="cards-wrapper">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara amarillo.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
             </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto amarillo.png" alt="" class="card-image">
+          </div>
         </div>
+      </div>
 
-        <div class="rule-card amarillo">
-            <h3 class="rule-title">No Es Recomendable</h3>
-            <div class="rule-content">
-                <span class="color-circle"></span>
-                <div class="rule-list">
-                    <ul>
-                        <li><strong>Conducir a exceso de velocidad:</strong> Acelerar de más aumenta el riesgo de siniestros viales. Siempre respetar los límites de velocidad establecidos.</li>
-                        <li><strong>Usar el pito de forma excesiva:</strong> El uso del pito debe ser para prevenir un accidente, no para expresar impaciencia.</li>
-                        <li><strong>Distraerse al volante:</strong> Utilizar el teléfono móvil o manipular otros dispositivos mientras se conduce puede generar accidentes.</li>
-                        <li><strong>Realizar maniobras bruscas:</strong> Cambiar de carril sin avisar, adelantar por la derecha o frenar de repente puede confundir a otros conductores y causar colisiones.</li>
-                        <li><strong>Estacionarse en zonas no autorizadas:</strong> Esto obstaculiza el flujo vehicular y peatonal, y puede resultar en multas.</li>
-                    </ul>
-                </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara azuclar.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
             </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto azuclar.png" alt="" class="card-image">
+          </div>
         </div>
+      </div>
 
-        <div class="rule-card rojo">
-            <h3 class="rule-title">Lo Que No Se Debe Hacer</h3>
-            <div class="rule-content">
-                <span class="color-circle"></span>
-                <div class="rule-list">
-                    <ul>
-                        <li><strong>Conducir bajo la influencia del alcohol o drogas:</strong> Esta es una de las principales causas de siniestros viales y está estrictamente prohibido y sancionado.</li>
-                        <li><strong>No respetar la luz roja del semáforo:</strong> Pasarse el semáforo en rojo es una de las infracciones más graves y peligrosas.</li>
-                        <li><strong>Transportar personas en lugares no aptos:</strong> Llevar personas en platones de camionetas, carrocerías o cualquier otra parte externa del vehículo está prohibido.</li>
-                        <li><strong>Conducir sin los documentos al día:</strong> Circular sin la licencia, el SOAT o la revisión técnico-mecánica vigente es una infracción grave que acarrea multas e inmovilización del vehículo.</li>
-                        <li><strong>No usar casco en motocicleta:</strong> El uso de casco es obligatorio tanto para el conductor como para el acompañante. No usarlo pone en riesgo la vida.</li>
-                        <li><strong>Invadir andenes o zonas peatonales:</strong> Los andenes son para los peatones. Invadirlos con vehículos es una falta de respeto y una infracción.</li>
-                        <li><strong>Realizar cargue o descargue en horarios y lugares prohibidos:</strong> En Barranquilla, existen restricciones de horarios y zonas para estas actividades, especialmente en el centro de la ciudad.</li>
-                    </ul>
-                </div>
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara verde.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
             </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto verde.png" alt="" class="card-image">
+          </div>
         </div>
+      </div>
 
-        <section class="section">
-            <h2 id="conductores">Seguridad Vial para Conductores 🚗🏍️</h2>
-            <div class="section-content">
-                <div class="text-content">
-                    <p>Nuestros datos revelan que la principal causa de accidentes es el <strong>choque</strong>, con el mayor número de heridos y muertes. Las infracciones más comunes son el exceso de velocidad y no respetar las señales de tránsito. Esto nos muestra que la mayoría de los siniestros viales son predecibles y, por lo tanto, prevenibles.</p>
-                    <ul>
-                        <li><strong>Entienda la física de la velocidad:</strong> Con 269,370 comparendos por <strong>"SOBREPASAR LA VELOCIDAD MÁXIMA PERMITIDA"</strong>, la velocidad es un factor de riesgo crítico. A mayor velocidad, menor es su tiempo de reacción y más largo es el espacio que necesita para frenar. Esto significa que una reacción tardía o una maniobra brusca a alta velocidad puede convertir un simple susto en un choque fatal. Conducir a la velocidad adecuada no es solo una norma; es una medida de seguridad activa.</li>
-                        <li><strong>El semáforo es una señal de vida, no un obstáculo:</strong> La infracción de <strong>"NO DETENERSE ANTE LUZ ROJA O AMARILLA"</strong> acumula 50,900 comparendos. Ignorar un semáforo en rojo o acelerar en el amarillo es un acto de alto riesgo que aumenta la probabilidad de una colisión por impacto lateral, uno de los tipos de choque más peligrosos, con consecuencias devastadoras. Unos segundos de espera valen más que una vida.</li>
-                        <li><strong>Comparta la vía con empatía:</strong> Los motociclistas son la población más vulnerable, registrando 6,062 hombres y 557 mujeres heridos. Al conducir, siempre revise sus puntos ciegos y mantenga una distancia de seguridad prudente, especialmente al cambiar de carril. Entienda que un motociclista tiene menos estabilidad y visibilidad que un automóvil, y cualquier error de cálculo puede tener consecuencias fatales para ellos.</li>
-                    </ul>
-                </div>
-                <img src="Conductores.png" alt="Conductor mirando por el retrovisor" class="section-image">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara gris.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
             </div>
-        </section>
-
-        <section class="section">
-            <h2 id="peatones">Seguridad Vial para Peatones 🚶‍♀️🚶‍♂️</h2>
-            <div class="section-content image-left">
-                <div class="text-content">
-                    <p>Los datos nos muestran que los <strong>atropellos</strong> son el segundo tipo de accidente más mortal, con 94 muertes y 1,892 heridos. Esto subraya la importancia de que los peatones sean actores activos de su propia seguridad.</p>
-                    <ul>
-                        <li><strong>Los cruces peatonales son su zona segura:</strong> La mayoría de los atropellos ocurren cuando las personas cruzan la vía por lugares no autorizados. Los puentes peatonales y las cebras están diseñados para su seguridad. Al usarlos, usted se hace más visible y se asegura de que los vehículos en circulación estén preparados para su presencia. No es una comodidad, ¡es una obligación de seguridad!</li>
-                        <li><strong>El teléfono puede esperar, su vida no:</strong> La distracción por el uso de dispositivos móviles al caminar por la calle es una de las principales causas de accidentes. Estar inmerso en una conversación o revisando un mensaje lo desconecta del entorno, disminuyendo su percepción de los sonidos y vehículos que se aproximan. Mantenga la atención en la vía; cada paso cuenta.</li>
-                        <li><strong>Entienda el concepto de "ver y ser visto":</strong> Vista ropa de colores claros o brillantes cuando camine, especialmente de noche, y evite los puntos ciegos de vehículos grandes como buses y camiones. Un conductor no puede reaccionar a algo que no ve.</li>
-                    </ul>
-                </div>
-                <img src="Peatones.png" alt="Peatón cruzando una cebra" class="section-image">
-            </div>
-        </section>
-
-        <section class="section">
-            <h2 id="ciclistas">Seguridad para Ciclistas 🚴‍♂️🚴‍♀️</h2>
-            <div class="section-content">
-                <div class="text-content">
-                    <p>Los ciclistas, al igual que los peatones, no tienen la protección de una carrocería. Los datos revelan que 576 accidentes involucraron bicicletas, con un total de 500 heridos. Esto subraya que la vulnerabilidad de los ciclistas es alta y la prevención es clave.</p>
-                    <ul>
-                        <li><strong>La visibilidad es su escudo:</strong> Vístase para ser visto. La mayoría de los accidentes de ciclistas son <strong>choques</strong>. Use ropa de colores llamativos y, si conduce de noche, las luces y los elementos reflectantes son obligatorios. Esto no es solo una recomendación; es una medida esencial que les da a los conductores el tiempo necesario para reaccionar y evitar una colisión.</li>
-                        <li><strong>Sea un actor predecible en la vía:</strong> Siempre señale sus giros y cambios de carril con sus brazos. Aunque sea más pequeño que un carro, usted es un vehículo y debe respetar las normas. Al hacer sus movimientos predecibles, ayuda a los conductores a anticiparse y reduce el riesgo de un choque.</li>
-                        <li><strong>El respeto al semáforo y las señales es mutuo:</strong> Así como los conductores deben respetar las ciclorrutas y su espacio, usted debe respetar los semáforos, las señales de pare y la dirección de las vías. Ignorar estas reglas lo pone en un riesgo innecesario y crea confusión en el tráfico. La seguridad vial es un trabajo en equipo.</li>
-                    </ul>
-                </div>
-                <img src="Ciclistas.png" alt="Ciclista señalizando un giro" class="section-image">
-            </div>
-        </section>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto gris.png" alt="" class="card-image">
+          </div>
+        </div>
       </div>
     </div>
+
+    <center>
+
+      <div
+        style="background-color: #b5b5b5; color:white; width: 1000px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);">
+        <br>
+        <h2>La Seguridad Vial No Negocia: Reglas Claras para Vías Seguras</h2><br>
+      </div>
+      <div style="background-color: #f0f0f0; width: 900px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);"><br><br>
+        <div class="contenedor-flex">
+          <p> <br> No Confíes Demasiado, No Te Distraigas Nunca.
+            En nuestras calles, la vida se juega a cada instante. Hemos caído en la trampa de la confianza excesiva: "A
+            mí
+            no me pasa", "Solo un segundo", "Conozco el camino". Pero la realidad es cruda: un segundo de distracción,
+            una
+            pizca de negligencia, una imprudencia, puede cambiarlo todo. <br><br>
+            Nos hemos acostumbrado a la prisa, a la indiferencia. Como conductores, peatones o ciclistas, a menudo
+            priorizamos nuestra urgencia sobre la seguridad del otro. Esta despreocupación es un veneno que cobra vidas.
+            <br><br>
+            <b>Para todos: jóvenes, niños y adultos.</b> Las calles no perdonan. La seguridad no es un juego ni un
+            derecho
+            que podamos dar por sentado; es una responsabilidad que asumimos con cada paso, con cada viaje. <br><br>
+            Baja la velocidad, levanta la vista del móvil, respeta las normas, pero, sobre todo, <b>recuerda que tu vida
+              y
+              la de los demás valen más que cualquier prisa o distracción</b>.
+          </p>
+          <img src="imagenes/sparki patos.png" alt="Descripción de tu imagen">
+        </div><br><br>
+      </div>
+    </center>
+    <div class="cards-wrapper">
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara azuoscu.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto azuoscu.png" alt="" class="card-image">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara rojo.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto rojo.png" alt="" class="card-image">
+          </div>
+        </div>
+      </div>
+
+      <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="cartas/cara morado.png" alt="Frente de la tarjeta" class="card-image">
+            <div class="card-content">
+            </div>
+          </div>
+          <div class="flip-card-back">
+            <img src="cartas/texto morado.png" alt="" class="card-image ">
+          </div>
+        </div>
+      </div>
+    </div>
+    <center>
+
+      <div class="image-container">
+        <img src="imagenes/spam vacio.png" class="hover-image" alt="Imagen que cambia al pasar el cursor">
+      </div>
+      <br><br><br>
+
+      <div
+        style="background-color: #b5b5b5; color:white; width: 1000px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);">
+        <br>
+        <h2>La Seguridad Vial No Negocia: Reglas Claras para Vías Seguras</h2><br>
+      </div>
+      <div style="background-color: #f0f0f0; width: 900px; box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);"><br><br>
+
+        <div class="contenedor-flex">
+          <img src="imagenes/sparki comparendos.png" alt="Descripción de tu imagen">
+          <p>
+            <b>SPARK lo tiene claro:</b> La autoridad y la ley existen para garantizar el orden y prevenir tragedias. El
+            cumplimiento de las normas no es una opción, es una obligación cívica y moral. No hay justificación para la
+            imprudencia o la indiferencia. <br><br>
+
+            <b>Para todos los actores de la vía:</b>
+            <br>
+            <b>Conductores:</b> Su vehículo es una herramienta de poder, úsela con responsabilidad.
+            <br>
+            <b>Motociclistas:</b> Su agilidad exige el doble de precaución y cumplimiento.
+            <br>
+            <b>Peatones:</b> Su vida es invaluable, no la arriesgue por unos segundos.
+            <br>
+            <b>Ciclistas:</b> Su vulnerabilidad les exige ser visibles y respetar las normas. <br>
+            La seguridad de todos depende de la responsabilidad de cada uno. Las consecuencias de ignorar las normas son
+            graves y nadie está exento. <br>
+            <b>Respeta, obedece, protege.</b> La seguridad vial es un compromiso de todos, para el bien de todos.
+          </p>
+        </div><br><br>
+      </div><br><br>
+
+    </center>
+
   </main>
-  <footer class="footer">
-    <p>© 2025 Data Vial Analytics. Todos los derechos reservados.</p>
-    <a href="#logo"><img src="images/arrow.svg" alt="INICIO" class="borde"></a>
+
+  <!--FOOTER-->
+  <footer>
+    <!-- 🔹 Column 1: Colombia Image -->
+    <div class="footer-col">
+      <img src="../images/baq.svg" height="240" width="210" alt="FOTO DE ESCUDO DE BARRANQUILLA">
+    </div>
+
+    <!-- 🔹 Column 2: Redes + Sena -->
+    <div class="footer-col">
+      <h2>Síguenos</h2>
+      <ul class="logos">
+        <li><a href="https://www.facebook.com/share/16LubPom5W/" target="_blank"><img src="../logos/facebook.png"
+              height="40" width="40" alt="FACEBOOK"></a></li>
+        <li><a href="https://github.com/analyticsdatavial-cell" target="_blank"><img src="../logos/github.png"
+              height="40" width="40" alt=""></a></li>
+        <li><a href="https://www.instagram.com/data_vialanalytics?igsh=MWx5bmppaHk0czVrag==" target="_blank"><img
+              src="../logos/instagram.png" height="40" width="40" alt=""></a></li>
+        <li><a
+            href="https://www.linkedin.com/in/data-vial-analytics-1b2627382?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSUz6cn9FQRSaJ5VYcaNm%2FA%3D%3D"
+            target="_blank"><img src="../logos/linkedin.png" height="40" width="40" alt=""></a></li>
+        <li><a href="https://www.tiktok.com/@datavial_analytics?_t=ZS-8zjLNM77zkn&_r=1" target="_blank"><img
+              src="../logos/tik-tok.png" height="40" width="40" alt=""></a></li>
+      </ul>
+      <img src="../logos/sena.png" height="130" width="130" alt="Logo Sena" style="margin-top: 1rem;">
+    </div>
+
+    <!-- 🔹 Column 3: Contactos -->
+    <div class="footer-col">
+      <h1>Contactos</h1>
+      <ul class="contact">
+        <li>Correo: analyticsdatavial@gmail.com</li>
+        <li>Dirección: Cra. 54 #68 – 80, Nte. Centro Historico,<br>Barranquilla, Atlántico.</li>
+      </ul>
+    </div>
+
+    <!-- 🔹 Bottom section -->
+    <div class="footer-bottom">
+      <p>© 2025 Data Vial Analytics. Todos los derechos reservados.</p>
+      <a href="#logo"><img src="../images/arrow.svg" alt="INICIO" class="borde"></a>
+    </div>
   </footer>
 
-        <script src="script.js"></script>
+  <script src="script.js"></script>
+
+  <script>// Obtiene todas las tarjetas
+    const cards = document.querySelectorAll('.flip-card');
+
+    // Itera sobre cada tarjeta para agregarle el evento de clic
+    cards.forEach(card => {
+      card.addEventListener('click', () => {
+        card.classList.toggle('flipped');
+      });
+    });</script>
 </body>
+
+
 </html>
