@@ -241,17 +241,19 @@ footer img.borde {
 
 .recursos-educativos .texto {
   flex: 1;
-  text-align: left;
+  text-align: left;   
+
+    
 }
 
 .recursos-educativos .texto h2 {
-  font-size: 28px;
+  font-size: 40px;
   color: #c62828; /* rojo fuerte */
   margin-bottom: 15px;
 }
 
 .recursos-educativos .texto p {
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1.6;
   color: #2E4975; 
   margin-bottom: 10px;
@@ -270,8 +272,11 @@ footer img.borde {
 
   .video-section h2 {
     color: #dc2626;
-    margin-bottom: 25px;
-    font-size: 28px;
+    margin-bottom: 30px;
+    font-size: 30px;
+  }
+  .video-section p{
+    font-size: 20px;
   }
 
   .video-grid {
@@ -324,14 +329,14 @@ h2, h3 {
 }
 
 .texto-seccion h2 {
-  font-size: 26px;
+  font-size: 30px;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
 }
 
 .texto-seccion p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
@@ -346,14 +351,14 @@ h2, h3 {
 }
 
 .intro-senales h2 {
-  font-size: 28px;
+  font-size: 30px;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
 }
 
 .intro-senales p {
-  font-size: 16px;
+  font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
 }
@@ -475,7 +480,7 @@ h2, h3 {
 .senales h3, .definiciones h3 {
   color: #c40000; /* rojo vial */
   margin-bottom: 15px;
-  font-size: 20px;
+  font-size: 30px;
   font-weight: bold;
 }
 
@@ -490,13 +495,13 @@ h2, h3 {
 }
 
 .actividades h2 {
-  font-size: 28px;
+  font-size: 30px;
   color: #c40000;
   margin-bottom: 10px;
 }
 
 .actividades p {
-  font-size: 16px;
+  font-size: 20px;
   color: #444;
   margin-bottom: 30px;
 }
