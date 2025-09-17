@@ -179,6 +179,7 @@ nav li:has(.submenu:hover) > .submenu {
     }
 }
 
+
 /* --- Sección del Equipo (Team Section) --- */
 .ayuda {
     background-color: white; /*fondo centro*/
@@ -202,7 +203,7 @@ section.teamsection  {
 
 #equipo {
     width: 80%;
-    padding: 10px 40px;
+    padding: 50px;
     text-align: center;
     background: #fff;
     max-width: 900px;
@@ -210,7 +211,6 @@ section.teamsection  {
     border-radius: 10px;
     margin: 0 auto;
 }
-
 
 .teamsection h2 {
     font-size: 2rem;
@@ -231,7 +231,7 @@ section.teamsection  {
     justify-content: center;
     gap: 30px;
     max-width: 900px;
-    margin: 10px auto;
+    margin: 50px auto;
     border: 20px #2e58b3;
     flex-wrap: wrap;
 }
@@ -247,9 +247,25 @@ section.teamsection  {
     text-align: center;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease;
-    cursor: pointer;
+    position: relative;
+    overflow: visible;
 }
 
+.mascota {
+    position: absolute;
+    top: -40px;  /* empieza fuera de la tarjeta */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    opacity: 0;  /* invisible al inicio */
+}
+
+.team-card-principios1:hover .mascota,
+.team-card-principios2:hover .mascota,
+.team-card-principios3:hover .mascota {
+    bottom: -10px;   /* sube un poquito como asomándose */
+    opacity: 1;
+}
 .team-card-principios1:hover {
     transform: translateY(-5px);
     z-index: 10;
@@ -414,22 +430,21 @@ section.teamsection  {
     display: block;
 }
 .team-section {
-    margin: 10px 0;
+    margin: 40px 0;
     text-align: center; /* centra el título */
     width: 100%; /* ocupa todo el ancho */
 }
 .team-title {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 5px;
-    color: #222;
+    margin-bottom: 20px;
+    color: #333;
     text-align: center;
     width: 100%; /* ocupa todo el ancho */
     display: block;
-    border-radius: 12px;
-    background-color: #ffb74d;
-    box-shadow: 5px 3px 10px rgba(0,0,0,0.4);
-}
+    border: 2px solid #2E4975;
+    border-radius: 11px;
+    background-color: #ffb74d;}
 
 .team-flip-container {
     display: flex;
@@ -452,6 +467,7 @@ section.teamsection  {
     opacity: 1; /* Lo hace visible */
     transform: translateY(0); /* Lo regresa a su posición original */
 }
+
 
 footer {
   position: relative;
@@ -512,4 +528,65 @@ footer img.borde {
   text-align: center;
   margin-top: 0;
   padding-bottom: 10px;
+}
+
+.hero-quienes {
+  position: relative;
+  height: 70vh;
+  background: url("./fotos/FGE.jfif") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Fira Sans', sans-serif;
+}
+
+.hero-quienes .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.3); /* un velo oscuro muy sutil */
+}
+
+.toggle-btn {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(0,0,0,0.7);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  z-index: 2;
+  transition: background 0.3s;
+}
+
+.toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.text-box {
+  position: absolute;
+  bottom: 70px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 400px;
+  display: none; /* oculto por defecto */
+  z-index: 2;
+}
+
+.text-box h1 {
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+}
+
+.text-box p {
+  font-size: 1rem;
+  line-height: 1.5;
 }
