@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="ESTILOSEÑALES.css">
+  <style>
+    /* Redes Sociales Estilo */
+    button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+
+    .up, .down {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+    }
+
+    .card1, .card2, .card3, .card4 {
+      width: 90px;
+      height: 90px;
+      outline: none;
+      border: none;
+      background: white;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      transition: .2s ease-in-out;
+    }
+
+    .card1 { border-radius: 90px 5px 5px 5px; }
+    .card2 { border-radius: 5px 90px 5px 5px; }
+    .card3 { border-radius: 5px 5px 5px 90px; }
+    .card4 { border-radius: 5px 5px 90px 5px; }
+
+    /* Íconos */
+    .instagram { margin-top: 1.5em; margin-left: 1.2em; fill: #cc39a4; }
+    .linkedin  { margin-top: 1.5em; margin-left: -0.9em; fill: #0077b5; }
+    .facebook  { margin-top: -0.6em; margin-left: 1.2em; fill: #1877F2; }
+    .tiktok    { margin-top: -0.9em; margin-left: -1.2em; fill: #000; }
+
+    /* Hover */
+    .card1:hover { cursor: pointer; scale: 1.1; background-color: #cc39a4; }
+    .card1:hover .instagram { fill: white; }
+
+    .card2:hover { cursor: pointer; scale: 1.1; background-color: #0077b5; }
+    .card2:hover .linkedin { fill: white; }
+
+    .card3:hover { cursor: pointer; scale: 1.1; background-color: #1877F2; }
+    .card3:hover .facebook { fill: white; }
+
+    .card4:hover { cursor: pointer; scale: 1.1; background-color: #000; }
+    .card4:hover .tiktok { fill: white; }
+
+    /* Para quitar subrayado en los links */
+    a {
+      text-decoration: none;
+    }
+
+
+
+
+   
+  </style>
+
+  
+</head>
+<body>
+
+
+  <H1>Señales de Reglamentación</H1>
+
+<div class="cards">
+
+  <div class="card">
+    <a href="https://es.vecteezy.com/vectores-gratis/pare" target="_blank">
+    <img src="PARE.jpg" alt="PARE" class="card__image"> 
+    <div class="card__content">
+      <p class="card__title">PARE(SR-01)</p>
+       <p class="card__description">Obliga al conductor a detenerse completamente antes de la línea de pare, para que pueda observar el flujo del tráfico en las vías que se cruzan y ceder el paso. Se usa en intersecciones peligrosas para evitar colisiones.</p>
+    </div>
+  </a>
+  </div>
+
+  <div class="card">
+    <a href="https://jopavisos.com/producto/ceda-el-paso-sr02-senalizacion-vial/" target="_blank">
+    <img src="CEDA EL PASO.png" alt="CEDA EL PASO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">CEDA EL PASO(SR-02)</p>
+      <p class="card__description">Indica que el conductor debe reducir la velocidad y detenerse si es necesario, para permitir que los vehículos que circulan por la vía principal pasen primero. Su propósito es regular la prelación en intersecciones sin semáforo.</p>
+    </div>
+  </a>
+  </div>
+
+   <div class="card">
+    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fjopavisos.com%2Fproducto%2Fprohibido-de-parquear-sr-28-senalizacion-vial%2F&psig=AOvVaw2IJFIpjy8wiCyBo76HQIlh&ust=1757172061667000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMjor5b2wY8DFQAAAAAdAAAAABAE" target="_blank">
+    <img src="NO PARQUEAR.png" alt="PROHIBIDO PARQUEAR" class="card__image">
+    <div class="card__content">
+      <p class="card__title">PROHIBIDO PARQUEAR(SR-27)</p>
+      <p class="card__description">Prohíbe estacionar cualquier vehículo en el tramo de vía donde se encuentra. Su uso es para mantener el flujo vehicular y evitar la congestión, especialmente en zonas de alta circulación o estrechas.</p>
+    </div>
+    </a>
+  </div>
+
+   <div class="card">
+    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Finsumosfirstpro.com%2Fshop%2Fseguridad-industrial%2Fsenalizacion-vial-seguridad-industrial%2Fsenal-de-velocidad-maxima-de-40-km-h%2F&psig=AOvVaw2uhcgl8NQnWFkqMYVsgh4s&ust=1757172300133000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLCYl4n3wY8DFQAAAAAdAAAAABAE"target="_blank">
+    <img src="40k.png" alt="VELOCIDAD MAXIMA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">VELOCIDAD MAXIMA (SR-30)</p>
+      <p class="card__description">Indica la velocidad máxima a la que se puede circular de forma segura. Se usa para prevenir accidentes en zonas de riesgo, como áreas urbanas, escolares o curvas peligrosas.</p>
+    </div>
+  </a>
+  </div>
+
+  
+   <div class="card">
+    <a href="https://jopavisos.com/producto/prohibido-adelantar-sr-26-senalizacion-vial/" target="_blank">
+    <img src="NO REBASAR.png" alt="NO REBASAR" class="card__image">
+    <div class="card__content">
+      <p class="card__title">NO REBASAR (SR-32)</p>
+      <p class="card__description">Prohíbe que los vehículos realicen maniobras de adelantamiento a otros vehículos en el tramo de vía. Se utiliza en zonas donde el adelantamiento es peligroso, como curvas, puentes, túneles o vías de doble sentido estrechas.</p>
+    </div>
+  </a>
+  </div>
+
+     <div class="card">
+      <a href="https://jopavisos.com/producto/no-pase-sr04-senalizacion-vial/" target="_blank">
+    <img src="NO PASE.png" alt="NO PASE" class="card__image">
+    <div class="card__content">
+      <p class="card__title"> NO PASE (SENTIDO UNICO DE TRANSITO) (SR-04)</p>
+      <p class="card__description">Informa que la vía es de un solo sentido y prohíbe el tránsito en dirección contraria. Se usa para ordenar el flujo vehicular en calles y avenidas, evitando colisiones frontales.</p>
+    </div>
+      </a>
+  </div>
+
+     <div class="card">
+      <a href="https://www.istockphoto.com/es/fotos/se%C3%B1al-de-prohibido-girar-a-la-izquierda" target="_blank">
+    <img src="NO GIRAR A LA IZQUIERDA.jpg" alt="NO GIRAR A LA IZQUIERDA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">NO GIRAR A LA IZQUIERDA (SR-06)</p>
+      <p class="card__description">Prohíbe de forma explícita el giro a la izquierda en la intersección. Su propósito es evitar accidentes y conflictos de tráfico en cruces complejos o en vías de alta velocidad.</p>
+    </div>
+  </a>
+  </div>
+
+       <div class="card">
+        <a href="https://www.istockphoto.com/es/fotos/prohibido-girar-en-u" target="_blank">
+    <img src="PROHIBIDO GIRAR EN U.jpg" alt="PROHIBIDO GIRAR EN U" class="card__image">
+    <div class="card__content">
+      <p class="card__title">PROHIBIDO GIRAR EN U (SR-10)</p>
+      <p class="card__description">Prohíbe que el conductor realice un giro de 180° para devolverse por la misma vía. Se usa en zonas donde esta maniobra es peligrosa, como puentes, túneles o tramos de alta velocidad.</p>
+</p>
+    </div>
+    </a>
+  </div>
+  </div>
+
+<H1>Señales de Prevención</H1>
+
+<div class="cards">
+     <div class="card">
+      <a href="https://es.123rf.com/photo_195737707_se%C3%B1al-de-tr%C3%A1fico-de-tope-de-velocidad-aislada-dise%C3%B1o-plano.html" target="_blank">
+    <img src="POLICIA ACOSTADO.jpg" alt="POLICIA ACOSTADO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">RESALTO / POLICÍA ACOSTADO (SP-35)</p>
+      <p class="card__description">Advierte la proximidad de un resalto en la vía, que podría causar daños al vehículo si no se reduce la velocidad. Su propósito es obligar al conductor a reducir la velocidad para pasar de forma segura.</p>
+</p>
+    </div>
+  </a>
+  </div>
+
+       <div class="card">
+        <a href="https://jopavisos.com/producto/curva-pronunciada-a-la-derecha-sp-04/" target="_blank">
+    <img src="CURVA PRONUNCIADA A LA DERECHA.png" alt="CURVA PRONUNCIADA A LA DERECHA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">CURVA PRONUNCIADA A LA DERECHA (SP-04)<p>
+      <p class="card__description">Advierte sobre una curva peligrosa que requiere reducir la velocidad. Se usa para alertar al conductor sobre un cambio brusco en la dirección de la vía y evitar que se salga del camino.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+        <div class="card">
+          <a href="https://www.sigo.com.gt/senales-viales-de-advertencia/1115-rotulo-vial-advertencia-zona-escolar-cod-sp-53.html?srsltid=AfmBOoqKLtxPwl9j43TrFRTXDTqhNK6afG85rnQelrDY0WBzkxIAJKj0" target="_blank">
+    <img src="ZONA ESCOLAR.jpg" alt="ZONA ESCOLAR" class="card__image">
+    <div class="card__content">
+      <p class="card__title">ZONA ESCOLAR (SP-26)<p>
+      <p class="card__description">Indica la cercanía de una escuela, colegio o cualquier centro educativo. Su uso es vital para advertir a los conductores que deben reducir la velocidad y estar alerta a la posible presencia de estudiantes.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+          <div class="card">
+            <a href="https://jopavisos.com/producto/final-del-pavimento-sp-57/" target="_blank">
+    <img src="FINAL DEL PAVIMENTO.png" alt="FINAL DE PAVIMENTO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">FINAL DE PAVIMENTO (SP-57)</p>
+      <p class="card__description">Indica que la vía se angosta considerablemente en ambos lados. Se utiliza para advertir a los conductores que deben transitar con precaución y reducir la velocidad para evitar incidentes.</p>
+</p>
+    </div>
+  </a>
+  </div>
+
+            <div class="card">
+              <a href="https://jopavisos.com/producto/curva-y-contracurva-cerrada-primera-a-la-derecha-sp-06/" target="_blank">
+    <img src="CURVA Y CONTRACURVA.png" alt="CURVA Y CONTRACURVA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">CURVA Y CONTRACURVA (SP-06)</p>
+      <p class="card__description">Advierte sobre una serie de dos o más curvas en direcciones opuestas. Se usa en carreteras sinuosas para que el conductor anticipe los cambios de dirección y ajuste su velocidad.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+            <div class="card">
+            <a href="https://es.123rf.com/photo_43606710_canadiense-carretera-se%C3%B1al-de-advertencia-temporal-puente-estrecho-este-signo-se-utiliza-en.html" target="_blank">
+    <img src="PUENTE ESTRECHO.jpg" alt="PUENTE ESTRECHO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">PUENTE ESTRECHO (SP-23)</p>
+      <p class="card__description">Advierte sobre la proximidad de un túnel. Su propósito es que los conductores se preparen para las condiciones de oscuridad, y, en algunos casos, enciendan las luces y estén atentos a las señales dentro del túnel.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+              <div class="card">
+                <a href="https://practicatest.co/senales-transito-colombia" target="_blank">
+    <img src="SEMAFORO.png" alt="SEMAFORO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">SEMAFORO (SP-21)</p>
+      <p class="card__description">Advierte la proximidad de un semáforo. Se usa en intersecciones donde el semáforo no es visible desde lejos o en vías de alta velocidad para que el conductor tenga tiempo de reducir la velocidad y prepararse para la posible detención.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+                <div class="card">
+                  <a href="https://jopavisos.com/producto/superficie-deslizante-sp-44-senalizacion-vial/" target="_blank">
+    <img src="SUPERFICIE DESLIZANTE.png" alt="SUPERFICIE DESLIZANTE" class="card__image">
+    <div class="card__content">
+      <p class="card__title">SUPERFICIE DESLIZANTE (SP-44)</p>
+      <p class="card__description"> Indica que el tramo de vía que se aproxima tiene una superficie con baja fricción o adherencia, lo que puede causar que las llantas de un vehículo se deslicen, especialmente en condiciones de lluvia.</p>
+</p>
+    </div>
+    </a>
+  </div>
+</div>
+
+<h1>Nuestras Redes Sociales</h1>
+
+<div class="main">
+    <div class="up">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/data_vialanalytics/" target="_blank">
+        <button class="card1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30px" height="30px" class="instagram">
+            <path d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm52-84a12 12 0 1 1-12-12a12 12 0 0 1 12 12Zm40 4v96a56.06 56.06 0 0 1-56 56H92a56.06 56.06 0 0 1-56-56V80a56.06 56.06 0 0 1 56-56h72a56.06 56.06 0 0 1 56 56Z"/>
+          </svg>
+        </button>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com/in/data-vial-analytics-1b2627382/" target="_blank">
+        <button class="card2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px" class="linkedin">
+            <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M17,39h-5V20h5V39z
+            M14.5,17C13.119,17,12,15.881,12,14.5S13.119,12,14.5,12S17,13.119,17,14.5S15.881,17,14.5,17z M39,39h-5v-9.5
+            c0-2.481-2.019-4.5-4.5-4.5S25,27.019,25,29.5V39h-5V20h5v2.077C26.06,20.805,28.019,20,30.5,20C34.642,20,38,23.358,38,27.5V39z"/>
+          </svg>
+        </button>
+      </a>
+    </div>
+
+    <div class="down">
+      <!-- Facebook -->
+      <a href="https://www.facebook.com/profile.php?id=61580192974347" target="_blank">
+        <button class="card3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px" class="facebook">
+            <path d="M25,3C12.85,3,3,12.85,3,25c0,11.07,8.061,20.22,18.578,21.8V30.82h-5.578v-5.82h5.578v-4.49c0-5.51,3.313-8.54,8.273-8.54
+            c2.39,0,4.478,0.18,5.08,0.26v5.89h-3.49c-2.74,0-3.28,1.3-3.28,3.21v4.67h6.55l-0.86,5.82h-5.69v16.02C38.94,45.22,47,36.07,47,25
+            C47,12.85,37.15,3,25,3z"/>
+          </svg>
+        </button>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com/@datavial_analytics?is_from_webapp=1&sender_device=pc" target="_blank">
+        <button class="card4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px" class="tiktok">
+            <path d="M35.1,14.7c-1.9-1.4-3-3.5-3-5.8V8h-5v23.3c0,3.4-2.8,6.2-6.2,6.2S14.7,34.7,14.7,31.3s2.8-6.2,6.2-6.2
+            c0.7,0,1.4,0.1,2,0.4v-5.3c-0.7-0.1-1.3-0.2-2-0.2c-6.3,0-11.5,5.1-11.5,11.5S14.7,43,21,43s11.5-5.1,11.5-11.5V23
+            c2,1.4,4.5,2.2,7.2,2.2v-5C37.7,20.2,36.1,18.5,35.1,14.7z"/>
+          </svg>
+        </button>
+      </a>
+    </div>
+  </div>
+
+
+
+
+
+  </body>
+</html>
