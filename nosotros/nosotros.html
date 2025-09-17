@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>DataVial</title>
+</head>
+<body>
+    <main>
+    <header>
+        <div id="start">
+        <img id="logo" src="../images/favicon.png" alt="LOGO DE DATAVIAL">
+            <h1 id="title">DataVialAnalytics</h1>
+        </div>
+    <nav>
+<ul>
+  <li>
+    <a href="../inicio/index.html">INICIO</a>
+    <ul class="submenu">
+      <li><a href="#sobre">Sobre el Proyecto</a></li>
+      <li><a href="#objetivo">Objetivos</a></li>
+      <li><a href="#metodologia">Metodología</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../nosotros/nosotros.html" class="active">QUIENES SOMOS</a>
+    <ul class="submenu">
+      <li><a href="#equipo">Equipo del Proyecto</a></li>
+      <li><a href="#front">FRONTEND TEAM</a></li>
+      <li><a href="#end">BACKEND TEAM</a></li> 
+    </ul>
+  </li>
+  <li>
+    <a href="../analisis/analisis.html">ANALISIS</a>
+    <ul class="submenu">
+      <li><a href="#consulta1">CONSULTA 1</a></li>
+      <li><a href="#consulta2">CONSULTA 2</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../prevenciones/prevenciones.html">PREVENCIONES</a>
+    <ul class="submenu">
+      <li><a href="#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
+      <li class="sub"><img src="../images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="#conductores">Conductores</a></li>
+      <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="#peatones">Peatones</a></li>
+      <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="#ciclistas">Ciclistas</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../recursos/recursos.html">RECURSOS EDUCATIVOS</a>
+    <ul class="submenu">
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#señales">Señales de transito</a></li> 
+      <li><a href="#interactivo">Sección Interactiva</a></li>
+    </ul>
+  </li>
+  <li><a href="../noticias/noticias.html">NOTICIAS</a></li>
+  <button id="btn"><img src="../images/lupa.png" alt="BOTON DE BUSQUEDA"></button>
+</ul>
+        </nav>
+    </header>
+
+  <!--TEAM-->
+    <div class="ayuda">
+        <br>
+        <section class="team-principios">
+            <div class="team-card-principios1">
+                <h3>Misión</h3>
+                <p>Transformar datos en conocimiento útil para apoyar la toma de decisiones, desarrollando soluciones innovadoras y responsables.</p>
+            </div>
+            <div class="team-card-principios2">
+                <h3>Visión</h3>
+                <p>Ser un equipo referente en análisis de datos, reconocido por la calidad, creatividad e impacto de nuestros proyectos.</p>
+            </div>
+            <div class="team-card-principios3">
+                <h3>Valores</h3>
+                <p>Trabajo en equipo, innovación, responsabilidad, compromiso y pasión por el aprendizaje.</p>
+            </div>
+        </section>
+
+        <section class="teamsection" id="equipo">
+            <h2>Nuestro Equipo - DataVialAnalytics</h2>
+            <p>Somos un equipo de aprendices del programa Técnico en Programación para la Analítica de Datos del SENA – Nodo TIC Barranquilla, comprometidos con la investigación, el análisis y la generación de soluciones basadas en datos que aporten al desarrollo social y comunitario.
+                <br><br>
+                Actualmente desarrollamos el Proyecto para Analizar, Identificar, Informar y Prevenir la Siniestralidad Vial en Colombia, con un estudio enfocado en la cultura de movilidad en Barranquilla durante el periodo 2018–2025.
+            </p><br>
+            <img src="./fotos/FGE.jfif" width="490" height="350" alt="FotoTAD9" style="border-radius: 20px;
+" class="oculto shadow">
+        </section>
+<section class="team-section">
+    <h2 class="team-title"> <B>DIRECTORES DE PROYECTO</B></h2>
+    <div class="team-flip-container">
+        
+        <div class="team-flip-card">
+            <div class="team-flip-card-inner">
+                <div class="team-flip-card-front">
+                    <img src="./fotos/Instructor Miguel V2.jpg" alt="Foto Miguel Olivares" class="team-profile-img">
+                    <h3>Miguel Olivares Rosero</h3>
+                </div>
+                <div class="team-flip-card-back">
+                    <img src="./fotos/Instructor Miguel V2.jpg" alt="Foto Miguel Olivares" class="team-profile-img-small">
+                    <h4>Miguel Olivares Rosero</h4>
+                    <p><b>Rol:</b> Director de proyecto</p>
+                    <p><b>Email:</b> maolivares@sena.edu.co</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="team-flip-card">
+            <div class="team-flip-card-inner">
+                <div class="team-flip-card-front">
+                    <img src="./fotos/Instructor Roymer V1.png" alt="Foto Roymer Romero" class="team-profile-img">
+                    <h3>Roymer Romero Algarín</h3>
+                </div>
+                <div class="team-flip-card-back">
+                    <img src="./fotos/Instructor Roymer V1.png" alt="Foto Roymer Romero" class="team-profile-img-small">
+                    <h4>Roymer Romero Algarín</h4>
+                    <p><b>Rol:</b> Director de proyecto</p>
+                    <p><b>Email:</b> rromeroalga@gmail.com</p>
+                </div>
+            </div>
+        </div>
+    <div class="team-section">
+        <h2 class="team-title"> <B>LIDERES DE PROYECTO</B></h2>
+        <div class="team-flip-container oculto">
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Natalia V4.png" alt="Foto Natalia Mendoza" class="team-profile-img">
+                        <h3>Natalia Mendoza</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Natalia V4.png" alt="Foto natalia lider" class="team-profile-img-small"> 
+                        <h4>Natalia Mendoza</h4>
+                        <p><b>Rol:</b> Lider frontend, Power BI</p>
+                        <p><b>Email:</b>natjobs07@gmail.com</p>
+                        <a href="https://www.linkedin.com/in/natalia-mendoza-ruidiaz-1a599333b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Juan (lider).png" alt="Foto Juan Lider" class="team-profile-img">
+                        <h3>Juan Quintero</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Juan (lider).png" alt="Foto Juan Lider" class="team-profile-img-small">
+                        <h4>Juan Quintero</h4>
+                        <p><b>Rol:</b> Lider de proyecto y Power BI</p>
+                        <p><b>Email:</b>juanqui21212003@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-section">
+        <h2 class="team-title"><a name=end><B>EQUIPO BACKEND</B></a></h2>
+        <div class="team-flip-container ">
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Diego.png" alt="Foto Diego" class="team-profile-img">
+                        <h3>Diego Orozco</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Diego.png" alt="Foto Diego" class="team-profile-img-small"> 
+                        <h4>Diego Orozco</h4>
+                        <p><b>Rol:</b> Excel</p>
+                        <p><b>Email:</b> diego2005orozco@hotmail.com</p>
+                        <a href="https://www.linkedin.com/in/diego-orozco-666453356/" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Juan.png" alt="Foto Juan S" class="team-profile-img">
+                        <h3>Juan Sarmiento</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Juan.png" alt="Foto Juan S" class="team-profile-img-small">
+                        <h4>Juan Sarmiento</h4>
+                        <p><b>Rol:</b>Excel</p>
+                        <p><b>Email:</b>jcami0811@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Deiner.png" alt="Foto Deiner Camargo" class="team-profile-img">
+                        <h3>Deiner Camargo</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Deiner.png" alt="Foto Deiner Camargo" class="team-profile-img-small">
+                        <h4>Deiner Camargo</h4>
+                        <p><b>Rol:</b> Excel</p>
+                        <p><b>Email:</b> deinercamargo8@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Guillermo.png" alt="Foto Guillermo" class="team-profile-img">
+                        <h3>Guillermo Castro</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Guillermo.png" alt="Foto Guillermo" class="team-profile-img-small">
+                        <h4>Guillermo Castro</h4>
+                        <p><b>Rol:</b>Excel y R Markdown</p>
+                        <p><b>Email:</b>guillermocastrotec@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Camilo V2.png" alt="Foto Camilo" class="team-profile-img">
+                        <h3>Camilo Arias</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Camilo V2.png" alt="Foto Camilo" class="team-profile-img-small">
+                        <h4>Camilo Arias</h4>
+                        <p><b>Rol:</b> Excel</p>
+                        <p><b>Email:</b>camiloarias202007@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Richard_.png" alt="Foto Richard" class="team-profile-img">
+                        <h3>Richard Barrios</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Richard_.png" alt="Foto Richard" class="team-profile-img-small">
+                        <h4>Richard Barrios</h4>
+                        <p><b>Rol:</b>Excel</p>
+                        <p><b>Email:</b>richardbarrios320@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Johanan.png" alt="Foto Johanan" class="team-profile-img">
+                        <h3>Johanan Gallardo</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Johanan.png" alt="Foto Johanan" class="team-profile-img-small">
+                        <h4>Johanan Gallardo</h4>
+                        <p><b>Rol:</b> R Markdown</p>
+                        <p><b>Email:</b>johanangallardobusiness@gmail.com</p>
+                        <a href="utm" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Valeria.png" alt="Foto Valeria" class="team-profile-img">
+                        <h3>Valeria Angulo</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Valeria.png" alt="Foto Valeria" class="team-profile-img-small">
+                        <h4>Valeria Angulo</h4>
+                        <p><b>Rol:</b> R Markdown</p>
+                        <p><b>Email:</b> vale181181@gmail.com</p>
+                        <a href="https://www.linkedin.com/in/valeria-angulo-784237381?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Yeiner.png" alt="Foto Yeiner Padilla" class="team-profile-img">
+                        <h3>Yeiner Padilla</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Yeiner.png" alt="Foto Yeiner Padilla" class="team-profile-img-small">
+                        <h4>Yeiner Padilla</h4>
+                        <p><b>Rol:</b> R Markdown</p>
+                        <p><b>Email:</b>yeinerpadillaruizl@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Luis V1.png" alt="Foto Luis Ospina" class="team-profile-img">
+                        <h3>Luis Ospina</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Luis V1.png" alt="Foto Luis Ospina" class="team-profile-img-small">
+                        <h4>Luis Ospina</h4>
+                        <p><b>Rol:</b> R Markdown</p>
+                        <p><b>Email:</b>luisospinahdez@hotmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="team-section">
+        <h2 class="team-title"><a name=front ><B>EQUIPO FRONTEND</B></a></h2>
+        <div class="team-flip-container ">
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Yuli.png" alt="Foto Yuli" class="team-profile-img">
+                        <h3>Yuly Ferreira</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Yuli.png" alt="Foto Yuli" class="team-profile-img-small">
+                        <h4>Yuly Ferreira</h4>
+                        <p><b>Rol:</b> Diseño, Power BI</p>
+                        <p><b>Email:</b>ferreirayuly43@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Zharick.png" alt="Foto Zharick" class="team-profile-img">
+                        <h3>Zharick Orjuela</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Zharick.png" alt="Foto Zharick" class="team-profile-img-small">
+                        <h4>Zharick Orjuela</h4>
+                        <p><b>Rol:</b>Diseño</p>
+                        <p><b>Email:</b> orjuelaromerocat@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Kyle.png" alt="Foto Kyle" class="team-profile-img">
+                        <h3>Kyle Silva</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Kyle.png" alt="Foto Kyle" class="team-profile-img-small">
+                        <h4>Kyle Silva</h4>
+                        <p><b>Rol:</b>CSS y HTML</p>
+                        <p><b>Email:</b>silvakyle075@gmail.com</p>
+                        <a href="https://www.linkedin.com/in/kyle-silva-analyst?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BroLy8ARhTomzb8EWdDEvqA%3D%3D" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Aldair Pedroza V2.png" alt="Foto Aldair Pedroza" class="team-profile-img">
+                        <h3>Aldair Pedroza</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Aldair Pedroza V2.png" alt="Foto Aldair Pedroza" class="team-profile-img-small">
+                        <h4>Aldair Pedroza</h4>
+                        <p><b>Rol:</b>CSS</p>
+                        <p><b>Email:</b> pedrozaballesterosaldair@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedIn.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Mateo.png" alt="Foto Mateo Camacho" class="team-profile-img">
+                        <h3>Mateo Camacho</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Mateo.png" alt="Foto Mateo Camacho" class="team-profile-img-small">
+                        <h4>Mateo Camacho</h4>
+                        <p><b>Rol:</b> CSS</p>
+                        <p><b>Email:</b> matt.camachonava@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/María Fernanda_.png" alt="Foto María Fernanda" class="team-profile-img">
+                        <h3>Maria Alvarez</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/María Fernanda_.png" alt="Foto María Fernanda" class="team-profile-img-small">
+                        <h4>Maria Alvarez</h4>
+                        <p><b>Rol:</b>HTML</p>
+                        <p><b>Email:</b> alvarezmafe20@gmail.com</p>
+                        <a href="https://www.linkedin.com/in/maria-fernanda-alvarez-613278360?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Mariangel.png" alt="Foto Mariangel" class="team-profile-img">
+                        <h3>Mariangel Solano</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Mariangel.png" alt="Foto Mariangel" class="team-profile-img-small">
+                        <h4>Mariangel Solano</h4>
+                        <p><b>Rol:</b> HTML</p>
+                        <p><b>Email:</b> mariangelsolano0114@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Josedaniel.png" alt="Foto Josedaniel" class="team-profile-img">
+                        <h3>Josedaniel Hernandez</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Josedaniel.png" alt="Foto Josedaniel" class="team-profile-img-small">
+                        <h4>Josedaniel Hernandez</h4>
+                        <p><b>Rol:</b> HTML</p>
+                        <p><b>Email:</b>jh288804@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>
+                    </div>
+                </div>
+            </div>
+           <div class="team-flip-card">
+                <div class="team-flip-card-inner">
+                    <div class="team-flip-card-front">
+                        <img src="./fotos/Aldair Maldonado.png" alt="Foto Aldair M." class="team-profile-img">
+                        <h3>Aldair Maldonado</h3>
+                    </div>
+                    <div class="team-flip-card-back">
+                        <img src="./fotos/Aldair Maldonado.png" alt="Foto Aldair M." class="team-profile-img-small">
+                        <h4>Aldair Maldonado</h4>
+                        <p><b>Rol:</b> HTML</p>
+                        <p><b>Email:</b> aldmaldonador@gmail.com</p>
+                        <a href="🤍" target="_blank" class="team-linkedin-btn">
+                            <img src="./fotos/linkedin.png" alt="LinkedIn Logo"> LinkedIn
+                        </a>  
+        </div>
+    </div>
+        
+    </div>
+    </main>
+
+
+  <footer>
+  <!-- 🔹 Column 1: Colombia Image -->
+  <div class="footer-col">
+    <img src="../images/baq.svg" height="240" width="210" alt="FOTO DE ESCUDO DE BARRANQUILLA">
+  </div>
+
+  <!-- 🔹 Column 2: Redes + Sena -->
+  <div class="footer-col">
+    <h2>Síguenos</h2>
+    <ul class="logos">
+      <li><a href="https://www.facebook.com/share/16LubPom5W/" target="_blank"><img src="../logos/facebook.png" height="40" width="40" alt="FACEBOOK"></a></li>
+      <li><a href="https://github.com/analyticsdatavial-cell" target="_blank"><img src="../logos/github.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.instagram.com/data_vialanalytics?igsh=MWx5bmppaHk0czVrag==" target="_blank"><img src="../logos/instagram.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.linkedin.com/in/data-vial-analytics-1b2627382?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSUz6cn9FQRSaJ5VYcaNm%2FA%3D%3D" target="_blank"><img src="../logos/linkedin.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.tiktok.com/@datavial_analytics?_t=ZS-8zjLNM77zkn&_r=1" target="_blank"><img src="../logos/tik-tok.png" height="40" width="40" alt=""></a></li>
+    </ul>
+    <img src="../logos/sena.png" height="130" width="130" alt="Logo Sena" style="margin-top: 1rem;">
+  </div>
+
+  <!-- 🔹 Column 3: Contactos -->
+  <div class="footer-col">
+    <h1>Contactos</h1>
+    <ul class="contact">
+      <li>Correo: analyticsdatavial@gmail.com</li>
+      <li>Dirección: Cra. 54 #68 – 80, Nte. Centro Historico,<br>Barranquilla, Atlántico.</li>
+    </ul>
+  </div>
+
+  <!-- 🔹 Bottom section -->
+  <div class="footer-bottom">
+    <p>© 2025 Data Vial Analytics. Todos los derechos reservados.</p>
+    <a href="#logo"><img src="../images/arrow.svg" alt="INICIO" class="borde"></a>
+  </div>
+</footer>
+
+    <script src="script.js"></script>
+    <script>
+        // Aquí va el código JavaScript que hace que tus elementos aparezcan al hacer scroll
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementosOcultos = document.querySelectorAll('.oculto');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            elementosOcultos.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
