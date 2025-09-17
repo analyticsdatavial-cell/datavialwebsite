@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Juego: Arrastra y Suelta</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f7f7f7;
+    }
+
+    h1 {
+      color: #d32f2f;
+    }
+
+    #game {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+    }
+
+    .opciones, .respuestas {
+      width: 45%;
+      min-height: 300px;
+      padding: 20px;
+      border: 2px dashed #d32f2f;
+      border-radius: 10px;
+      background: #fff;
+    }
+
+    .opciones img {
+      width: 80px;
+      margin: 10px;
+      cursor: grab;
+    }
+
+    .caja {
+      margin: 15px;
+      padding: 15px;
+      border: 2px solid #aaa;
+      border-radius: 8px;
+      min-height: 100px;
+      background: #fafafa;
+    }
+
+    .correcto {
+      border: 2px solid green;
+      background: #d4edda;
+    }
+
+    .incorrecto {
+      border: 2px solid red;
+      background: #f8d7da;
+    }
+  </style>
+</head>
+<body>
+  <h1>🚦 Juego: Arrastra la señal a su significado</h1>
+  <p>Arrastra cada señal de tránsito hacia la descripción correcta.</p>
+
+  <div id="game">
+    <!-- Opciones (Señales) -->
+    <div class="opciones">
+      <h3>Señales</h3>
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Colombia_R-30.svg/200px-Colombia_R-30.svg.png" 
+           draggable="true" id="stop" alt="PARE">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Colombia_SP-30.svg/200px-Colombia_SP-30.svg.png" 
+           draggable="true" id="curva" alt="Curva">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Colombia_R-31.svg/200px-Colombia_R-31.svg.png" 
+           draggable="true" id="noParking" alt="No estacionar">
+    </div>
+
+    <!-- Respuestas (Definiciones) -->
+    <div class="respuestas">
+      <h3>Definiciones</h3>
+      <div class="caja" data-respuesta="stop">🚗 Indica que el vehículo debe detenerse completamente.</div>
+      <div class="caja" data-respuesta="curva">➡️ Señala una curva peligrosa en la vía.</div>
+      <div class="caja" data-respuesta="noParking">🅿️ Prohíbe estacionar en el área señalada.</div>
+    </div>
+  </div>
+
+  <script>
+    // Drag & Drop básico
+    const opciones = document.querySelectorAll(".opciones img");
+    const cajas = document.querySelectorAll(".caja");
+
+    opciones.forEach(opcion => {
+      opcion.addEventListener("dragstart", e => {
+        e.dataTransfer.setData("id", opcion.id);
+      });
+    });
+
+    cajas.forEach(caja => {
+      caja.addEventListener("dragover", e => {
+        e.preventDefault();
+      });
+
+      caja.addEventListener("drop", e => {
+        e.preventDefault();
+        const id = e.dataTransfer.getData("id");
+        if (id === caja.dataset.respuesta) {
+          caja.classList.add("correcto");
+          caja.innerHTML += `<br><img src="${document.getElementById(id).src}" width="60">`;
+          document.getElementById(id).remove();
+        } else {
+          caja.classList.add("incorrecto");
+          setTimeout(() => caja.classList.remove("incorrecto"), 1000);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
+

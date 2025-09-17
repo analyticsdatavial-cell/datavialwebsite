@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;0,700;1,800;1,900&display=swap');
+
+/* Estilos globales y de navegación */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Fira Sans", sans-serif;
+}
+
+body {
+    background-color: #F0F0F0;
+    color: #2E4975;
+    line-height: 1.8;
+    font-size: 1.1rem;
+}
+
+header {
+    background-color: #2E4975;
+    color: white;
+    height: 15%;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 1%;
+}
+
+#start {
+    display: flex;
+    align-items: center;
+}
+
+#title {
+    font-size: 2.8rem;
+    font-weight: bold;
+}
+
+#cultura {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+    margin-left: 8%;
+    padding-top: 0;
+}
+
+nav ul {
+    --gap: 2rem;
+    list-style: none;
+    display: flex;
+    gap: var(--gap);
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+nav li {
+    position: relative;
+    padding: 0 1rem;
+}
+
+nav > ul > li:not(:first-child)::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 100%;
+    margin-right: calc(var(--gap) / 2);
+    width: 1px;
+    background-color: white;
+}
+
+nav a {
+    text-decoration: none;
+    color: white;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav > ul > li:hover > a {
+    color: #ffb74d;
+}
+
+nav ul .submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #e0e0e0;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    min-width: 180px;
+    z-index: 1000;
+}
+
+nav ul .submenu li {
+    position: relative;
+    transition: background-color 0.3s ease;
+}
+
+nav ul .submenu li::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 85%;
+    height: 1px;
+    background-color: #000;
+}
+
+nav ul .submenu li:last-child::after {
+    content: none;
+}
+
+nav ul .submenu a {
+    color: #000000;
+    font-weight: 500;
+    padding: 0.75rem 1rem;
+    display: block;
+    transition: color 0.2s ease;
+}
+
+nav ul .submenu li:hover {
+    background-color: #cacaca;
+}
+
+nav ul .submenu a:hover {
+    color: #2E4975;
+}
+
+nav li:hover > .submenu,
+nav li:has(.submenu:hover) > .submenu {
+    display: block;
+}
+
+.sub {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.sub img {
+    flex-shrink: 0;
+}
+
+#btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    padding: 0;
+    border: none;
+}
+
+#btn img {
+    max-width: 70%;
+    max-height: 70%;
+}
+
+footer {
+    position: relative;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 1.5rem;
+    background-color: #2E4975;
+    color: white;
+}
+
+footer img.borde {
+    position: absolute;
+    top: -50%;
+    left: 6%;
+    transform: translateX(-50%) rotate(90deg);
+    width: 60px;
+    height: 60px;
+}
+
+/* Estilos para el contenido principal */
+.content-container {
+    padding: 3rem 15rem;
+}
+
+.rules-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.rule-card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.verde {
+    background-color: #f1f8e9;
+}
+
+.amarillo {
+    background-color: #fffde7;
+}
+
+.rojo {
+    background-color: #ffebee;
+}
+
+.rule-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.rule-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+
+.color-circle {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.verde .color-circle {
+    background-color: #4caf50;
+}
+
+.amarillo .color-circle {
+    background-color: #ffc107;
+}
+
+.rojo .color-circle {
+    background-color: #f44336;
+}
+
+.rule-list {
+    flex-grow: 1;
+}
+
+.rule-list ul {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.rule-list li {
+    padding-left: 2rem;
+    position: relative;
+    line-height: 1.6;
+}
+
+.rule-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2E4975;
+    font-size: 1.5rem;
+    line-height: 1;
+}
+
+/* Estilos de las nuevas secciones */
+.section {
+    margin-top: 5rem;
+}
+
+.section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.section-content {
+    display: flex;
+    align-items: center;
+    gap: 6rem;
+}
+
+.section-content .text-content {
+    flex: 1;
+}
+
+.section-content .text-content p {
+    margin-bottom: 1rem;
+}
+
+.section-content .text-content ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.section-content .text-content li {
+    margin-bottom: 1.2rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.section-content .text-content li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #2E4975;
+    font-size: 1.5rem;
+    top: 0;
+}
+
+.section-image {
+    width: 400px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    flex-shrink: 0;
+}
+
+/* Para la sección de peatones, se invierte el orden del flexbox */
+.section-content.image-left {
+    flex-direction: row-reverse;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
+    #title {
+        font-size: 1.8rem;
+    }
+
+    .content-container {
+        padding: 2rem 1.5rem;
+    }
+
+    .rules-container, .section {
+        gap: 1.5rem;
+    }
+
+    .rule-card {
+        padding: 1rem;
+    }
+
+    .rule-title, .section h2 {
+        text-align: center;
+        font-size: 1.5rem;
+    }
+
+    .rule-content, .section-content {
+        flex-direction: column;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    .section-content.image-left {
+        flex-direction: column;
+    }
+
+    .color-circle {
+        width: 100px;
+        height: 100px;
+    }
+
+    .rule-list ul {
+        gap: 1rem;
+    }
+
+    .rule-list li, .section-content .text-content li {
+        padding-left: 0;
+        text-align: center;
+    }
+
+    .rule-list li::before, .section-content .text-content li::before {
+        display: none;
+    }
+
+    .section-image {
+        width: 100%;
+        max-width: 250px;
+    }
+}

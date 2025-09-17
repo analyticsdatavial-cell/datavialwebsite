@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="../images/favicon.png">
+    <title>DataVial</title>
+</head>
+<body>
+    <main>
+    <header>
+    <div id="start">
+        <img id="logo" src="../images/favicon.png" alt="LOGO DE DATAVIAL">
+        <h1 id="title">DataVialAnalytics</h1>
+    </div>
+    <nav>
+<ul>
+  <li>
+    <a href="../inicio/index.html">INICIO</a>
+    <ul class="submenu">
+      <li><a href="#sobre">Sobre el Proyecto</a></li>
+      <li><a href="#objetivo">Objetivos</a></li>
+      <li><a href="#metodologia">Metodología</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../nosotros/nosotros.html">QUIENES SOMOS</a>
+    <ul class="submenu">
+      <li><a href="#equipo">Equipo del Proyecto</a></li>
+      <li><a href="#front">FRONTEND TEAM</a></li>
+      <li><a href="#end">BACKEND TEAM</a></li> 
+    </ul>
+  </li>
+  <li>
+    <a href="../analisis/analisis.html">ANALISIS</a>
+    <ul class="submenu">
+      <li><a href="#consulta1">CONSULTA 1</a></li>
+      <li><a href="#consulta2">CONSULTA 2</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../prevenciones/prevenciones.html">PREVENCIONES</a>
+    <ul class="submenu">
+      <li><a href="#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
+      <li class="sub"><img src="../images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="#conductores">Conductores</a></li>
+      <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="#peatones">Peatones</a></li>
+      <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="#ciclistas">Ciclistas</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../recursos/recursos.html" class="active">RECURSOS EDUCATIVOS</a>
+    <ul class="submenu">
+      <li><a href="#videos">Videos</a></li>
+      <li><a href="#señales">Señales de transito</a></li> 
+      <li><a href="#interactivo">Sección Interactiva</a></li>
+    </ul>
+  </li>
+  <li><a href="../noticias/noticias.html">NOTICIAS</a></li>
+  <button id="btn"><img src="../images/lupa.png" alt="BOTON DE BUSQUEDA"></button>
+</ul>
+        </nav>
+    </header>
+
+
+
+
+
+
+
+<!--AQUI DEBERÁN ESCRIBIR EL CONTENIDO DE SU SECCIÓN, YO (KYLE) ME ENCARGARÉ DE UNIR LAS SECCIONES UNA VEZ TERMINEN DE UNIR SU CODIGO CON EL DE ESTA PLANTILLA-->
+
+
+
+
+<!------------------------- SECCION DE RECURSOS EDUCATIVOS (ALDAIR PEDROZA) -------------------------------------------->
+<section class="recursos-educativos">
+  <div class="contenido">
+    <!-- Imagen o animación -->
+    <div class="imagen">
+      <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExd3lwZGkyMHBsbnd4azhjeGUwb3cyMmRzdmFhamc2eXh4bzU5dzYyZCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l0NwKmBJB63cyPP5S/giphy.gif" alt="Educación vial animada">
+    </div>
+
+    <!---------------------------- Texto DE BIENVENIDA------------------------------------------------------->
+    <div class="texto">
+      <h2>¡BIENVENIDO A LA SECCION DE RECURSOS EDUCATIVOS!</h2>
+      <p>
+        La <strong>educación vial</strong> no tiene que ser aburrida. 🚦  
+        Aquí encontrarás <strong>recursos interactivos, videos y actividades</strong> diseñadas especialmente 
+        para la educa, con el fin de <em>aprender jugando y reflexionando</em> sobre 
+        la importancia de la seguridad en las vías.
+      </p>
+      <p>
+        Nuestro objetivo es que descubras cómo <strong>pequeñas acciones pueden salvar vidas</strong>.  
+        ¡Atrévete a explorar, interactuar y ser parte del cambio hacia una movilidad más segura! 🙌
+      </p>
+    </div>
+  </div>
+</section>
+
+
+    <!--------------------SECCION DE VIDEOS------------------------------------------------------------------------->
+<section id="videos" class="video-section">
+  <h2>Videos Educativos</h2>
+  <p>En esta sección encontrarás material audiovisual diseñado con un enfoque educativo para fortalecer la cultura vial en la ciudad de Barranquilla. Los videos presentan de manera clara y dinámica conceptos, recomendaciones y buenas prácticas que buscan concientizar a conductores, peatones y ciclistas sobre la importancia de respetar las normas de tránsito.</p>
+  <br>
+  <br>
+  <div class="video-grid">
+    <!-- Video 1 -->
+    <div class="video-container">
+        <iframe src="https://www.youtube.com/embed/-8wrC-BdTBk"
+              title="Educación vial infantil en Colombia"
+              allowfullscreen>
+      </iframe>
+    </div>
+    <!-- Video 2 -->
+    <div class="video-container">
+     <iframe src="https://www.youtube.com/embed/d-AG7kNwbkM"
+              title="Campaña PAS: Proteger, Avisar, Socorrer"
+              allowfullscreen>
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+    <!----------------------------------  DEFINICION SEÑALES DE TRANSITO --------------------------------->
+<section id="señales" class="intro-senales">
+  <h2>Señales de Tránsito</h2>
+  <p>
+    Las <strong>señales de tránsito</strong> son elementos visuales esenciales dentro de la movilidad vial, 
+    cuyo propósito principal es <strong>regular, advertir e informar</strong> a los diferentes actores de la vía 
+    —conductores, ciclistas y peatones—. Gracias a ellas, se logra establecer un lenguaje universal que permite la 
+    <strong>prevención de accidentes</strong>, la correcta circulación y el respeto por las normas de tránsito.
+  </p>
+  <p>
+    A continuación, encontrarás una selección de <strong>tarjetas interactivas</strong> que presentan algunas de las principales 
+    señales utilizadas en la ciudad. Cada tarjeta muestra la <strong>imagen de la señal</strong> junto con su 
+    <strong>definición y uso específico</strong>. Además, al dar clic en cada una podrás acceder directamente a su 
+    <strong>fuente original</strong>, reconociendo así los derechos de autor correspondientes.
+  </p>
+</section>
+
+    <!-- DEFINICION SEÑALES DE TRANSITO REGLAMENTARIAS------------------------>
+
+<section class="texto-seccion">
+  <h2> Algunas Señales de Reglamentación</h2>
+  <p>
+    Las <strong>señales de reglamentación</strong> son aquellas que indican a los usuarios de la vía 
+    las <strong>normas específicas de tránsito</strong> que deben cumplir obligatoriamente.  
+    Están diseñadas para garantizar la seguridad vial, la fluidez en la movilidad y la convivencia armónica 
+    entre conductores, ciclistas y peatones.  
+  </p>
+  <p>
+    Su incumplimiento puede generar sanciones, ya que estas señales establecen prohibiciones, 
+    restricciones o mandatos claros como <em>detenerse</em>, <em>no girar</em> o <em>respetar un límite de velocidad</em>.  
+    A continuación, encontrarás algunas de las más comunes representadas en tarjetas interactivas.
+  </p>
+</section>
+
+    <!------------------------------ TARJETAS DE LAS SEÑALES DE TRANSITO  REGLAMENTARIAS ---------------------------------------->
+<section> 
+<div class="cards">
+  <div class="card">
+    <a href="https://es.vecteezy.com/vectores-gratis/pare" target="_blank">
+    <img src="PARE.jpg" alt="PARE" class="card__image"> 
+    <div class="card__content">
+      <p class="card__title">PARE(SR-01)</p>
+       <p class="card__description">Obliga al conductor a detenerse completamente antes de la línea de pare, para que pueda observar el flujo del tráfico en las vías que se cruzan y ceder el paso. Se usa en intersecciones peligrosas para evitar colisiones.</p>
+    </div>
+  </a>
+  </div>
+
+  <div class="card">
+    <a href="https://jopavisos.com/producto/ceda-el-paso-sr02-senalizacion-vial/" target="_blank">
+    <img src="CEDA EL PASO.png" alt="CEDA EL PASO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">CEDA EL PASO(SR-02)</p>
+      <p class="card__description">Indica que el conductor debe reducir la velocidad y detenerse si es necesario, para permitir que los vehículos que circulan por la vía principal pasen primero. Su propósito es regular la prelación en intersecciones sin semáforo.</p>
+    </div>
+  </a>
+  </div>
+
+   <div class="card">
+    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Fjopavisos.com%2Fproducto%2Fprohibido-de-parquear-sr-28-senalizacion-vial%2F&psig=AOvVaw2IJFIpjy8wiCyBo76HQIlh&ust=1757172061667000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCMjor5b2wY8DFQAAAAAdAAAAABAE" target="_blank">
+    <img src="NO PARQUEAR.png" alt="PROHIBIDO PARQUEAR" class="card__image">
+    <div class="card__content">
+      <p class="card__title">PROHIBIDO PARQUEAR(SR-27)</p>
+      <p class="card__description">Prohíbe estacionar cualquier vehículo en el tramo de vía donde se encuentra. Su uso es para mantener el flujo vehicular y evitar la congestión, especialmente en zonas de alta circulación o estrechas.</p>
+    </div>
+    </a>
+  </div>
+
+   <div class="card">
+    <a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Finsumosfirstpro.com%2Fshop%2Fseguridad-industrial%2Fsenalizacion-vial-seguridad-industrial%2Fsenal-de-velocidad-maxima-de-40-km-h%2F&psig=AOvVaw2uhcgl8NQnWFkqMYVsgh4s&ust=1757172300133000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLCYl4n3wY8DFQAAAAAdAAAAABAE"target="_blank">
+    <img src="40k.png" alt="VELOCIDAD MAXIMA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">VELOCIDAD MAXIMA (SR-30)</p>
+      <p class="card__description">Indica la velocidad máxima a la que se puede circular de forma segura. Se usa para prevenir accidentes en zonas de riesgo, como áreas urbanas, escolares o curvas peligrosas.</p>
+    </div>
+  </a>
+  </div>
+
+  
+   <div class="card">
+    <a href="https://jopavisos.com/producto/prohibido-adelantar-sr-26-senalizacion-vial/" target="_blank">
+    <img src="NO REBASAR.png" alt="NO REBASAR" class="card__image">
+    <div class="card__content">
+      <p class="card__title">NO REBASAR (SR-32)</p>
+      <p class="card__description">Prohíbe que los vehículos realicen maniobras de adelantamiento a otros vehículos en el tramo de vía. Se utiliza en zonas donde el adelantamiento es peligroso, como curvas, puentes, túneles o vías de doble sentido estrechas.</p>
+    </div>
+  </a>
+  </div>
+
+     <div class="card">
+      <a href="https://jopavisos.com/producto/no-pase-sr04-senalizacion-vial/" target="_blank">
+    <img src="NO PASE.png" alt="NO PASE" class="card__image">
+    <div class="card__content">
+      <p class="card__title"> NO PASE (SENTIDO UNICO DE TRANSITO) (SR-04)</p>
+      <p class="card__description">Informa que la vía es de un solo sentido y prohíbe el tránsito en dirección contraria. Se usa para ordenar el flujo vehicular en calles y avenidas, evitando colisiones frontales.</p>
+    </div>
+      </a>
+  </div>
+
+     <div class="card">
+      <a href="https://www.istockphoto.com/es/fotos/se%C3%B1al-de-prohibido-girar-a-la-izquierda" target="_blank">
+    <img src="NO GIRAR A LA IZQUIERDA.jpg" alt="NO GIRAR A LA IZQUIERDA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">NO GIRAR A LA IZQUIERDA (SR-06)</p>
+      <p class="card__description">Prohíbe de forma explícita el giro a la izquierda en la intersección. Su propósito es evitar accidentes y conflictos de tráfico en cruces complejos o en vías de alta velocidad.</p>
+    </div>
+  </a>
+  </div>
+
+       <div class="card">
+        <a href="https://www.istockphoto.com/es/fotos/prohibido-girar-en-u" target="_blank">
+    <img src="PROHIBIDO GIRAR EN U.jpg" alt="PROHIBIDO GIRAR EN U" class="card__image">
+    <div class="card__content">
+      <p class="card__title">PROHIBIDO GIRAR EN U (SR-10)</p>
+      <p class="card__description">Prohíbe que el conductor realice un giro de 180° para devolverse por la misma vía. Se usa en zonas donde esta maniobra es peligrosa, como puentes, túneles o tramos de alta velocidad.</p>
+</p>
+    </div>
+    </a>
+  </div>
+  </div></section>
+
+
+  
+    <!-- DEFINICION SEÑALES DE TRANSITO DE PREVENCION ----------------------------------->
+<section class="texto-seccion">
+  <h2> Algunas Señales de Prevención</h2>
+  <p>
+    Las <strong>señales de prevención</strong> cumplen la función de <strong>alertar</strong> a los usuarios de la vía 
+    sobre la presencia de <strong>riesgos o condiciones especiales</strong> en el camino.  
+    No imponen obligaciones, pero sí advierten situaciones como curvas peligrosas, pasos peatonales, 
+    zonas escolares, reductores de velocidad o posibles derrumbes.
+  </p>
+  <p>
+    Su objetivo principal es que los conductores adopten una actitud preventiva y ajusten su 
+    conducción para <strong>evitar accidentes</strong>.  
+    En el siguiente apartado se presentan algunos ejemplos de estas señales, también en tarjetas interactivas.
+  </p>
+</section>
+
+
+    <!-- TARJETAS DE SEÑALES DE PREVENCION-->
+<div class="cards">
+     <div class="card">
+      <a href="https://es.123rf.com/photo_195737707_se%C3%B1al-de-tr%C3%A1fico-de-tope-de-velocidad-aislada-dise%C3%B1o-plano.html" target="_blank">
+    <img src="POLICIA ACOSTADO.jpg" alt="POLICIA ACOSTADO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">RESALTO / POLICÍA ACOSTADO (SP-35)</p>
+      <p class="card__description">Advierte la proximidad de un resalto en la vía, que podría causar daños al vehículo si no se reduce la velocidad. Su propósito es obligar al conductor a reducir la velocidad para pasar de forma segura.</p>
+</p>
+    </div>
+  </a>
+  </div>
+
+       <div class="card">
+        <a href="https://jopavisos.com/producto/curva-pronunciada-a-la-derecha-sp-04/" target="_blank">
+    <img src="CURVA PRONUNCIADA A LA DERECHA.png" alt="CURVA PRONUNCIADA A LA DERECHA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">CURVA PRONUNCIADA A LA DERECHA (SP-04)<p>
+      <p class="card__description">Advierte sobre una curva peligrosa que requiere reducir la velocidad. Se usa para alertar al conductor sobre un cambio brusco en la dirección de la vía y evitar que se salga del camino.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+        <div class="card">
+          <a href="https://www.sigo.com.gt/senales-viales-de-advertencia/1115-rotulo-vial-advertencia-zona-escolar-cod-sp-53.html?srsltid=AfmBOoqKLtxPwl9j43TrFRTXDTqhNK6afG85rnQelrDY0WBzkxIAJKj0" target="_blank">
+    <img src="ZONA ESCOLAR.jpg" alt="ZONA ESCOLAR" class="card__image">
+    <div class="card__content">
+      <p class="card__title">ZONA ESCOLAR (SP-26)<p>
+      <p class="card__description">Indica la cercanía de una escuela, colegio o cualquier centro educativo. Su uso es vital para advertir a los conductores que deben reducir la velocidad y estar alerta a la posible presencia de estudiantes.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+          <div class="card">
+            <a href="https://jopavisos.com/producto/final-del-pavimento-sp-57/" target="_blank">
+    <img src="FINAL DEL PAVIMENTO.png" alt="FINAL DE PAVIMENTO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">FINAL DE PAVIMENTO (SP-57)</p>
+      <p class="card__description">Indica que la vía se angosta considerablemente en ambos lados. Se utiliza para advertir a los conductores que deben transitar con precaución y reducir la velocidad para evitar incidentes.</p>
+</p>
+    </div>
+  </a>
+  </div>
+
+            <div class="card">
+              <a href="https://jopavisos.com/producto/curva-y-contracurva-cerrada-primera-a-la-derecha-sp-06/" target="_blank">
+    <img src="CURVA Y CONTRACURVA.png" alt="CURVA Y CONTRACURVA" class="card__image">
+    <div class="card__content">
+      <p class="card__title">CURVA Y CONTRACURVA (SP-06)</p>
+      <p class="card__description">Advierte sobre una serie de dos o más curvas en direcciones opuestas. Se usa en carreteras sinuosas para que el conductor anticipe los cambios de dirección y ajuste su velocidad.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+            <div class="card">
+            <a href="https://es.123rf.com/photo_43606710_canadiense-carretera-se%C3%B1al-de-advertencia-temporal-puente-estrecho-este-signo-se-utiliza-en.html" target="_blank">
+    <img src="PUENTE ESTRECHO.jpg" alt="PUENTE ESTRECHO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">PUENTE ESTRECHO (SP-23)</p>
+      <p class="card__description">Advierte sobre la proximidad de un túnel. Su propósito es que los conductores se preparen para las condiciones de oscuridad, y, en algunos casos, enciendan las luces y estén atentos a las señales dentro del túnel.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+              <div class="card">
+                <a href="https://practicatest.co/senales-transito-colombia" target="_blank">
+    <img src="SEMAFORO.png" alt="SEMAFORO" class="card__image">
+    <div class="card__content">
+      <p class="card__title">SEMAFORO (SP-21)</p>
+      <p class="card__description">Advierte la proximidad de un semáforo. Se usa en intersecciones donde el semáforo no es visible desde lejos o en vías de alta velocidad para que el conductor tenga tiempo de reducir la velocidad y prepararse para la posible detención.</p>
+</p>
+    </div>
+    </a>
+  </div>
+
+                <div class="card">
+                  <a href="https://jopavisos.com/producto/superficie-deslizante-sp-44-senalizacion-vial/" target="_blank">
+    <img src="SUPERFICIE DESLIZANTE.png" alt="SUPERFICIE DESLIZANTE" class="card__image">
+    <div class="card__content">
+      <p class="card__title">SUPERFICIE DESLIZANTE (SP-44)</p>
+      <p class="card__description"> Indica que el tramo de vía que se aproxima tiene una superficie con baja fricción o adherencia, lo que puede causar que las llantas de un vehículo se deslicen, especialmente en condiciones de lluvia.</p>
+</p>
+    </div>
+    </a>
+  </div>
+</div>
+
+
+
+  <!-- ESTILO DEL JUEGO DE LAS SEÑALES ----------------------------------->
+  <style>
+    
+    .contenedor {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+     border: 2px solid #c62828;
+      border-radius: 10px;
+      padding: 15px;
+      background: #F0F0F0;
+      max-width: 400px;
+    }
+
+    h3 {
+      margin-bottom: 15px;
+      color: #c62828;
+    }
+
+    .señales, .definiciones {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin: 0 auto;
+    }
+
+    .señales img {
+      width: 120px;
+      cursor: grab;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      transition: 0.2s;
+    }
+
+    .señales img:hover {
+      transform: scale(1.1);
+      border: 2px solid #c62828;
+    }
+
+    .definicion {
+      width: 120px;
+      min-height: 100px;
+      border: 2px solid #c62828;
+      border-radius: 8px;
+      background: #ffffff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 8px;
+      font-size: 14px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .definicion.correcto {
+      background: #c8f7c5;
+      border-color: green;
+    }
+
+    .definicion.incorrecto {
+      background: #f7c5c5;
+      border-color: #c62828;
+    }
+  </style>
+
+
+  <!-- Contenedor de señales ------------------------------------->
+   <section>
+      <h2>🚦: Arrastra la señal a su significado</h2>
+  <h3>Arrastra cada señal de tránsito hacia la descripción correcta.</h3>
+  <div class="juego-container">
+  <div class="contenedor">
+    <h2>Señales</h2>
+    <div class="señales">
+      <img src="pare.jpg" alt="Pare" draggable="true" data-respuesta="1">
+      <img src="CURVA PRONUNCIADA A LA DERECHA.png" alt="Curva peligrosa" draggable="true" data-respuesta="2">
+      <img src="NO PARQUEAR.png" alt="Prohibido parquear" draggable="true" data-respuesta="3">
+      <img src="CEDA EL PASO.png" alt="Ceda el paso" draggable="true" data-respuesta="4">
+      <img src="ZONA ESCOLAR.jpg" alt="zona escolar" draggable="true" data-respuesta="5">
+      <img src="40k.png" alt="Límite de velocidad" draggable="true" data-respuesta="6">
+      <img src="NO PASE.png" alt="Sentido único" draggable="true" data-respuesta="7">
+      <img src="semaforo.png" alt="Semáforo" draggable="true" data-respuesta="8">
+    </div>
+  </div>
+
+  <!-- Contenedor de definiciones -->
+  <div class="contenedor">
+    <h2>Definiciones</h2>
+   <div class="definiciones" id="contenedor-definiciones">
+  <div class="definicion" data-respuesta="1">🚗 Indica que el vehículo debe detenerse completamente.</div>
+  <div class="definicion" data-respuesta="2">⚠️ Señala una curva peligrosa en la vía.</div>
+  <div class="definicion" data-respuesta="3">🅿️ Prohíbe estacionar en el área señalada.</div>
+  <div class="definicion" data-respuesta="4">↘️ El conductor debe ceder el paso a otros vehículos.</div>
+  <div class="definicion" data-respuesta="5">🚶‍♂️ Indica la cercanía de una escuela, colegio o cualquier centro educativo.</div>
+  <div class="definicion" data-respuesta="6">⏱️ Señala el límite máximo de velocidad permitido.</div>
+  <div class="definicion" data-respuesta="7">➡️ Indica que la vía tiene un único sentido de circulación.</div>
+  <div class="definicion" data-respuesta="8">🚦 Indica la proximidad de un semáforo en la vía.</div>
+</div>
+
+  </div>
+
+  <!-- Sonidos -->
+  <audio id="correcto" src="sonido-correcto-331225.mp3"></audio>
+  <audio id="incorrecto" src="invalid-selection-39351.mp3"></audio>
+
+  <script>
+    const imagenes = document.querySelectorAll(".señales img");
+    const definiciones = document.querySelectorAll(".definicion");
+    const sonidoCorrecto = document.getElementById("correcto");
+    const sonidoIncorrecto = document.getElementById("incorrecto");
+
+    let dragged;
+
+    imagenes.forEach(img => {
+      img.addEventListener("dragstart", e => {
+        dragged = e.target;
+      });
+    });
+
+    definiciones.forEach(def => {
+      def.addEventListener("dragover", e => {
+        e.preventDefault();
+      });
+
+      def.addEventListener("drop", e => {
+        if (dragged.dataset.respuesta === def.dataset.respuesta) {
+          def.classList.add("correcto");
+          def.classList.remove("incorrecto");
+          def.innerHTML = "✅ ¡Correcto!";
+          dragged.style.display = "none";
+          sonidoCorrecto.play();
+        } else {
+          def.classList.add("incorrecto");
+          sonidoIncorrecto.play();
+        }
+      });
+    });
+// --- FUNCION PARA DESORDENAR LAS RESPUESTAS ---
+function mezclarRespuestas() {
+  const contenedor = document.getElementById("contenedor-definiciones");
+  const definiciones = Array.from(contenedor.children);
+  
+  // Mezclar el array con algoritmo Fisher-Yates
+  for (let i = definiciones.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [definiciones[i], definiciones[j]] = [definiciones[j], definiciones[i]];
+  }
+
+  // Insertar en el contenedor en nuevo orden
+  definiciones.forEach(def => contenedor.appendChild(def));
+}
+
+// Llamar a la función al cargar la página
+window.onload = mezclarRespuestas;
+
+    
+  </script>
+</section>
+
+
+
+
+  <!-- ACTIVIDADES RECREATIVAS  ----------------------------------->
+<section id="interactivo" class="actividades">
+  <h2>📚 Actividades Recreativas</h2>
+  <p>
+    Aquí encontrarás material descargable para aprender de manera divertida sobre seguridad vial. 
+    Son actividades con juegos didácticos que fortalecen el aprendizaje en el aula y en casa.
+  </p>
+ <a href="TEMATICAS DE LOS JUEGOS PARA LA EDUCACION VIAL.pdf" class="actividad-card" download>
+       DESCARGA LA TEMATICA PREVIA A LOS JUEGOS
+    </a>
+
+ <h2> SOPA DE LETRAS </h2>
+ <P>Encontrar palabras relacionadas con la educación en seguridad vial para niños.
+Descarga la versión para jugar en papel</P>
+  <a href="4837994-seguridad_vial.pdf" class="actividad-card" download>
+      IMPRIME JUEGO EN FISICO
+    </a>
+<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/4837994-seguridad_vial.html"></iframe>
+
+ <h2> CUCIGRAMA</h2>
+ <P>Rellena correctamente todas las casillas del Crucigrama ayudándote, en su caso, de la descripción de cada palabra. Si el autor ha establecido un tiempo máximo o un límite en el número de vidas, tendrás que hacerlo antes de que se acaben el tiempo y/o las vidas.
+Si el autor ha establecido un número determinado de vidas, cada vez que rellenes de forma incorrecta una de las palabras del crucigrama perderás una vida.
+Si el autor ha establecido un tiempo máximo para completar cada Crucigrama, cuando se acabe pasarás al siguiente Crucigrama sin poder sumar la puntuación de las palabras no rellenadas. En este caso, también perderás una vida si no son infinitas.
+El juego acaba cuando rellenas correctamente todas las casillas del último Crucigrama, cuando pierdes todas las vidas, o cuando se te acaba el tiempo en el último Crucigrama.</P>
+   <a href="6868181-educacion_vial.pdf" class="actividad-card" download>
+      IMPRIME JUEGO EN FISICO 
+    </a>
+<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/6868181-educacion_vial.html"></iframe>
+
+
+<h2>Educación vial , factores de accidentalidad y señales de transito</h2>
+<p>Objetivo:
+
+Salta a la casilla que contiene la respuesta correcta antes de que se acabe el tiempo de la pregunta.
+Si se acaba el tiempo o saltas a una casilla incorrecta, te hundirás en el agua y perderás una vida.
+El juego acaba cuando llegas a la orilla o pierdes todas tus vidas.
+Salta a cualquier casilla haciendo clic en ella con el botón principal del ratón. También puedes hacerlo con las flechas del teclado (izquierda, arriba o derecha).</p>
+
+  <a href="14915266-educacion_vial_factores_de_accidentalidad_y_senales_de_transito.pdf" class="actividad-card" download>
+      IMPRIME JUEGO EN FISICO 
+    </a>
+    
+<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/14915266-educacion_vial_factores_de_accidentalidad_y_senales_de_transito.html"></iframe>
+
+
+<!------------------ SECCION DE RECURSOS EDUCATIVOS (ALDAIR PEDROZA)-------------------------------------------------------------------->
+
+
+
+  </main>
+
+
+<footer>
+
+  <!-- 🔹 Column 1: Colombia Image -->
+  <div class="footer-col">
+    <img src="../images/colombia.avif" height="240" width="210" alt="FOTO DE COLOMBIA">
+  </div>
+
+  <!-- 🔹 Column 2: Redes + Sena -->
+  <div class="footer-col">
+    <h2 style="color: white !important;">Síguenos en redes</h2> <br>
+    <ul class="logos">
+      <li><img src="../logos/facebook.png" height="65" width="65" alt=""></li>
+      <li><img src="../logos/github.png" height="65" width="65" alt=""></li>
+      <li><img src="../logos/instagram.png" height="65" width="65" alt=""></li>
+      <li><img src="../logos/linkedin.png" height="65" width="65" alt=""></li>
+      <li><img src="../logos/tik-tok.png" height="65" width="65" alt=""></li>
+    </ul>
+    <img src="../logos/sena.png" height="150" width="150" alt="Logo Sena" style="margin-top: 1rem;">
+  </div>
+
+  <!-- 🔹 Column 3: Contactos -->
+  <div class="footer-col">
+    <h1>Contactos</h1>
+    <ul class="contact">
+      <li>Correo: analyticsdatavial@gmail.com</li>
+      <li>Dirección: Cra. 54 #68 – 80, Nte. Centro Historico,<br>Barranquilla, Atlántico.</li>
+    </ul>
+  </div>
+
+  <!-- 🔹 Bottom section -->
+  <div class="footer-bottom">
+    <p>© 2025 Data Vial Analytics. Todos los derechos reservados.</p>
+    <a href="#logo"><img src="../images/arrow.svg" alt="INICIO" class="borde"></a>
+  </div>
+</footer>
+
+
+        <script src="script.js"></script>
+</body>

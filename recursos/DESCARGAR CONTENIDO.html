@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Reporte de Accidentalidad - Barranquilla</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#200000; /* rojo oscuro */
+      --card:#330000;
+      --accent:#ef4444; /* rojo principal */
+      --muted:#fca5a5;
+      --glass: rgba(255,255,255,0.05);
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;background:linear-gradient(180deg,var(--bg),#150000);color:#ffecec;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:32px}
+    .container{width:100%;max-width:980px}
+
+    header{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#b91c1c);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff5f5;font-size:20px;box-shadow:0 6px 18px rgba(0,0,0,0.7)}
+    h1{font-size:20px;margin:0}
+    p.lead{margin:4px 0 0;color:var(--muted);font-size:14px}
+
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.04), rgba(255,255,255,0.02));border-radius:14px;padding:20px;box-shadow:0 8px 30px rgba(0,0,0,0.6);border:1px solid rgba(255,255,255,0.05)}
+
+    .download-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px;margin-top:16px}
+
+    .file{background:var(--glass);padding:12px;border-radius:10px;display:flex;align-items:center;gap:12px;border:1px solid rgba(255,255,255,0.05)}
+    .file .meta{flex:1}
+    .filename{font-weight:600}
+    .filedesc{font-size:13px;color:var(--muted);margin-top:4px}
+    .actions{display:flex;gap:8px;align-items:center}
+
+    .btn{display:inline-flex;align-items:center;gap:8px;padding:10px 12px;border-radius:10px;text-decoration:none;font-weight:600;border:1px solid transparent;background:linear-gradient(90deg,var(--accent),#dc2626);color:#fff5f5;box-shadow:0 6px 18px rgba(0,0,0,0.5);transition:transform .12s ease,box-shadow .12s ease}
+    .btn:hover{transform:translateY(-3px);box-shadow:0 14px 30px rgba(0,0,0,0.6)}
+
+    .btn-secondary{background:transparent;color:var(--accent);border:1px dashed rgba(239,68,68,0.3);font-weight:600}
+
+    .small{font-size:13px;color:var(--muted)}
+
+    @media (max-width:420px){header{gap:10px}.logo{width:56px;height:56px}}
+
+    a:focus{outline:3px solid rgba(239,68,68,0.4);outline-offset:3px}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">BA</div>
+      <div>
+        <h1>Proyecto: Reporte de Accidentalidad — Barranquilla</h1>
+        <p class="lead">Sección de descargas — aquí puedes obtener los archivos oficiales y datos del proyecto.</p>
+      </div>
+    </header>
+
+    <main class="card" role="main" aria-labelledby="downloadsTitle">
+      <h2 id="downloadsTitle" style="margin:0 0 8px">Descargar contenido</h2>
+      <p class="small">Selecciona el archivo que necesites. Todos los archivos están verificados y contienen la fecha y el responsable en su metadata.</p>
+
+      <section class="download-grid" aria-label="Archivos para descargar">
+
+        <article class="file" aria-labelledby="f1">
+          <div class="meta">
+            <div id="f1" class="filename">Reporte Anual 2024 (PDF)</div>
+            <div class="filedesc">Informe completo con estadísticas por barrio y mapas de siniestralidad. Tamaño: 4.2 MB — Formato: PDF.</div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="/downloads/reporte-anual-2024.pdf" download="Reporte_Accidentalidad_Barranquilla_2024.pdf">Descargar</a>
+            <a class="btn btn-secondary" href="/downloads/reporte-anual-2024.pdf" target="_blank" rel="noopener">Ver</a>
+          </div>
+        </article>
+
+        <article class="file" aria-labelledby="f2">
+          <div class="meta">
+            <div id="f2" class="filename">Base de Datos (CSV)</div>
+            <div class="filedesc">Registros de incidentes (anónimo) con campos: fecha, lugar, tipo, heridos, gravedad. Tamaño: 8.1 MB — Formato: CSV.</div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="/downloads/incidentes_barranquilla_2024.csv" download="Incidentes_Barranquilla_2024.csv">Descargar</a>
+            <a class="btn btn-secondary" href="/downloads/incidentes_barranquilla_2024.csv" target="_blank" rel="noopener">Ver</a>
+          </div>
+        </article>
+
+        <article class="file" aria-labelledby="f3">
+          <div class="meta">
+            <div id="f3" class="filename">Resumen Ejecutivo (DOCX)</div>
+            <div class="filedesc">Documento breve para tomadores de decisiones con hallazgos y recomendaciones. Tamaño: 320 KB — Formato: DOCX.</div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="/downloads/resumen_ejecutivo.docx" download="Resumen_Ejecutivo_Accidentalidad_Barranquilla.docx">Descargar</a>
+            <a class="btn btn-secondary" href="/downloads/resumen_ejecutivo.docx" target="_blank" rel="noopener">Ver</a>
+          </div>
+        </article>
+
+        <article class="file" aria-labelledby="f4">
+          <div class="meta">
+            <div id="f4" class="filename">Mapas Geoespaciales (GeoJSON)</div>
+            <div class="filedesc">Capa GeoJSON con puntos y polígonos para usar en QGIS / Leaflet. Tamaño: 2.7 MB — Formato: GeoJSON.</div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="/downloads/mapas_barranquilla_2024.geojson" download="Mapas_Barranquilla_2024.geojson">Descargar</a>
+            <a class="btn btn-secondary" href="/downloads/mapas_barranquilla_2024.geojson" target="_blank" rel="noopener">Ver</a>
+          </div>
+        </article>
+
+        <article class="file" aria-labelledby="f5">
+          <div class="meta">
+            <div id="f5" class="filename">Presentación (PPTX)</div>
+            <div class="filedesc">Diapositivas para presentaciones públicas con gráficos y metodología. Tamaño: 6.5 MB — Formato: PPTX.</div>
+          </div>
+          <div class="actions">
+            <a class="btn" href="/downloads/presentacion_accidentalidad_2024.pptx" download="Presentacion_Accidentalidad_Barranquilla_2024.pptx">Descargar</a>
+            <a class="btn btn-secondary" href="/downloads/presentacion_accidentalidad_2024.pptx" target="_blank" rel="noopener">Ver</a>
+          </div>
+        </article>
+
+      </section>
+
+      <footer style="margin-top:18px;border-top:1px solid rgba(255,255,255,0.08);padding-top:12px;display:flex;justify-content:space-between;align-items:center">
+        <div class="small">Origen: Alcaldía de Barranquilla / Secretaría de Tránsito — Última actualización: <strong>10 de septiembre de 2025</strong></div>
+        <div class="small">Contacto: <a href="mailto:info@barranquilla.gov.co">info@barranquilla.gov.co</a></div>
+      </footer>
+    </main>
+
+  </div>
+</body>
+</html>

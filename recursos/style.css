@@ -1,0 +1,573 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
+}
+
+body {
+  background-color: #F0F0F0;
+  line-height: 1.6;
+}
+
+header {
+    background-color: #2E4975;
+    color: white;
+    height: 15%;
+}
+
+#logo {
+    width: 100px;
+    height: 100px;
+    border-radius: 100%;
+    margin: 1%;
+}
+
+#start {
+    display: flex;
+    align-items: center;
+}
+
+#title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-align: left;
+  margin: 0;
+}
+
+nav {
+    display: block;
+    unicode-bidi: isolate;
+    margin-left: 8%;
+    padding-top: 0;
+}
+
+nav ul {
+  --gap: 2rem; /* valor de separación entre li */
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+nav li {
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* Línea centrada en el espacio entre elementos pero a la izquierda */
+nav > ul > li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  margin-right: calc(var(--gap) / 2);
+  width: 1px;
+  background-color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li:hover > a {
+  color: #ffb74d; /* COLOCAR COLOR AMARILLO SOLO EN EL MENU PRINCIPAL */
+}
+
+/* SUBMENU */
+nav ul .submenu {
+  display: none;
+  position: absolute;          /* Se posiciona en relación al <li> padre */
+  top: 100%;                   /* Lo coloca justo debajo del <li> principal */
+  left: 0;                     /* Alinea el submenú al lado izquierdo del padre */
+  background: #e0e0e0;         /* Color de fondo gris claro para el submenú */
+  padding: 0;                  /* Quita el espacio interno (padding) del <ul> */
+  margin: 0;                   /* Quita márgenes del <ul> del submenú */
+  list-style: none;            /* Elimina viñetas o bullets de la lista */
+  min-width: 180px;            /* Asegura que el submenú tenga un ancho mínimo */
+  z-index: 1000;               /* Lo coloca encima de otros elementos en la página */
+}
+
+nav ul .submenu li {
+  position: relative; /* Necesario para que funcione el ::after */
+  transition: background-color 0.3s ease;
+}
+
+nav ul .submenu li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;               
+  left: 50%;               
+  transform: translateX(-50%);
+  width: 85%;              /* << aquí controlas el ancho de la línea */
+  height: 1px;             
+  background-color: #000;  
+}
+
+nav ul .submenu li:last-child::after {
+  content: none;           /* Quita la línea del último */
+}
+
+nav ul .submenu a {
+  color: #000000;                  /* El texto de las opciones del submenú será negro */
+  font-weight: 500;             /* Peso medio en la tipografía (un poco más gruesa que normal) */
+  padding: 0.75rem 1rem;        /* Espaciado interno arriba/abajo (0.75rem) y a los lados (1rem) */
+  display: block;               /* Hace que el enlace ocupe todo el ancho disponible (clickeable en toda el área) */
+  transition: color 0.2s ease;
+}
+
+nav ul .submenu li:hover {
+  background-color: #cacaca;
+}
+
+nav ul .submenu a:hover {
+  color: #2E4975;
+}
+
+.active {
+  color: red;
+}
+
+/* Mostrar submenu al hacer hover */
+nav li:hover > .submenu,
+nav li:has(.submenu:hover) > .submenu {
+  display: block;  /* Se mantiene visible incluso si pasas por el submenu */
+}
+
+.sub {
+  display: flex;
+  align-items: center;   /* centra verticalmente texto e imagen */
+  gap: 0.5rem;           /* espacio entre la imagen y el texto */
+}
+
+.sub img {
+  flex-shrink: 0;        /* evita que la imagen se deforme o reduzca */
+}
+
+#btn {
+    display: flex;
+    justify-content: center; /* Centra horizontalmente */
+    align-items: center;     /* Centra verticalmente */
+    width: 50px; /* o el valor que uses */
+    height: 50px;
+    background: transparent; /* no blanco */
+    padding: 0;
+    border: none;
+}
+
+#btn img {
+  max-width: 70%; /* ajusta según necesites */
+  max-height: 70%;
+} 
+
+/* CONTENEDOR DEL VIDEO PRINCIPAL 
+.video-container video {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+} */
+
+footer {
+  position: relative; /* importante para que la imagen se posicione respecto al footer */
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1.5rem;
+  background-color: #2E4975; /* ejemplo */
+  color: white;
+}
+
+footer img.borde {
+  position: absolute;
+  top: -50%;   /* mueve la imagen hacia arriba la mitad de su altura */
+  left: 6%;   /* céntrala horizontalmente */
+  transform: translateX(-50%);
+  transform: rotate(90deg);
+  width: 60px; /* ajusta al tamaño que quieras */
+  height: 60px;
+}
+
+/* Responsividad */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+
+
+/* -----------------------SECCION DE RECURSOS EDUCATIVOS (ALDAIR PEDROZA) --------------------------------------*/
+
+
+/* INTROCCION A LA SECCION */
+
+.recursos-educativos {
+  background: #fff3f3; /* un rojo muy suave de fondo */
+  padding: 50px 20px;
+}
+
+.recursos-educativos .contenido {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1100px;
+  margin: auto;
+  flex-wrap: wrap; /* para móviles */
+}
+
+.recursos-educativos .imagen img {
+  width: 280px;
+  border-radius: 20px;
+  box-shadow: 0px 5px 15px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.recursos-educativos .imagen img:hover {
+  transform: scale(1.05); /* efecto zoom divertido */
+}
+
+.recursos-educativos .texto {
+  flex: 1;
+  text-align: left;
+}
+
+.recursos-educativos .texto h2 {
+  font-size: 28px;
+  color: #c62828; /* rojo fuerte */
+  margin-bottom: 15px;
+}
+
+.recursos-educativos .texto p {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #2E4975; 
+  margin-bottom: 10px;
+}
+
+
+
+
+
+/* VIDEOS EDUCATIVOS*/
+    .video-section {
+    margin: 60px auto;
+    text-align: center;
+    max-width: 1200px;
+  }
+
+  .video-section h2 {
+    color: #dc2626;
+    margin-bottom: 25px;
+    font-size: 28px;
+  }
+
+  .video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+    gap: 20px;
+    justify-content: center;
+  }
+
+  .video-container {
+    background: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .video-container:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+  }
+
+  .video-container iframe,
+  .video-container video {
+    width: 100%;
+    height: 300px;
+    border: none;
+    display: block;
+  }
+  h1{
+  margin:0 auto;
+
+
+
+/* estilo de texto descriptivo*/
+}
+h2, h3 {
+  text-align: center;
+  font-weight: bold;
+  margin: 30px 0 20px;
+  color: #c62828;
+}
+
+.texto-seccion {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
+
+.texto-seccion h2 {
+  font-size: 26px;
+  font-weight: bold;
+  color: #c62828; /* rojo institucional */
+  margin-bottom: 15px;
+}
+
+.texto-seccion p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+
+.intro-senales {
+  max-width: 900px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  color: #333;
+}
+
+.intro-senales h2 {
+  font-size: 28px;
+  font-weight: bold;
+  color: #c62828; /* rojo institucional */
+  margin-bottom: 15px;
+}
+
+.intro-senales p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+
+/* ESTILO DE LAS TARJETAS DE SEÑALES DE TRANSITO */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 20px;
+  max-width: 1200px; 
+  margin: 0 auto; /* centrar en la página */
+  padding: 20px;
+  justify-items: center; 
+}
+
+.card {
+  position: relative;
+  width: 250px;    
+  height: 200px;
+  background: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.card__image {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;  /* mantiene proporción */
+  display: block;
+  margin: auto;         /* centra vertical y horizontal */
+  transition: all 0.4s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  background: rgba(255,255,255,0.95);
+  opacity: 0;
+  text-align: center;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.card:hover .card__content {
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  color: #333;
+}
+
+.card__description {
+  margin: 5px 0 0;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.3;
+}
+
+.card:hover .card__image {
+  opacity: 0.3;
+}
+
+
+
+/* SECCION DEL JUEGO */
+
+.juego-container {
+  display: flex;
+  justify-content: center; /* Centrado horizontal */
+  align-items: center;     /* Centrado vertical */
+  width: 100%;
+  margin: 40px 0; /* Espacio arriba y abajo */
+}
+
+.juego {
+  display: flex;
+  gap: 30px;
+  max-width: 1000px;  /* ancho máximo */
+  width: 95%;         /* adaptable */
+  justify-content: center;
+  padding: 25px;
+  border-radius: 15px;
+  background: linear-gradient(135deg, #ffffff, #f8f9fa); /* fondo suave */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* sombra */
+}
+
+.senales, .definiciones {
+  flex: 1;
+  max-width: 420px;
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1); /* sombra interna */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.senales:hover, .definiciones:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2); /* efecto hover */
+}
+
+.senales h3, .definiciones h3 {
+  color: #c40000; /* rojo vial */
+  margin-bottom: 15px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+
+
+/* SECCION DE ACTIVIDADES */
+.actividades {
+  text-align: center;
+  margin: 60px auto;
+  max-width: 900px;
+  padding: 20px;
+}
+
+.actividades h2 {
+  font-size: 28px;
+  color: #c40000;
+  margin-bottom: 10px;
+}
+
+.actividades p {
+  font-size: 16px;
+  color: #444;
+  margin-bottom: 30px;
+}
+.actividad-card {
+  display: block;
+  padding: 15px;
+  background: linear-gradient(135deg, #ffefef, #fff);
+  border: 2px solid #c40000;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: bold;
+  color: #c40000;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s, background 0.3s;
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  padding: 2rem;
+  margin-top: 0.2rem;
+  background-color: #2E4975;
+  color: white;
+  overflow: visible;
+  height: auto; /* let content determine height */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* 🔽 Arrow image (remains floating at the top) */
+footer img.borde {
+  position: absolute;
+  top: 0;
+  left: 7%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 60px;
+  height: 60px;
+}
+
+/* 🔽 Footer columns */
+.footer-col {
+  flex: 1 1 30%;
+  min-width: 250px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.contact {
+  list-style: none;
+  font-size: 23px;
+}
+
+/* 🔽 Redes logos */
+.logos {
+  display: flex;
+  gap: 5px;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.logos li {
+  display: inline-block;
+}
+
+/* 🔽 Bottom text and arrow */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 2rem;
+}

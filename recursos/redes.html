@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Redes Sociales</title>
+  <style>
+    /* Redes Sociales Estilo */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: #f5f5f5;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5em;
+    }
+
+    .up, .down {
+      display: flex;
+      flex-direction: row;
+      gap: 0.5em;
+    }
+
+    .card1, .card2, .card3, .card4 {
+      width: 90px;
+      height: 90px;
+      outline: none;
+      border: none;
+      background: white;
+      box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+                  rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+      transition: .2s ease-in-out;
+    }
+
+    .card1 { border-radius: 90px 5px 5px 5px; }
+    .card2 { border-radius: 5px 90px 5px 5px; }
+    .card3 { border-radius: 5px 5px 5px 90px; }
+    .card4 { border-radius: 5px 5px 90px 5px; }
+
+    /* Íconos */
+    .instagram { margin-top: 1.5em; margin-left: 1.2em; fill: #cc39a4; }
+    .linkedin  { margin-top: 1.5em; margin-left: -0.9em; fill: #0077b5; }
+    .facebook  { margin-top: -0.6em; margin-left: 1.2em; fill: #1877F2; }
+    .tiktok    { margin-top: -0.9em; margin-left: -1.2em; fill: #000; }
+
+    /* Hover */
+    .card1:hover { cursor: pointer; scale: 1.1; background-color: #cc39a4; }
+    .card1:hover .instagram { fill: white; }
+
+    .card2:hover { cursor: pointer; scale: 1.1; background-color: #0077b5; }
+    .card2:hover .linkedin { fill: white; }
+
+    .card3:hover { cursor: pointer; scale: 1.1; background-color: #1877F2; }
+    .card3:hover .facebook { fill: white; }
+
+    .card4:hover { cursor: pointer; scale: 1.1; background-color: #000; }
+    .card4:hover .tiktok { fill: white; }
+
+    /* Para quitar subrayado en los links */
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="main">
+    <div class="up">
+      <!-- Instagram -->
+      <a href="https://www.instagram.com" target="_blank">
+        <button class="card1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="30px" height="30px" class="instagram">
+            <path d="M128 80a48 48 0 1 0 48 48a48.05 48.05 0 0 0-48-48Zm0 80a32 32 0 1 1 32-32a32 32 0 0 1-32 32Zm52-84a12 12 0 1 1-12-12a12 12 0 0 1 12 12Zm40 4v96a56.06 56.06 0 0 1-56 56H92a56.06 56.06 0 0 1-56-56V80a56.06 56.06 0 0 1 56-56h72a56.06 56.06 0 0 1 56 56Z"/>
+          </svg>
+        </button>
+      </a>
+
+      <!-- LinkedIn -->
+      <a href="https://www.linkedin.com" target="_blank">
+        <button class="card2">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px" class="linkedin">
+            <path d="M41,4H9C6.243,4,4,6.243,4,9v32c0,2.757,2.243,5,5,5h32c2.757,0,5-2.243,5-5V9C46,6.243,43.757,4,41,4z M17,39h-5V20h5V39z
+            M14.5,17C13.119,17,12,15.881,12,14.5S13.119,12,14.5,12S17,13.119,17,14.5S15.881,17,14.5,17z M39,39h-5v-9.5
+            c0-2.481-2.019-4.5-4.5-4.5S25,27.019,25,29.5V39h-5V20h5v2.077C26.06,20.805,28.019,20,30.5,20C34.642,20,38,23.358,38,27.5V39z"/>
+          </svg>
+        </button>
+      </a>
+    </div>
+
+    <div class="down">
+      <!-- Facebook -->
+      <a href="https://www.facebook.com" target="_blank">
+        <button class="card3">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px" class="facebook">
+            <path d="M25,3C12.85,3,3,12.85,3,25c0,11.07,8.061,20.22,18.578,21.8V30.82h-5.578v-5.82h5.578v-4.49c0-5.51,3.313-8.54,8.273-8.54
+            c2.39,0,4.478,0.18,5.08,0.26v5.89h-3.49c-2.74,0-3.28,1.3-3.28,3.21v4.67h6.55l-0.86,5.82h-5.69v16.02C38.94,45.22,47,36.07,47,25
+            C47,12.85,37.15,3,25,3z"/>
+          </svg>
+        </button>
+      </a>
+
+      <!-- TikTok -->
+      <a href="https://www.tiktok.com" target="_blank">
+        <button class="card4">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 50 50" width="30px" height="30px" class="tiktok">
+            <path d="M35.1,14.7c-1.9-1.4-3-3.5-3-5.8V8h-5v23.3c0,3.4-2.8,6.2-6.2,6.2S14.7,34.7,14.7,31.3s2.8-6.2,6.2-6.2
+            c0.7,0,1.4,0.1,2,0.4v-5.3c-0.7-0.1-1.3-0.2-2-0.2c-6.3,0-11.5,5.1-11.5,11.5S14.7,43,21,43s11.5-5.1,11.5-11.5V23
+            c2,1.4,4.5,2.2,7.2,2.2v-5C37.7,20.2,36.1,18.5,35.1,14.7z"/>
+          </svg>
+        </button>
+      </a>
+    </div>
+  </div>
+</body>
+</html>
