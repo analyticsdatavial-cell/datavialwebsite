@@ -579,6 +579,7 @@ footer img.borde {
   max-width: 400px;
   display: none; /* oculto por defecto */
   z-index: 2;
+  text-align: justify;
 }
 
 .text-box h1 {

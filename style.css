@@ -205,6 +205,16 @@ nav li:has(.submenu:hover) > .submenu {
   width: 50%;
 }
 
+.text h1 {
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+.text p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  line-height: 1.6;
+  text-align: justify;
+}
+
 .video-container {
   position: relative;
   background-color: rgb(0, 0, 0);
