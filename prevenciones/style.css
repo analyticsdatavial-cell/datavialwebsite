@@ -1,396 +1,479 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;0,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/* Estilos globales y de navegación */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Fira Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Fira Sans", sans-serif;
 }
 
 body {
-    background-color: #F0F0F0;
-    color: #2E4975;
-    line-height: 1.8;
-    font-size: 1.1rem;
+  color: #2E4975;
+  /* azul más claro */
+  line-height: 1.6;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
 header {
-    background-color: #2E4975;
-    color: white;
-    height: 15%;
+  background-color: #2E4975;
+  color: white;
+  height: 15%;
 }
 
 #logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin: 1%;
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 1%;
 }
 
 #start {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 #title {
-    font-size: 2.8rem;
-    font-weight: bold;
-}
-
-#cultura {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 nav {
-    display: block;
-    unicode-bidi: isolate;
-    margin-left: 8%;
-    padding-top: 0;
+  display: block;
+  unicode-bidi: isolate;
+  margin-left: 8%;
+  padding-top: 0;
 }
 
 nav ul {
-    --gap: 2rem;
-    list-style: none;
-    display: flex;
-    gap: var(--gap);
-    justify-content: space-evenly;
-    align-items: center;
+  --gap: 2rem;
+  /* valor de separación entre li */
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 nav li {
-    position: relative;
-    padding: 0 1rem;
+  position: relative;
+  padding: 0 1rem;
 }
 
-nav > ul > li:not(:first-child)::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: 100%;
-    margin-right: calc(var(--gap) / 2);
-    width: 1px;
-    background-color: white;
+/* Línea centrada en el espacio entre elementos pero a la izquierda */
+nav>ul>li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  margin-right: calc(var(--gap) / 2);
+  width: 1px;
+  background-color: white;
 }
 
 nav a {
-    text-decoration: none;
-    color: white;
-    font-weight: 500;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
 }
 
-nav > ul > li:hover > a {
-    color: #ffb74d;
+nav>ul>li:hover>a {
+  color: #ffb74d;
+  /* COLOCAR COLOR AMARILLO SOLO EN EL MENU PRINCIPAL */
 }
 
+/* SUBMENU */
 nav ul .submenu {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    background: #e0e0e0;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    min-width: 180px;
-    z-index: 1000;
+  display: none;
+  position: absolute;
+  /* Se posiciona en relación al <li> padre */
+  top: 100%;
+  /* Lo coloca justo debajo del <li> principal */
+  left: 0;
+  /* Alinea el submenú al lado izquierdo del padre */
+  background: #e0e0e0;
+  /* Color de fondo gris claro para el submenú */
+  padding: 0;
+  /* Quita el espacio interno (padding) del <ul> */
+  margin: 0;
+  /* Quita márgenes del <ul> del submenú */
+  list-style: none;
+  /* Elimina viñetas o bullets de la lista */
+  min-width: 180px;
+  /* Asegura que el submenú tenga un ancho mínimo */
+  z-index: 1000;
+  /* Lo coloca encima de otros elementos en la página */
 }
 
 nav ul .submenu li {
-    position: relative;
-    transition: background-color 0.3s ease;
+  position: relative;
+  /* Necesario para que funcione el ::after */
+  transition: background-color 0.3s ease;
 }
 
 nav ul .submenu li::after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 85%;
-    height: 1px;
-    background-color: #000;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 85%;
+  /* << aquí controlas el ancho de la línea */
+  height: 1px;
+  background-color: #000;
 }
 
 nav ul .submenu li:last-child::after {
-    content: none;
+  content: none;
+  /* Quita la línea del último */
 }
 
 nav ul .submenu a {
-    color: #000000;
-    font-weight: 500;
-    padding: 0.75rem 1rem;
-    display: block;
-    transition: color 0.2s ease;
+  color: #000000;
+  /* El texto de las opciones del submenú será negro */
+  font-weight: 500;
+  /* Peso medio en la tipografía (un poco más gruesa que normal) */
+  padding: 0.75rem 1rem;
+  /* Espaciado interno arriba/abajo (0.75rem) y a los lados (1rem) */
+  display: block;
+  /* Hace que el enlace ocupe todo el ancho disponible (clickeable en toda el área) */
+  transition: color 0.2s ease;
 }
 
 nav ul .submenu li:hover {
-    background-color: #cacaca;
+  background-color: #cacaca;
 }
 
 nav ul .submenu a:hover {
-    color: #2E4975;
+  color: #2E4975;
 }
 
-nav li:hover > .submenu,
-nav li:has(.submenu:hover) > .submenu {
-    display: block;
+.active {
+  color: red;
+}
+
+/* Mostrar submenu al hacer hover */
+nav li:hover>.submenu,
+nav li:has(.submenu:hover)>.submenu {
+  display: block;
+  /* Se mantiene visible incluso si pasas por el submenu */
 }
 
 .sub {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
+  display: flex;
+  align-items: center;
+  /* centra verticalmente texto e imagen */
+  gap: 0.5rem;
+  /* espacio entre la imagen y el texto */
 }
 
 .sub img {
-    flex-shrink: 0;
+  flex-shrink: 0;
+  /* evita que la imagen se deforme o reduzca */
 }
 
 #btn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 50px;
-    height: 50px;
-    background: transparent;
-    padding: 0;
-    border: none;
+  display: flex;
+  justify-content: center;
+  /* Centra horizontalmente */
+  align-items: center;
+  /* Centra verticalmente */
+  width: 50px;
+  /* o el valor que uses */
+  height: 50px;
+  background: transparent;
+  /* no blanco */
+  padding: 0;
+  border: none;
 }
 
 #btn img {
-    max-width: 70%;
-    max-height: 70%;
-}
-
-footer {
-    position: relative;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 1.5rem;
-    background-color: #2E4975;
-    color: white;
-}
-
-footer img.borde {
-    position: absolute;
-    top: -50%;
-    left: 6%;
-    transform: translateX(-50%) rotate(90deg);
-    width: 60px;
-    height: 60px;
-}
-
-/* Estilos para el contenido principal */
-.content-container {
-    padding: 3rem 15rem;
-}
-
-.rules-container {
-    display: flex;
-    flex-direction: column;
-    gap: 3rem;
-    margin-top: 2rem;
-}
-
-.rule-card {
-    background-color: white;
-    padding: 2rem;
-    border-radius: 8px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-}
-
-.verde {
-    background-color: #f1f8e9;
-}
-
-.amarillo {
-    background-color: #fffde7;
-}
-
-.rojo {
-    background-color: #ffebee;
-}
-
-.rule-title {
-    font-size: 1.8rem;
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-    text-align: center;
-}
-
-.rule-content {
-    display: flex;
-    align-items: flex-start;
-    gap: 2.5rem;
-}
-
-.color-circle {
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.verde .color-circle {
-    background-color: #4caf50;
-}
-
-.amarillo .color-circle {
-    background-color: #ffc107;
-}
-
-.rojo .color-circle {
-    background-color: #f44336;
-}
-
-.rule-list {
-    flex-grow: 1;
-}
-
-.rule-list ul {
-    list-style-type: none;
-    padding-left: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
-}
-
-.rule-list li {
-    padding-left: 2rem;
-    position: relative;
-    line-height: 1.6;
-}
-
-.rule-list li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #2E4975;
-    font-size: 1.5rem;
-    line-height: 1;
-}
-
-/* Estilos de las nuevas secciones */
-.section {
-    margin-top: 5rem;
-}
-
-.section h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 2rem;
-}
-
-.section-content {
-    display: flex;
-    align-items: center;
-    gap: 6rem;
-}
-
-.section-content .text-content {
-    flex: 1;
-}
-
-.section-content .text-content p {
-    margin-bottom: 1rem;
-}
-
-.section-content .text-content ul {
-    list-style-type: none;
-    padding-left: 0;
-}
-
-.section-content .text-content li {
-    margin-bottom: 1.2rem;
-    padding-left: 1.5rem;
-    position: relative;
-}
-
-.section-content .text-content li::before {
-    content: '•';
-    position: absolute;
-    left: 0;
-    color: #2E4975;
-    font-size: 1.5rem;
-    top: 0;
-}
-
-.section-image {
-    width: 400px;
-    max-width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    flex-shrink: 0;
-}
-
-/* Para la sección de peatones, se invierte el orden del flexbox */
-.section-content.image-left {
-    flex-direction: row-reverse;
+  max-width: 70%;
+  /* ajusta según necesites */
+  max-height: 70%;
 }
 
 /* Responsividad */
 @media (max-width: 768px) {
-    body {
-        font-size: 1rem;
-    }
+  .hero {
+    grid-template-columns: 1fr;
+  }
 
-    #title {
-        font-size: 1.8rem;
-    }
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
 
-    .content-container {
-        padding: 2rem 1.5rem;
-    }
+body {
+  background-color: #e6e6e6;
+}
 
-    .rules-container, .section {
-        gap: 1.5rem;
-    }
+.imagen {
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
 
-    .rule-card {
-        padding: 1rem;
-    }
+.sombra {
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+}
 
-    .rule-title, .section h2 {
-        text-align: center;
-        font-size: 1.5rem;
-    }
+p:not(footer p) {
+  width: 300px;
+  text-align: center;
+}
 
-    .rule-content, .section-content {
-        flex-direction: column;
-        align-items: center;
-        gap: 3rem;
-    }
+p:hover .texto-oculto {
+  visibility: visible;
+  opacity: 1;
+}
 
-    .section-content.image-left {
-        flex-direction: column;
-    }
+.contenedor-flex {
+  display: flex;
+  align-items: center;
+  /* Alinea los elementos verticalmente al centro */
+  gap: 20px;
+  /* Añade espacio entre la imagen y el texto */
+  width: 800px;
+  /* Opcional: limita el ancho del contenedor */
+  margin: 0 auto;
+  /* Opcional: centra el contenedor en la página */
+}
 
-    .color-circle {
-        width: 100px;
-        height: 100px;
-    }
+.contenedor-flex img {
+  width: 360px;
+  /* Controla el tamaño de la imagen */
+  height: auto;
+  /* Mantiene la relación de aspecto de la imagen */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+}
 
-    .rule-list ul {
-        gap: 1rem;
-    }
+/* Puedes añadir estilos al texto para una mejor visualización */
+.contenedor-flex p {
+  line-height: 1.5;
+  text-align: left;
+  width: 800px;
+}
 
-    .rule-list li, .section-content .text-content li {
-        padding-left: 0;
-        text-align: center;
-    }
+/* Estado por defecto (enlace sin visitar) */
+a.noticias:link {
+  color: #2E4975;
+  text-decoration: none;
+}
 
-    .rule-list li::before, .section-content .text-content li::before {
-        display: none;
-    }
+/* Enlace al pasar el cursor (más brillante) */
+a.noticias:hover {
+  color: #496492;
+  /* Un tono más claro que el base */
+  text-decoration: underline;
+}
 
-    .section-image {
-        width: 100%;
-        max-width: 250px;
-    }
+/* Enlace ya visitado (más apagado) */
+a.noticias:visited {
+  color: #3D506F;
+  /* Un tono más oscuro y apagado */
+  text-decoration: none;
+}
+
+/* Enlace activo (cuando se está haciendo clic) */
+a.noticias:active {
+  color: #688AB9;
+  /* Un color muy vivo para el momento del clic */
+}
+
+footer {
+  position: relative;
+  text-align: center;
+  padding: 0;
+  margin-top: 0;
+  background-color: #2E4975;
+  color: white;
+  overflow: visible;
+  height: auto; /* let content determine height */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+/* 🔽 Arrow image (remains floating at the top) */
+footer img.borde {
+  position: absolute;
+  top: 0;
+  left: 7%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 60px;
+  height: 60px;
+}
+
+/* 🔽 Footer columns */
+.footer-col {
+  flex: 1 1 30%;
+  min-width: 250px;
+  padding: 1rem;
+  text-align: center;
+}
+
+.contact {
+  list-style: none;
+  font-size: 18px;
+}
+
+/* 🔽 Redes logos */
+.logos {
+  display: flex;
+  gap: 3px;
+  list-style: none;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  margin-top: 10px;
+}
+
+.logos li {
+  display: inline-block;
+}
+
+/* 🔽 Bottom text and arrow */
+.footer-bottom {
+  width: 100%;
+  text-align: center;
+  margin-top: 0;
+  padding-bottom: 10px;
+}
+
+/* Nuevo contenedor para las tarjetas */
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+/* Contenedor principal de la tarjeta */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 500px;
+  perspective: 1000px;
+  margin: 50px 0;
+  cursor: pointer;
+  transition: transform 0.8s;
+  /* Animación para el movimiento y la sombra */
+}
+
+/* La tarjeta se eleva y la sombra se agranda cuando se le hace clic */
+.flip-card.flipped {
+  transform: translateY(-20px);
+  /* El contenedor se mueve hacia arriba */
+}
+
+/* El "contenedor interno" que rota */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  /* Solo transiciona la rotación */
+  transform-style: preserve-3d;
+}
+
+/* Gira el contenedor interno 180 grados en el eje Y cuando tiene la clase 'flipped' */
+.flip-card.flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Estilos de las dos caras de la tarjeta */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+}
+
+/* Estilos para las imágenes dentro de la tarjeta */
+.card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Estilos para el contenido de texto encima de la imagen */
+.card-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  /* Sombra para mejor legibilidad */
+}
+
+/* Contenedor de la imagen */
+.image-container {
+    width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    transition: transform 0.5s, box-shadow 0.5s; /* Transición suave para la elevación y sombra */
+}
+
+/* La imagen original dentro del contenedor */
+.hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s; /* Transición para la opacidad */
+}
+
+/* Efecto al pasar el cursor */
+.image-container:hover {
+    transform: translateY(-10px); /* La imagen se eleva 10px */
+}
+
+/* Cambio de imagen al pasar el cursor */
+.image-container:hover .hover-image {
+    opacity: 0; /* Oculta la imagen original */
+}
+
+/* Aquí se define la segunda imagen como un pseudoelemento */
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/spam\ lleno.png'); /* Reemplaza esta URL por la de tu segunda imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Inicialmente la segunda imagen está oculta */
+    transition: opacity 0.5s;
+}
+
+/* Muestra la segunda imagen al pasar el cursor */
+.image-container:hover::before {
+    opacity: 1; /* La segunda imagen se hace visible */
 }
