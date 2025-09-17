@@ -87,12 +87,12 @@
       <p>
         La <strong>educación vial</strong> no tiene que ser aburrida. 🚦  
         Aquí encontrarás <strong>recursos interactivos, videos y actividades</strong> diseñadas especialmente 
-        para la educa, con el fin de <em>aprender jugando y reflexionando</em> sobre 
+        para la educacion, con el fin de <em>aprender jugando y reflexionando</em> sobre 
         la importancia de la seguridad en las vías.
       </p>
       <p>
         Nuestro objetivo es que descubras cómo <strong>pequeñas acciones pueden salvar vidas</strong>.  
-        ¡Atrévete a explorar, interactuar y ser parte del cambio hacia una movilidad más segura! 🙌
+        ¡Atrévete a explorar, interactuar y ser parte del cambio hacia una movilidad más segura! 
       </p>
     </div>
   </div>
@@ -128,17 +128,10 @@
 <section id="señales" class="intro-senales">
   <h2>Señales de Tránsito</h2>
   <p>
-    Las <strong>señales de tránsito</strong> son elementos visuales esenciales dentro de la movilidad vial, 
-    cuyo propósito principal es <strong>regular, advertir e informar</strong> a los diferentes actores de la vía 
-    —conductores, ciclistas y peatones—. Gracias a ellas, se logra establecer un lenguaje universal que permite la 
-    <strong>prevención de accidentes</strong>, la correcta circulación y el respeto por las normas de tránsito.
+Las señales de tránsito son elementos visuales que regulan, advierten e informan a conductores, ciclistas y peatones, facilitando la circulación segura y la prevención de accidentes.
   </p>
   <p>
-    A continuación, encontrarás una selección de <strong>tarjetas interactivas</strong> que presentan algunas de las principales 
-    señales utilizadas en la ciudad. Cada tarjeta muestra la <strong>imagen de la señal</strong> junto con su 
-    <strong>definición y uso específico</strong>. Además, al dar clic en cada una podrás acceder directamente a su 
-    <strong>fuente original</strong>, reconociendo así los derechos de autor correspondientes.
-  </p>
+    A continuación, encontrarás una selección de tarjetas interactivas con las principales señales de la ciudad, cada una con su imagen, definición y uso. Al hacer clic, podrás acceder a su fuente original respetando los derechos de autor.
 </section>
 
     <!-- DEFINICION SEÑALES DE TRANSITO REGLAMENTARIAS------------------------>
@@ -146,16 +139,9 @@
 <section class="texto-seccion">
   <h2> Algunas Señales de Reglamentación</h2>
   <p>
-    Las <strong>señales de reglamentación</strong> son aquellas que indican a los usuarios de la vía 
-    las <strong>normas específicas de tránsito</strong> que deben cumplir obligatoriamente.  
-    Están diseñadas para garantizar la seguridad vial, la fluidez en la movilidad y la convivencia armónica 
-    entre conductores, ciclistas y peatones.  
+  Las señales de reglamentación indican normas de tránsito de cumplimiento obligatorio para garantizar la seguridad y fluidez vial. Su incumplimiento genera sanciones, pues establecen prohibiciones, restricciones o mandatos claros. A continuación, verás algunas de las más comunes en tarjetas interactivas.
   </p>
-  <p>
-    Su incumplimiento puede generar sanciones, ya que estas señales establecen prohibiciones, 
-    restricciones o mandatos claros como <em>detenerse</em>, <em>no girar</em> o <em>respetar un límite de velocidad</em>.  
-    A continuación, encontrarás algunas de las más comunes representadas en tarjetas interactivas.
-  </p>
+
 </section>
 
     <!------------------------------ TARJETAS DE LAS SEÑALES DE TRANSITO  REGLAMENTARIAS ---------------------------------------->
@@ -250,16 +236,9 @@
 <section class="texto-seccion">
   <h2> Algunas Señales de Prevención</h2>
   <p>
-    Las <strong>señales de prevención</strong> cumplen la función de <strong>alertar</strong> a los usuarios de la vía 
-    sobre la presencia de <strong>riesgos o condiciones especiales</strong> en el camino.  
-    No imponen obligaciones, pero sí advierten situaciones como curvas peligrosas, pasos peatonales, 
-    zonas escolares, reductores de velocidad o posibles derrumbes.
+ Las señales de prevención alertan sobre riesgos o condiciones especiales en la vía, como curvas, pasos peatonales, zonas escolares o derrumbes. No imponen obligaciones, pero invitan a conducir con precaución para evitar accidentes. A continuación, verás algunos ejemplos en tarjetas interactivas.
   </p>
-  <p>
-    Su objetivo principal es que los conductores adopten una actitud preventiva y ajusten su 
-    conducción para <strong>evitar accidentes</strong>.  
-    En el siguiente apartado se presentan algunos ejemplos de estas señales, también en tarjetas interactivas.
-  </p>
+
 </section>
 
 
@@ -363,7 +342,7 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-     border: 2px solid #c62828;
+     
       border-radius: 10px;
       padding: 15px;
       background: #F0F0F0;
@@ -384,29 +363,31 @@
     }
 
     .señales img {
-      width: 120px;
+      width: 150px;
       cursor: grab;
       border: 2px solid transparent;
       border-radius: 8px;
       transition: 0.2s;
+      
     }
 
     .señales img:hover {
       transform: scale(1.1);
       border: 2px solid #c62828;
+        
     }
 
     .definicion {
-      width: 120px;
-      min-height: 100px;
-      border: 2px solid #c62828;
+      width: 100px;
+      min-height: 190px;
+      border: 2px solid #c9c9c9;
       border-radius: 8px;
       background: #ffffff;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      padding: 8px;
+      padding: 5px;
       font-size: 14px;
       cursor: pointer;
       transition: 0.3s;
@@ -460,8 +441,8 @@
   </div>
 
   <!-- Sonidos -->
-  <audio id="correcto" src="sonido-correcto-331225.mp3"></audio>
-  <audio id="incorrecto" src="invalid-selection-39351.mp3"></audio>
+  <audio id="correcto" src="shine-10-268906.mp3"></audio>
+  <audio id="incorrecto" src="error-08-206492.mp3"></audio>
 
   <script>
     const imagenes = document.querySelectorAll(".señales img");
