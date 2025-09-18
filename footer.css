@@ -18,6 +18,10 @@ h1, h2, h3 {
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+p {
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+}
+
 /* 🔽 Arrow image (remains floating at the top) */
 footer img.borde {
   position: absolute;
