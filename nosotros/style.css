@@ -234,6 +234,7 @@ section.teamsection  {
     margin: 50px auto;
     border: 20px #2e58b3;
     flex-wrap: wrap;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
 .team-card-principios1,
@@ -245,7 +246,7 @@ section.teamsection  {
     border-radius: 15px;
     width: 280px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     position: relative;
     overflow: visible;
@@ -266,10 +267,11 @@ section.teamsection  {
     bottom: -10px;   /* sube un poquito como asomándose */
     opacity: 1;
 }
+
 .team-card-principios1:hover {
     transform: translateY(-5px);
     z-index: 10;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
     color: white;
     background-color: #60a566;
     border: #60a566;
@@ -278,7 +280,7 @@ section.teamsection  {
 .team-card-principios2:hover {
     transform: translateY(-5px);
     z-index: 10;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
     color: white;
     background-color: #FFB74D;
     border: #FFB74D;
@@ -287,7 +289,7 @@ section.teamsection  {
 .team-card-principios3:hover {
     transform: translateY(-5px);
     z-index: 10;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    box-shadow: 3px 6px 20px rgba(0, 0, 0, 0.4);
     color: white;
     background-color: #de406d;
     border: #de406d;
@@ -440,11 +442,14 @@ section.teamsection  {
     margin-bottom: 20px;
     color: #333;
     text-align: center;
-    width: 100%; /* ocupa todo el ancho */
-    display: block;
+    width: 100%;
+    display: block; /*
     border: 2px solid #2E4975;
-    border-radius: 11px;
-    background-color: #ffb74d;}
+    border-radius: 11px; */
+    background-color: #ffb74d;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
 
 .team-flip-container {
     display: flex;
@@ -452,6 +457,7 @@ section.teamsection  {
     flex-wrap: wrap;
     gap: 20px;
     width: 100%; /* que no se encoja */
+    padding: 20px 0px;
 }
 
 
@@ -579,6 +585,7 @@ footer img.borde {
   max-width: 400px;
   display: none; /* oculto por defecto */
   z-index: 2;
+  text-align: justify;
 }
 
 .text-box h1 {

@@ -560,3 +560,8 @@ footer img.borde {
   margin-top: 0;
   padding-bottom: 10px;
 }
+
+footer h2 {
+  margin-top: 0% !important;
+  margin-bottom: 0% !important;
+}
