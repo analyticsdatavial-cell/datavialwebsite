@@ -103,53 +103,62 @@ Analizar e identificar la siniestralidad vial en Colombia durante el periodo 201
 
 <!--METODOLOGIA-->
 <!-- archivo: metodologia.html -->
-<section class="mtd-section" aria-labelledby="mtd-title">
-  <header class="mtd-hero" role="banner">
-    <h2 id="mtd-title">Metodología</h2>
-  </header>
+ <section class="mtd-participacion-wrapper">
+  <section class="mtd-section" aria-labelledby="mtd-title">
+    <header class="mtd-hero" role="banner">
+      <h2 id="mtd-title">Metodología</h2>
+    </header>
 
-  <section class="mtd-steps" aria-label="Pasos de la metodología">
-    <article class="mtd-step" data-step="1" tabindex="0">
-      <div class="mtd-num mtd-num-1">1</div>
-      <h3>Investigación participativa</h3>
-      <p>Encuestas, entrevistas y talleres con jóvenes, familias y conductores para entender la cultura vial.</p>
-    </article>
-    <article class="mtd-step" data-step="2" tabindex="0">
-      <div class="mtd-num mtd-num-2">2</div>
-      <h3>Recolección y limpieza de datos</h3>
-      <p>Unimos fuentes (reportes oficiales, cámaras, observaciones) y limpiamos los datos para que sean confiables.</p>
-    </article>
-    <article class="mtd-step" data-step="3" tabindex="0">
-      <div class="mtd-num mtd-num-3">3</div>
-      <h3>Análisis y visualización</h3>
-      <p>Gráficas fáciles, mapas interactivos y mapas de calor para mostrar dónde pasan más accidentes.</p>
-    </article>
-    <article class="mtd-step" data-step="4" tabindex="0">
-      <div class="mtd-num mtd-num-4">4</div>
-      <h3>Acción y prevención</h3>
-      <p>Campañas, juegos educativos y propuestas de infraestructura para reducir riesgos.</p>
-    </article>
+    <section class="mtd-steps" aria-label="Pasos de la metodología">
+      <article class="mtd-step" data-step="1" tabindex="0">
+        <div class="mtd-num mtd-num-1">1</div>
+        <h3>Planteamiento de estudio</h3>
+        <p>
+          La investigación es un análisis cuantitativo que procesa grandes volúmenes de datos estadísticos sobre homicidios, accidentalidad y movilidad para identificar patrones y factores de la siniestralidad. Este estudio tiene un doble propósito: por un lado, un enfoque analítico para comprender el problema y, por otro, un componente educativo que transforma los resultados en material pedagógico para fomentar la cultura vial en la sociedad
+        </p>
+      </article>
+      <article class="mtd-step" data-step="2" tabindex="0">
+        <div class="mtd-num mtd-num-2">2</div>
+        <h3>Recolección de datos</h3>
+        <p>
+Para este estudio se recolectaron datos provenientes de fuentes oficiales y de acceso público, como la Policía Nacional, la Alcaldía de Barranquilla y plataformas de datos abiertos del gobierno. Se incluyeron registros sobre homicidios por accidentes de tránsito, comparendos electrónicos, y estadísticas de accidentalidad y víctimas entre 2018 y 2025.
+        </p>
+      </article>
+      <article class="mtd-step" data-step="3" tabindex="0">
+        <div class="mtd-num mtd-num-3">3</div>
+        <h3>Metodología de procesamiento</h3>
+        <p>
+El procesamiento de datos se hizo con varias herramientas: Excel para limpieza y consultas preliminares; Python para gráficos y análisis de tendencias; R Markdown para informes dinámicos; y Power BI para dashboards que muestran datos detallados de accidentalidad en Barranquilla.        </p>
+      </article>
+      <article class="mtd-step" data-step="4" tabindex="0">
+        <div class="mtd-num mtd-num-4">4</div>
+        <h3>Enfoque educativo</h3>
+        <p>
+          Los resultados obtenidos fueron adaptados para su uso en espacios educativos, especialmente en colegios, con el fin de sensibilizar a niños y jóvenes sobre la importancia de la cultura vial y la prevención de accidentes de tránsito. Asimismo, se busca que la información sea un insumo para autoridades locales y nacionales en la formulación de políticas públicas de movilidad segura.
+        </p>
+      </article>
+    </section>
   </section>
-</section>
 
-<!-- HTML: PARTICIPACIÓN -->
-<section class="participacion-reducida">
-  <h2>Espacio de Participación</h2>
-  <p>Queremos conocer tus ideas para mejorar la movilidad y prevenir los accidentes de tránsito en Barranquilla 🚦.  
-    ¡Tu opinión puede hacer la diferencia!</p>
+  <!-- Participación en línea, con altura igualada -->
+  <section class="participacion-reducida">
+    <h2 style="text-shadow: none;">Espacio de Participación</h2>
+    <p>Queremos conocer tus ideas para mejorar la movilidad y prevenir los accidentes de tránsito en Barranquilla 🚦.  
+      ¡Tu opinión puede hacer la diferencia!</p>
 
-  <form action="#gracias" method="get">
-    <label for="nombre">Nombre:</label>
-    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+    <form action="#gracias" method="get">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
 
-    <label for="edad">Edad:</label>
-    <input type="number" id="edad" name="edad" placeholder="Escribe tu edad" min="10" max="100" required>
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" placeholder="Escribe tu edad" min="10" max="100" required>
 
-    <label for="mensaje">Tu idea:</label>
-    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu propuesta..." required></textarea>
+      <label for="mensaje">Tu idea:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu propuesta..." required></textarea>
 
-    <button type="submit" class="btn-reducido">Enviar mi idea</button>
-  </form>
+      <button type="submit" class="btn-reducido">Enviar mi idea</button>
+    </form>
+  </section>
 </section>
 
 <!-- Popup de agradecimiento -->
