@@ -102,47 +102,63 @@ Analizar e identificar la siniestralidad vial en Colombia durante el periodo 201
 </section>
 
 <!--METODOLOGIA-->
-<div id="metodologia" class="metodologia">
-  <h2 class="metodologia-titulo">Nuestra metodología</h2>
-  
-  <div class="container">
-    <div class="timeline">
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 1: Data Collection</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We gather traffic data through sensors, cameras, and surveys.</p>
-        </div>
-      </div>
+<!-- archivo: metodologia.html -->
+<section class="mtd-section" aria-labelledby="mtd-title">
+  <header class="mtd-hero" role="banner">
+    <h2 id="mtd-title">Metodología</h2>
+  </header>
 
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 2: Risk Analysis</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We identify accident-prone areas and analyze contributing factors.</p>
-        </div>
-      </div>
+  <section class="mtd-steps" aria-label="Pasos de la metodología">
+    <article class="mtd-step" data-step="1" tabindex="0">
+      <div class="mtd-num mtd-num-1">1</div>
+      <h3>Investigación participativa</h3>
+      <p>Encuestas, entrevistas y talleres con jóvenes, familias y conductores para entender la cultura vial.</p>
+    </article>
+    <article class="mtd-step" data-step="2" tabindex="0">
+      <div class="mtd-num mtd-num-2">2</div>
+      <h3>Recolección y limpieza de datos</h3>
+      <p>Unimos fuentes (reportes oficiales, cámaras, observaciones) y limpiamos los datos para que sean confiables.</p>
+    </article>
+    <article class="mtd-step" data-step="3" tabindex="0">
+      <div class="mtd-num mtd-num-3">3</div>
+      <h3>Análisis y visualización</h3>
+      <p>Gráficas fáciles, mapas interactivos y mapas de calor para mostrar dónde pasan más accidentes.</p>
+    </article>
+    <article class="mtd-step" data-step="4" tabindex="0">
+      <div class="mtd-num mtd-num-4">4</div>
+      <h3>Acción y prevención</h3>
+      <p>Campañas, juegos educativos y propuestas de infraestructura para reducir riesgos.</p>
+    </article>
+  </section>
+</section>
 
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 3: Action Plan</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We design and implement targeted interventions like speed bumps and signage.</p>
-        </div>
-      </div>
+<!-- HTML: PARTICIPACIÓN -->
+<section class="participacion-reducida">
+  <h2>Espacio de Participación</h2>
+  <p>Queremos conocer tus ideas para mejorar la movilidad y prevenir los accidentes de tránsito en Barranquilla 🚦.  
+    ¡Tu opinión puede hacer la diferencia!</p>
 
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 4: Public Awareness</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We educate the community about traffic safety through campaigns and workshops.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="image-container">
-      <img src="images/road.png" alt="ROAD IMAGE">
-    </div>
+  <form action="#gracias" method="get">
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+    <label for="edad">Edad:</label>
+    <input type="number" id="edad" name="edad" placeholder="Escribe tu edad" min="10" max="100" required>
+
+    <label for="mensaje">Tu idea:</label>
+    <textarea id="mensaje" name="mensaje" placeholder="Escribe tu propuesta..." required></textarea>
+
+    <button type="submit" class="btn-reducido">Enviar mi idea</button>
+  </form>
+</section>
+
+<!-- Popup de agradecimiento -->
+<div id="gracias" class="popup-reducida">
+  <div class="popup-content-reducida">
+    <h3>¡Gracias por participar!</h3>
+    <p>Tu propuesta ha sido registrada.  
+      Juntos podemos hacer de Colombia un país más seguro 🚦.</p>
+    <a href="#" class="close-reducida">Cerrar</a>
   </div>
 </div>
 
