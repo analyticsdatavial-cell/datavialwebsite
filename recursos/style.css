@@ -234,9 +234,10 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .recursos-educativos .texto p {
-  font-size: 20px;
+  font-size: 20px;  
+  text-align: justify;
   line-height: 1.6;
-  color: #2E4975; 
+  color: #000000; 
   margin-bottom: 10px;
 }
 
