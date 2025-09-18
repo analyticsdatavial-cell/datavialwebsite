@@ -228,9 +228,10 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .recursos-educativos .texto h2 {
-  font-size: 40px;
+  font-size: 2rem;
   color: #c62828; /* rojo fuerte */
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .recursos-educativos .texto p {
@@ -239,6 +240,7 @@ nav li:has(.submenu:hover) > .submenu {
   line-height: 1.6;
   color: #000000; 
   margin-bottom: 10px;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -255,12 +257,14 @@ nav li:has(.submenu:hover) > .submenu {
   .video-section h2 {
     color: #dc2626;
     margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
   .video-section p{
     font-size: 20px;
     text-align: justify;
      color: #000000; 
+     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
   }
 
   .video-grid {
@@ -313,10 +317,11 @@ nav li:has(.submenu:hover) > .submenu {
 
 .texto-seccion h1 {
   color:  #c62828;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .texto-seccion h3 {
-  font-size: 23px;
+  font-size: 2rem;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
@@ -329,6 +334,7 @@ nav li:has(.submenu:hover) > .submenu {
   margin-bottom: 10px;
   text-align: justify;
    color: #000000; 
+   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -340,17 +346,19 @@ nav li:has(.submenu:hover) > .submenu {
   color: #333;
 }
 .intro-senales h1 {
-  font-size: 40px;
+  font-size: 2rem;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .intro-senales h2 {
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
    
 }
 
@@ -369,6 +377,7 @@ margin-bottom: 1px; /* espacio abajo */
   margin-bottom: 10px;
   text-align: justify;
    color: #000000; 
+   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* ESTILO DE LAS TARJETAS DE SEÑALES DE TRANSITO */
@@ -429,7 +438,7 @@ margin-bottom: 1px; /* espacio abajo */
 
 .card__title {
   margin: 0;
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: 700;
   color: #333;
 }
@@ -488,8 +497,9 @@ margin-bottom: 1px; /* espacio abajo */
 .senales h3, .definiciones h3 {
   color: #c40000; /* rojo vial */
   margin-bottom: 15px;
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -503,9 +513,10 @@ margin-bottom: 1px; /* espacio abajo */
 }
 
 .actividades h2 {
-  font-size: 30px;
+  font-size: 2rem;
   color: #c40000;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .actividades p {
@@ -513,6 +524,7 @@ margin-bottom: 1px; /* espacio abajo */
   color: #000000;
   margin-bottom: 30px;
   text-align: justify;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 .actividad-card {
   display: block;
