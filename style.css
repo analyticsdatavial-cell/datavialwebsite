@@ -289,7 +289,7 @@ nav li:has(.submenu:hover) > .submenu {
 
 .intro p {
   color: #2E4975;
-  text-shadow: 4px 2px 4px rgba(0, 0, 0, 0.25);
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
   font-size: 20px;
 }
 
@@ -365,108 +365,242 @@ nav li:has(.submenu:hover) > .submenu {
   line-height: 1.5;
 }
 
-/* Replace your current .container class with this */
-.container {
+/* archivo: metodologia.css */
+
+:root {
+  --mtd-amarillo: #ffd166;
+  --mtd-card: #fccc5d;
+  --mtd-gris: #1e2836;
+  --mtd-fondo: #ffffff;
+  --mtd-radius: 14px;
+  --mtd-shadow: rgba(16, 24, 40, 0.06);
+  --mtd-hover-shadow: rgba(16, 24, 40, 0.12);
+  --mtd-transition: 300ms cubic-bezier(.2,.9,.33,1);
+}
+
+.mtd-section a {
+  text-decoration: none;
+  color: #000;
+  font-style: italic;
+}
+/* CONTENEDOR FLEX PADRE */
+.mtd-participacion-wrapper {
   display: flex;
-  gap: 30px;
-  align-items: flex-start;
+  gap: 24px;
+  max-width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  align-items: stretch; /* Hace que hijos tengan igual altura */
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
 }
 
-/* Replace your current .metodologia class with this */
-.metodologia {
-  background-color: #f4f4f4; 
-  padding: 20px 20px 0px 20px;
-  border-radius: 16px;
-  max-width: 1200px;
-  margin: 20px auto;
-  box-shadow: 4px 6px 20px rgba(0,0,0,0.25);
-  box-sizing: border-box;
+.mtd-section {
+  flex: 2;
+  background: var(--mtd-fondo);
+  color: var(--mtd-gris);
+  border-radius: 16px; /* 👈 esto */
+  box-shadow: 2px 5px 18px rgba(0,0,0,0.2); /* opcional para darle profundidad */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
-/* Replace your current .timeline class with this */
-.timeline {
-  position: relative;
-  margin-top: 8px;
-  margin-left: 0;
-  padding-left: 40px;
-  border-left: 3px solid #FFCC00;
-  overflow: visible;
-  flex: 1;
+.mtd-hero {
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  padding: 18px;
+  border-radius: var(--mtd-radius);
+  background: linear-gradient(90deg, var(--mtd-card));
+  box-shadow: 0 6px 18px rgba(238, 255, 4, 0.06);
 }
 
-/* Replace your current .image-container with this */
-.image-container {
-  flex: 1;
-  aspect-ratio: 1 / 0.8;   /* Changed from 1 / 1 to 1 / 0.8 to make it shorter */
-  border-radius: 16px;
-  box-shadow: 4px 6px 12px rgba(0,0,0,0.3);
-  overflow: hidden;
+.mtd-hero h2 {
+  margin: 0;
+  font-size: 20px;
+  color: var(--mtd-gris);
 }
 
+.mtd-steps {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin-top: 18px;
+}
 
-/* 🆕 Add space between circle and text */
-.step-header {
-  background: none;
-  border: none;
-  padding: 10px 0 10px 20px;  /* Left padding added */
-  font-size: 18px;
-  font-weight: bold;
+.mtd-step {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 6px 18px var(--mtd-shadow);
   cursor: pointer;
-  color: #333;
-  width: 100%;
-  text-align: left;
+  transform: translateY(0);
+  transition: transform var(--mtd-transition), box-shadow var(--mtd-transition);
+  text-align: justify;
 }
 
-.step {
-  position: relative;
-  margin-bottom: 40px;
+.mtd-step:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 18px 30px var(--mtd-hover-shadow);
 }
 
-.step-marker {
-  position: absolute;
-  left: -8px;
-  top: 11px;
-  width: 20px;
-  height: 20px;
-  background-color: #000;
-  border: 3px solid #FFCC00;
-  border-radius: 50%;
-  z-index: 10;
+.mtd-num {
+  display: inline-flex;
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: #000;
+  margin-bottom: 8px;
+  background: var(--mtd-amarillo);
 }
 
-.step-content {
-  display: none;
-  padding: 8px 20px;
-  background-color: #f5f5f5;
-  border-left: 4px solid #FFCC00;
-  margin-top: 8px;
-  border-radius: 4px;
+.mtd-step h3 {
+  margin: 4px 0 6px;
   font-size: 16px;
 }
 
-/* 🆕 Methodology Section Title */
-.metodologia-titulo {
-  font-size: 28px;
-  font-weight: bold;
+.mtd-step p {
+  margin: 0;
+  color: #475569;
+  font-size: 14px;
+}
+
+/* PARTICIPACIÓN REORDENADA PARA FLEX Y ALTURA IGUAL */
+.participacion-reducida {
+  flex: 1;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  border-left: 8px solid #fccc5d;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: none; /* quita max-width para que el flex funcione bien */
+  margin: 0; /* quita margenes para evitar que el contenedor se separe */
+  box-shadow: 2px 5px 18px rgba(0,0,0,0.2); /* opcional para darle profundidad */
+  padding-bottom: 12px;
+}
+
+.participacion-reducida h2 {
   text-align: center;
-  margin-bottom: 40px;
-  color: #222;
-  border-bottom: 2px solid #FFCC00;
-  display: inline-block;
-  padding-bottom: 10px;
+  color: #fccc5d;
+  font-size: 1.7em;
+  margin-bottom: 8px;
 }
 
-.metodologia, 
-.image-container {
-  flex: 1; /* each takes equal space */
-  box-sizing: border-box; /* so padding/borders won’t break layout */
+.participacion-reducida p {
+  text-align: center;
+  font-size: 1em;
+  margin-bottom: 20px;
+  color: #555;
 }
 
-.image-container img {
+.participacion-reducida form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  flex-grow: 1; /* hace que el form crezca para llenar el contenedor */
+}
+
+.participacion-reducida input,
+.participacion-reducida textarea {
+  padding: 10px;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95em;
+  transition: border-color 0.3s ease;
+}
+
+.participacion-reducida input:focus,
+.participacion-reducida textarea:focus {
+  border-color: #fccc5d;
+  outline: none;
+  box-shadow: 0 0 6px rgba(252, 204, 93, 0.4);
+}
+
+.participacion-reducida textarea {
+  resize: none;
+  height: 100%;
+}
+
+.btn-reducido {
+  background: #fccc5d;
+  color: white;
+  font-size: 1em;
+  font-weight: bold;
+  border: none;
+  padding: 12px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+
+.btn-reducido:hover {
+  background: #e6b84f;
+}
+
+/* Popup reducido */
+.popup-reducida {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  object-fit: cover;     /* fill container while maintaining ratio */
-  display: block;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup-reducida:target {
+  display: flex;
+}
+
+.popup-content-reducida {
+  background: #ffffff;
+  padding: 24px;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+  max-width: 360px;
+  border-top: 8px solid #fccc5d;
+  animation: zoom 0.3s ease;
+}
+
+.popup-content-reducida h3 {
+  margin: 0 0 10px;
+  color: #fccc5d;
+  font-size: 1.5em;
+}
+
+.popup-content-reducida p {
+  margin-bottom: 16px;
+  font-size: 1em;
+  color: #444;
+}
+
+.close-reducida {
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fccc5d;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.close-reducida:hover {
+  background: #e6b84f;
+}
+
+@keyframes zoom {
+  from { transform: scale(0.8); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
 }
 
 /* Responsividad */
@@ -485,6 +619,7 @@ nav li:has(.submenu:hover) > .submenu {
   .objetivo-general .text {
     max-width: 900px;
   }
+
 }
 
 @media (min-width: 1200px) {
