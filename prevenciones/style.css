@@ -233,6 +233,18 @@ p:hover .texto-oculto {
   opacity: 1;
 }
 
+.contenedor{
+  display: flex;
+  align-items: center;
+  /* Alinea los elementos verticalmente al centro */
+  gap: 20px;
+  /* Añade espacio entre la imagen y el texto */
+  width: 800px;
+  /* Opcional: limita el ancho del contenedor */
+  margin: 0 auto;
+  /* Opcional: centra el contenedor en la página */
+}
+
 .contenedor-flex {
   display: flex;
   align-items: center;
@@ -257,7 +269,7 @@ p:hover .texto-oculto {
 /* Puedes añadir estilos al texto para una mejor visualización */
 .contenedor-flex p {
   line-height: 1.5;
-  text-align: left;
+  text-align: justify;
   width: 800px;
 }
 
@@ -415,4 +427,61 @@ a.noticias:active {
 /* Muestra la segunda imagen al pasar el cursor */
 .image-container:hover::before {
     opacity: 1; /* La segunda imagen se hace visible */
+}
+
+/* Contenedor principal con Flexbox */
+.container-futuro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* O el valor que desees */
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Contenedor de la imagen sin márgenes que estorben */
+.image-container {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s, box-shadow 0.5s;
+    /* Eliminamos el margin de 50px auto; */
+    margin: 0; 
+}
+
+/* El resto de tu código CSS para las imágenes y efectos hover... */
+.hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s;
+}
+
+.image-container:hover {
+    transform: translateY(-10px);
+}
+
+.image-container:hover .hover-image {
+    opacity: 0;
+}
+
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/spam lleno.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.image-container:hover::before {
+    opacity: 1;
 }
