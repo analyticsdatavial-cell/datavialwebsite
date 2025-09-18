@@ -4,7 +4,7 @@ footer {
   padding: 0;
   margin-top: 0;
   background-color: #2E4975;
-  color: white;
+  color: white !important;
   overflow: visible;
   height: auto; /* let content determine height */
   display: flex;
@@ -12,6 +12,10 @@ footer {
   justify-content: space-between;
   align-items: flex-start;
   align-items: stretch; /* 👈 Hace que todas las columnas crezcan a la misma altura */
+}
+
+h1, h2, h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 /* 🔽 Arrow image (remains floating at the top) */

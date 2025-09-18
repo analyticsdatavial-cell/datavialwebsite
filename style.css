@@ -378,15 +378,31 @@ nav li:has(.submenu:hover) > .submenu {
   --mtd-transition: 300ms cubic-bezier(.2,.9,.33,1);
 }
 
-.mtd-section {
-  max-width: 1100px;
-  margin: 32px auto;
+.mtd-section a {
+  text-decoration: none;
+  color: #000;
+  font-style: italic;
+}
+/* CONTENEDOR FLEX PADRE */
+.mtd-participacion-wrapper {
+  display: flex;
+  gap: 24px;
+  max-width: 100%;
+  margin: 10px auto;
   padding: 20px;
+  align-items: stretch; /* Hace que hijos tengan igual altura */
   font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+.mtd-section {
+  flex: 2;
   background: var(--mtd-fondo);
   color: var(--mtd-gris);
   border-radius: 16px; /* 👈 esto */
-  box-shadow: 3px 6px 18px rgba(0,0,0,0.3); /* opcional para darle profundidad */
+  box-shadow: 2px 5px 18px rgba(0,0,0,0.2); /* opcional para darle profundidad */
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
 }
 
 .mtd-hero {
@@ -420,6 +436,7 @@ nav li:has(.submenu:hover) > .submenu {
   cursor: pointer;
   transform: translateY(0);
   transition: transform var(--mtd-transition), box-shadow var(--mtd-transition);
+  text-align: justify;
 }
 
 .mtd-step:hover {
@@ -451,15 +468,20 @@ nav li:has(.submenu:hover) > .submenu {
   font-size: 14px;
 }
 
-/* CSS */
+/* PARTICIPACIÓN REORDENADA PARA FLEX Y ALTURA IGUAL */
 .participacion-reducida {
-  max-width: 600px;
-  margin: 40px auto;
+  flex: 1;
   background: #ffffff;
   border-radius: 16px;
   padding: 24px;
-  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.08);
   border-left: 8px solid #fccc5d;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  max-width: none; /* quita max-width para que el flex funcione bien */
+  margin: 0; /* quita margenes para evitar que el contenedor se separe */
+  box-shadow: 2px 5px 18px rgba(0,0,0,0.2); /* opcional para darle profundidad */
+  padding-bottom: 12px;
 }
 
 .participacion-reducida h2 {
@@ -480,12 +502,7 @@ nav li:has(.submenu:hover) > .submenu {
   display: flex;
   flex-direction: column;
   gap: 12px;
-}
-
-.participacion-reducida label {
-  font-weight: bold;
-  color: #333;
-  font-size: 0.95em;
+  flex-grow: 1; /* hace que el form crezca para llenar el contenedor */
 }
 
 .participacion-reducida input,
@@ -506,7 +523,7 @@ nav li:has(.submenu:hover) > .submenu {
 
 .participacion-reducida textarea {
   resize: none;
-  height: 100px;
+  height: 100%;
 }
 
 .btn-reducido {
@@ -585,7 +602,6 @@ nav li:has(.submenu:hover) > .submenu {
   from { transform: scale(0.8); opacity: 0; }
   to { transform: scale(1); opacity: 1; }
 }
-
 
 /* Responsividad */
 @media (max-width: 768px) {
