@@ -222,7 +222,7 @@ nav li:has(.submenu:hover) > .submenu {
 
 .recursos-educativos .texto {
   flex: 1;
-  text-align: left;   
+  text-align: justify; 
 
     
 }
@@ -248,7 +248,7 @@ nav li:has(.submenu:hover) > .submenu {
 /* VIDEOS EDUCATIVOS*/
     .video-section {
     margin: 60px auto;
-    text-align: center;
+    text-align: justify;
     max-width: 1200px;
   }
 
@@ -259,6 +259,8 @@ nav li:has(.submenu:hover) > .submenu {
   }
   .video-section p{
     font-size: 20px;
+    text-align: justify;
+     color: #000000; 
   }
 
   .video-grid {
@@ -306,20 +308,27 @@ nav li:has(.submenu:hover) > .submenu {
   margin: 40px auto;
   text-align: center;
   padding: 20px;
-  color: #333;
+  color: #000000;
 }
 
-.texto-seccion h2 {
-  font-size: 30px;
+.texto-seccion h1 {
+  color:  #c62828;
+}
+
+.texto-seccion h3 {
+  font-size: 23px;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
+  margin-top: 0px;
 }
 
 .texto-seccion p {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
+  text-align: justify;
+   color: #000000; 
 }
 
 
@@ -330,18 +339,36 @@ nav li:has(.submenu:hover) > .submenu {
   padding: 20px;
   color: #333;
 }
+.intro-senales h1 {
+  font-size: 40px;
+  font-weight: bold;
+  color: #c62828; /* rojo institucional */
+  margin-bottom: 15px;
+}
 
 .intro-senales h2 {
   font-size: 30px;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
+   
 }
+
+
+
+
+.intro-senales h2, h1 {
+margin-top: 1px;   /* espacio arriba */
+margin-bottom: 1px; /* espacio abajo */
+}
+
 
 .intro-senales p {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
+  text-align: justify;
+   color: #000000; 
 }
 
 /* ESTILO DE LAS TARJETAS DE SEÑALES DE TRANSITO */
@@ -483,8 +510,9 @@ nav li:has(.submenu:hover) > .submenu {
 
 .actividades p {
   font-size: 20px;
-  color: #444;
+  color: #000000;
   margin-bottom: 30px;
+  text-align: justify;
 }
 .actividad-card {
   display: block;
