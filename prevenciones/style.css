@@ -9,12 +9,35 @@
 
 body {
   color: #2E4975;
+  /* azul más claro */
   line-height: 1.6;
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
-  background-color: #e6e6e6; /* Agregado para consistencia */
+}
+
+header {
+  background-color: #2E4975;
+  color: white;
+  height: 15%;
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 1%;
+}
+
+#start {
+  display: flex;
+  align-items: center;
+}
+
+#title {
+  font-size: 2.5rem;
+  font-weight: bold;
 }
 
 nav {
@@ -26,6 +49,7 @@ nav {
 
 nav ul {
   --gap: 2rem;
+  /* valor de separación entre li */
   list-style: none;
   display: flex;
   gap: var(--gap);
@@ -38,6 +62,7 @@ nav li {
   padding: 0 1rem;
 }
 
+/* Línea centrada en el espacio entre elementos pero a la izquierda */
 nav>ul>li:not(:first-child)::before {
   content: "";
   position: absolute;
@@ -58,23 +83,35 @@ nav a {
 
 nav>ul>li:hover>a {
   color: #ffb74d;
+  /* COLOCAR COLOR AMARILLO SOLO EN EL MENU PRINCIPAL */
 }
 
+/* SUBMENU */
 nav ul .submenu {
   display: none;
   position: absolute;
+  /* Se posiciona en relación al <li> padre */
   top: 100%;
+  /* Lo coloca justo debajo del <li> principal */
   left: 0;
+  /* Alinea el submenú al lado izquierdo del padre */
   background: #e0e0e0;
+  /* Color de fondo gris claro para el submenú */
   padding: 0;
+  /* Quita el espacio interno (padding) del <ul> */
   margin: 0;
+  /* Quita márgenes del <ul> del submenú */
   list-style: none;
+  /* Elimina viñetas o bullets de la lista */
   min-width: 180px;
+  /* Asegura que el submenú tenga un ancho mínimo */
   z-index: 1000;
+  /* Lo coloca encima de otros elementos en la página */
 }
 
 nav ul .submenu li {
   position: relative;
+  /* Necesario para que funcione el ::after */
   transition: background-color 0.3s ease;
 }
 
@@ -85,19 +122,25 @@ nav ul .submenu li::after {
   left: 50%;
   transform: translateX(-50%);
   width: 85%;
+  /* << aquí controlas el ancho de la línea */
   height: 1px;
   background-color: #000;
 }
 
 nav ul .submenu li:last-child::after {
   content: none;
+  /* Quita la línea del último */
 }
 
 nav ul .submenu a {
   color: #000000;
+  /* El texto de las opciones del submenú será negro */
   font-weight: 500;
+  /* Peso medio en la tipografía (un poco más gruesa que normal) */
   padding: 0.75rem 1rem;
+  /* Espaciado interno arriba/abajo (0.75rem) y a los lados (1rem) */
   display: block;
+  /* Hace que el enlace ocupe todo el ancho disponible (clickeable en toda el área) */
   transition: color 0.2s ease;
 }
 
@@ -113,46 +156,67 @@ nav ul .submenu a:hover {
   color: red;
 }
 
+/* Mostrar submenu al hacer hover */
 nav li:hover>.submenu,
 nav li:has(.submenu:hover)>.submenu {
   display: block;
+  /* Se mantiene visible incluso si pasas por el submenu */
 }
 
 .sub {
   display: flex;
   align-items: center;
+  /* centra verticalmente texto e imagen */
   gap: 0.5rem;
+  /* espacio entre la imagen y el texto */
 }
 
 .sub img {
   flex-shrink: 0;
+  /* evita que la imagen se deforme o reduzca */
 }
 
 #btn {
   display: flex;
   justify-content: center;
+  /* Centra horizontalmente */
   align-items: center;
+  /* Centra verticalmente */
   width: 50px;
+  /* o el valor que uses */
   height: 50px;
   background: transparent;
+  /* no blanco */
   padding: 0;
   border: none;
 }
 
 #btn img {
   max-width: 70%;
+  /* ajusta según necesites */
   max-height: 70%;
 }
 
-.imagen, .image-centered {
+/* Responsividad */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 1rem;
+  }
+}
+
+body {
+  background-color: #e6e6e6;
+}
+
+.imagen {
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-  width: 90%; /* Ajuste para móviles */
-  max-width: 600px; /* Ancho máximo en escritorio */
-  height: auto;
-  display: block;
-  margin: 20px auto;
 }
 
 .sombra {
@@ -160,8 +224,7 @@ nav li:has(.submenu:hover)>.submenu {
 }
 
 p:not(footer p) {
-  width: 100%;
-  max-width: 300px;
+  width: 300px;
   text-align: center;
 }
 
@@ -170,143 +233,115 @@ p:hover .texto-oculto {
   opacity: 1;
 }
 
-/* Nuevo CSS para contenedores de texto e imágenes (secciones principales) */
-.content-section-welcome,
-.content-section-centered,
-.content-section {
-    display: flex;
-    flex-direction: column;
-    align-items: center; /* Centra el contenido */
-    margin: 20px auto;
-    width: 100%;
-    max-width: 1200px;
+.contenedor{
+  display: flex;
+  align-items: center;
+  /* Alinea los elementos verticalmente al centro */
+  gap: 20px;
+  /* Añade espacio entre la imagen y el texto */
+  width: 800px;
+  /* Opcional: limita el ancho del contenedor */
+  margin: 0 auto;
+  /* Opcional: centra el contenedor en la página */
 }
 
-.content-section-welcome {
-    background-color: #d2d2d2;
-    color: white;
-    text-shadow: 3px 3px 5px gray;
-    padding: 20px 10px;
-}
-
-.content-section-centered {
-    text-align: center;
-}
-
-.slogan-text {
-    font-size: 23px;
-    display: block; /* Para que ocupe su propio bloque y se centre */
-    margin: 20px 0;
-    padding: 0 10px;
-}
-
-.section-title,
-.section-body {
-    width: 100%;
-    max-width: 1000px;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-    padding: 20px;
-    text-align: center;
-}
-
-.section-title {
-    background-color: #b5b5b5;
-    color: white;
-    margin-bottom: 20px;
-}
-
-.section-body {
-    background-color: #f0f0f0;
-}
-
-/* Estilos de los contenedores flexibles */
 .contenedor-flex {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
-    width: 100%;
-    max-width: 900px; /* Ancho máximo para el contenedor */
-    margin: 0 auto;
-    padding: 0;
+  display: flex;
+  align-items: center;
+  /* Alinea los elementos verticalmente al centro */
+  gap: 20px;
+  /* Añade espacio entre la imagen y el texto */
+  width: 800px;
+  /* Opcional: limita el ancho del contenedor */
+  margin: 0 auto;
+  /* Opcional: centra el contenedor en la página */
 }
 
 .contenedor-flex img {
-    width: 100%;
-    max-width: 450px;
-    height: auto;
-    box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
-    border-radius: 10px;
+  width: 360px;
+  /* Controla el tamaño de la imagen */
+  height: auto;
+  /* Mantiene la relación de aspecto de la imagen */
+  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
 }
 
+/* Puedes añadir estilos al texto para una mejor visualización */
 .contenedor-flex p {
-    line-height: 1.5;
-    text-align: justify;
-    width: 100%;
-    max-width: 500px;
+  line-height: 1.5;
+  text-align: justify;
+  width: 800px;
 }
 
-
-/* Estados de los enlaces */
+/* Estado por defecto (enlace sin visitar) */
 a.noticias:link {
   color: #2E4975;
   text-decoration: none;
 }
 
+/* Enlace al pasar el cursor (más brillante) */
 a.noticias:hover {
   color: #496492;
+  /* Un tono más claro que el base */
   text-decoration: underline;
 }
 
+/* Enlace ya visitado (más apagado) */
 a.noticias:visited {
   color: #3D506F;
+  /* Un tono más oscuro y apagado */
   text-decoration: none;
 }
 
+/* Enlace activo (cuando se está haciendo clic) */
 a.noticias:active {
   color: #688AB9;
+  /* Un color muy vivo para el momento del clic */
 }
 
 /* Nuevo contenedor para las tarjetas */
 .cards-wrapper {
   display: flex;
   justify-content: center;
-  gap: 1rem;
+  gap: 3rem;
   flex-wrap: wrap;
-  padding: 1rem;
 }
 
+/* Contenedor principal de la tarjeta */
 .flip-card {
   background-color: transparent;
-  width: 100%;
-  max-width: 300px;
-  height: 450px;
+  width: 300px;
+  height: 500px;
   perspective: 1000px;
-  margin: 20px auto;
+  margin: 50px 0;
   cursor: pointer;
-  transition: transform 0.8s, box-shadow 0.8s;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
+  transition: transform 0.8s;
+  /* Animación para el movimiento y la sombra */
 }
 
+/* La tarjeta se eleva y la sombra se agranda cuando se le hace clic */
 .flip-card.flipped {
-  transform: translateY(-10px);
-  box-shadow: 15px 15px 20px rgba(0, 0, 0, 0.6);
+  transform: translateY(-20px);
+  /* El contenedor se mueve hacia arriba */
 }
 
+/* El "contenedor interno" que rota */
 .flip-card-inner {
   position: relative;
   width: 100%;
   height: 100%;
   text-align: center;
   transition: transform 0.8s;
+  /* Solo transiciona la rotación */
   transform-style: preserve-3d;
 }
 
+/* Gira el contenedor interno 180 grados en el eje Y cuando tiene la clase 'flipped' */
 .flip-card.flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 
+/* Estilos de las dos caras de la tarjeta */
 .flip-card-front,
 .flip-card-back {
   position: absolute;
@@ -326,6 +361,7 @@ a.noticias:active {
   transform: rotateY(180deg);
 }
 
+/* Estilos para las imágenes dentro de la tarjeta */
 .card-image {
   width: 100%;
   height: 100%;
@@ -335,304 +371,215 @@ a.noticias:active {
   left: 0;
 }
 
+/* Estilos para el contenido de texto encima de la imagen */
 .card-content {
   position: relative;
   z-index: 2;
   padding: 20px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+  /* Sombra para mejor legibilidad */
 }
 
+/* Contenedor de la imagen */
 .image-container {
-  width: 100%;
-  max-width: 500px;
-  height: 300px;
-  margin: 0;
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.5s, box-shadow 0.5s;
+    width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    position: relative;
+    overflow: hidden; /* Oculta cualquier desbordamiento de la imagen */
+    transition: transform 0.5s, box-shadow 0.5s; /* Transición suave para la elevación y sombra */
 }
 
+/* La imagen original dentro del contenedor */
 .hover-image {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  transition: opacity 0.5s;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s; /* Transición para la opacidad */
+}
+
+/* Efecto al pasar el cursor */
+.image-container:hover {
+    transform: translateY(-10px); /* La imagen se eleva 10px */
+}
+
+/* Cambio de imagen al pasar el cursor */
+.image-container:hover .hover-image {
+    opacity: 0; /* Oculta la imagen original */
+}
+
+/* Aquí se define la segunda imagen como un pseudoelemento */
+.image-container::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/spam\ lleno.png'); /* Reemplaza esta URL por la de tu segunda imagen */
+    background-size: cover;
+    background-position: center;
+    opacity: 0; /* Inicialmente la segunda imagen está oculta */
+    transition: opacity 0.5s;
+}
+
+/* Muestra la segunda imagen al pasar el cursor */
+.image-container:hover::before {
+    opacity: 1; /* La segunda imagen se hace visible */
+}
+
+/* Contenedor principal con Flexbox */
+.container-futuro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* O el valor que desees */
+    max-width: 1300px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Contenedor de la imagen sin márgenes que estorben */
+.image-container {
+    width: 500px;
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.5s, box-shadow 0.5s;
+    /* Eliminamos el margin de 50px auto; */
+    margin: 0; 
+}
+
+/* El resto de tu código CSS para las imágenes y efectos hover... */
+.hover-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.5s;
 }
 
 .image-container:hover {
-  transform: translateY(-10px);
+    transform: translateY(-10px);
 }
 
 .image-container:hover .hover-image {
-  opacity: 0;
+    opacity: 0;
 }
 
 .image-container::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('imagenes/spam lleno.png');
-  background-size: cover;
-  background-position: center;
-  opacity: 0;
-  transition: opacity 0.5s;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('imagenes/spam lleno.png');
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.5s;
 }
 
 .image-container:hover::before {
-  opacity: 1;
+    opacity: 1;
 }
 
-.container-futuro {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  max-width: 1300px;
-  margin: 0 auto;
-  text-align: left;
-  flex-wrap: wrap; /* Añadido para que se envuelva en móviles */
-}
-
-.text-futuro {
-  font-size: 23px;
-  text-align: center;
-  flex-basis: 400px;
-}
-
-.title-futuro {
-  font-size: 30px;
-}
-
-/* Media Queries para responsividad */
 @media (max-width: 1200px) {
-  .contenedor-flex, .container-futuro {
-    width: 95%;
-    flex-direction: column;
-    text-align: center;
-  }
-
-  .contenedor-flex img {
-    width: 80%;
-    height: auto;
-  }
-
-  .contenedor-flex p {
-    width: 90%;
-    text-align: center;
-  }
-
-  .image-container {
-    width: 90%;
-    height: auto;
-    margin: 20px 0;
-  }
-
-  .flip-card {
-    width: 250px;
-    height: 400px;
-  }
+    .container-futuro,
+    .contenedor-flex {
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+    }
+    .image-container,
+    .contenedor-flex img {
+        width: 80%;
+        height: auto;
+    }
+    .contenedor-flex p {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .info-section,
+    .text-section {
+        width: 90% !important;
+    }
 }
 
 @media (max-width: 1024px) {
-  header {
-    height: auto;
-    flex-direction: column;
-    align-items: center;
-  }
-
-  #start {
-    justify-content: center;
-    text-align: center;
-    padding: 10px 0;
-  }
-
-  nav {
-    margin-left: 0;
-    padding: 10px 0;
-  }
-
-  nav ul {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem;
-    padding: 0 10px;
-  }
-
-  nav > ul > li:not(:first-child)::before {
-    content: none;
-  }
-
-  .container-futuro {
-    flex-direction: column;
-    text-align: center;
-  }
+    .cards-wrapper {
+        gap: 2rem;
+    }
+    .flip-card {
+        width: 45%;
+    }
 }
 
 @media (max-width: 768px) {
-  #title {
-    font-size: 2rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  nav ul .submenu {
-    position: static;
-    display: none;
-    background: none;
-    min-width: unset;
-    padding-left: 20px;
-  }
-
-  nav ul li:hover > .submenu,
-  nav ul li:has(.submenu:hover) > .submenu {
-    display: block;
-  }
-
-  .contenedor-flex, .container-futuro {
-    width: 90%;
-  }
-
-  .contenedor-flex img {
-    width: 90%;
-  }
-
-  .flip-card {
-    width: 90%;
-    height: auto;
-  }
-
-  .cards-wrapper {
-    gap: 1rem;
-  }
-
-  footer {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-  }
-  
-  .footer-col {
-    width: 100%;
-    margin-bottom: 20px;
-  }
-
-  .logos {
-    justify-content: center;
-  }
+    #start {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    #logo {
+        width: 80px;
+        height: 80px;
+        margin: 10px 0;
+    }
+    #title {
+        font-size: 2rem;
+    }
+    nav ul {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 10px 0;
+    }
+    nav li {
+        width: 100%;
+        text-align: center;
+        padding: 5px 0;
+    }
+    nav > ul > li:not(:first-child)::before {
+        display: none;
+    }
+    .cards-wrapper {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+    .flip-card {
+        width: 90%;
+        height: auto;
+        margin: 20px 0;
+    }
+    .contenedor-flex {
+        gap: 10px;
+    }
 }
 
 @media (max-width: 480px) {
-  #logo {
-    width: 70px;
-    height: 70px;
-  }
-
-  #title {
-    font-size: 1.5rem;
-  }
-
-  .container-futuro span,
-  .contenedor-flex p {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .image-container {
-    height: 200px;
-  }
-
-  .imagen {
-    width: 90%;
-    height: auto;
-  }
-
-  .footer-col h1, .footer-col h2 {
-    font-size: 1.5rem;
-  }
-
-  .footer-col li {
-    font-size: 0.9rem;
-  }
-
-  .footer-bottom p {
-    font-size: 0.8rem;
-  }
-}
-
-/* ==================================== */
-/* SOLUCIÓN DEFINITIVA PARA LAS TARJETAS */
-/* ==================================== */
-
-/* Contenedor Flex para las tarjetas */
-.cards-wrapper {
-  display: flex !important; /* Fuerza el uso de flexbox */
-  flex-direction: row !important; /* Por defecto, en fila */
-  justify-content: center !important;
-  align-items: flex-start !important; /* Alinea al principio para evitar desorden */
-  flex-wrap: wrap !important;
-  gap: 1.5rem !important;
-  padding: 1rem !important;
-}
-
-/* Estilos de cada tarjeta */
-.flip-card {
-  background-color: transparent !important;
-  width: 100% !important; /* Ocupa todo el ancho disponible */
-  max-width: 300px !important; /* Con un máximo de 300px */
-  height: auto !important; /* La altura se ajusta al contenido para evitar el recorte de imágenes */
-  aspect-ratio: 2 / 3 !important; /* Mantiene una relación de aspecto consistente (ej. 2:3) */
-  perspective: 1000px !important;
-  margin: 15px !important;
-  cursor: pointer !important;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5) !important;
-  transition: transform 0.8s, box-shadow 0.8s !important;
-}
-
-.flip-card-inner {
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  text-align: center !important;
-  transition: transform 0.8s !important;
-  transform-style: preserve-3d !important;
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute !important;
-  width: 100% !important;
-  height: 100% !important;
-  backface-visibility: hidden !important;
-  -webkit-backface-visibility: hidden !important;
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  color: white !important;
-}
-
-/* La imagen de la tarjeta */
-.card-image {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Asegura que la imagen cubra toda el área sin deformarse */
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-/* Media query para móviles */
-@media (max-width: 768px) {
-  .cards-wrapper {
-    flex-direction: column !important; /* Apila las cartas en móviles */
-    align-items: center !important;
-  }
+    #title {
+        font-size: 1.5rem;
+    }
+    .main-title {
+        font-size: 28px;
+    }
+    .secondary-title {
+        font-size: 1.5rem;
+    }
+    .paragraph-text {
+        font-size: 16px;
+    }
+    p:not(footer p) {
+        width: 90%;
+    }
+    .contenedor-flex p {
+        width: 95%;
+    }
+    .imagen {
+        width: 100%;
+        height: auto;
+    }
 }
