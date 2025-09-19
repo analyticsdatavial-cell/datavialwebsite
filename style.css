@@ -13,29 +13,6 @@ body {
   line-height: 1.6;
 }
 
-header {
-    background-color: #2E4975;
-    color: white;
-    height: 15%;
-}
-
-#logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin: 1%;
-}
-
-#start {
-    display: flex;
-    align-items: center;
-}
-
-#title {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
 nav {
     display: block;
     unicode-bidi: isolate;
@@ -685,6 +662,13 @@ nav li:has(.submenu:hover) > .submenu {
   nav ul {
     flex-direction: column;
     gap: 1rem;
+    align-items: flex-start;   /* 🔥 left align */
+    padding-left: 16px;        /* space from edge */
+  }
+
+  nav a {
+    text-align: left;          /* 🔥 left text */
+    width: 100%;               /* makes full clickable row */
   }
 
   .intro {
@@ -745,15 +729,72 @@ nav li:has(.submenu:hover) > .submenu {
     padding: 16px;
   }
 }
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+  .intro {
+    flex-direction: column;
+    height: auto;
+    padding: 20px;
+  }
+
+  .video {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .text {
+    width: 100%;
+  }
+
+  .video-container {
+    margin-left: 0;
+    height: 240px;
+    width: 100%;
+  }
+
+  .mtd-steps {
+    grid-template-columns: 1fr;
+  }
+
+  .mtd-participacion-wrapper {
+    flex-direction: column;
+  }
+
+  .participacion-reducida {
+    width: 100%;
+  }
+
+  .lema-container {
+    font-size: 28px;
+    padding-left: 16px;
+  }
+
+  .intro h1 {
+    font-size: 1.8rem;
+    text-align: center;
+  }
+
+  .intro p {
+    font-size: 1rem;
+    text-align: justify;
+  }
+
+  /* 🔥 objetivo-general smaller on phones */
+  .objetivo-general {
+    height: auto;
+    flex-direction: column;
+    padding: 12px;       /* reduce padding */
+  }
+
+  .objetivo-general .text {
+    width: 100%;
+    padding: 12px;       /* reduce space */
+    font-size: 0.9rem;   /* smaller text */
+  }
+}
 
 /* Tablets (481px–768px) */
 @media (max-width: 768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;
-  }
-
   .intro {
     flex-direction: column;
     height: auto;
@@ -798,17 +839,19 @@ nav li:has(.submenu:hover) > .submenu {
     font-size: 1.1rem;
   }
 
+  .objetivo-general {
+    padding: 16px;
+    height: auto;
+  }
+
   .objetivo-general .text {
-    padding: 20px;
+    padding: 16px;
+    font-size: 1rem;
   }
 }
 
 /* Laptops (769px–1024px) */
 @media (max-width: 1024px) {
-  nav ul {
-    gap: 1rem;
-  }
-
   .video-container {
     height: 360px;
     width: 90%;

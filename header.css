@@ -1,0 +1,234 @@
+/* ================== HEADER BASE ================== */
+header {
+  background-color: #2E4975;
+  color: white;
+  height: 15%;          /* fixed proportion */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;            /* reset */
+  padding: 0;           /* reset */
+}
+
+#logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 100%;
+  margin: 1%;
+}
+
+#start {
+  display: flex;
+  align-items: center;
+  justify-content: center;  /* keep logo + title aligned */
+}
+
+#title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin: 0;            /* 🔥 avoid extra space */
+  line-height: 1.2;     /* 🔥 compact line height */
+}
+
+/* ================== NAVIGATION ================== */
+nav {
+  display: block;
+  unicode-bidi: isolate;
+  margin-left: 8%;
+  padding: 0;           /* 🔥 ensure no extra space */
+  margin-top: 10px;
+}
+
+nav ul {
+  --gap: 2rem;
+  list-style: none;
+  display: flex;
+  gap: var(--gap);
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0;            /* 🔥 reset browser default */
+  padding: 0;           /* 🔥 reset browser default */
+}
+
+nav li {
+  position: relative;
+  padding: 0 1rem;
+}
+
+/* separator lines between menu items */
+nav > ul > li:not(:first-child)::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  margin-right: calc(var(--gap) / 2);
+  width: 1px;
+  background-color: white;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+nav > ul > li:hover > a {
+  color: #ffb74d; /* hover = yellow */
+}
+
+/* Active page link */
+.active {
+  color: red;
+}
+
+/* ================== SUBMENU ================== */
+nav ul .submenu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #e0e0e0;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  min-width: 180px;
+  z-index: 1000;
+}
+
+nav ul .submenu li {
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+nav ul .submenu li::after {
+  content: "";
+  position: absolute;
+  bottom: 0;               
+  left: 50%;               
+  transform: translateX(-50%);
+  width: 85%;
+  height: 1px;             
+  background-color: #000;  
+}
+
+nav ul .submenu li:last-child::after {
+  content: none;
+}
+
+nav ul .submenu a {
+  color: #000;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  display: block;
+  transition: color 0.2s ease;
+}
+
+nav ul .submenu li:hover {
+  background-color: #cacaca;
+}
+
+nav ul .submenu a:hover {
+  color: #2E4975;
+}
+
+nav li:hover > .submenu,
+nav li:has(.submenu:hover) > .submenu {
+  display: block;
+}
+
+/* ================== EXTRAS ================== */
+.highlight {
+  background-color: yellow;
+  font-weight: bold;
+}
+
+#searchBox {
+  display: none;
+  margin-left: 10px;
+}
+
+.sub {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sub img {
+  flex-shrink: 0;
+}
+
+#btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+#btn img {
+  max-width: 70%;
+  max-height: 70%;
+}
+/* ================== NAV RESPONSIVE ================== */
+
+@media (max-width: 480px) {
+  header #start {
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;   /* left align */
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 2px;        /* margin from edge */
+  }
+
+  nav a {
+    text-align: left;
+    width: 100%;               /* full clickable row */
+  }
+}
+
+/* Tablets (481px–768px) */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 4px;        /* more padding for bigger screens */
+  }
+
+  nav a {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+/* Laptops (769px–1024px) */
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1rem;                 /* tighter spacing */
+    justify-content: flex-start;
+    padding-left: 8px;
+  }
+}
+
+/* Large screens (≥1200px) */
+@media (min-width: 1200px) {
+  nav ul {
+    gap: 2rem;                 /* normal spacing */
+    justify-content: space-evenly;
+    padding-left: 16px;
+  }
+}
