@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="../images/favicon.png">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../header.css">
     <title>DataVial</title>
 </head>
 <body>
@@ -19,17 +21,17 @@
   <li>
     <a href="../index.html">INICIO</a>
     <ul class="submenu">
-      <li><a href="#sobre">Sobre el Proyecto</a></li>
-      <li><a href="#objetivo">Objetivos</a></li>
-      <li><a href="#metodologia">Metodología</a></li>
+      <li><a href="../index.html#sobre">Sobre el Proyecto</a></li>
+      <li><a href="../index.html#objetivo">Objetivos</a></li>
+      <li><a href="../index.html#metodologia">Metodología</a></li>
     </ul>
   </li>
   <li>
     <a href="../nosotros/nosotros.html">QUIENES SOMOS</a>
     <ul class="submenu">
-      <li><a href="#equipo">Equipo del Proyecto</a></li>
-      <li><a href="#front">FRONTEND TEAM</a></li>
-      <li><a href="#end">BACKEND TEAM</a></li> 
+      <li><a href="../nosotros/nosotros.html#equipo">Equipo del Proyecto</a></li>
+      <li><a href="../nosotros/nosotros.html#front">FRONTEND TEAM</a></li>
+      <li><a href="../nosotros/nosotros.html#end">BACKEND TEAM</a></li> 
     </ul>
   </li>
   <li>
@@ -43,17 +45,17 @@
     <a href="../prevenciones/prevenciones.html">PREVENCIONES</a>
     <ul class="submenu">
       <li><a href="#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
-      <li class="sub"><img src="../images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="#conductores">Conductores</a></li>
-      <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="#peatones">Peatones</a></li>
-      <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="#ciclistas">Ciclistas</a></li>
+      <li class="sub"><img src="../images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="../prevenciones/prevenciones.html#conductores">Conductores</a></li>
+      <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="../prevenciones/prevenciones.html##peatones">Peatones</a></li>
+      <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="../prevenciones/prevenciones.html##ciclistas">Ciclistas</a></li>
     </ul>
   </li>
   <li>
     <a href="../recursos/recursos.html" class="active">RECURSOS EDUCATIVOS</a>
     <ul class="submenu">
-      <li><a href="#videos">Videos</a></li>
-      <li><a href="#señales">Señales de transito</a></li> 
-      <li><a href="#interactivo">Sección Interactiva</a></li>
+      <li><a href="recursos.html#videos">Videos</a></li>
+      <li><a href="recursos.html#señales">Señales de transito</a></li> 
+      <li><a href="recursos.html#interactivo">Sección Interactiva</a></li>
     </ul>
   </li>
   <button id="btn"><img src="../images/lupa.png" alt="BOTON DE BUSQUEDA"></button>
@@ -120,21 +122,11 @@
   </div>
 </section>
 
-
-    <!----------------------------------  DEFINICION SEÑALES DE TRANSITO --------------------------------->
-<section id="señales" class="intro-senales">
-  <h2>Señales de Tránsito</h2>
-  <p>
-Las señales de tránsito son elementos visuales que regulan, advierten e informan a conductores, ciclistas y peatones, facilitando la circulación segura y la prevención de accidentes.
-  </p>
-  <p>
-    A continuación, encontrarás una selección de tarjetas interactivas con las principales señales de la ciudad, cada una con su imagen, definición y uso. Al hacer clic, podrás acceder a su fuente original respetando los derechos de autor.
-</section>
-
     <!-- DEFINICION SEÑALES DE TRANSITO REGLAMENTARIAS------------------------>
 
-<section class="texto-seccion">
-  <h2> Algunas Señales de Reglamentación</h2>
+<section class="texto-seccion" id="señales">
+  <h1 style="padding: 0;">Señales de Tránsito</h1>
+  <h3> Algunas Señales de Reglamentación</h3>
   <p>
   Las señales de reglamentación indican normas de tránsito de cumplimiento obligatorio para garantizar la seguridad y fluidez vial. Su incumplimiento genera sanciones, pues establecen prohibiciones, restricciones o mandatos claros. A continuación, verás algunas de las más comunes en tarjetas interactivas.
   </p>
@@ -231,7 +223,7 @@ Las señales de tránsito son elementos visuales que regulan, advierten e inform
   
     <!-- DEFINICION SEÑALES DE TRANSITO DE PREVENCION ----------------------------------->
 <section class="texto-seccion">
-  <h2> Algunas Señales de Prevención</h2>
+  <h3>Algunas Señales de Prevención</h3>
   <p>
  Las señales de prevención alertan sobre riesgos o condiciones especiales en la vía, como curvas, pasos peatonales, zonas escolares o derrumbes. No imponen obligaciones, pero invitan a conducir con precaución para evitar accidentes. A continuación, verás algunos ejemplos en tarjetas interactivas.
   </p>
@@ -345,10 +337,17 @@ Las señales de tránsito son elementos visuales que regulan, advierten e inform
       background: #F0F0F0;
       max-width: 400px;
     }
-
+    h2 {
+      margin-bottom: 15px;
+      color: #c62828;
+      font-size: 2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
     h3 {
       margin-bottom: 15px;
       color: #c62828;
+      font-size: 2rem;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     }
 
     .señales, .definiciones {
@@ -505,27 +504,27 @@ window.onload = mezclarRespuestas;
     Aquí encontrarás material descargable para aprender de manera divertida sobre seguridad vial. 
     Son actividades con juegos didácticos que fortalecen el aprendizaje en el aula y en casa.
   </p>
- <a href="TEMATICAS DE LOS JUEGOS PARA LA EDUCACION VIAL.pdf" class="actividad-card" download>
+ <a href="TEMATICAS DE LOS JUEGOS PARA LA EDUCACION VIAL.pdf" target="_blank" class="actividad-card" download>
        DESCARGA LA TEMATICA PREVIA A LOS JUEGOS
     </a>
 
  <h2> SOPA DE LETRAS </h2>
  <P>Encontrar palabras relacionadas con la educación en seguridad vial para niños.
 Descarga la versión para jugar en papel</P>
-  <a href="4837994-seguridad_vial.pdf" class="actividad-card" download>
+  <a href="4837994-seguridad_vial.pdf" target="_blank" class="actividad-card" download>
       IMPRIME JUEGO EN FISICO
     </a>
-<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/4837994-seguridad_vial.html"></iframe>
+<iframe class="iframe" allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="fit-content" height="690" frameborder="0" src="https://es.educaplay.com/juego/4837994-seguridad_vial.html"></iframe>
 
  <h2> CUCIGRAMA</h2>
  <P>Rellena correctamente todas las casillas del Crucigrama ayudándote, en su caso, de la descripción de cada palabra. Si el autor ha establecido un tiempo máximo o un límite en el número de vidas, tendrás que hacerlo antes de que se acaben el tiempo y/o las vidas.
 Si el autor ha establecido un número determinado de vidas, cada vez que rellenes de forma incorrecta una de las palabras del crucigrama perderás una vida.
 Si el autor ha establecido un tiempo máximo para completar cada Crucigrama, cuando se acabe pasarás al siguiente Crucigrama sin poder sumar la puntuación de las palabras no rellenadas. En este caso, también perderás una vida si no son infinitas.
 El juego acaba cuando rellenas correctamente todas las casillas del último Crucigrama, cuando pierdes todas las vidas, o cuando se te acaba el tiempo en el último Crucigrama.</P>
-   <a href="6868181-educacion_vial.pdf" class="actividad-card" download>
+   <a href="6868181-educacion_vial.pdf" target="_blank" class="actividad-card" download>
       IMPRIME JUEGO EN FISICO 
     </a>
-<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/6868181-educacion_vial.html"></iframe>
+<iframe class="iframe" allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/6868181-educacion_vial.html"></iframe>
 
 
 <h2>Educación vial , factores de accidentalidad y señales de transito</h2>
@@ -536,11 +535,11 @@ Si se acaba el tiempo o saltas a una casilla incorrecta, te hundirás en el agua
 El juego acaba cuando llegas a la orilla o pierdes todas tus vidas.
 Salta a cualquier casilla haciendo clic en ella con el botón principal del ratón. También puedes hacerlo con las flechas del teclado (izquierda, arriba o derecha).</p>
 
-  <a href="14915266-educacion_vial_factores_de_accidentalidad_y_senales_de_transito.pdf" class="actividad-card" download>
+  <a href="14915266-educacion_vial_factores_de_accidentalidad_y_senales_de_transito.pdf" target="_blank" class="actividad-card" download>
       IMPRIME JUEGO EN FISICO 
     </a>
     
-<iframe allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/14915266-educacion_vial_factores_de_accidentalidad_y_senales_de_transito.html"></iframe>
+<iframe class="iframe" allow="fullscreen; autoplay; allow-top-navigation-by-user-activation" allowfullscreen width="795" height="690" frameborder="0" src="https://es.educaplay.com/juego/14915266-educacion_vial_factores_de_accidentalidad_y_senales_de_transito.html"></iframe>
 
 
 <!------------------ SECCION DE RECURSOS EDUCATIVOS (ALDAIR PEDROZA)-------------------------------------------------------------------->
@@ -552,7 +551,7 @@ Salta a cualquier casilla haciendo clic en ella con el botón principal del rat�
   <footer>
   <!-- 🔹 Column 1: Colombia Image -->
   <div class="footer-col">
-    <img src="../images/baq.svg" height="240" width="210" alt="FOTO DE ESCUDO DE BARRANQUILLA">
+    <img src="../images/baq.svg" height="150" width="120" alt="FOTO DE ESCUDO DE BARRANQUILLA">
   </div>
 
   <!-- 🔹 Column 2: Redes + Sena -->
@@ -565,7 +564,7 @@ Salta a cualquier casilla haciendo clic en ella con el botón principal del rat�
       <li><a href="https://www.linkedin.com/in/data-vial-analytics-1b2627382?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSUz6cn9FQRSaJ5VYcaNm%2FA%3D%3D" target="_blank"><img src="../logos/linkedin.png" height="40" width="40" alt=""></a></li>
       <li><a href="https://www.tiktok.com/@datavial_analytics?_t=ZS-8zjLNM77zkn&_r=1" target="_blank"><img src="../logos/tik-tok.png" height="40" width="40" alt=""></a></li>
     </ul>
-    <img src="../logos/sena.png" height="130" width="130" alt="Logo Sena" style="margin-top: 1rem;">
+    <img src="../logos/sena.png" height="90" width="90" alt="Logo Sena" style="margin-top: 1rem;">
   </div>
 
   <!-- 🔹 Column 3: Contactos -->

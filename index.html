@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/favicon.png">
-    <title>Data Vial</title>
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <title>DataVial</title>
 </head>
 <body>
     <main>
@@ -20,9 +22,9 @@
   <li>
     <a href="index.html" class="active">INICIO</a>
     <ul class="submenu">
-      <li><a href="/index.html#sobre">Sobre el Proyecto</a></li>
-      <li><a href="/index.html#objetivo">Objetivos</a></li>
-      <li><a href="/index.html#metodologia">Metodología</a></li>
+      <li><a href="index.html#sobre">Sobre el Proyecto</a></li>
+      <li><a href="index.html#objetivo">Objetivos</a></li>
+      <li><a href="index.html#metodologia">Metodología</a></li>
     </ul>
   </li>
   <li>
@@ -44,9 +46,9 @@
     <a href="prevenciones/prevenciones.html">PREVENCIONES</a>
     <ul class="submenu">
       <li><a href="#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
-      <li class="sub"><img src="images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="#conductores">Conductores</a></li>
-      <li class="sub"><img src="images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="#peatones">Peatones</a></li>
-      <li class="sub"><img src="images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="#ciclistas">Ciclistas</a></li>
+      <li class="sub"><img src="images/driver.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="prevenciones/prevenciones.html#">Conductores</a></li>
+      <li class="sub"><img src="images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="prevenciones/prevenciones.html#">Peatones</a></li>
+      <li class="sub"><img src="images/bicicleta.png" alt="FOTO DE CICLISTA" width="40px" height="40px"><a href="prevenciones/prevenciones.html#">Ciclistas</a></li>
     </ul>
   </li>
   <li>
@@ -82,9 +84,9 @@
     </div>
   </div>
 </div>
-<div class="text">
-<h1>DataVial Analytics</h1> <br>
-<p style="text-align: justify;">introduccion
+<div class="text" id="sobre">
+<h1>Acompañanos a crear vías seguras</h1> <br>
+<p>Este proyecto analiza la siniestralidad vial en Colombia entre 2018 y 2025, con énfasis en Barranquilla. Su objetivo es identificar causas de accidentes, comparendos y muertes en el tránsito. Utiliza un enfoque cuantitativo con datos de la Policía Nacional y la Alcaldía, procesados con Excel, Python y R Markdown. Además del análisis técnico, busca un impacto educativo mediante materiales pedagógicos. Los resultados están orientados a mejorar la cultura vial y apoyar a las autoridades en la toma de decisiones.
 </p>
 </div>
 </section>
@@ -101,47 +103,72 @@ Analizar e identificar la siniestralidad vial en Colombia durante el periodo 201
 </section>
 
 <!--METODOLOGIA-->
-<div id="metodologia" class="metodologia">
-  <h2 class="metodologia-titulo">Nuestra metodología</h2>
-  
-  <div class="container">
-    <div class="timeline">
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 1: Data Collection</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We gather traffic data through sensors, cameras, and surveys.</p>
-        </div>
-      </div>
+<!-- archivo: metodologia.html -->
+ <section class="mtd-participacion-wrapper" id="metodologia">
+  <section class="mtd-section" aria-labelledby="mtd-title">
+    <header class="mtd-hero" role="banner">
+      <h2 id="mtd-title">Metodología</h2>
+    </header>
 
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 2: Risk Analysis</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We identify accident-prone areas and analyze contributing factors.</p>
-        </div>
-      </div>
+    <section class="mtd-steps" aria-label="Pasos de la metodología">
+      <article class="mtd-step" data-step="1" tabindex="0">
+        <div class="mtd-num mtd-num-1">1</div>
+        <h3>Planteamiento de estudio</h3>
+        <p>
+          La investigación es un análisis cuantitativo que procesa grandes volúmenes de datos estadísticos sobre homicidios, accidentalidad y movilidad para identificar patrones y factores de la siniestralidad. Este estudio tiene un doble propósito: por un lado, un enfoque analítico para comprender el problema y, por otro, un componente educativo que transforma los resultados en material pedagógico para fomentar la cultura vial en la sociedad
+        </p>
+      </article>
+      <article class="mtd-step" data-step="2" tabindex="0">
+        <div class="mtd-num mtd-num-2">2</div>
+        <h3>Recolección de datos</h3>
+        <p>
+Para este estudio se recolectaron datos provenientes de fuentes oficiales y de acceso público, como la Policía Nacional, la Alcaldía de Barranquilla y plataformas de datos abiertos del gobierno. Se incluyeron registros sobre homicidios por accidentes de tránsito, comparendos electrónicos, y estadísticas de accidentalidad y víctimas entre 2018 y 2025.
+        </p>
+      </article>
+      <article class="mtd-step" data-step="3" tabindex="0">
+        <div class="mtd-num mtd-num-3">3</div>
+        <h3>Metodología de procesamiento</h3>
+        <p>
+El procesamiento de datos se hizo con varias herramientas: Excel para limpieza y consultas preliminares; Python para gráficos y análisis de tendencias; R Markdown para informes dinámicos; y Power BI para dashboards que muestran datos detallados de accidentalidad en Barranquilla.        </p>
+      </article>
+      <article class="mtd-step" data-step="4" tabindex="0">
+        <div class="mtd-num mtd-num-4">4</div>
+        <h3>Enfoque educativo</h3>
+        <p>
+          Los resultados obtenidos fueron adaptados para su uso en espacios educativos, especialmente en colegios, con el fin de sensibilizar a niños y jóvenes sobre la importancia de la cultura vial y la prevención de accidentes de tránsito. Asimismo, se busca que la información sea un insumo para autoridades locales y nacionales en la formulación de políticas públicas de movilidad segura.
+        </p>
+      </article>
+    </section>
+  </section>
 
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 3: Action Plan</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We design and implement targeted interventions like speed bumps and signage.</p>
-        </div>
-      </div>
+  <!-- Participación en línea, con altura igualada -->
+  <section class="participacion-reducida">
+    <h2 style="text-shadow: none;">Espacio de Participación</h2>
+    <p>Queremos conocer tus ideas para mejorar la movilidad y prevenir los accidentes de tránsito en Barranquilla 🚦.  
+      ¡Tu opinión puede hacer la diferencia!</p>
 
-      <div class="step">
-        <div class="step-marker"></div>
-        <button class="step-header">Step 4: Public Awareness</button>
-        <div class="step-content">
-          <p style="text-align: justify;">We educate the community about traffic safety through campaigns and workshops.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="image-container">
-      <img src="images/road.png" alt="ROAD IMAGE">
-    </div>
+    <form action="#gracias" method="get">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" placeholder="Escribe tu edad" min="10" max="100" required>
+
+      <label for="mensaje">Tu idea:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu propuesta..." required></textarea>
+
+      <button type="submit" class="btn-reducido">Enviar mi idea</button>
+    </form>
+  </section>
+</section>
+
+<!-- Popup de agradecimiento -->
+<div id="gracias" class="popup-reducida">
+  <div class="popup-content-reducida">
+    <h3>¡Gracias por participar!</h3>
+    <p>Tu propuesta ha sido registrada.  
+      Juntos podemos hacer de Colombia un país más seguro 🚦.</p>
+    <a href="#" class="close-reducida">Cerrar</a>
   </div>
 </div>
 
@@ -151,7 +178,7 @@ Analizar e identificar la siniestralidad vial en Colombia durante el periodo 201
   <footer>
   <!-- 🔹 Column 1: Colombia Image -->
   <div class="footer-col">
-    <img src="images/baq.svg" height="240" width="210" alt="FOTO DE ESCUDO DE BARRANQUILLA">
+    <img id="baq" src="images/baq.svg" height="150" width="120" alt="FOTO DE ESCUDO DE BARRANQUILLA">
   </div>
 
   <!-- 🔹 Column 2: Redes + Sena -->
@@ -164,7 +191,7 @@ Analizar e identificar la siniestralidad vial en Colombia durante el periodo 201
       <li><a href="https://www.linkedin.com/in/data-vial-analytics-1b2627382?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSUz6cn9FQRSaJ5VYcaNm%2FA%3D%3D" target="_blank"><img src="logos/linkedin.png" height="40" width="40" alt=""></a></li>
       <li><a href="https://www.tiktok.com/@datavial_analytics?_t=ZS-8zjLNM77zkn&_r=1" target="_blank"><img src="logos/tik-tok.png" height="40" width="40" alt=""></a></li>
     </ul>
-    <img src="logos/sena.png" height="130" width="130" alt="Logo Sena" style="margin-top: 1rem;">
+    <img src="logos/sena.png" height="90" width="90" alt="Logo Sena" style="margin-top: 0.5rem;">
   </div>
 
   <!-- 🔹 Column 3: Contactos -->

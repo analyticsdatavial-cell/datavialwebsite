@@ -7,35 +7,13 @@
   font-family: "Fira Sans", sans-serif;
 }
 
+h1, h2, h3 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
 body {
   background-color: #F0F0F0;
   line-height: 1.6;
-}
-
-
-header {
-    background-color: #2E4975;
-    color: white;
-    height: 15%;
-}
-
-#logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin: 1%;
-}
-
-#start {
-    display: flex;
-    align-items: center;
-}
-
-#title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: left;
-  margin: 0;
 }
 
 nav {
@@ -222,22 +200,25 @@ nav li:has(.submenu:hover) > .submenu {
 
 .recursos-educativos .texto {
   flex: 1;
-  text-align: left;   
+  text-align: justify; 
 
     
 }
 
 .recursos-educativos .texto h2 {
-  font-size: 40px;
+  font-size: 2rem;
   color: #c62828; /* rojo fuerte */
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .recursos-educativos .texto p {
-  font-size: 20px;
+  font-size: 20px;  
+  text-align: justify;
   line-height: 1.6;
-  color: #2E4975; 
+  color: #2E4975;
   margin-bottom: 10px;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -247,17 +228,23 @@ nav li:has(.submenu:hover) > .submenu {
 /* VIDEOS EDUCATIVOS*/
     .video-section {
     margin: 60px auto;
-    text-align: center;
+    text-align: justify;
     max-width: 1200px;
   }
 
   .video-section h2 {
     color: #dc2626;
     margin-bottom: 30px;
-    font-size: 30px;
+    font-size: 2rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   }
   .video-section p{
     font-size: 20px;
+    text-align: justify;
+     color: #000000; 
+     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+
+    color: #2E4975; 
   }
 
   .video-grid {
@@ -305,42 +292,66 @@ nav li:has(.submenu:hover) > .submenu {
   margin: 40px auto;
   text-align: center;
   padding: 20px;
-  color: #333;
+  color: #2E4975; 
 }
 
-.texto-seccion h2 {
-  font-size: 30px;
+.texto-seccion h1 {
+  color:  #c62828;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.texto-seccion h3 {
+  font-size: 2rem;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
+  margin-top: 0px;
 }
 
 .texto-seccion p {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
+  text-align: justify;
+  color: #2E4975; 
 }
-
 
 .intro-senales {
   max-width: 900px;
   margin: 40px auto;
   text-align: center;
   padding: 20px;
-  color: #333;
+  color: #2E4975; 
 }
-
-.intro-senales h2 {
-  font-size: 30px;
+.intro-senales h1 {
+  font-size: 2rem;
   font-weight: bold;
   color: #c62828; /* rojo institucional */
   margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
+
+.intro-senales h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #c62828; /* rojo institucional */
+  margin-bottom: 15px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+   
+}
+
+.intro-senales h2, h1 {
+margin-top: 1px;   /* espacio arriba */
+margin-bottom: 1px; /* espacio abajo */
+}
+
 
 .intro-senales p {
   font-size: 20px;
   line-height: 1.6;
   margin-bottom: 10px;
+  text-align: justify;
+  color: #2E4975; 
 }
 
 /* ESTILO DE LAS TARJETAS DE SEÑALES DE TRANSITO */
@@ -401,15 +412,15 @@ nav li:has(.submenu:hover) > .submenu {
 
 .card__title {
   margin: 0;
-  font-size: 18px;
+  font-size: 2rem;
   font-weight: 700;
-  color: #333;
+  color: #2E4975; 
 }
 
 .card__description {
   margin: 5px 0 0;
   font-size: 14px;
-  color: #555;
+  color: #2E4975; 
   line-height: 1.3;
 }
 
@@ -460,11 +471,10 @@ nav li:has(.submenu:hover) > .submenu {
 .senales h3, .definiciones h3 {
   color: #c40000; /* rojo vial */
   margin-bottom: 15px;
-  font-size: 30px;
+  font-size: 2rem;
   font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-
 
 /* SECCION DE ACTIVIDADES */
 .actividades {
@@ -475,15 +485,18 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .actividades h2 {
-  font-size: 30px;
+  font-size: 2rem;
   color: #c40000;
   margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .actividades p {
   font-size: 20px;
-  color: #444;
+  color: #2E4975; 
   margin-bottom: 30px;
+  text-align: justify;
+  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
 .actividad-card {
   display: block;
@@ -499,65 +512,145 @@ nav li:has(.submenu:hover) > .submenu {
   transition: transform 0.3s, background 0.3s;
 }
 
-footer {
-  position: relative;
-  text-align: center;
-  padding: 0;
-  margin-top: 0;
-  background-color: #2E4975;
-  color: white;
-  overflow: visible;
-  height: auto; /* let content determine height */
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: flex-start;
+/* ==================================== */
+/* RESPONSIVIDAD GENERAL */
+/* ==================================== */
+
+/* Dispositivos muy pequeños (móviles en orientación vertical, menos de 480px) */
+@media (max-width: 479px) {
+    /* Ajustes para textos y títulos */
+    .recursos-educativos .texto h2,
+    .video-section h2,
+    .texto-seccion h3,
+    .intro-senales h1,
+    .intro-senales h2 {
+        font-size: 1.5rem;
+    }
+
+    .recursos-educativos .texto p,
+    .video-section p,
+    .texto-seccion p,
+    .intro-senales p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para las tarjetas de señales */
+    .cards {
+        grid-template-columns: 1fr; /* Una columna para móviles */
+    }
+
+    /* Ajustes para la sección de videos */
+    .video-grid {
+        grid-template-columns: 1fr; /* Una columna para videos */
+    }
+
+    .video-container iframe,
+    .video-container video {
+        height: 250px;
+    }
+
+    /* Ajustes para la sección del juego */
+    .juego-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .senales, .definiciones {
+        flex: auto;
+        max-width: 100%;
+    }
+    .iframe {
+  width: fit-content;
+}
 }
 
-/* 🔽 Arrow image (remains floating at the top) */
-footer img.borde {
-  position: absolute;
-  top: 0;
-  left: 7%;
-  transform: translate(-50%, -50%) rotate(90deg);
-  width: 60px;
-  height: 60px;
+/* Teléfonos (480px a 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    /* Ajustes para las tarjetas de señales */
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas pequeñas */
+    }
+
+    /* Ajustes para la sección del juego */
+    .juego-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .senales, .definiciones {
+        flex: auto;
+        max-width: 100%;
+    }
 }
 
-/* 🔽 Footer columns */
-.footer-col {
-  flex: 1 1 30%;
-  min-width: 250px;
-  padding: 1rem;
-  text-align: center;
+/* Tabletas (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajustes para las tarjetas de señales */
+    .cards {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en tabletas grandes */
+    }
+
+    /* Ajustes para la sección de videos */
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
 }
 
-.contact {
-  list-style: none;
-  font-size: 18px;
+/* Computadoras portátiles (1024px a 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    }
+    
+    .juego {
+        gap: 20px;
+    }
 }
 
-/* 🔽 Redes logos */
-.logos {
-  display: flex;
-  gap: 3px;
-  list-style: none;
-  padding: 0;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  margin-top: 10px;
+/* Pantallas grandes (1200px o más) */
+@media (min-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+
+    }
 }
 
-.logos li {
-  display: inline-block;
-}
+@media (max-width: 767px) {
+    /* Ajustes para la cuadrícula de la sopa de letras */
+    #word-search-grid {
+        grid-template-columns: repeat(15, 1fr);
+        gap: 0;
+        width: 100%;
+        padding: 5px;
+    }
+    .grid-cell {
+        width: 5vw; /* Usa unidades de viewport */
+        height: 5vw;
+        font-size: 2.5vw;
+    }
 
-/* 🔽 Bottom text and arrow */
-.footer-bottom {
-  width: 100%;
-  text-align: center;
-  margin-top: 0;
-  padding-bottom: 10px;
+    /* Ajustes para la sección del juego y la mascota */
+    .juego {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .senales, .definiciones {
+        flex: auto;
+        max-width: 100%;
+    }
+
+    .mascot-image {
+        width: 150px;
+    }
+
+    /* Ocultar la lista de palabras para que la cuadrícula tenga más espacio, si es necesario */
+    #word-list {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.9rem;
+    }
 }
 
 footer h2 {

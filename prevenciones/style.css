@@ -17,29 +17,6 @@ body {
   background-position: center;
 }
 
-header {
-  background-color: #2E4975;
-  color: white;
-  height: 15%;
-}
-
-#logo {
-  width: 100px;
-  height: 100px;
-  border-radius: 100%;
-  margin: 1%;
-}
-
-#start {
-  display: flex;
-  align-items: center;
-}
-
-#title {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
 nav {
   display: block;
   unicode-bidi: isolate;
@@ -245,6 +222,18 @@ p:hover .texto-oculto {
   /* Opcional: centra el contenedor en la página */
 }
 
+.contenedor{
+  display: flex;
+  align-items: center;
+  /* Alinea los elementos verticalmente al centro */
+  gap: 20px;
+  /* Añade espacio entre la imagen y el texto */
+  width: 800px;
+  /* Opcional: limita el ancho del contenedor */
+  margin: 0 auto;
+  /* Opcional: centra el contenedor en la página */
+}
+
 .contenedor-flex {
   display: flex;
   align-items: center;
@@ -427,159 +416,4 @@ a.noticias:active {
 /* Muestra la segunda imagen al pasar el cursor */
 .image-container:hover::before {
     opacity: 1; /* La segunda imagen se hace visible */
-}
-
-/* Contenedor principal con Flexbox */
-.container-futuro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px; /* O el valor que desees */
-    max-width: 1300px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Contenedor de la imagen sin márgenes que estorben */
-.image-container {
-    width: 500px;
-    height: 300px;
-    position: relative;
-    overflow: hidden;
-    transition: transform 0.5s, box-shadow 0.5s;
-    /* Eliminamos el margin de 50px auto; */
-    margin: 0; 
-}
-
-/* El resto de tu código CSS para las imágenes y efectos hover... */
-.hover-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-    transition: opacity 0.5s;
-}
-
-.image-container:hover {
-    transform: translateY(-10px);
-}
-
-.image-container:hover .hover-image {
-    opacity: 0;
-}
-
-.image-container::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('imagenes/spam lleno.png');
-    background-size: cover;
-    background-position: center;
-    opacity: 0;
-    transition: opacity 0.5s;
-}
-
-.image-container:hover::before {
-    opacity: 1;
-}
-
-@media (max-width: 1200px) {
-    .container-futuro,
-    .contenedor-flex {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-    .image-container,
-    .contenedor-flex img {
-        width: 80%;
-        height: auto;
-    }
-    .contenedor-flex p {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .info-section,
-    .text-section {
-        width: 90% !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .cards-wrapper {
-        gap: 2rem;
-    }
-    .flip-card {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    #start {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    #logo {
-        width: 80px;
-        height: 80px;
-        margin: 10px 0;
-    }
-    #title {
-        font-size: 2rem;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 10px 0;
-    }
-    nav li {
-        width: 100%;
-        text-align: center;
-        padding: 5px 0;
-    }
-    nav > ul > li:not(:first-child)::before {
-        display: none;
-    }
-    .cards-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .flip-card {
-        width: 90%;
-        height: auto;
-        margin: 20px 0;
-    }
-    .contenedor-flex {
-        gap: 10px;
-    }
-}
-
-@media (max-width: 480px) {
-    #title {
-        font-size: 1.5rem;
-    }
-    .main-title {
-        font-size: 28px;
-    }
-    .secondary-title {
-        font-size: 1.5rem;
-    }
-    .paragraph-text {
-        font-size: 16px;
-    }
-    p:not(footer p) {
-        width: 90%;
-    }
-    .contenedor-flex p {
-        width: 95%;
-    }
-    .imagen {
-        width: 100%;
-        height: auto;
-    }
 }
