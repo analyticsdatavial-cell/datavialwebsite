@@ -549,6 +549,105 @@ margin-bottom: 1px; /* espacio abajo */
   transition: transform 0.3s, background 0.3s;
 }
 
+/* ==================================== */
+/* RESPONSIVIDAD GENERAL */
+/* ==================================== */
+
+/* Dispositivos muy pequeños (móviles en orientación vertical, menos de 480px) */
+@media (max-width: 479px) {
+    /* Ajustes para textos y títulos */
+    .recursos-educativos .texto h2,
+    .video-section h2,
+    .texto-seccion h3,
+    .intro-senales h1,
+    .intro-senales h2 {
+        font-size: 1.5rem;
+    }
+
+    .recursos-educativos .texto p,
+    .video-section p,
+    .texto-seccion p,
+    .intro-senales p {
+        font-size: 1rem;
+    }
+
+    /* Ajustes para las tarjetas de señales */
+    .cards {
+        grid-template-columns: 1fr; /* Una columna para móviles */
+    }
+
+    /* Ajustes para la sección de videos */
+    .video-grid {
+        grid-template-columns: 1fr; /* Una columna para videos */
+    }
+
+    .video-container iframe,
+    .video-container video {
+        height: 250px;
+    }
+
+    /* Ajustes para la sección del juego */
+    .juego-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .senales, .definiciones {
+        flex: auto;
+        max-width: 100%;
+    }
+}
+
+/* Teléfonos (480px a 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    /* Ajustes para las tarjetas de señales */
+    .cards {
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en tabletas pequeñas */
+    }
+
+    /* Ajustes para la sección del juego */
+    .juego-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .senales, .definiciones {
+        flex: auto;
+        max-width: 100%;
+    }
+}
+
+/* Tabletas (768px a 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    /* Ajustes para las tarjetas de señales */
+    .cards {
+        grid-template-columns: repeat(3, 1fr); /* Tres columnas en tabletas grandes */
+    }
+
+    /* Ajustes para la sección de videos */
+    .video-grid {
+        grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    }
+}
+
+/* Computadoras portátiles (1024px a 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr); /* Cuatro columnas */
+    }
+    
+    .juego {
+        gap: 20px;
+    }
+}
+
+/* Pantallas grandes (1200px o más) */
+@media (min-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
 footer h2 {
   margin-top: 0% !important;
   margin-bottom: 0% !important;
