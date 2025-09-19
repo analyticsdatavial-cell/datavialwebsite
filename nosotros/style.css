@@ -202,13 +202,12 @@ section.teamsection  {
 
 /* Tarjetas de Misión, Visión, Valores */
 .team-principios {
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(3, 30%);
+    justify-content: center; /* centra el grid */
     gap: 30px;
-    max-width: 900px;
+    max-width: 1200px; /* ajusta el ancho del bloque */
     margin: 50px auto;
-    border: 20px #2e58b3;
-    flex-wrap: wrap;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
 }
 
@@ -219,7 +218,6 @@ section.teamsection  {
     padding: 20px;
     border: #2e58b3 solid 2px;
     border-radius: 15px;
-    width: 280px;
     text-align: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
@@ -705,5 +703,19 @@ section.teamsection  {
   #title {
     font-size: 1.8rem;
     text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .team-principios {
+    grid-template-columns: 1fr; /* una columna */
+    gap: 20px; /* menos espacio entre cajas */
+    justify-items: center;
+  }
+
+  .team-card-principios1,
+  .team-card-principios2,
+  .team-card-principios3 {
+    width: 80%; /* ocupa todo el ancho disponible */
   }
 }

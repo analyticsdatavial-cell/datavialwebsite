@@ -907,3 +907,35 @@ nav li:has(.submenu:hover) > .submenu {
     font-size: 1.3rem;
   }
 }
+
+/*PARTICIPACION*/
+
+/* Tablets y móviles */
+@media (max-width: 768px) {
+  .mtd-steps {
+    grid-template-columns: 1fr; /* una sola columna */
+    gap: 20px;                  /* más espacio entre cajas */
+    justify-items: center;      /* centra las cajas */
+  }
+
+  .mtd-step {
+    width: 90%;      /* cada caja ocupa el 90% */
+    font-size: 0.9rem; /* texto un poco más pequeño */
+  }
+}
+
+/* Teléfonos pequeños */
+@media (max-width: 480px) {
+  .mtd-step {
+    width: 100%;      /* ancho completo */
+    font-size: 0.8rem; /* texto más pequeño */
+  }
+}
+
+@media (max-width: 1024px) {
+  .mtd-steps {
+    grid-template-columns: 1fr; /* una sola columna */
+    gap: 20px;                  /* más espacio entre cajas */
+    justify-items: center;      /* centra las cajas */
+  }
+}
