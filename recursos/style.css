@@ -412,7 +412,7 @@ margin-bottom: 1px; /* espacio abajo */
 
 .card__title {
   margin: 0;
-  font-size: 2rem;
+  font-size: 20px;
   font-weight: 700;
   color: #2E4975; 
 }
@@ -559,10 +559,12 @@ margin-bottom: 1px; /* espacio abajo */
         flex: auto;
         max-width: 100%;
     }
-    .iframe {
-  width: fit-content;
+
+    .iframee {
+      width: fit-content;
+    }
 }
-}
+
 
 /* Teléfonos (480px a 767px) */
 @media (min-width: 480px) and (max-width: 767px) {

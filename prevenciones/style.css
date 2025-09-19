@@ -552,111 +552,26 @@ a.noticias:active {
 }
 
 @media (max-width: 480px) {
-  #logo {
-    width: 70px;
-    height: 70px;
-  }
-
-  #title {
-    font-size: 1.5rem;
-  }
-
-  .container-futuro span,
-  .contenedor-flex p {
-    font-size: 16px;
-    text-align: center;
-  }
-
-  .image-container {
-    height: 200px;
-  }
-
-  .imagen {
-    width: 90%;
-    height: auto;
-  }
-
-  .footer-col h1, .footer-col h2 {
-    font-size: 1.5rem;
-  }
-
-  .footer-col li {
-    font-size: 0.9rem;
-  }
-
-  .footer-bottom p {
-    font-size: 0.8rem;
-  }
+    #title {
+        font-size: 1.5rem;
+    }
+    .main-title {
+        font-size: 28px;
+    }
+    .secondary-title {
+        font-size: 1.5rem;
+    }
+    .paragraph-text {
+        font-size: 16px;
+    }
+    p:not(footer p) {
+        width: 90%;
+    }
+    .contenedor-flex p {
+        width: 95%;
+    }
+    .imagen {
+        width: 100%;
+        height: auto;
+    }
 }
-
-/* ==================================== */
-/* SOLUCIÓN DEFINITIVA PARA LAS TARJETAS */
-/* ==================================== */
-
-/* Contenedor Flex para las tarjetas */
-.cards-wrapper {
-  display: flex !important; /* Fuerza el uso de flexbox */
-  flex-direction: row !important; /* Por defecto, en fila */
-  justify-content: center !important;
-  align-items: flex-start !important; /* Alinea al principio para evitar desorden */
-  flex-wrap: wrap !important;
-  gap: 1.5rem !important;
-  padding: 1rem !important;
-}
-
-/* Estilos de cada tarjeta */
-.flip-card {
-  background-color: transparent !important;
-  width: 100% !important; /* Ocupa todo el ancho disponible */
-  max-width: 300px !important; /* Con un máximo de 300px */
-  height: auto !important; /* La altura se ajusta al contenido para evitar el recorte de imágenes */
-  aspect-ratio: 2 / 3 !important; /* Mantiene una relación de aspecto consistente (ej. 2:3) */
-  perspective: 1000px !important;
-  margin: 15px !important;
-  cursor: pointer !important;
-  box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5) !important;
-  transition: transform 0.8s, box-shadow 0.8s !important;
-}
-
-.flip-card-inner {
-  position: relative !important;
-  width: 100% !important;
-  height: 100% !important;
-  text-align: center !important;
-  transition: transform 0.8s !important;
-  transform-style: preserve-3d !important;
-}
-
-.flip-card-front,
-.flip-card-back {
-  position: absolute !important;
-  width: 100% !important;
-  height: 100% !important;
-  backface-visibility: hidden !important;
-  -webkit-backface-visibility: hidden !important;
-  overflow: hidden !important;
-  display: flex !important;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  color: white !important;
-}
-
-/* La imagen de la tarjeta */
-.card-image {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important; /* Asegura que la imagen cubra toda el área sin deformarse */
-  position: absolute !important;
-  top: 0 !important;
-  left: 0 !important;
-}
-
-/* Media query para móviles */
-@media (max-width: 768px) {
-  .cards-wrapper {
-    flex-direction: column !important; /* Apila las cartas en móviles */
-    align-items: center !important;
-  }
-}
-
