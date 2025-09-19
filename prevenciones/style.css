@@ -463,100 +463,21 @@ a.noticias:active {
     opacity: 1;
 }
 
-@media (max-width: 1200px) {
-    .container-futuro,
-    .contenedor-flex {
-        flex-direction: column;
-        text-align: center;
-        width: 100%;
-    }
-    .image-container,
-    .contenedor-flex img {
-        width: 80%;
-        height: auto;
-    }
-    .contenedor-flex p {
-        width: 90%;
-        margin: 0 auto;
-    }
-    .info-section,
-    .text-section {
-        width: 90% !important;
-    }
-}
-
-@media (max-width: 1024px) {
-    .cards-wrapper {
-        gap: 2rem;
-    }
-    .flip-card {
-        width: 45%;
-    }
-}
-
-@media (max-width: 768px) {
-    #start {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-    #logo {
-        width: 80px;
-        height: 80px;
-        margin: 10px 0;
-    }
-    #title {
-        font-size: 2rem;
-    }
-    nav ul {
-        flex-direction: column;
-        gap: 0.5rem;
-        padding: 10px 0;
-    }
-    nav li {
-        width: 100%;
-        text-align: center;
-        padding: 5px 0;
-    }
-    nav > ul > li:not(:first-child)::before {
-        display: none;
-    }
-    .cards-wrapper {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
-    }
-    .flip-card {
-        width: 90%;
-        height: auto;
-        margin: 20px 0;
-    }
-    .contenedor-flex {
-        gap: 10px;
-    }
-}
-
 @media (max-width: 480px) {
-    #title {
-        font-size: 1.5rem;
-    }
-    .main-title {
-        font-size: 28px;
-    }
-    .secondary-title {
-        font-size: 1.5rem;
-    }
-    .paragraph-text {
-        font-size: 16px;
-    }
-    p:not(footer p) {
-        width: 90%;
-    }
-    .contenedor-flex p {
-        width: 95%;
-    }
-    .imagen {
-        width: 100%;
-        height: auto;
-    }
+  #start {
+    flex-direction: column;   /* stack vertically */
+    align-items: center;
+    text-align: center;
+  }
+
+  #logo {
+    width: 80px;
+    height: 80px;
+    margin: 8px 0;
+  }
+
+  #title {
+    font-size: 1.8rem;
+    text-align: center;
+  }
 }
