@@ -78,3 +78,102 @@ footer img.borde {
   align-items: center;
   justify-content: center; 
 }
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    min-width: 100%;
+    padding: 0.75rem;
+  }
+
+  footer img.borde {
+    left: 10%;
+    width: 40px;
+    height: 40px;
+  }
+
+  .contact {
+    font-size: 16px;
+  }
+
+  .logos {
+    justify-content: center;
+    gap: 6px;
+  }
+
+  .logos li {
+    flex: 0 0 auto;
+  }
+
+  .footer-bottom {
+    font-size: 14px;
+  }
+}
+
+/* Tablets (481px–768px) */
+@media (max-width: 768px) {
+  footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .footer-col {
+    width: 100%;
+    min-width: 100%;
+    padding: 1rem 0.5rem;
+  }
+
+  .logos {
+    justify-content: center;
+    gap: 8px;
+  }
+
+  footer img.borde {
+    left: 10%;
+    width: 50px;
+    height: 50px;
+  }
+}
+
+/* Laptops (769px–1024px) */
+@media (max-width: 1024px) {
+  .footer-col {
+    flex: 1 1 45%;
+    min-width: 280px;
+  }
+
+  .logos {
+    justify-content: space-around;
+  }
+
+  footer img.borde {
+    left: 8%;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+/* Large screens (≥1200px) */
+@media (min-width: 1200px) {
+  .footer-col {
+    flex: 1 1 30%;
+    max-width: 33%;
+  }
+
+  .logos {
+    justify-content: space-evenly;
+  }
+
+  footer img.borde {
+    left: 7%;
+    width: 60px;
+    height: 60px;
+  }
+}
