@@ -222,18 +222,6 @@ p:hover .texto-oculto {
   /* Opcional: centra el contenedor en la página */
 }
 
-.contenedor{
-  display: flex;
-  align-items: center;
-  /* Alinea los elementos verticalmente al centro */
-  gap: 20px;
-  /* Añade espacio entre la imagen y el texto */
-  width: 800px;
-  /* Opcional: limita el ancho del contenedor */
-  margin: 0 auto;
-  /* Opcional: centra el contenedor en la página */
-}
-
 .contenedor-flex {
   display: flex;
   align-items: center;
