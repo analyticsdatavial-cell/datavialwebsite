@@ -20,7 +20,7 @@ header {
 #start {
   display: flex;
   align-items: center;
-  justify-content: flex-start;  /* keep logo + title aligned */
+  justify-content: center;  /* keep logo + title aligned */
 }
 
 #title {
@@ -36,6 +36,7 @@ nav {
   unicode-bidi: isolate;
   margin-left: 8%;
   padding: 0;           /* 🔥 ensure no extra space */
+  margin-top: 10px;
 }
 
 nav ul {
@@ -172,4 +173,72 @@ nav li:has(.submenu:hover) > .submenu {
 #btn img {
   max-width: 70%;
   max-height: 70%;
+}
+/* ================== NAV RESPONSIVE ================== */
+/* ================== NAV + HEADER RESPONSIVE ================== */
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+  header #start {
+    display: flex;
+    flex-direction: column;  /* stack logo, title, nav */
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;   /* left align nav items */
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 2px;        /* margin from edge */
+    width: 100%;
+  }
+
+  nav a {
+    text-align: left;
+    width: 100%;               /* full clickable row */
+  }
+}
+
+/* Tablets (481px–768px) */
+@media (max-width: 768px) {
+  header #start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 4px;
+    width: 100%;
+  }
+
+  nav a {
+    text-align: left;
+    width: 100%;
+  }
+}
+
+/* Laptops (769px–1024px) */
+@media (max-width: 1024px) {
+  nav ul {
+    gap: 1rem;                 /* tighter spacing */
+    justify-content: flex-start;
+    padding-left: 8px;
+  }
+}
+
+/* Large screens (≥1200px) */
+@media (min-width: 1200px) {
+  nav ul {
+    gap: 2rem;                 /* normal spacing */
+    justify-content: space-evenly;
+    padding-left: 16px;
+  }
 }

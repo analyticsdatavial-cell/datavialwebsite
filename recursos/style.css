@@ -16,31 +16,6 @@ body {
   line-height: 1.6;
 }
 
-header {
-    background-color: #2E4975;
-    color: white;
-    height: 15%;
-}
-
-#logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin: 1%;
-}
-
-#start {
-    display: flex;
-    align-items: center;
-}
-
-#title {
-  font-size: 2.5rem;
-  font-weight: bold;
-  text-align: left;
-  margin: 0;
-}
-
 nav {
     display: block;
     unicode-bidi: isolate;
@@ -266,12 +241,7 @@ nav li:has(.submenu:hover) > .submenu {
   .video-section p{
     font-size: 20px;
     text-align: justify;
-<<<<<<< HEAD
-     color: #000000; 
-     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-=======
     color: #2E4975; 
->>>>>>> main
   }
 
   .video-grid {
@@ -340,12 +310,7 @@ nav li:has(.submenu:hover) > .submenu {
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: justify;
-<<<<<<< HEAD
-   color: #000000; 
-   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-=======
   color: #2E4975; 
->>>>>>> main
 }
 
 .intro-senales {
@@ -383,12 +348,7 @@ margin-bottom: 1px; /* espacio abajo */
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: justify;
-<<<<<<< HEAD
-   color: #000000; 
-   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-=======
   color: #2E4975; 
->>>>>>> main
 }
 
 /* ESTILO DE LAS TARJETAS DE SEÑALES DE TRANSITO */
