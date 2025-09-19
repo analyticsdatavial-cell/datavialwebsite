@@ -13,29 +13,6 @@ body {
   line-height: 1.6; 
 }
 
-header {
-    background-color: #2E4975;
-    color: white;
-    height: 15%;
-}
-
-#logo {
-    width: 100px;
-    height: 100px;
-    border-radius: 100%;
-    margin: 1%;
-}
-
-#start {
-    display: flex;
-    align-items: center;
-}
-
-#title {
-  font-size: 2.5rem;
-  font-weight: bold;
-}
-
 nav {
     display: block;
     unicode-bidi: isolate;
@@ -169,34 +146,10 @@ nav li:has(.submenu:hover) > .submenu {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
 } */
 
-footer {
-  position: relative; /* importante para que la imagen se posicione respecto al footer */
-  text-align: center;
-  padding: 1rem;
-  margin-top: 1.5rem;
-  background-color: #2E4975; /* ejemplo */
-  color: white;
-}
-
-footer img.borde {
-  position: absolute;
-  top: -50%;   /* mueve la imagen hacia arriba la mitad de su altura */
-  left: 6%;   /* céntrala horizontalmente */
-  transform: translateX(-50%);
-  transform: rotate(90deg);
-  width: 60px; /* ajusta al tamaño que quieras */
-  height: 60px;
-}
-
 /* Responsividad */
 @media (max-width: 768px) {
   .hero {
     grid-template-columns: 1fr;
-  }
-
-  .nav ul {
-    flex-direction: column;
-    gap: 1rem;
   }
 }   
 
@@ -243,11 +196,8 @@ footer img.borde {
     }
 
     .texto_analisis {
-      
       font-size: 20px;
-      
       text-align: justify;
-      
     }
 
     /* Sección general */
@@ -280,8 +230,6 @@ footer img.borde {
       z-index: 2;
       gap: 30px;
     }
-
-    
 
     /* Ajustar texto más ancho y movido hacia la izquierda */
 .seccion1 .texto {
@@ -621,7 +569,146 @@ footer img.borde {
     flex-direction: column;
     text-align: center;
   }
-
-  
 }
 
+/* ============================
+   RESPONSIVE QUERIES
+   ============================ */
+
+/* Large screens (1200px+) */
+@media (min-width: 1200px) {
+  .contenido {
+    max-width: 1400px;
+  }
+  .texto h2 {
+    font-size: 2.5rem;
+  }
+  .texto p {
+    font-size: 1.2rem;
+  }
+}
+
+/* Laptops (1024px and below) */
+@media (max-width: 1024px) {
+  section {
+    padding: 20px;
+    margin: 20px;
+  }
+
+  .contenido {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .seccion1 .imagen-derecha img,
+  .seccion2 .imagen-derecha img {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .seccion1 .texto,
+  .seccion2 .texto {
+    margin: 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .download-section {
+    padding: 30px 40px;
+  }
+
+  .download-buttons {
+    flex-direction: column;
+  }
+}
+
+/* Tablets (768px and below) */
+@media (max-width: 768px) {
+  .contenido_analisis {
+    flex-direction: column;
+    padding: 30px 40px;
+  }
+
+  .imagen_analisis {
+    width: 200px;
+    height: auto;
+    margin: 0 auto 20px;
+  }
+
+  .titulo_analisis {
+    font-size: 30px;
+  }
+
+  .texto_analisis {
+    font-size: 18px;
+  }
+
+  .seccion6 .contenido {
+    padding: 30px 20px;
+  }
+
+  .seccion6 .texto h2 {
+    margin: 0;
+    font-size: 1.6rem;
+  }
+
+  .seccion6 .texto p {
+    margin: 0;
+    font-size: 1rem;
+  }
+
+  .seccion6 .imagen-derecha {
+    justify-content: center;
+  }
+
+  .seccion6 .imagen-derecha img {
+    max-width: 150px;
+    height: auto;
+  }
+}
+
+/* Phones (480px and below) */
+@media (max-width: 480px) {
+  section {
+    margin: 15px;
+    padding: 20px 10px;
+  }
+
+  .texto h2 {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+
+  .texto p {
+    font-size: 0.95rem;
+    text-align: center;
+  }
+
+  .titulo_analisis {
+    font-size: 24px;
+  }
+
+  .texto_analisis {
+    font-size: 16px;
+  }
+
+  .download-section {
+    padding: 20px 15px;
+  }
+
+  .download-buttons button {
+    min-width: 100%;
+    font-size: 14px;
+    padding: 10px 14px;
+  }
+
+  .descargas-inline h2 {
+    font-size: 1.2rem;
+  }
+
+  .seccion6 .download-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
