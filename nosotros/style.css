@@ -41,9 +41,9 @@ header {
 nav {
     display: block;
     unicode-bidi: isolate;
-    margin-left: 8%;
+    margin-left: 0;
     padding-top: 0;
-    padding-bottom: 0px;
+    padding-bottom: 0;
 }
 
 nav ul {
@@ -552,13 +552,12 @@ section.teamsection  {
 
   #title {
     font-size: 1.8rem;
+    text-align: center;
   }
 
   nav ul {
     flex-direction: column;
     gap: 1rem;
-    align-items: flex-start; /* ✅ Align menu items to the left */
-    padding-left: 20px;       /* ✅ Optional: adds spacing from edge */
   }
 
   .intro {
@@ -620,6 +619,7 @@ section.teamsection  {
   }
 }
 
+/* Tablets (≤768px) */
 @media (max-width: 768px) {
   #start {
     flex-direction: column;
@@ -640,9 +640,8 @@ section.teamsection  {
 
   nav ul {
     flex-direction: column;
-    gap: 1rem;
-    align-items: flex-start;  /* keep nav left-aligned */
-    padding-left: 20px;
+    gap: 1rem; 
+    align-items: flex-start;
   }
 
   .intro {
@@ -670,10 +669,11 @@ section.teamsection  {
   }
 }
 
+/* Laptops (≤1024px) */
 @media (max-width: 1024px) {
   nav ul {
     justify-content: flex-start;
-    gap: 2rem;
+    gap: 1rem;
     padding-left: 30px;
   }
 
@@ -693,13 +693,14 @@ section.teamsection  {
   }
 }
 
+/* Large screens (≥1200px) */
 @media (min-width: 1200px) {
   #title {
     font-size: 2.8rem;
   }
 
   nav ul {
-    gap: 2.5rem;
+    gap: 1rem;
     padding-left: 40px;
   }
 
@@ -719,4 +720,3 @@ section.teamsection  {
     font-size: 1.1rem;
   }
 }
-
