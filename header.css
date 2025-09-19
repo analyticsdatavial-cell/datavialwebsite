@@ -193,6 +193,22 @@ nav li:has(.submenu:hover) > .submenu {
     gap: 1rem;
     padding-left: 2px;        /* margin from edge */
     width: 100%;
+
+@media (max-width: 480px) {
+  header #start {
+    flex-direction: column !important;
+    align-items: center;
+  }
+}
+
+/* Phones (≤480px) */
+@media (max-width: 480px) {
+  nav ul {
+    flex-direction: column;
+    align-items: flex-start;   /* left align */
+    justify-content: flex-start;
+    gap: 1rem;
+    padding-left: 2px;        /* margin from edge */
   }
 
   nav a {
@@ -217,6 +233,7 @@ nav li:has(.submenu:hover) > .submenu {
     gap: 1rem;
     padding-left: 4px;
     width: 100%;
+    padding-left: 4px;        /* more padding for bigger screens */
   }
 
   nav a {
@@ -241,4 +258,4 @@ nav li:has(.submenu:hover) > .submenu {
     justify-content: space-evenly;
     padding-left: 16px;
   }
-}
+}}}
