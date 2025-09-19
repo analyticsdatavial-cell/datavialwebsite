@@ -241,6 +241,9 @@ nav li:has(.submenu:hover) > .submenu {
   .video-section p{
     font-size: 20px;
     text-align: justify;
+     color: #000000; 
+     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+
     color: #2E4975; 
   }
 
@@ -556,6 +559,9 @@ margin-bottom: 1px; /* espacio abajo */
         flex: auto;
         max-width: 100%;
     }
+    .iframe {
+  width: fit-content;
+}
 }
 
 /* Teléfonos (480px a 767px) */
@@ -605,6 +611,45 @@ margin-bottom: 1px; /* espacio abajo */
 @media (min-width: 1200px) {
     .cards {
         grid-template-columns: repeat(4, 1fr);
+
+    }
+}
+
+@media (max-width: 767px) {
+    /* Ajustes para la cuadrícula de la sopa de letras */
+    #word-search-grid {
+        grid-template-columns: repeat(15, 1fr);
+        gap: 0;
+        width: 100%;
+        padding: 5px;
+    }
+    .grid-cell {
+        width: 5vw; /* Usa unidades de viewport */
+        height: 5vw;
+        font-size: 2.5vw;
+    }
+
+    /* Ajustes para la sección del juego y la mascota */
+    .juego {
+        flex-direction: column;
+        gap: 20px;
+        padding: 15px;
+    }
+
+    .senales, .definiciones {
+        flex: auto;
+        max-width: 100%;
+    }
+
+    .mascot-image {
+        width: 150px;
+    }
+
+    /* Ocultar la lista de palabras para que la cuadrícula tenga más espacio, si es necesario */
+    #word-list {
+        flex-direction: column;
+        gap: 8px;
+        font-size: 0.9rem;
     }
 }
 
