@@ -463,25 +463,6 @@ a.noticias:active {
     opacity: 1;
 }
 
-@media (max-width: 480px) {
-  #start {
-    flex-direction: column;   /* stack vertically */
-    align-items: center;
-    text-align: center;
-  }
-
-  #logo {
-    width: 80px;
-    height: 80px;
-    margin: 8px 0;
-  }
-
-  #title {
-    font-size: 1.8rem;
-    text-align: center;
-  }
-}
-
 @media (max-width: 1200px) {
     .container-futuro,
     .contenedor-flex {

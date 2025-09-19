@@ -175,24 +175,6 @@ nav li:has(.submenu:hover) > .submenu {
   max-height: 70%;
 }
 /* ================== NAV RESPONSIVE ================== */
-/* ================== NAV + HEADER RESPONSIVE ================== */
-
-/* Phones (≤480px) */
-@media (max-width: 480px) {
-  header #start {
-    display: flex;
-    flex-direction: column;  /* stack logo, title, nav */
-    align-items: center;
-    gap: 0.5rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    align-items: flex-start;   /* left align nav items */
-    justify-content: flex-start;
-    gap: 1rem;
-    padding-left: 2px;        /* margin from edge */
-    width: 100%;
 
 @media (max-width: 480px) {
   header #start {
@@ -219,20 +201,11 @@ nav li:has(.submenu:hover) > .submenu {
 
 /* Tablets (481px–768px) */
 @media (max-width: 768px) {
-  header #start {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.75rem;
-  }
-
   nav ul {
     flex-direction: column;
     align-items: flex-start;
     justify-content: flex-start;
     gap: 1rem;
-    padding-left: 4px;
-    width: 100%;
     padding-left: 4px;        /* more padding for bigger screens */
   }
 
@@ -258,4 +231,4 @@ nav li:has(.submenu:hover) > .submenu {
     justify-content: space-evenly;
     padding-left: 16px;
   }
-}}}
+}
