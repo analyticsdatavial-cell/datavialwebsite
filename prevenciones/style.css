@@ -183,7 +183,7 @@ nav li:has(.submenu:hover)>.submenu {
 
 .imagen {
   width: 500px;
-  height: 400px;
+  height: 300px;
   object-fit: cover;
   border-radius: 10px;
   box-shadow: 10px 10px 15px rgba(0, 0, 0, 0.5);
