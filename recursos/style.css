@@ -380,7 +380,7 @@ margin-bottom: 1px; /* espacio abajo */
 }
 
 .card__image {
-  max-width: 90%;
+  max-width: 80%;
   max-height: 100%;
   object-fit: contain;  /* mantiene proporción */
   display: block;
@@ -444,7 +444,7 @@ margin-bottom: 1px; /* espacio abajo */
   display: flex;
   gap: 30px;
   max-width: 1000px;  /* ancho máximo */
-  width: 95%;         /* adaptable */
+  width: 80%;         /* adaptable */
   justify-content: center;
   padding: 25px;
   border-radius: 15px;
@@ -454,7 +454,7 @@ margin-bottom: 1px; /* espacio abajo */
 
 .senales, .definiciones {
   flex: 1;
-  max-width: 420px;
+  max-width: 1000px;
   background: #fff;
   border-radius: 12px;
   padding: 20px;
@@ -471,7 +471,7 @@ margin-bottom: 1px; /* espacio abajo */
 .senales h3, .definiciones h3 {
   color: #c40000; /* rojo vial */
   margin-bottom: 15px;
-  font-size: 2rem;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
