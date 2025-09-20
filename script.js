@@ -28,3 +28,16 @@ btn.addEventListener("click", () => {
     window.find(term);
   }
 });
+
+window.addEventListener('scroll', function() {
+    const blueLine = document.getElementById('blueLine');
+    const scrollTop = window.pageYOffset;
+    const windowHeight = window.innerHeight;
+    const documentHeight = document.documentElement.scrollHeight;
+    
+    if (scrollTop + windowHeight >= documentHeight) {
+        blueLine.classList.add('show-at-bottom');
+    } else {
+        blueLine.classList.remove('show-at-bottom');
+    }
+});

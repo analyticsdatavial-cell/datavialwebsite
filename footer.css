@@ -177,3 +177,19 @@ footer img.borde {
     height: 60px;
   }
 }
+
+/* Hidden by default - only shows when you reach bottom */
+.hide-ads {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 15px;
+    background-color: #2E4975;
+    z-index: 9999;
+    display: none;  /* Hidden by default */
+}
+
+/* Shows when user reaches bottom */
+.hide-ads.show-at-bottom {
+    display: block;
+}
