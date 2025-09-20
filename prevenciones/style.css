@@ -379,78 +379,256 @@ nav li:has(.submenu:hover)>.submenu {
 }
 
 /* MEDIA QUERIES PARA ADAPTAR EL DISEÑO */
-
-/* MÓVILES (hasta 768px) */
-@media (max-width: 768px) {
-  .container-futuro,
+/* SMALL PHONES (up to 480px) */
+@media (max-width: 480px) {
+  .imagen {
+    width: 100%;
+    max-width: 280px;
+    height: 200px;
+  }
+  
+  .info-section {
+    width: 98%;
+    margin: 1rem auto;
+  }
+  
+  .info-header {
+    width: 100%;
+    padding: 0.75rem;
+  }
+  
+  .info-body {
+    padding: 1rem 0.75rem;
+  }
+  
   .contenedor-flex,
   .contenedor-flex.reverse {
     flex-direction: column;
     text-align: center;
-    width: 95%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 98%;
+    gap: 15px;
   }
-
-  .image-container,
+  
   .contenedor-flex img {
-    width: 80%;
-    max-width: 300px;
-    height: auto;
+    width: 90%;
+    max-width: 260px;
   }
-
-  .futuro-text {
-    font-size: 18px;
+  
+  .container-futuro {
+    flex-direction: column;
+    text-align: center;
+    width: 98%;
+    gap: 15px;
   }
-
+  
+  .image-container {
+    max-width: 90%;
+    height: 90%;
+  }
+  
   .main-title {
-    font-size: 24px;
+    font-size: 20px;
   }
-
+  
+  .futuro-text {
+    font-size: 16px;
+  }
+  
   .middle-text {
-    font-size: 18px;
+    font-size: 16px;
   }
+  
+  .flip-card {
+    width: 200px;
+    height: 320px;
+    margin: 0.5rem 0;
+  }
+  
+  .cards-wrapper {
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+  
+  .card-content {
+    padding: 15px;
+  }
+}
 
+/* PHONES (481px to 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  .imagen {
+    width: 400px;
+    height: 250px;
+  }
+  
+  .info-section {
+    width: 95%;
+  }
+  
+  .info-header {
+    width: 108%;
+  }
+  
+  .contenedor-flex,
+  .contenedor-flex.reverse {
+    flex-direction: column;
+    text-align: center;
+    width: 92%;
+    gap: 18px;
+  }
+  
+  .contenedor-flex img {
+    width: 85%;
+    max-width: 320px;
+  }
+  
+  .container-futuro {
+    flex-direction: column;
+    text-align: center;
+    width: 92%;
+    gap: 18px;
+  }
+  
+  .image-container {
+    width: 100%;
+    max-width: 90%;
+    height: 90%;
+  }
+  
+  .main-title {
+    font-size: 26px;
+  }
+  
+  .futuro-text {
+    font-size: 20px;
+  }
+  
+  .middle-text {
+    font-size: 20px;
+  }
+  
+  .flip-card {
+    width: 280px;
+    height: 450px;
+  }
+  
   .cards-wrapper {
     flex-direction: column;
     align-items: center;
     gap: 1.5rem;
   }
-
-  .flip-card {
-    width: 250px;
-    height: 400px;
-    margin: 1rem 0;
-  }
-
-  .info-section {
-    width: 95%;
-  }
-
-  .info-header {
-    width: 110%; /* Ajusta el ancho para que siga sobresaliendo en móviles */
-    max-width: none;
-  }
 }
 
-/* TABLETAS (769px a 1024px) */
+/* TABLETS (769px to 1024px) */
 @media (min-width: 769px) and (max-width: 1024px) {
+  .imagen {
+    width: 450px;
+    height: 280px;
+  }
+  
+  .info-section {
+    width: 92%;
+  }
+  
+  .info-header {
+    width: 108%;
+  }
+  
   .contenedor-flex,
   .contenedor-flex.reverse {
-    gap: 15px;
-    width: 90%;
+    width: 88%;
+    gap: 18px;
   }
-
+  
   .contenedor-flex img {
-    max-width: 280px;
+    max-width: 320px;
   }
-
+  
+  .container-futuro {
+    width: 88%;
+    gap: 18px;
+  }
+  
+  .image-container {
+    max-width: 80%;
+    height: 80%;
+  }
+  
+  .main-title {
+    font-size: 28px;
+  }
+  
+  .futuro-text {
+    font-size: 21px;
+  }
+  
+  .middle-text {
+    font-size: 21px;
+  }
+  
+  .flip-card {
+    width: 260px;
+    height: 420px;
+  }
+  
   .cards-wrapper {
     gap: 2rem;
   }
+}
 
+/* LAPTOPS (1025px to 1199px) */
+@media (min-width: 1025px) and (max-width: 1199px) {
+  .container-futuro {
+    width: 85%;
+    max-width: 1200px;
+  }
+  
+  .image-container {
+    max-width: 450px;
+    height: 290px;
+  }
+  
+  .info-section {
+    width: 88%;
+    max-width: 1000px;
+  }
+  
   .flip-card {
-    width: 220px;
-    height: 350px;
+    width: 280px;
+    height: 480px;
+  }
+  
+  .cards-wrapper {
+    gap: 2.5rem;
+  }
+  
+  .contenedor-flex {
+    width: 88%;
+    max-width: 850px;
+  }
+}
+
+/* LARGE SCREENS (1200px+) */
+@media (min-width: 1200px) {
+  .container-futuro {
+    max-width: 1400px;
+  }
+  
+  .info-section {
+    max-width: 1100px;
+  }
+  
+  .contenedor-flex {
+    max-width: 950px;
+  }
+  
+  .cards-wrapper {
+    gap: 4rem;
+  }
+  
+  .flip-card {
+    width: 320px;
+    height: 520px;
   }
 }
