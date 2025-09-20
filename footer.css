@@ -48,7 +48,7 @@ footer img.borde {
 /* 🔽 Redes logos */
 .logos {
   display: flex;
-  gap: 3px;
+  gap: 1.5rem;
   list-style: none;
   padding: 0;
   flex-wrap: wrap;
