@@ -380,6 +380,7 @@ nav li:has(.submenu:hover) > .submenu {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  text-shadow: none;
 }
 
 .mtd-hero {
@@ -396,6 +397,7 @@ nav li:has(.submenu:hover) > .submenu {
   margin: 0;
   font-size: 20px;
   color: var(--mtd-gris);
+  text-shadow: none;
 }
 
 .mtd-steps {
@@ -437,6 +439,7 @@ nav li:has(.submenu:hover) > .submenu {
 .mtd-step h3 {
   margin: 4px 0 6px;
   font-size: 16px;
+  text-shadow: none;
 }
 
 .mtd-step p {
@@ -552,6 +555,7 @@ nav li:has(.submenu:hover) > .submenu {
   margin: 0 0 10px;
   color: #fccc5d;
   font-size: 1.5em;
+  text-shadow: none;
 }
 
 .popup-content-reducida p {
