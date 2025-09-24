@@ -216,7 +216,7 @@ nav li:has(.submenu:hover)>.submenu {
 .contenedor-flex {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 60px;
   width: 90%;
   max-width: 900px;
   margin: 0 auto;

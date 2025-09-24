@@ -71,11 +71,13 @@ footer img.borde {
 #baq {
   display: block;
   margin: auto;
+  margin-left: 1.5rem;
 }
 
 #atl {
   display: block;
   margin: auto;
+  margin-right: 1.5rem;
 }
 
 .footer-col:first-child {
