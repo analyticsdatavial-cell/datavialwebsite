@@ -561,6 +561,11 @@ section.teamsection  {
     padding: 12px;
     font-size: 0.9rem;
   }
+
+  .hero-quienes {
+    height: 40vh; /* reduce height */
+    background-position: center top; /* keep focus */
+  }
 }
 
 /* Tablets (481px–768px) */
@@ -600,6 +605,11 @@ section.teamsection  {
   .intro p {
     font-size: 1.1rem;
   }
+
+  .hero-quienes {
+    height: 50vh; /* a bit taller than phones */
+    background-position: center center;
+  }
 }
 
 /* Laptops (769px–1024px) */
@@ -635,6 +645,11 @@ section.teamsection  {
   .team-flip-card {
     width: 220px;
     height: 320px;
+  }
+
+  .hero-quienes {
+    height: 60vh; /* closer to desktop */
+    background-position: center center;
   }
 }
 
@@ -684,6 +699,11 @@ section.teamsection  {
   .text-box {
     max-width: 500px;
     font-size: 1.1rem;
+  }
+
+  .hero-quienes {
+    height: 70vh; /* default desktop size */
+    background-attachment: fixed; /* nice effect on big screens */
   }
 }
 

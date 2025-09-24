@@ -19,7 +19,7 @@ h1, h2, h3 {
 }
 
 p {
-  text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+  text-shadow: none !important;
 }
 
 /* 🔽 Arrow image (remains floating at the top) */
@@ -69,6 +69,11 @@ footer img.borde {
 }
 
 #baq {
+  display: block;
+  margin: auto;
+}
+
+#atl {
   display: block;
   margin: auto;
 }
