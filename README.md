@@ -77,9 +77,9 @@ El proyecto se apoya en la legislación colombiana sobre tránsito y seguridad v
 ---
 
 ## 👥 Equipo de Trabajo
-Proyecto desarrollado en el marco de la formación **SENA – Tecnólogo en Análisis y Desarrollo de Software (TAD09)**.  
+Proyecto desarrollado en el marco de la formación **SENA – Técnico en Programación para la Analítica de Datos (TAD09)**.  
 - **Instructor:** Miguel Ángel Olivares Rosero  
-- **Equipo:** 21 integrantes distribuidos en áreas de Backend y Frontend  
+- **Equipo:** 21 integrantes distribuidos en áreas de Backend y Frontend
 
 ---
 
