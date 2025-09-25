@@ -139,13 +139,6 @@ nav li:has(.submenu:hover) > .submenu {
   max-height: 70%;
 } 
 
-/* CONTENEDOR DEL VIDEO PRINCIPAL 
-.video-container video {
-  width: 100%;
-  border-radius: 12px;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-} */
-
 /* Responsividad */
 @media (max-width: 768px) {
   .hero {
@@ -454,7 +447,7 @@ nav li:has(.submenu:hover) > .submenu {
   }
 
   /* Submenús estilo dropdown */
-    .submenu {
+    .submenu:not(header nav .submenu) {
       display: none;
       flex-direction: column;
       background: #fff;
@@ -466,7 +459,7 @@ nav li:has(.submenu:hover) > .submenu {
       box-shadow: 0 2px 8px rgba(0,0,0,0.2);
     }
 
-    .submenu a {
+    .submenu a:not(header nav .submenu a) {
       color: #2E4975;
       text-decoration: none;
       padding: 10px 15px;
@@ -475,7 +468,7 @@ nav li:has(.submenu:hover) > .submenu {
       transition: background 0.2s;
     }
 
-    .submenu a:hover {
+    .submenu a:hover:not(header nav .submenu a) {
       background: #60A560;
       color: #fff;
     }

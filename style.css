@@ -294,19 +294,16 @@ nav li:has(.submenu:hover) > .submenu {
 .objetivo-general {
   position: relative;
   width: 100%;
-  height: 350px; /* ajusta según tu diseño */
-  overflow: hidden;
-  border-radius: 0px;
+  min-height: 350px;
   display: flex;
   align-items: center;
   justify-content: center;
-}
 
-.objetivo-general img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  filter: brightness(0.7); /* oscurece la imagen para resaltar el texto */
+  /* Imagen como fondo con overlay directamente */
+  background: 
+    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+    url("images/metodologia.jpg_large.jpg") no-repeat center center;
+  background-size: cover;
 }
 
 .objetivo-general .overlay {
@@ -324,7 +321,7 @@ nav li:has(.submenu:hover) > .submenu {
   max-width: 700px;     /* maximum width */
   text-align: center;
   padding: 20px;
-  background: rgba(255, 223, 0, 0.85); /* amarillo semitransparente */
+  background: rgba(255, 223, 0, 0.8); /* amarillo semitransparente */
   border-radius: 12px;
   box-shadow: 0 4px 15px rgba(0,0,0,0.2);
 }
