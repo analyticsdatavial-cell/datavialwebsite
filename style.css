@@ -732,6 +732,10 @@ nav li:has(.submenu:hover) > .submenu {
     width: 90%;
     padding: 16px;
   }
+
+  .objetivo-general .text p {
+    font-size: 0.8rem;
+  }
 }
 /* Phones (≤480px) */
 @media (max-width: 480px) {
