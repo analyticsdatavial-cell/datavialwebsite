@@ -9,7 +9,7 @@
 
 body {
   background-color: #F0F0F0;
-  color: #2E4975; /* azul más claro */ 
+  color: #2E4975; /* azul más claro */  
   line-height: 1.6; 
 }
 
@@ -214,9 +214,8 @@ nav li:has(.submenu:hover) > .submenu {
       /* Estilos agregados para bordes y sombra */
       border-radius: 15px;              /* bordes redondeados */
       border-radius: 12px;
-      background-color: #f1f8e9;
-      transition: all 0.6s ease;
-      box-shadow: 0 20px 35px rgba(0, 0, 0, 0.4); /* sombra suave */
+      background-color: #FFFFFF;
+     
       transition: all 0.6s ease;
     }
 
@@ -234,14 +233,14 @@ nav li:has(.submenu:hover) > .submenu {
     /* Ajustar texto más ancho y movido hacia la izquierda */
 .seccion1 .texto {
   width: 70%;          /* antes 50% */
-  max-width: 800px;    /* más ancho */
-  margin-left: -150px;  /* lo empuja hacia el borde izquierdo */
+  max-width: 650px;    /* más ancho */
+  padding-left: 30px;
 }
 
 
     .texto {
       width: 70%;
-      max-width: 800px;
+      max-width: 650px;
       text-align: justify;
       color: #000000;
     }
@@ -258,7 +257,7 @@ nav li:has(.submenu:hover) > .submenu {
       font-size: 1.1rem;
       margin-bottom: 15px;
       text-align: justify;  
-      
+      color: #000000;
       transition: transform 0.3s;
     }
 
@@ -281,37 +280,24 @@ nav li:has(.submenu:hover) > .submenu {
       margin-bottom: 15px;
     }
 
-    /* Animacion de movimiento de texto hacia la derecha*/
-     .texto h2, p:hover {
-      transform: translateX(20px);
-
-    }
+    
 
     .seccion1 .imagen-derecha {
       width: 60%;
       height: 100%;
+      margin-left: 40px;
       transition: 0.5s;
       cursor: pointer;
     }
     /* Ajustar la imagen */
   .seccion1 .imagen-derecha img {
-    width: 800px;
-    height: 600px;
+    width: 650px;
+    height: 650px;
     object-fit: contain;  /* evita deformaciones */
-   margin-left: 80px;    /* la mueve más hacia la derecha */
+   
   }
 
-    /* Animacion de movimiento de imagen hacia la derecha*/
-     .imagen-derecha:hover {
-      transform: translateY(-20px);
-    }
-
-    /*.imagen-derecha img {
-      width: 100%;
-      height: 100%;
-     
-      border-radius: 10px;
-    }*/
+    
 
     /* ==========================
        EFECTOS
@@ -325,7 +311,7 @@ nav li:has(.submenu:hover) > .submenu {
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, #96ca97a8,#49d73ca8, #2e8b57);
+      background: linear-gradient(90deg, #DCFCE7, #DCFCE7);
       transition: left 0.8s ease;
       z-index: 1;
     }
@@ -340,13 +326,13 @@ nav li:has(.submenu:hover) > .submenu {
     /* ====== Cambio de color del texto al hacer la transición ====== */
     .seccion1:hover .texto,
     .seccion2:hover .texto {
-      color: #2E4975;         /* texto blanco al pasar el mouse */
+      color: black;         /* texto blanco al pasar el mouse */
       transition: color 0.6s ease-in;
     }
 
     .seccion1:hover .texto h2,
     .seccion2:hover .texto h2 {
-      color: #ffffff;         /* título también cambia */
+      color: #60A560;         /* título también cambia */
       transition: color 0.6s ease-in;
     }
 
@@ -367,19 +353,17 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .seccion2 .imagen-derecha img {
-  width: 700px;
-  height: 600px;
+  width: 650px;
+  height: 650px;
   object-fit: contain;   /* evita deformaciones */
-  margin-right: 80px;    /* separa hacia la derecha */
-  margin-left: -150px;
+  
 }
 
 /* Texto en Sección 2 → más ancho y pegado a la izquierda */
 .seccion2 .texto {
-  width: 90%;
-  
-  margin-right: -150px;  /* lo empuja hacia el borde derecho */
-  text-align: justify;
+  width: 70%;          /* antes 50% */
+  max-width: 650px;    /* más ancho */
+  padding-right: 30px;
 }
 
     /* 2. Sección 2 → transición verde esmeralda izquierda → derecha */
@@ -390,7 +374,7 @@ nav li:has(.submenu:hover) > .submenu {
   right: -100%;   /* inicia fuera por la derecha */
   width: 100%;
   height: 100%;
-  background: linear-gradient(270deg, #96ca97a8, #49d73ca8, #2e8b57);
+  background: linear-gradient(270deg,  #DCFCE7, #DCFCE7);
   transition: right 0.8s ease;
   z-index: 1;
 }
@@ -437,10 +421,11 @@ nav li:has(.submenu:hover) > .submenu {
     justify-content: center;
     flex-wrap: wrap;   /* responsive */
     gap: 15px;
+    margin-bottom: 20px;
   }
 
   .download-buttons button {
-    min-width: 220px;
+    min-width: 260px;
     padding: 12px 18px;
     border: none;
     border-radius: 12px;
@@ -497,70 +482,64 @@ nav li:has(.submenu:hover) > .submenu {
 
     /* ===== Sección 6: Archivos Excel ===== */
 .seccion6 {
-  background: #ffffff;
+  padding: 30px;         /* elimina padding del section */
+  justify-content: center;
+  align-items: center;
+  margin: 60px auto;  /* centrado en el body */
+ 
+  width: 90%;
+  max-width: 1200px;          /* elimina margen extra */
+   border-left: 10px solid #4CAF50; /* barra lateral tipo alerta */
+    border-right: 10px solid #4CAF50; /* barra lateral tipo alerta */
+  background-color: #DCFCE7;   /* fondo verde claro */
+
+  border-radius: 10% / 50%;
 }
 
 .seccion6 .contenido {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 40px;
-  padding: 50px;
-  flex-wrap: wrap;  /* asegura que en pantallas pequeñas se acomode */
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.seccion6 .texto {
+  flex: 1;
+  min-width: 300px;
 }
 
 .seccion6 .texto h2 {
   font-size: 2rem;
-  font-weight: 800;
-  color: #0a1f44;
+  text-align: center;
+  font-weight: bold;
+  color: #60A560;
   margin-bottom: 20px;
-  margin-left: -150px;
 }
 
 .seccion6 .texto p {
   font-size: 1.1rem;
-  margin-bottom: 30px;
-  color: #222;
+  margin-bottom: 25px;
+  color: black;
   text-align: justify;
-  margin-left: -150px;
 }
 
-.seccion6 .download-buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 15px;
-}
-
-.seccion6 .download-buttons button {
-  min-width: 200px;
-  padding: 12px 18px;
-  border: none;
-  border-radius: 6px;
-  font-size: 14px;
-  font-weight: bold;
-  background-color: #0a1f44;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.seccion6 .download-buttons button:hover {
-  background-color: #163d75;
-  transform: scale(1.05);
-}
-
-/* Imagen */
+/* Imagen a la derecha */
 .seccion6 .imagen-derecha {
   flex: 1;
-  
   display: flex;
-  justify-content: flex-end; /* fuerza la imagen a alinearse a la derecha */
-}
-.seccion6 .imagen-derecha img {
-  width: 300px;
-  max-width: 200px;
-  height: 200px;
+  justify-content: flex-end;
+  align-items: center; 
   
+}
+
+.seccion6 .imagen-derecha2 img {
+  width: 100%;
+  max-width: 800px;   /* limita el ancho máximo */
+  max-height: 800px;
+  object-fit: contain; /* asegura que no se recorte */
+  border-radius: 10% / 50%;
+ 
 }
 
 /* Responsive */
@@ -568,6 +547,15 @@ nav li:has(.submenu:hover) > .submenu {
   .seccion6 .contenido {
     flex-direction: column;
     text-align: center;
+  }
+
+  .seccion6 .imagen-derecha2 {
+    justify-content: center;
+    margin-top: 20px;
+  }
+
+  .seccion6 .imagen-derecha2 img {
+    max-width: 350px;
   }
 }
 
