@@ -1,6 +1,6 @@
 const hero = document.querySelector(".hero-quienes");
 const images = [
-  "../images/wallpaper.jpeg",
+  "../images/wallpaper.jpg",
   "../images/wallpaper1.jpeg",
   "../images/wallpaper2.jpeg",
   "../images/wallpaper3.jpg",
