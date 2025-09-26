@@ -449,14 +449,41 @@ section.teamsection  {
 
 .hero-quienes {
   position: relative;
-  height: 70vh; /*
-  background: url("./fotos/FGE.jfif") no-repeat center center/cover; */
-  background: url(../images/wallpaper1.jpeg) no-repeat center center/cover;
+  height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: 'Fira Sans', sans-serif;
+  background: url(../images/wallpaper.jpeg) no-repeat center center/cover;
+  transition: background-image 1s ease-in-out;
+  overflow: hidden;
 }
+
+/* Botones de navegación */
+.hero-quienes button:not(.toggle-btn) {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.4);
+  color: #fff;
+  border: none;
+  font-size: 2rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  width: 50px;
+  height: 50px;
+  border-radius: 100%;
+  z-index: 10;
+  transition: background 0.3s;
+}
+
+.hero-quienes button:hover:not(.toggle-btn) {
+  background: rgba(0,0,0,0.7);
+}
+
+.hero-quienes .prev { left: 20px; }
+.hero-quienes .next { right: 20px; }
+
 
 .hero-quienes .overlay {
   position: absolute;
