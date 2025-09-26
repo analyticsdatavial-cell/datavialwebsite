@@ -454,7 +454,7 @@ section.teamsection  {
   align-items: center;
   justify-content: center;
   font-family: 'Fira Sans', sans-serif;
-  background: url(../images/wallpaper.jpeg) no-repeat center center/cover;
+  background: url(../images/wallpaper.jpg) no-repeat center center/cover;
   transition: background-image 1s ease-in-out;
   overflow: hidden;
 }
