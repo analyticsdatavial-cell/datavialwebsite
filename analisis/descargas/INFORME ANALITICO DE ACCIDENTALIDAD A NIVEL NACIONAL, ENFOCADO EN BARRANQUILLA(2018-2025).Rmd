@@ -1,0 +1,1989 @@
+---
+title: "INFORME PARA ANALIZAR, IDENTIFICAR, INFORMAR Y PREVENIR LA SINIESTRALIDAD VIAL EN COLOMBIA CON UN ESTUDIO ENFOCADO EN LA CULTURA DE MOVILIDAD EN BARRANQUILLA
+(2018-2025)"
+author: "SENA_Centro Nacional Colombo Aleman-PROGRAMA ANÁLISIS DE DATOS- TAD_09"
+date: "2025-09-07"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    toc_float: true
+    collapsed: true
+    smooth_scroll: true
+    theme: journal
+    highlight: kate
+    df_print: paged
+    code_folding: show
+  
+encoding: "UTF-8"
+---
+
+```{=html}
+<style>
+body {
+  font-family: Arial, sans-serif;
+  color: black; /* Texto normal negro */
+  font-size: 18px; /* Tamaño general del texto */
+  text-align: justify;
+  background-color: #F0F0F0;
+}
+
+h1, h2, h3 {
+    color:#1C2C4E; /* Color de los títulos */
+  font-weight: bold;
+}
+
+h1 {
+  font-size: 28px; /* Títulos principales */
+  text-align: center;
+}
+
+h2 {
+  font-size: 24px; /* Subtítulos */
+  text-align: center;
+}
+
+h3 {
+  font-size: 20px; /* Sub-subtítulos */
+}
+
+h5{
+  text-align: right;
+}
+.list-group-item.tocify-header-1 > a {
+    font-weight: bold;      /* Texto más grueso */
+    color: #004A7F;         /* Color azul oscuro */
+    font-size: 1.1em;       /* Ligeramente más grande */
+    margin-top: 5px;        /* Espacio superior */
+}
+
+/* Estilo para los H2 (Nivel 2) en la TOC */
+.list-group-item.tocify-header-2 > a {
+    color: #333;            /* Color gris más claro */
+    font-style: italic;     /* Cursiva */
+    font-size: 1em;
+}
+
+</style>
+```
+
+```{r fechas, echo = FALSE}
+cat("Fecha de visualización:", format(Sys.Date(),"%d-%m-%Y"),"\n")
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+# 1. INTRODUCCIÓN
+
+Hoy en día, la seguridad vial en el país enfrenta numerosas limitaciones y desafíos; lo qué genera consecuencias lamentables cómo homicidios, a causa de accidentes de tránsito. Esta problemática, no sólo afecta a quiénes infringen las normas, sino también a personas que aún cumpliendo con las reglas, terminan involucradas en situaciones no deseadas y con múltiples consecuencias.
+
+Por esta razón, el objetivo del presente informe, será analizar el comportamiento de homicidios por accidentes de tránsito en todo el país desde el año 2018 hasta el año 2025, y seguidamente, analizar el comportamiento vial sólo en la ciudad de Barranquilla; de tal manera, que esto nos ayude a tomar medidas que se encuentren a nuestro alcance, y así poder generar un cambio significativo en nuestra ciudad.
+
+Para el siguiente análisis estadístico, se hará uso de una base de datos relaccionada con los homicidios presentados en Colombia a causa de los accidentes de tránsito (2018-2025); una base de datos relacionada con los accidentes presentados y las víctimas de estos accidentes de tránsito, en la ciudad de Barranquilla; tomando también el mismo período (2018-2025); y finalmente, una base de datos relacionada con los comparendos electrónicos ejecutados en la ciudad de Barranquilla(2018-2025).
+
+## 1.1.1 OBJETIVOS GENERALES:
+
+-   En el contexto actual de crecimiento urbano y aumento del parque automotor, la seguridad vial se ha convertido en un tema prioritario para las ciudades colombianas. La comprensión de los factores que influyen en la ocurrencia de siniestros viales resulta fundamental para diseñar estrategias efectivas de prevención y educación. **Analizar la siniestralidad vial en Colombia con énfasis en la cultura de movilidad en Barranquilla durante el periodo 2018-2025**, para identificar factores de riesgo, considerando aspectos como las prácticas de los actores viales, el cumplimiento de las normas de tránsito, el tipo de vehículos involucrados y el impacto de la educación vial, integrando tanto información estadística como elementos culturales que permitan una lectura más integral del problema, y contribuyan a la construcción de entornos urbanos más seguros y responsables.
+
+## 1.1.2 OBJETIVOS ESPECÍFICOS:
+
+-   Identificar las tendencias de los siniestros viales en Barranquilla entre 2018 y 2025.
+
+-   Informar a la ciudadanía y autoridades sobre patrones críticos de siniestralidad vial.
+
+-   Brindar información para la educación vial que fortalezcan la seguridad en la movilidad urbana.
+
+# 1.2. DESCRIPCIÓN GENERAL DE LOS DATOS
+
+El siguiente informe enfocado en accidentalidad vial, está conformado por 3 dataframe- Homicidios por accidentes de tránsito a nivel nacional, Accidentalidad y víctimas por accidentes de tránsito en Barranquilla, y un dataframe de comparendos electronicos en Barranquilla entre los periodos de 2018 hasta el abril de 2025 - con un total de 396.644 registros de los 3 dataframes que están en formato xlsx-Excel- de los cuales llevarán un orden jerárquico-De lo general a lo específico o en forma de envudo con metodología cuantitativa . Se disponen de lenguajes de programación para análisis de datos como R Markdown y Python , programas de visualización como Excel y Power Bi - útiles en el diseño de un dashboard interactivo y dinámico. - para llevar a cabo este análisis de manera eficaz, óptima y confiable.
+
+Dentro de esta base de datos, se podrán apreciar variables como los departamentos, municipios, regiones, e incluso los días, meses y años, dónde ocurrieron los homicidios; asimismo, el tipo de vehículo (identificado con nombre: “ARMAS MEDIO”), por el cuál ocurrió el homicidio. Cabe aclarar, qué hay registros dónde no se reportó el tipo de vehículo; asimismo, los registros sólo se encuentran hasta el mes de Julio del 2025.
+
+| **Dataframes** | **Total de registros** |
+|------------------------------------|------------------------------------|
+| Homicidios por accidente de transito en Colombia (2020-2025) | 33,708 |
+| Accidentalidad y victimas en Barranquilla (2018-abril 2025) | 48,484 |
+| Comparendos electrónicos en Barranquilla (2018-2024) | 314,452 |
+
+# 2. ANÁLISIS
+
+que se trabajaron a lo largo del informe, y su correspondiente función; asimismo, las bases de datos que fueron importadas.
+
+```{r}
+library(tidyverse) #colección de paquetes para manipular, analizar y visualizar datos.
+library(scales)#paquete con funciones para formatear números, porcentaje, ejes de gráfico, etc.
+library(readxl)#paquete para leer archivo de excel
+library(dplyr)#paquete de manipulación de datos
+library(ggrepel)#ayuda para que las etiquetas en los gráficos no se interpongan
+library(htmltools)#Evita que las etiquetas en los gráficos se sobrepongan.
+library(stringr)# Cambiar fuente global y color de texto en ggplot
+library(leaflet)
+library(ggplot2)
+library(sf)
+library(reticulate)
+
+
+theme_update(
+  text = element_text(family = "Arial", colour = "black", size = 17) # Texto más grande en gráficos
+)
+
+BD_Homicidios <- read_xlsx("C:/Users/CORE I5/Downloads/Homicidios por accidentes de tránsito en Colombia (2018-2025).xlsx", 
+     sheet = "DATA")#importamos la base de datos
+
+ACCD_ACT <- read_xlsx("C:/Users/CORE I5/Downloads/ACCIDENTALIDAD Y VICTIMAS.xlsx", 
+     sheet = "ACCIDENTALIDAD" )
+
+VIC_ACT <- read_xlsx("C:/Users/CORE I5/Downloads/ACCIDENTALIDAD Y VICTIMAS.xlsx", 
+    sheet = "VICTIMAS")
+
+df_comp <- read_xlsx("C:/Users/CORE I5/Downloads/Comparendos electrónicos control y regulación Actualizada2.7.xlsx", 
+    sheet = "Data Original")
+
+Mapeado<-st_read("C:\\Users\\CORE I5\\Downloads\\regiones\\regiones.shp")
+```
+
+```{r}
+reticulate::py_install("openpyxl")
+reticulate::py_install("matplotlib")
+reticulate::py_install("seaborn")
+
+```
+
+```{r}
+py_require(c("pandas"))
+py_require(c("seaborn"))
+py_require(c("openpyxl"))
+py_require(c("matplotlib"))
+```
+
+```{python}
+import pandas as pd
+df_comp = pd.read_excel("C:/Users/CORE I5/Downloads/Comparendos electrónicos control y regulación Actualizada2.7.xlsx")
+
+
+df_hom = pd.read_excel("C:/Users/CORE I5/Downloads/Homicidios por accidentes de tránsito en Colombia (2018-2025).xlsx")
+```
+
+## 2.1. NOMBRE DE LAS COLUMNAS TRABAJADAS
+
+Aquí podrás observar cuáles fueron las columnas que se trabajaron; así mismo, se eliminaron columnas en blanco que se encontraban en la base de datos.
+
+```{r}
+#HOMICIDIOS POR ACCIDENTES DE TRÁNSITO
+colnames(BD_Homicidios)#nombre de las columnas
+BD_Homicidios <- BD_Homicidios %>%
+  select(-...17,-...18,-...19,-...20,-...21)#eliminar columnas vacías
+colnames(BD_Homicidios)
+
+#ACCIDENTABILIDAD POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA
+colnames(ACCD_ACT)
+#VICTIMAS POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA
+colnames(VIC_ACT)
+#COMPARENDOS ELECTRÓNICOS EN BARRANQUILLA
+colnames(df_comp)
+
+head(Mapeado)
+```
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+## 2.2. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO A NIVEL NACIONAL(2018-2025)
+
+### 2.2.1. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO PRESENTADOS (2018-2025)
+
+A partir del gráfico, se puede observar cómo en el año 2019, los homicidios por accidentes de tránsito alcanzaron su punto más alto con un total de 12.108 homicidios. Sin embargo, para el año 2020 comienza a descender, manteniendose los homicidios con una cantidad estable desde el año 2021 hasta el año 2024, con un promedio de 7.311 homicidios; asimismo, el año en qué se presentó un mayor declive, corresponde al año 2021 con un total de 6.999 homicidios; hecho que podría explicarse por la pandemia COVID-19, dónde para ese año, aún nos encontrabamos bajo medidas de aislamiento. Aunque pareciese que el año 2025 fue el que tuvo un mayor descenso, hay que recordar, como se mencionó en la introducción; que los datos registrados para este año, sólo se encuentran hasta el mes de Julio.
+
+```{r fig.height=10, fig.width=20, fig.align='center'}
+Tab_homicidios1 <- BD_Homicidios %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>%
+  arrange(desc(CANTIDAD_HOMICIDIOS)) %>%
+  rename(AÑOS=AÑO, CANTIDAD_DE_HOMICIDIOS = CANTIDAD_HOMICIDIOS)
+
+titulo <- str_wrap("CANTIDAD DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO A NIVEL NACIONAL (2018-2025)", width = 45)
+  
+  ggplot(Tab_homicidios1,aes( x = AÑOS, y = CANTIDAD_DE_HOMICIDIOS))+#inicia el gráfico indicando los ejes
+  geom_line(aes(group = 1), color="#60A560", size=4)+#Dibuja línea para conectar puntos
+    geom_label(aes(label=label_comma(big.mark = ".",decimal.mark = ",")(CANTIDAD_DE_HOMICIDIOS)),#etiquetas de texto sobre cada punto
+               vjust=-0.5,#se ajusta el texto verticalmente
+               hjust=0.5,#se ajusta el texto horizontalmente
+               size=10,#tamaño de texto
+               fill= "#1C2C4E",#fondo de las etiquetas
+               color ="white")+ #color del texto
+    geom_point(size=8, color="#1C2C4E")+#puntos en cada valor
+     scale_x_continuous(breaks=unique(Tab_homicidios1$AÑOS),
+                     labels=unique(Tab_homicidios1$AÑOS))+#muestra los años como texto
+    labs(title=titulo, #nombre del titulo de gráfico y ejes.
+         x=NULL,
+         y = NULL)+
+  scale_y_continuous(limits = c(2000,15000),
+                     breaks = seq(2000,15000, by = 5000),
+                     labels=label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y
+     theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+   
+  
+```
+
+##### GRÁFICO 1
+
+### 2.2.2. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO PRESENTADOS POR REGIÓN(2018-2025)
+
+En el gráfico, se puede apreciar que existe una mayor incidencia de esta siniestralidad vial en la cual la región Andina cuenta con un total de 32.861 homicidios por accidentes de tránsito; esto podría explicarse debido a qué la región Andina cuenta con la mayor cantidad de habitantes(30.057.952), en comparación con las demás regiones; siendo las grandes ciudades como Bogota(7.929.539 de habitantes), Medellin(2.595.300 de habitantes), Cali(2.280.907 de habitantes) y Bucaramanga(528.575 de habitantes) las que cuentan con una mayor cantidad de habitantes. Así mismo, en la Región Andina se confluyen los principales ejes de transporte. En contraste, la región con la menor cantidad de homicidios, es la región Insular, posiblemente se deba a que esta región en su mayoría, corresponde a un conjunto de islas, cayos o islotes.
+
+```{r fig.align='center'}
+islas <- data.frame(
+  REGION = "INSULAR",
+  long = -81.7, # Longitud de un punto de San Andrés
+  lat = 12.5 # Latitud de un punto de San Andrés
+)
+sube <- BD_Homicidios %>%
+  group_by(REGION) %>%
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop")
+
+head(sube)
+
+colores_fins_esc <- c("#1C2C4E", "#2B406E", "#375087", "#4562A1","#5171B5","#6485CC","#7597E0","#85A8F2","#8FAFF2", "#A6C0F7")
+
+mapa_final <- left_join(Mapeado, sube, by = "REGION")
+centroides <- sf::st_centroid(mapa_final)
+
+titulo_map <- str_wrap("TOTAL DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRÁNSITO EN COLOMBIA POR REGIÓN(2018-2025) ", width=50)
+
+ggplot(data = mapa_final) +
+  geom_sf(aes(fill = CANTIDAD_HOMICIDIOS), color = "black", size = 0.2) +
+  scale_fill_distiller(palette ="YlOrRd", name = "Número de\nAccidentes") +
+  labs(
+    title = titulo_map,
+    subtitle = "Visualización con datos de shapefile personalizado",
+    caption = "Fuente: Archivo .shp personal"
+  ) +
+  theme_void() +
+  geom_sf_text(data = centroides, aes(label = paste(REGION, ":", CANTIDAD_HOMICIDIOS)),
+               , size = 3, color = "black")+
+  theme(
+    plot.title = element_text(hjust = 0.5, color = ),
+    plot.subtitle = element_text(hjust=0.5)
+  )
+```
+
+##### GRÁFICO 2
+
+### 2.2.3. MUNICIPIOS CON MAYOR INCIDENCIA DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO(2018-2025)
+
+Gracias al gráfico, podemos observar el comportamiento de 10 municipios con una mayor cantidad de homicidios por accidentes de tránsito, presentándose la cantidad más alta, en el Municipio de Bogota, con un total de 4.923 homicidios, siguiéndole los municipios de Antioquia y Valle, con un total de 3.060 y 2.495 homicidios respectivamente. Estos 3 municipios que presentan una mayor incidencia de esta siniestralidad, responden a la región Andina; y cómo fue mencionado en el análisis anterior de esta región, esta es la que posee una mayor cantidad de habitantes,siendo una de las razones, la emigración por motivos laborales. Asimismo, la mayor incidencia en el municipio de Bogota, podría explicarse porque es la ciudad en dónde se presenta una mayor circulación tanto de vehículos, cómo de habitantes. En contraste, el municipio con una menor cantidad de homicidios, es Montería, con un total de 686 homicidios.
+
+```{r fig.width=20, fig.height=10}
+
+Tabla_top_10 <- BD_Homicidios %>%
+  group_by(MUNICIPIO)%>%
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups="drop")%>%
+  arrange(desc(CANTIDAD_HOMICIDIOS))%>%
+  top_n(10)%>% 
+  mutate(MUNICIPIO = fct_reorder(MUNICIPIO,CANTIDAD_HOMICIDIOS, .desc=TRUE))
+
+title_2 <- str_wrap("CANTIDAD DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRÁNSITO POR MUNICIPIOS(TOP 10)-(2018-2025)", width=40)
+
+colores_fins_esc <- c("#1C2C4E", "#2B406E", "#375087", "#4562A1","#5171B5","#6485CC","#7597E0","#85A8F2","#8FAFF2", "#A6C0F7")
+  
+ggplot(Tabla_top_10,aes(reorder(x =MUNICIPIO, CANTIDAD_HOMICIDIOS), y = CANTIDAD_HOMICIDIOS, fill = MUNICIPIO))+
+  geom_bar(stat = "identity")+
+  coord_flip()+
+  labs(title = title_2,
+       x = NULL,
+       y = NULL)+
+  geom_text(aes(label = label_comma(big.mark = ".", decimal.mark = ",")(CANTIDAD_HOMICIDIOS)),
+            size=12,
+            hjust= -0.3,
+           )+
+  scale_fill_manual(values = colores_fins_esc)+
+  scale_y_continuous(limits = c(0,5500),
+                     breaks = seq(0,5500, by = 1500),
+                     labels = label_comma(big.mark = ".", decimal.mark = "                                 ,"))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    legend.position = "none",
+    axis.line = element_line(color = "black")
+  )
+
+```
+
+##### GRÁFICO 3
+
+### 2.2.4. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO PRESENTADOS EN LOS MESES DE CADA AÑO(2018-2025)
+
+#### AÑO 2018-2019
+
+A partir de este primer gráfico, se puede apreciar que hubo una mayor cantidad de homicidios por accidentes de tránsito en el mes de diciembre, en los dos años; en el año 2018 este mes presentó un total de 640 homicidios; y en el año 2019, qué justamente comenzó a presentarse un ascenso en la cantidad de muertes por accidentes de tránsito, surgió un total de 1.306 homicidios para este mismo mes. Asimismo, se puede inferir gracias al gráfico, que en el año 2018, el mes de abril presentó una menor cantidad de homicidios con un total de 437 casos; y para el año 2019, el mes que presentó una menor cantidad de homicidios, fue febrero , con un total de 872 casos registrados.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE", "DICIEMBRE") 
+
+tabla_mes_1819 <- BD_Homicidios %>% 
+  filter(AÑO %in% c(2018,2019))%>%
+  mutate(AÑO = as.character(AÑO))%>%
+  group_by(AÑO, NOM_MES)%>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))%>%
+  mutate(AÑO = factor(AÑO, levels = c("2018","2019")))
+ 
+
+title_3 <- str_wrap("CANTIDAD DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRÁNSITO POR MESES(2018-2019) ", width=35)
+
+colores_graf_3 <- c("#60A560","#1C2C4E") 
+
+ggplot(tabla_mes_1819,aes(x=NOM_MES, y=CANTIDAD_HOMICIDIOS, color=AÑO)) +
+  geom_line(aes(group=AÑO),size= 4) +
+  geom_label_repel(aes(label= label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=8,
+            vjust= 1,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8, color="#1C2C4E")+
+  scale_color_manual(values= colores_graf_3)+
+  scale_y_continuous(limits = c(0,1500),
+                     breaks = seq(0,1500, by = 200),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_3,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+
+
+```
+
+##### GRÁFICO 4
+
+#### AÑO 2020-2022
+
+Para este gráfico, se mostraron los años desde el 2020 hasta el 2022, con el fin de evaluar el comportamiento vial en este tiempo, que correspondió a la pandemia mejor conocida como COVID-19. Se puede apreciar que en el año 2020, fue para el mes de Marzo en dónde se presentó una mayor cantidad de homicidios por accidentes de tránsito con un total de 1.186 casos; sin embargo, para el mes de abril se presentó un descenso abrupto con un total de 335 homicidios, siendo el mes con una menor cantidad de casos en este mismo año, posiblemente porque en este mes, se presentaba un aislamiento definitivo a causa de la pandemia. Aunque, después de este mes, comienza a incrementarse la cantidad de homicidios por accidentes de tránsito. Para el año 2021 y 2022, se puede apreciar cómo la cantidad qué venía presentándose, empezó a disminuir; en el año 2021, el mes qué presentó una mayor cantidad de homicidios, fue septiembre con un total de 666 casos, mientras qué el mes que presentó una menor cantidad fue mayo con un total de 514 homicidios. Finalmente para el año 2022, dónde la pandemia ya se encontraba finalizando, empieza otra vez el incremento de la cantidad de homicidios, siendo el mes de diciembre el que presentó una mayor cantidad con un total de 776 casos, y siendo el mes de febrero el que presentó una menor cantidad con un total de 529 casos.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE") 
+
+
+tabla_mes_2022 <- BD_Homicidios %>% 
+  filter(AÑO %in% c(2020,2021,2022))%>%
+  mutate(AÑO = as.character(AÑO))%>%
+  group_by(AÑO, NOM_MES)%>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))%>%
+  mutate(AÑO = factor(AÑO, levels = c("2020","2021","2022")))
+ 
+title_4 <- str_wrap("CANTIDAD DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRÁNSITO POR MESES(2020-2022) ", width=35)
+
+colores_graf_4 <- c("#DE403B","#FFB74D","#60A560")
+
+ggplot(tabla_mes_2022,aes(x=NOM_MES, y=CANTIDAD_HOMICIDIOS, color=AÑO)) +
+  geom_line(aes(group=AÑO),size= 4) +
+  geom_label_repel(aes(label= label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=9,
+            vjust= 0.5,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8)+
+  scale_color_manual(values = colores_graf_4)+
+  scale_y_continuous(limits = c(200,1500),
+                     breaks = seq(200,1500, by = 100),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_4,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+```
+
+##### GRÁFICO 5
+
+#### AÑO 2023-2024
+
+A partir de este gráfico, se puede apreciar que el año 2023 presenta una mayor cantidad de homicidios por accidentes de tránsito en el mes de diciembre con un total de 743 casos, mientras qué para el año 2024, este mes disminuye en cantidad, presentando un total de 630 casos.En contraste, para el año 2024, el mes dónde se presenta una mayor cantidad de casos, es septiembre con un total de 675 homicidios. Y, los meses dónde se presentaron una menor cantidad de homicidios, fue en el mes de enero para el año 2023 con un total de 568 casos; y el mes de noviembre para el año 2024, con un total de 505 casos.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE","DICIEMBRE") 
+
+tabla_mes_2325 <- BD_Homicidios %>% 
+  filter(AÑO %in% c(2023,2024))%>%
+  mutate(AÑO = as.character(AÑO))%>%
+  group_by(AÑO, NOM_MES)%>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))%>%
+   mutate(AÑO = fct_reorder(AÑO, CANTIDAD_HOMICIDIOS,.desc=TRUE))
+
+title_5 <- str_wrap("CANTIDAD DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRÁNSITO POR MESES(2023-2024) ", width=35)
+
+colores_graf_4 <- c("#FFB74D","#1C2C4E","#595757")
+
+ggplot(tabla_mes_2325,aes(x=NOM_MES, y=CANTIDAD_HOMICIDIOS, color=AÑO)) +
+  geom_line(aes(group=AÑO),size= 4) +
+  geom_label_repel(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=9,
+            vjust= 1,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8)+
+  scale_color_manual(values = colores_graf_4)+
+  scale_y_continuous(limits = c(300,900),
+                     breaks = seq(300,900, by = 300),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_5,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+```
+
+##### GRÁFICO 6
+
+#### AÑO 2025
+
+Debido a qué los registros del año 2025 se encuentran incompletos, se realizó el análisis de este gráfico aparte. Se puede apreciar que para este año, hasta el momento, se presentó una mayor cantidad de homicidios por accidente de transito en el mes de junio con un total de 734 casos; cantidad mayor a comparación del año 2024 en dónde se presentaron en este mismo mes un total de 595 casos. Asimismo, hasta el momento, el mes qué ha presentado una menor cantidad de homicidios, es febrero con un total de 432 casos, presentando una mejoría en comparación con este mismo mes del año 2024, dónde hubo un total de 540 homicidios.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+ orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE")  
+ 
+tabla_mes_25 <- BD_Homicidios %>% 
+  filter(AÑO == 2025) %>% 
+  group_by(AÑO, NOM_MES) %>% 
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups= "drop")%>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))
+
+title_10 <- str_wrap("CANTIDAD DE HOMICIDIOS DE ACCIDENTES DE TRANSITO POR MESES (2025)", width=35)
+
+ggplot(tabla_mes_25, aes(x = NOM_MES, y = CANTIDAD_HOMICIDIOS))+
+  geom_line(aes(group = 1), size= 4, color="#60A560")+
+  geom_point(size=8, color = "#1C2C4E" ) +
+   geom_label(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_HOMICIDIOS )),
+            size=10,
+            vjust= -0.5,
+            hjust= 0.5,
+            fill = "#1C2C4E",
+            color ="white")+
+  scale_y_continuous(limits = c(400,850),
+                     breaks = seq(400,850, by = 200),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = title_10,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1,color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color="black"))
+
+
+
+```
+
+##### GRÁFICO 7
+
+### 2.2.5. HOMICIDIOS PROMEDIO DE ACCIDENTES DE TRÁNSITO POR MESES(2018-2025)
+
+A partir de este gráfico, se puede inferir que en todos los años, el mes que presentó una mayor cantidad de homicidios por accidentes de transito, fue diciembre con un promedio de 830 casos, posiblemente por las fechas de las fiestas de Navidad y año nuevo, en dónde el flujo vehicular aumenta. En contraste, el mes que presenta una menor cantidad de homicidios, es abril con un promedio de 582 casos.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE") 
+
+tabla_mes_PROM <- BD_Homicidios %>% 
+  group_by(AÑO, NOM_MES) %>%
+  summarise(CANTIDAD_HOMICIDIOS = sum(CANTIDAD), .groups = "drop") %>% 
+  group_by(NOM_MES) %>%
+  summarise(CANTIDAD_PROM = round(mean(CANTIDAD_HOMICIDIOS),0), .groups = "drop")%>% 
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))
+
+ 
+
+title_3 <- str_wrap("CANTIDAD PROMEDIO DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRANSITO  POR MESES (2018-2025) ", width=35)
+
+
+ggplot(tabla_mes_PROM,aes(x=NOM_MES, y= CANTIDAD_PROM)) +
+  geom_line(aes(group=1),size= 4, color= "#60A560") +
+  geom_label_repel(aes(label= CANTIDAD_PROM ),
+            size=8,
+            vjust= 1,
+            hjust = 0.5,
+            fill= "#1C2C4E",
+            color = "white"
+              )+
+  geom_point(size=8,color = "#1C2C4E")+
+  scale_y_continuous(limits = c(0,1500),
+                     breaks = seq(0,1500, by = 200))+
+  labs(title = title_3,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),
+    axis.text.y = element_text(size = 25, color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size=25),
+    legend.key.size = unit(1, "cm"),
+    legend.title = element_text(size= 28))
+
+
+
+
+
+
+
+```
+
+##### GRÁFICO 8
+
+### 2.2.6. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO PRESENTADOS POR DÍAS DE LA SEMANA(2018-2025)
+
+A partir de los 2 gráficos presentados, se puede apreciar que los días sábado y domingo, son los días en que ocurren una mayor cantidad de homicidios por accidientes de transito; lo cuál podría explicarse por ocio nocturno, consumo de alcohol, entre otras, debido a que son los días en que muchos suelen descansar y salir de la rutina.
+
+Para el año 2018, el día de la semana con una mayor cantidad de homicidios, es el domingo, con un total de 1.244 casos presentados; mientras que el día que presenta una menor cantidad, corresponde al día miércoles con un total de 696 casos.
+
+Para los años siguientes, se continua presentando una mayor incidencia en el día domingo, incrementandose la cantidad de homicidios, pasando de 1.244 en el 2018, a 2.614 casos en el 2019. Para el año 2020 y 2021, vuelve a disminuir la cantidad con un total de 1.971 y 1.590 ,respetivamente. Para el año 2022 se presenta un total de 1.758 homicidios; para el año 2023, un total de 1.696 homicidios; para el año 2024, se presenta un total de 1.604 casos; y finalmente, para el año 2025 se ha presentado hasta ahora, una mayor cantidad de homicidios con un total de 932.
+
+```{r fig.width=15, fig.height=10, fig.align='center'}
+
+library(stringr)
+
+names(BD_Homicidios)[6] <- "DIA_SEMANA"
+
+
+
+# Cargar paquetes necesarios
+library(dplyr)
+library(ggplot2)
+
+# Paso 1: Reordenar días
+orden_dias <- c("LUNES", "MARTES", "MIÉRCOLES", 
+                "JUEVES", "VIERNES", "SÁBADO", "DOMINGO")
+
+colores_fin_vr <- c("#60A560","#6DB56D","#7AC27A","#8AD48A")
+
+# Paso 2: Crear tablas
+tabla_18_21 <- BD_Homicidios %>%
+  filter(`AÑO` >= 2018 & `AÑO` <= 2021) %>%
+  group_by(DIA_SEMANA, `AÑO`) %>%
+  summarise(CANTIDAD_HOMICIDIOS_2 = sum(CANTIDAD), .groups = "drop") %>%
+  mutate(
+    DIA_ORDENADO = factor(DIA_SEMANA, levels = orden_dias),
+    `AÑO` = factor(`AÑO`)
+  )
+
+tabla_22_25 <- BD_Homicidios %>%
+  filter(`AÑO` >= 2022 &`AÑO` <= 2025) %>%
+  group_by(DIA_SEMANA, `AÑO`) %>%
+  summarise(CANTIDAD_HOMICIDIOS_2 = sum(CANTIDAD), .groups = "drop") %>%
+  mutate(
+    DIA_ORDENADO = factor(DIA_SEMANA, levels = orden_dias),
+    `AÑO` = factor(`AÑO`)
+  )
+
+# Paso 3: Función de graficado con barras HORIZONTALES y etiquetas
+graficar_por_dia_horizontal <- function(tabla, titulo) {
+  ggplot(tabla, aes(x = `AÑO`, y = CANTIDAD_HOMICIDIOS_2, fill =`AÑO`)) +
+    geom_col(width = 0.7) +
+    geom_text(aes(label = CANTIDAD_HOMICIDIOS_2),
+              position = position_stack(vjust = 0.5),
+              size = 7, fontface = "bold", color = "white") +
+    facet_wrap(~DIA_ORDENADO, ncol = 2) +
+    scale_fill_manual(values = colores_fin_vr) +
+    labs(title = titulo, x = NULL, y = NULL) +
+    coord_flip() +  # <- Esto es clave
+    theme_minimal() +
+    theme(
+      panel.grid.major = element_blank(),
+      panel.grid.minor = element_blank(),
+      axis.text.y = element_text(size = 25, color = "#1C2C4E"),
+      axis.text.x = element_blank(),
+      axis.ticks.x = element_blank(),
+      strip.text = element_text(size = 25, color = "#1C2C4E"),
+      plot.title = element_text(size = 35, hjust = 0.5),
+      axis.line = element_line(color = "black"),
+      legend.text = element_blank(),
+      legend.title = element_blank(),
+      legend.key = element_blank(),
+      legend.position = "none"
+    )
+}
+
+# Paso 4: Generar gráficos
+grafico_dia_18_21 <- graficar_por_dia_horizontal(tabla_18_21, "HOMICIDIOS POR ACCIDENTES DE TRÁNSITO\nEN LOS DÍAS DE LA SEMANA(2018–2021)")
+grafico_dia_22_25 <- graficar_por_dia_horizontal(tabla_22_25, "HOMICIDIOS POR ACCIDENTES DE TRÁNSITO\n EN LOS DÍAS DE LA SEMANA(2022–2025)")
+
+# Paso 5: Mostrar
+grafico_dia_18_21
+grafico_dia_22_25
+```
+
+##### GRÁFICO 9
+
+### 2.2.7. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO PRESENTADOS POR ARMA MEDIO(2018-2025)
+
+Gracias al siguiente gráfico, se puede inferir que el medio por el cuál se frecuentó una mayor cantidad de homicidios por accidente de transito, fue el vehículo con un 49.68%, mientras que los medios que se registraron con una menor cantidad de homicidios, es el tren con un 0.08% y la bicicleta con un 0.6%, posiblemente porque en su mayoría, la gente acostumbra a usar medios motorizados; y la gran mayoría de ciudades, no poseen trenes.
+
+```{r fig.width=20, fig.height=15, fig.align='center'}
+names(BD_Homicidios)[16]<- "ARMAS_MEDIO"
+tabla_gen <- BD_Homicidios %>% 
+  filter(ARMAS_MEDIO != "NO REPORTADO")%>%
+  group_by(ARMAS_MEDIO) %>% 
+  summarise(CANTIDAD_H = sum(CANTIDAD), .groups ="drop")%>% 
+  mutate(PORCENTAJE = round(CANTIDAD_H/ sum(CANTIDAD_H)*100,2)) %>%
+  mutate(ARMAS_MEDIO = fct_reorder(ARMAS_MEDIO,CANTIDAD_H, .desc = TRUE))
+
+title_12 <- str_wrap("PORCENTAJE DE HOMICIDIOS A CAUSA DE ACCIDENTES DE TRÁNSITO POR TIPO DE ARMA MEDIO(2018-2025)- (Excluyendo los que no fueron reportados)", width=45)
+
+colores_fins_esc <- c("#1C2C4E", "#2B406E", "#375087", "#4562A1","#5171B5","#6485CC","#7597E0","#85A8F2","#8FAFF2", "#A6C0F7")
+  
+
+ggplot(tabla_gen, aes(x = "", y = PORCENTAJE, fill = ARMAS_MEDIO))+
+  geom_bar(stat = "identity", width = 5)+
+  coord_polar("y", start = 1)+
+  geom_text_repel(aes(label = paste0(PORCENTAJE, "%")),
+            size = 12,
+            color = "white",
+            position = position_stack(vjust=0.5)
+             )+
+  theme_minimal()+
+  theme_void()+
+  labs(title= title_12)+
+  scale_fill_manual(values = colores_fins_esc) +
+  theme(
+    legend.text = element_text(size = 25),
+    legend.title = element_blank(),
+    legend.key.size = unit(1, "cm"),
+    plot.title = element_text(size= 35, hjust=0.5)
+  )
+```
+
+##### GRÁFICO 10
+
+### 2.2.8. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN El DEPARTAMENTO DEL ATLÁNTICO(2018-2025)
+
+El gráfico evidencia una marcada concentración de homicidios por acciendente de transito en el municipio de Barranquilla, que con 862 casos supera ampliamente al resto de municipios del Atlántico. Esto refleja tanto la mayor densidad poblacional y vehicular de la ciudad, como el hecho de ser el principal centro urbano y económico del departamento, donde también se realizan con mayor frecuencia controles de tránsito.
+
+En un segundo grupo se ubican Soledad (217), Sabanalarga (136), Malambo (117) y Baranoa (89), municipios que aunque registran cifras significativamente más bajas que Barranquilla, concentran buena parte de los homicidios debido a su crecimiento urbano, flujo vehicular y cercanía con el área metropolitana.
+
+El resto de los municipios muestra valores menores a 90 homicidios, destacándose Puerto Colombia (84) y Galapa (62), también asociados al área metropolitana. En contraste, los municipios más pequeños como Santa Lucía (9) y Usiacurí (9) presentan las cifras más reducidas, lo cual puede estar relacionado con menor densidad poblacional, y menos vehículos en circulación.
+
+En general, la distribución refleja una relación directa entre el tamaño urbano, la dinámica económica y la cantidad de homicidios registrados, siendo Barranquilla el caso más representativo por la magnitud de sus cifras frente al resto del departamento.
+
+```{python fig.width=20, fig.height=10, fig.align = "center" }
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+import textwrap
+
+hom_atlan=df_hom[df_hom["DEPARTAMENTO"]=="ATLÁNTICO"]
+sub_hom_atlan=hom_atlan.groupby(["DEPARTAMENTO","MUNICIPIO"])["CANTIDAD"].sum().reset_index()
+sub_hom_atlan=sub_hom_atlan.sort_values(by="CANTIDAD",ascending= False)
+sns.set_style("whitegrid")
+# Estilo y configuración del gráfico
+sns.set_style("whitegrid")
+plt.figure(figsize=(12, 8))
+ax_h = sns.barplot(x="CANTIDAD", y="MUNICIPIO", data=sub_hom_atlan, palette="YlGnBu_r")
+
+# Títulos y etiquetas de los ejes
+plt.xlabel("", fontsize=15)
+plt.ylabel("MUNICIPIOS", fontsize=15)
+
+# --- título con salto de línea ---
+titulo = "CANTIDAD DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO - MUNICIPIOS DEL ATLÁNTICO (2018-2025)"
+titulo_envuelto = "\n".join(textwrap.wrap(titulo, width=50))
+plt.title(titulo_envuelto, fontsize=18, pad=20)
+
+# Función para agregar etiquetas de texto
+for p in ax_h.patches:
+    ax_h.text(p.get_width(),  # Posición x
+              p.get_y() + p.get_height() / 2,  # Posición y
+              '{:,.0f}'.format(p.get_width()),
+              ha='left', va='center', fontsize=18)
+
+# Configuración del eje X (horizontal)
+plt.xticks(rotation=45, ha='right', fontsize=22)
+
+# --- INICIO DE LA SOLUCIÓN ---
+# Función para dividir y envolver las etiquetas del eje Y
+def wrap_labels(ax, width, break_long_words=False):
+    labels = []
+    for label in ax.get_yticklabels():
+        text = label.get_text()
+        labels.append(textwrap.fill(text, width=width, break_long_words=break_long_words))
+    ax.set_yticklabels(labels, rotation=0, ha='right')
+
+# Aplica la función a las etiquetas del eje Y (ajusta 'width' si es necesario)
+wrap_labels(ax_h, 15)
+# --- FIN DE LA SOLUCIÓN ---
+
+# Ajuste automático del diseño para evitar cortes
+plt.tight_layout()
+ax_h.grid(False)
+plt.show()
+```
+
+##### GRÁFICO 11
+
+------------------------------------------------------------------------
+
+### 2.2.9. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN El DEPARTAMENTO DEL ATLÁNTICO POR TIPO DE TRANSPORTE(2018-2025)
+
+El siguiente gráfico, muestra que en el departamento del atlántico, se presenta un total acumulado de 2.011 homicidios por accidentes de tránsito, dónde en 1.118 casos no se reportó el tipo de transporte; 518 fueron a causa de los vehículos, 261 a causa de motos, 113 sin empleo de armas, y finalmente 1 caso a causa de bicicleta.
+
+```{r fig.align='center', fig.width= 20, fig.height=15}
+names(BD_Homicidios)[16] <- "ARMAS_MEDIO"
+atlan_tipveh=BD_Homicidios %>%
+  filter(DEPARTAMENTO=="ATLÁNTICO")%>%
+  group_by(ARMAS_MEDIO) %>%
+  summarise(CANT_TOTAL=sum(CANTIDAD), .groups = "drop")%>%
+  arrange(desc(CANT_TOTAL))%>%
+  mutate( ARMAS_MEDIO= fct_reorder(ARMAS_MEDIO, CANT_TOTAL))
+
+colores_fins <- c("#DE403B", "#FFB74D", "#60A560", "#1C2C4E","#8A8080","#F06D69","#3060C7","#36D636","#E38C0B", "#A6514E")
+
+tit_atlan_tip <- str_wrap(" CANTIDAD DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN El ATLÁNTICO POR TIPO DE TRANSPORTE(2018-2025)", width = 40)
+
+ggplot(atlan_tipveh,aes(x = ARMAS_MEDIO,y=CANT_TOTAL, fill = ARMAS_MEDIO))+
+  geom_col(position = "dodge", width = 0.9)+
+  coord_flip()+
+  geom_text(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (CANT_TOTAL)),
+            size=12,
+            position = position_dodge(width= 0.9),
+            hjust = -0.3,
+            vjust = 0.5,
+            fill = "#1C2C4E",
+            color ="black"
+            )+
+  scale_y_continuous(limits = c(0,2000),
+                     breaks = seq(0,2000, by = 400),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  scale_fill_manual(values = colores_fins)+
+  theme_minimal()+
+  labs(  title = tit_atlan_tip,
+         x = "MUNICIPIOS",
+         y = "CANTIDAD TOTAL",
+         fill = "TIPO DE TRANSPORTE")+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=28, angle = 45, hjust= 1,color="#1C2C4E"),
+    axis.text.y = element_text(size = 28,color="#1C2C4E"),
+    plot.title = element_text(size = 38, hjust = 0.5, color="#1C2C4E"),
+    legend.title = element_text(size = 25),
+    axis.title.x = element_text(size =30),
+    axis.title.y = element_text(size = 30),
+    legend.text = element_text(size = 32),
+    axis.line = element_line(color="black"),
+    legend.position = "none")
+```
+
+##### GRÁFICO 12
+
+##### \_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+## 2.3. ACCIDENTALIDAD Y VÍCTIMAS POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA(2018-2025)
+
+### 2.3.1. ACCIDENTES POR ACCIDENTES DE TRÁNSITO PRESENTADOS POR AÑO(2018-2025)
+
+A partir del gráfico, se puede apreciar cómo se presenta una disminución desde el año 2018, con un total de 11.768 accidentes, hasta el 2020 con un total de 6.474 accidentes; sin embargo, para el año 2021 vuelve a presentarse un crecimiento con un total de 9.387 accidentes. Finalmente, después de este año, vuelve otra vez a presentarse un decrecimiento, terminando el 2024 con un total de 2.769 accidentes; mientras tanto, el 2025 hasta el mes de julio, presentó un total de 866 accidentes. Posiblemente esta notable disminución se debe a realización de nuevas campañas e incluso ampliación de vías. (Puedes leer más sobre esto, al final, en la bibliografía del presente informe)
+
+```{r fig.height=10, fig.width=20, fig.align='center'}
+Tab_accd_1 <- ACCD_ACT %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_ACCIDENTES_T = sum(CANTIDAD_ACCIDENTES), .groups = "drop") %>%
+  arrange(desc(CANTIDAD_ACCIDENTES_T)) 
+
+
+titulo_acc_1 <- str_wrap("CANTIDAD DE ACCIDENTES DE TRÁNSITO (2018-2025)")
+  
+  ggplot(Tab_accd_1,aes( x = AÑO, y = CANTIDAD_ACCIDENTES_T))+#inicia el gráfico indicando los ejes
+  geom_line(aes(group = 1), color="#60A560", size=4)+#Dibuja línea para conectar puntos
+    geom_label(aes(label=label_comma(big.mark = ".",decimal.mark = ",")(CANTIDAD_ACCIDENTES_T)),#etiquetas de texto sobre cada punto
+               vjust=-0.5,#se ajusta el texto verticalmente
+               hjust=0.5,#se ajusta el texto horizontalmente
+               size=10,#tamaño de texto
+               fill= "#1C2C4E",#fondo de las etiquetas
+               color ="white")+ #color del texto
+    geom_point(size=8, color = "#1C2C4E")+#puntos en cada valor
+     scale_x_continuous(breaks=unique(Tab_accd_1$AÑO),
+                     labels=unique(Tab_accd_1$AÑO))+#muestra los años como texto
+    labs(title=titulo_acc_1, #nombre del titulo de gráfico y ejes.
+         x=NULL,
+         y = NULL)+
+  scale_y_continuous(limits = c(400,13000),
+                     breaks = seq(400,13000, by = 5000),
+                     labels=label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y
+     theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+   
+  
+```
+
+##### GRÁFICO 13
+
+### 2.3.2. PREDICCIÓN LINEAL RESPECTO A LA CANTIDAD DE ACCIDENTES DE TRÁNSITO(2018-2024)
+
+A partir del gráfico observado, se puede apreciar que la línea de tendencia indica una relación negativa, es decir, que a medida que han avanzado los años, desde el 2018 con un total acumulado de 11.768 accidentes; hasta el 2024 con un total de 2.769, se ha presentado un estado decreciente en el número de accidentes. Por lo cuál se estima y se sugiere, que para el año actual (2025) teniendo en cuenta los datos históricos, el total será menor que el año anterior, dónde presentó un acumulado de 2.769, como se mencionó anteriormente.
+
+```{r fig.height=10, fig.width=15, fig.align='center'}
+
+Tab_accd_1 <- ACCD_ACT %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_ACCIDENTES_T = sum(CANTIDAD_ACCIDENTES), .groups = "drop") %>%
+  filter(AÑO != 2025) %>%
+  arrange(desc(CANTIDAD_ACCIDENTES_T)) 
+  
+modelo=lm(CANTIDAD_ACCIDENTES_T ~ Tab_accd_1$AÑO, data=Tab_accd_1)
+modelo
+titulo_acc_1_pre <- str_wrap("PREDICCIÓN LINEAL DE CANTIDAD DE ACCIDENTES (2018-2024)", width=40)
+  
+  ggplot(Tab_accd_1, aes(x = AÑO, y = CANTIDAD_ACCIDENTES_T)) +
+  # Dibuja los puntos de datos
+  geom_point(size = 8, color = "#1C2C4E") +
+  
+  # AÑADE LA LÍNEA DE REGRESIÓN con geom_smooth()
+  geom_smooth(method = "lm", se = FALSE, color = "#60A560", linewidth = 1) +
+  
+  # Etiquetas de texto
+  geom_label(aes(label = label_comma(big.mark = ".", decimal.mark = ",")(CANTIDAD_ACCIDENTES_T)),
+             vjust = -0.5,
+             hjust = 0.5,
+             size = 10,
+             fill = "#1C2C4E",
+             color = "white") +
+  
+  scale_x_continuous(breaks = unique(Tab_accd_1$AÑO),
+                     labels = unique(Tab_accd_1$AÑO)) +
+  labs(title = titulo_acc_1_pre,
+       x = NULL,
+       y = NULL) +
+  scale_y_continuous(limits = c(400, 13000),
+                     breaks = seq(400, 13000, by = 5000),
+                     labels = label_comma(big.mark = ".", decimal.mark = ",")) +
+  
+  # Estilos de tema
+  theme_minimal() +
+  theme(
+    plot.title = element_text(size = 30, hjust = 0.5),
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.line = element_line(color = "black"),
+    axis.text.x = element_text(size = 25, color = "#1C2C4E"),
+    axis.text.y = element_text(size = 25, color = "#1C2C4E"),
+    panel.border = element_blank()
+  )
+```
+
+##### GRÁFICO 14
+
+### 2.3.3. VICTIMAS AFECTADAS POR ACCIDENTES DE TRÁNSITO (2018-2025)
+
+Con respecto a las víctimas presentadas en estos años, también se detalla un comportamiento casi idéntico que con los accidentes sucedidos en ese tiempo; en el año 2018 se comienza a presentar un decrecimiento partiendo de un total de 2.582 accidentes, hasta el 2020 con un total de 1.581 accidentes; después vuelve a presentarse un crecimiento desde el 2021 con un total de 2.116 víctimas; y he aquí para el siguiente año, el 2022, dónde se presenta una desigualdad respecto a la cantidad de accidentes, debido a que para el año 2022, continúan aumentando la cantidad de victimas, presentándose un total de 2.794; mientras que para ese año, los accidentes comenzaron a disminuir; tal como fue analizado en el gráfico anterior.
+
+```{r fig.height=10, fig.width=20, fig.align='center'}
+Tab_vic_1 <- VIC_ACT %>%
+  group_by(AÑO) %>% 
+  summarise(CANTIDAD_VICTIMAS_T = sum(CANTIDAD_VICTIMAS), .groups = "drop") %>%
+  arrange(desc(CANTIDAD_VICTIMAS_T)) 
+
+
+titulo_vic_1 <- str_wrap("CANTIDAD DE VICTIMAS (2018-2025)")
+  
+  ggplot(Tab_vic_1,aes( x = AÑO, y = CANTIDAD_VICTIMAS_T))+#inicia el gráfico indicando los ejes
+  geom_line(aes(group = 1), color="#60A560", size=4)+#Dibuja línea para conectar puntos
+    geom_label(aes(label=label_comma(big.mark = ".",decimal.mark = ",")(CANTIDAD_VICTIMAS_T)),#etiquetas de texto sobre cada punto
+               vjust=-0.5,#se ajusta el texto verticalmente
+               hjust=0.5,#se ajusta el texto horizontalmente
+               size=10,#tamaño de texto
+               fill= "#1C2C4E",#fondo de las etiquetas
+               color ="white")+ #color del texto
+    geom_point(size=8, color = "#1C2C4E")+#puntos en cada valor
+     scale_x_continuous(breaks=unique(Tab_accd_1$AÑO),
+                     labels=unique(Tab_accd_1$AÑO))+#muestra los años como texto
+    labs(title=titulo_vic_1, #nombre del titulo de gráfico y ejes.
+         x=NULL,
+         y = NULL)+
+  scale_y_continuous(limits = c(400,4000),
+                     breaks = seq(400,4000, by = 2000),
+                     labels=label_comma(big.mark = ".", decimal.mark = ","))+ #ajusta el eje y
+     theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+
+
+```
+
+##### GRÁFICO 15
+
+### 2.3.4. PROMEDIO ACCIDENTALIDAD VIAL POR MESES(2018-2025)
+
+A partir del gráfico se puede observar cómo para el mes de abril, siempre se presenta una menor cantidad de accidentes, mostrando un promedio de 522 accidentes; por otro lado, el mes con una mayor cantidad de accidentes promedio, responde al mes de diciembre, presentando un promedio de 656 accidentes. Esta notable cantidad de accidentes para los meses de diciembre, se respalda de lo mencionado anteriormente con la cantidad promedio de homicidios por accidentes de transito en estos meses, lo cuál sugiere que este mes ocurren más homicidios; y por lo tanto, más accidentes, por las fechas como la Navidad, y Año Nuevo.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",                   "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE")   
+
+Tab_acc_2 <- ACCD_ACT %>%   
+  group_by(AÑO, MES) %>%   
+  summarise(CANTIDAD_ACCIDENTE = sum(CANTIDAD_ACCIDENTES), 
+            .groups = "drop") %>%    
+  group_by(MES) %>%   
+  summarise(CANTIDAD_PROM_ACCD = round(mean(CANTIDAD_ACCIDENTE),0), .groups = "drop")%>%    
+  mutate(MES = factor(MES, levels = orden_meses))   
+
+ titulo_vic_2 <- str_wrap("CANTIDAD PROMEDIO DE ACCIDENTES POR MESES (2018-2025) ", width=35)  
+ 
+ ggplot(Tab_acc_2,aes(x=MES, y= CANTIDAD_PROM_ACCD)) +  
+   geom_line(aes(group=1),size= 4, color= "#60A560") +   
+   geom_label_repel(aes(label= CANTIDAD_PROM_ACCD ),         
+                    size=8,             vjust= 1, 
+            hjust = 0.5,fill= "#1C2C4E",      
+            color = "white")+   
+   geom_point(size=8, color = "#1C2C4E")+   
+   scale_y_continuous(limits = c(400,800),                     
+                      breaks = seq(400,800, by = 200))+   
+   labs(title = titulo_vic_2,        
+        x = NULL,         
+        y = NULL)+   
+   theme_minimal()+   
+   theme( panel.grid.major = element_blank(),     
+          panel.grid.minor = element_blank(), 
+          axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),    
+          axis.text.y = element_text(size = 25, color ="#1C2C4E"),    
+          plot.title = element_text(size = 35, hjust = 0.5),   
+          axis.line = element_line(color = "black"),  
+          legend.text = element_text(size=25),   
+          legend.key.size = unit(1, "cm"),     legend.title = element_text(size= 28))
+
+```
+
+##### GRÁFICO 16
+
+### 2.3.5. ACUMULADO DE VÍCTIMAS A CAUSA DE ACCIDENTES DE TRÁNSITO POR MESES(2018-2025)
+
+En esta visualización , se puede apreciar el mismo comportamiento analizado para el gráfico anterior; el mes de abril, presenta una menor cantidad de víctimas con un promedio de 162 víctimas, mientras que el mes que presentó una mayor cantidad de víctimas, es diciembre con un promedio de 210 víctimas.
+
+```{r fig.width= 20, fig.height=10, fig.align='center'}
+
+orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO",                   "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE")   
+
+Tab_vic_2 <- VIC_ACT %>%   
+  group_by(AÑO, MES) %>%   
+  summarise(CANTIDAD_VICTIMAS = sum(CANTIDAD_VICTIMAS), 
+            .groups = "drop") %>%    
+  group_by(MES) %>%   
+  summarise(CANTIDAD_PROM_VICTIMAS = round(mean(CANTIDAD_VICTIMAS),0), .groups = "drop")%>%    
+  mutate(MES = factor(MES, levels = orden_meses))   
+
+ titulo_vic_2 <- str_wrap("CANTIDAD PROMEDIO DE VICTIMAS POR MESES (2018-2025) ", width=35)  
+ 
+ ggplot(Tab_vic_2,aes(x=MES, y= CANTIDAD_PROM_VICTIMAS)) +  
+   geom_line(aes(group=1),size= 4, color= "#60A560") +   
+   geom_label_repel(aes(label= CANTIDAD_PROM_VICTIMAS ),             size=8,             vjust= 1, 
+            hjust = 0.5,fill= "#1C2C4E",      
+            color = "white")+   
+   geom_point(size=8, color = "#1C2C4E")+   
+   scale_y_continuous(limits = c(0,400),                     
+                      breaks = seq(0,400, by = 200))+   
+   labs(title = titulo_vic_2,        
+        x = NULL,         
+        y = NULL)+   
+   theme_minimal()+   
+   theme( panel.grid.major = element_blank(),     
+          panel.grid.minor = element_blank(), 
+          axis.text.x = element_text(size=25, angle = 45, hjust= 1, color ="#1C2C4E"),    
+          axis.text.y = element_text(size = 25, color ="#1C2C4E"),    
+          plot.title = element_text(size = 35, hjust = 0.5),   
+          axis.line = element_line(color = "black"),  
+          legend.text = element_text(size=25),   
+          legend.key.size = unit(1, "cm"),     legend.title = element_text(size= 28))
+
+```
+
+##### GRÁFICO 17
+
+### 2.3.6. ACCIDENTALIDAD VIAL POR DÍAS DE LA SEMANA(2018-2025)
+
+A partir del gráfico, se puede inferir que siempre se presenta una mayor cantidad de accidentes para los días martes con un promedio de 1.040,4  ; mientras que el mes que presenta una menor cantidad de accidentes, es el día domingo con un promedio de 658,1 accidentes. Pese a que los fines de semana normalmente la gente acostumbra a salir más seguido, posiblemente el domingo presente un promedio tan bajo por ser el lunes el día que le sigue al domingo, por lo que la mayoría empieza la semana trabajando; esto también explicaría por qué desde el lunes, hasta el sábado, se presenta una mayor cantidad promedio; debido a que, aumenta el flujo vehicular, ya que además de quienes trabajan, también se encuentran los estudiantes, y asimismo, personas que necesitan hacer diligencias.
+
+```{r fig.width=20, fig.height=10, fig.align='center'}
+
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(stringr)
+
+# Definir orden de días
+orden_diass <- c("LUNES","MARTES", "MIÉRCOLES", "JUEVES","VIERNES","SÁBADO","DOMINGO")
+
+# Arreglo de nombres
+names(ACCD_ACT)[3] <- "DIA_SEMANA"
+ACCD_ACT$DIA_SEMANA <- toupper(ACCD_ACT$DIA_SEMANA)
+
+# Tabla de resumen
+Tab_accd_3 <- ACCD_ACT %>% 
+  group_by(DIA_SEMANA) %>% 
+  summarise(CANTIDAD_DE_ACCIDENTES = sum(CANTIDAD_ACCIDENTES), .groups = "drop") %>%
+  mutate(DIA_SEMANA = factor(DIA_SEMANA, levels = orden_diass))
+
+# Título envuelto
+titulo_acc_3 <- str_wrap("ACUMULADO DE ACCIDENTALIDAD POR DÍA DE LA SEMANA (2018-2025)", width = 40)
+
+# Paleta de colores personalizada
+colores_fins_esc <- c(
+  "#1C2C4E", "#2B406E", "#375087", "#4562A1",
+  "#5171B5", "#6485CC", "#7597E0", "#85A8F2",
+  "#8FAFF2", "#A6C0F7"
+)
+
+# Gráfico final
+ggplot(Tab_accd_3, aes(x = DIA_SEMANA, y = CANTIDAD_DE_ACCIDENTES, fill = DIA_SEMANA)) +
+  geom_col() +
+  geom_text(
+    aes(label = scales::comma(CANTIDAD_DE_ACCIDENTES, big.mark = ".", decimal.mark = ",")),
+    size = 12,
+    vjust = -1
+  ) +
+  labs(title = titulo_acc_3, x = NULL, y = NULL) +
+  scale_fill_manual(values = colores_fins_esc) +
+  scale_y_continuous(
+    limits = c(0, 9000),
+    breaks = seq(0, 9000, by = 1000),
+    labels = scales::comma_format(big.mark = ".", decimal.mark = ",")
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size = 25, color = "#1C2C4E"),
+    axis.text.y = element_text(size = 25, color = "#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    legend.position = "none",
+    axis.line = element_line(color = "black")
+  )
+
+```
+
+##### GRÁFICO 18
+
+### 2.3.7. VICTIMAS PRESENTADAS POR GENERO Y CONDICIÓN EN BARRANQUILLA(2018-2024) y (2025)
+
+En este análisis, se presentará un acumulado desde el año 2018 hasta el 2024, de la cantidad de víctimas por género y condición en que se encontraban en el momento del accidente. Asimismo, después se mostrará un gráfico en dónde nos muestre la cantidad de víctimas sólo el año 2025, para comparar y notar si se ha presentado algún cambio para este año actual.
+
+Gracias al gráfico 19, se puede apreciar que para el género masculino, quiénes salen más heridos, son los motociclistas, presentándose un total de 5.267 víctimas dentro de esta categoría; asimismo, es esta categoría dentro de este género, la que presenta una mayor cantidad de víctimas a nivel general; mientras que en el género femenino, salen más perjudicadas las acompañantes, presentándose un total de 1.198 víctimas dentro de esta categoría. El primer comportamiento, en el género masculino con respecto a los motociclistas, podría explicarse debido a que la mayoría de hombres, suelen manejar este medio de transporte, por ser más accesibles. El segundo comportamiento presentado en el género femenino respecto a las acompañantes, puede deberse a que probablemente una parte notable de las mujeres, no suelen manejar muchos medios de transporte; por ejemplo, con las motos, dónde podemos encontrar una variedad de mujeres manejando este tipo de transporte; sin embargo, los hombres ganan en cantidad con respecto al manejo de este tipo de vehículo.
+
+Por otro lado, se puede observar que los peatones, también salen mayormente heridos; los peatones del género masculino con un total acumulado de 1.124 victimas, y los peatones del género femenino con un total acumulado de 348 víctimas.
+
+Finalmente, gracias al gráfico 19.1 dónde se presenta sólo en el año 2025, se puede inferir que aún quiénes presentan un mayor número de víctimas, es el género masculino con un total 266; asimismo, en el género femenino salen más afectadas las acompañantes, representando un total acumulado de 100 víctimas.
+
+```{r fig.width=20, fig.height=12, fig.align='center'}
+names(VIC_ACT)[7] <- "CONDICION_VICTIMA"
+names(VIC_ACT)[10] <- "SEXO_VICTIMA"
+
+Tab_vic_3 <- VIC_ACT %>% 
+  filter(SEXO_VICTIMA %in% c("FEMENINO", "MASCULINO"))%>%
+  group_by(SEXO_VICTIMA, CONDICION_VICTIMA) %>% 
+  summarise(CANTIDAD_VICTIMAS_3 = sum(CANTIDAD_VICTIMAS), 
+            .groups = "drop")
+
+
+colores_fins_esc <- c("#1C2C4E", "#2B406E", "#375087", "#4562A1","#5171B5","#6485CC","#7597E0","#85A8F2","#8FAFF2", "#A6C0F7")
+
+titulo_vic_3 <- str_wrap("CANTIDAD DE VICTIMAS POR GENERO Y CONDICIÓN DE LA VICTIMA  EN BARRANQUILLA(2020-2024)", width= 40)
+
+ggplot(Tab_vic_3,aes(x = CANTIDAD_VICTIMAS_3, y = SEXO_VICTIMA, fill = CONDICION_VICTIMA ))+
+  geom_col(position = "dodge", width = 0.9)+
+labs(title = titulo_vic_3,
+       x = NULL,
+       y = NULL)+
+  geom_text(aes(label =paste0(CONDICION_VICTIMA, ": "
+    ,label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_VICTIMAS_3))),
+            size=8,
+            position = position_dodge(width = 0.9),
+            vjust= 0.5,
+           hjust = -0.1)+
+  scale_fill_manual(values = colores_fins_esc)+
+  scale_x_continuous(limits = c(0,8000),
+                     breaks = seq(0,8000, by = 1000),
+                     labels = label_comma(big.mark = ".", decimal.mark = "                                 ,"))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size = 25),
+    legend.title = element_text(size=28),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "none"
+  )
+```
+
+##### GRÁFICO 19
+
+```{r fig.width=20, fig.height=15, fig.align='center'}
+names(VIC_ACT)[7] <- "CONDICION_VICTIMA"
+names(VIC_ACT)[10] <- "SEXO_VICTIMA"
+
+Tab_vic_3_1 <- VIC_ACT %>% 
+  filter(AÑO == 2025)%>%
+  filter(SEXO_VICTIMA %in% c("FEMENINO", "MASCULINO"))%>%
+  group_by(SEXO_VICTIMA, CONDICION_VICTIMA) %>% 
+  summarise(CANTIDAD_VICTIMAS_3_1 = sum(CANTIDAD_VICTIMAS), 
+            .groups = "drop")
+
+
+colores_fins_esc <- c("#1C2C4E", "#2B406E", "#375087", "#4562A1","#5171B5","#6485CC","#7597E0","#85A8F2","#8FAFF2", "#A6C0F7")
+
+titulo_vic_3_1 <- str_wrap("CANTIDAD DE VICTIMAS POR GENERO Y CONDICIÓN DE LA VICTIMA  EN BARRANQUILLA(2025)", width= 40)
+
+ggplot(Tab_vic_3_1,aes(x = CANTIDAD_VICTIMAS_3_1, y = SEXO_VICTIMA, fill = CONDICION_VICTIMA ))+
+  geom_col(position = "dodge", width = 0.9)+
+labs(title = titulo_vic_3_1,
+       x = NULL,
+       y = NULL)+
+  geom_text(aes(label =paste0(CONDICION_VICTIMA, ": "
+    ,label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_VICTIMAS_3_1))),
+            size=8,
+            position = position_dodge(width = 0.9),
+            vjust= 0.5,
+           hjust = -0.1)+
+  scale_fill_manual(values = colores_fins_esc)+
+  scale_x_continuous(limits = c(0,400),
+                     breaks = seq(0,400, by = 50),
+                     labels = label_comma(big.mark = ".", decimal.mark = "                                 ,"))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size = 25),
+    legend.title = element_text(size=28),
+    legend.key.size = unit(1, "cm"),
+    legend.position = "none"
+  )
+
+```
+
+##### GRÁFICO 19.1
+
+### 2.3.8. DIRECCIONES DONDE SE PRESENTARON UNA MAYOR CANTIDAD DE ACCIDENTES DE TRÁNSITO EN BARRANQUILLA(2018-2025)
+
+A partir del gráfico, se puede apreciar que la dirección dónde ocurrieron más accidentes en la ciudad de Barranquilla, fue en la calle 110 CR 9 G, con un total de 167 accidentes. Asimismo, las 2 direcciones que le siguen, corresponden a la calle 110, e incluso, esta calle se sigue repitiendo otras veces; pero, con diferente carrera. Esto podría explicarse ya que la calle 110, se intercepta con la avenida circunvalar. Hay que tener en cuenta que esta avenida es una autopista que bordea el costado occidental de Barranquilla; y se encuentra integrada con la vía 40 y la calle 30 conformando un anillo vial que facilita el tráfico de vehículos, el transporte de mercancías, el acceso al aeropuerto Ernesto Cortissoz y el desarrollo de la ciudad, así como la conexión con otras ciudades de la región Caribe y el país. A partir de esta información se infiere que el flujo de vehículos es mayor, y por lo tanto, las personas son más propensas a ocasionar accidentes. En contraste, la direccción con una menor cantidad de accidentes dentro de este top, es la vía 40 con calle 47, acumulando un total de 67 accidentes de tránsito.
+
+Si nos centramos en la primera dirección, la carrera 9G, es la que se encuentra más cercana a la avenida circunvalar, lo que podría darle explicación al hecho de que sea el lugar dónde se presentan más accidentes.
+
+```{r  fig.width=20, fig.height=20, fig.align='center'}
+names(ACCD_ACT)[6] <- "DIRECCION_ACCIDENTE"
+Tabla_top_10_DIREC <- ACCD_ACT %>%
+  group_by(DIRECCION_ACCIDENTE)%>%
+  summarise(CANTIDAD_ACCIDENTES_DIREC = sum(CANTIDAD_ACCIDENTES), .groups="drop")%>%
+  arrange(desc(CANTIDAD_ACCIDENTES_DIREC))%>%
+  top_n(10)%>% 
+  mutate(DIRECCION_ACCIDENTE = fct_reorder(DIRECCION_ACCIDENTE,CANTIDAD_ACCIDENTES_DIREC, .desc=TRUE))
+
+title_DIR <- str_wrap("DIRECCIONES CON MAYOR CANTIDAD DE ACCIDENTES EN BARRANQUILLA
+                    (2018-2025)", width=40)
+
+colores_fins_esc <- c("#1C2C4E", "#2B406E", "#375087", "#4562A1","#5171B5","#6485CC","#7597E0","#85A8F2","#8FAFF2", "#A6C0F7")
+
+  
+ggplot(Tabla_top_10_DIREC,aes(reorder(x =DIRECCION_ACCIDENTE, CANTIDAD_ACCIDENTES_DIREC), y = CANTIDAD_ACCIDENTES_DIREC, fill = DIRECCION_ACCIDENTE))+
+  geom_bar(stat = "identity")+
+  coord_flip()+
+  labs(title = title_DIR,
+       x = NULL,
+       y = NULL)+
+  geom_text(aes(label = label_comma(big.mark = ".", decimal.mark = ",")(CANTIDAD_ACCIDENTES_DIREC)),
+            size=12,
+            hjust= -0.3,
+           )+
+  scale_fill_manual(values = colores_fins_esc)+
+  scale_y_continuous(limits = c(0,300),
+                     breaks = seq(0,300, by = 50),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    legend.position = "none",
+    axis.line = element_line(color = "black")
+  )
+
+
+
+
+```
+
+##### GRÁFICO 20
+
+### 2.3.9. ACCIDENTES DE TRÁNSITO POR CLASE DE VEHÍCULO Y TIPO DE ACCIDENTE(2018-2025)
+
+En esta gráfica podemos ver que los automóviles son, por lejos, los que más accidentes tienen, con más de 23 mil casos, mientras que los camperos son los que menos aparecen, con apenas 1.466. Esto significa que los automóviles tienen más de 15 veces la cantidad de accidentes que los camperos.Su causa se deberse a que los automóviles son el vehículo más común en la ciudad, lo que aumenta naturalmente las probabilidades de choques. También influyen factores como el exceso de velocidad, la imprudencia en cruces y la alta circulación en zonas urbanas. En contraste, los camperos se usan mucho menos, casi siempre en zonas rurales o en contextos muy específicos, lo que hace que tengan una baja participación en la accidentalidad de la ciudad.
+
+```{r fig.width=20, fig.height=10, fig.align='center'}
+names(ACCD_ACT)[7] <- "CLASE_ACCIDENTE"
+names(ACCD_ACT)[9] <- "CLASE_VEHICULO_ACCIDENTADO"
+
+Tab_accd_4 <- ACCD_ACT %>% 
+  group_by(CLASE_VEHICULO_ACCIDENTADO, CLASE_ACCIDENTE) %>% 
+  summarise(CANTIDAD_ACCIDENTE_1 = sum(CANTIDAD_ACCIDENTES), 
+            .groups = "drop")%>% 
+  arrange(desc(CANTIDAD_ACCIDENTE_1)) %>%
+  top_n(6)%>%
+  mutate(CLASE_VEHICULO_ACCIDENTADO = fct_reorder(CLASE_VEHICULO_ACCIDENTADO,CANTIDAD_ACCIDENTE_1))
+
+
+
+titulo_accd_4 <- str_wrap("CANTIDAD DE ACCIDENTES POR CLASE DE VEHICULO ACCIDENTADO Y TIPO DE ACCIDENTE(2018-2025)", width = 40)
+
+ggplot(Tab_accd_4, aes(x = CLASE_VEHICULO_ACCIDENTADO, 
+                       y = CANTIDAD_ACCIDENTE_1, fill = CLASE_ACCIDENTE)) +
+  geom_bar(stat = "identity", width = 1.2, fill = "#1C2C4E") +
+  coord_flip() +
+  labs(title = titulo_accd_4,
+       x = NULL,
+       y = NULL,
+       ) +
+  geom_text(aes(label = scales::comma(CANTIDAD_ACCIDENTE_1, big.mark=".", decimal.mark=",")),
+            size = 8,
+            hjust = -0.1) +
+  scale_y_continuous(
+    limits = c(0, max(Tab_accd_4$CANTIDAD_ACCIDENTE_1) * 1.1),
+    breaks = seq(0, max(Tab_accd_4$CANTIDAD_ACCIDENTE_1), by = 5000),
+    labels = label_comma(big.mark = ".", decimal.mark = ",")
+  ) +
+  theme_minimal() +
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size = 25, color = "#1C2C4E"),
+    axis.text.y = element_text(size = 25, color = "#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.title = element_text(size = 20),
+    legend.text = element_text(size = 23),
+    legend.key.size = unit(1, "cm")
+  )+
+  guides(fill = guide_legend( title = "TIPO DE ACCIDENTE"))
+```
+
+##### GRÁFICO 21
+
+### 2.3.10. ACCIDENTALIDAD VIAL POR SERVICIO DE VEHÍCULO ACCIDENTADO EN BARRANQUIILLA(2018-2025)
+
+En el siguiente gráfico se puede apreciar que el servicio de vehículo con una mayor cantidad de accidentes, son los particulares con un total de 33.308 accidentes, siendo los consular y diplomático los que tienen un menor número, con un total de 1 y 3 respectivamente. La razón de ser de este gran número de accidentes de vehículos particulares, posiblemente sea por la numerosa cantidad que se encuentran circulando; asimismo,  muchos son propensos a cometer infracciones por exceso de velocidad, lo cual se verá evidenciado más adelante en los parámetros analizados de la base de comparendos electrónicos en Barranquilla.
+
+```{r fig.width=20, fig.height=15, fig.align='center'}
+
+names(ACCD_ACT)[8] <- "SERVICIO_VEHICULO_ACCIDENTADO"
+
+df_servicio <- ACCD_ACT %>%
+  group_by(SERVICIO_VEHICULO_ACCIDENTADO) %>%
+  summarise(Total = sum(CANTIDAD_ACCIDENTES, na.rm = TRUE))%>%
+  mutate(SERVICIO_VEHICULO_ACCIDENTADO = fct_reorder(SERVICIO_VEHICULO_ACCIDENTADO, Total, .desc = TRUE))
+
+colores_ver <- c("#60A560","#70B570","#80C280","#91CF91","#A2DBA2","#B5E8B5","#C9F5C9")
+
+tit_serv <- str_wrap("CANTIDAD DE ACCIDENTES POR SERVICIO DEL VEHÍCULO EN BARRANQUILLA(2018-2025)", width = 45)
+
+ggplot(df_servicio, aes(x = SERVICIO_VEHICULO_ACCIDENTADO, y = Total, fill = SERVICIO_VEHICULO_ACCIDENTADO)) +
+  geom_bar(stat = "identity") +
+  geom_text(aes(label = label_comma(big.mark = ".",decimal.mark = ",")(Total)), vjust = -0.5, size= 12) +
+  scale_fill_manual(values = colores_ver) +  
+  theme_minimal() +
+  theme(legend.position = "none") + #  esto quita la leyenda
+  scale_y_continuous(limits = c(0,35000),
+                     breaks = seq(0,35000, by = 5000),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(
+    title = tit_serv,
+    x = "SERVICIO DEL VEHÍCULO",
+    y = "CANTIDAD DE ACCIDENTES"
+  )+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size = 25),
+    legend.title = element_text(size=28),
+    legend.key.size = unit(1, "cm"),
+    axis.title.x = element_text(size = 28),
+    axis.title.y = element_text(size = 28))
+    
+```
+
+##### GRÁFICO 22
+
+## 2.4. HOMICIDIOS POR ACCIDENTES DE TRÁNSITO OCURRIDOS EN BARRANQUILLA(2018-2025)
+
+### 2.4.1. HOMICIDIOS POR ACCIDENTES DE TRANSITO EN BARRANQUILLA(2018-2025)
+
+Los homicidios por accidentes de tránsito en Barranquilla entre 2018 y 2025 muestran un comportamiento fluctuante sin un patrón estable. En 2018 se registraron 92 casos, pero en 2019 y 2020 la cifra aumentó de manera significativa hasta alcanzar 162 y 168 homicidios respectivamente, marcando los picos más altos del periodo. Sin embargo, en 2021 se produjo una disminución notable con 88 casos, lo cual puede asociarse al contexto de la pandemia: las restricciones de movilidad redujeron el flujo vehicular, lo que incidió en una menor ocurrencia de siniestros viales.
+
+Posteriormente, en 2022 y 2023 los homicidios volvieron a aumentar (105 y 108 respectivamente), evidenciando la vulnerabilidad del comportamiento vial cuando la movilidad regresó a la normalidad. A partir de 2024 se observa nuevamente un descenso con 86 casos, tendencia que se mantiene en 2025 con 53 homicidios. No obstante, es importante aclarar que el año 2025 aún no ha finalizado, por lo cual esta cifra puede variar al cierre del periodo.
+
+Estos datos reflejan que, aunque en los últimos años se advierte una mejoría, la situación sigue siendo inestable y dependiente de factores externos como contextos sociales, económicos y de movilidad. El repunte tras la pandemia evidencia que las políticas de seguridad vial y control han tenido avances, pero aún no son suficientes para garantizar una reducción sostenida en el tiempo.
+
+En conclusión, se requiere reforzar las medidas preventivas mediante campañas de educación vial permanentes, controles más estrictos al consumo de alcohol y velocidad, además de mejoras en la infraestructura y señalización. Solo de esta manera será posible consolidar la tendencia descendente observada en 2024 y lo que va de 2025, evitando que los homicidios por accidentes de tránsito vuelvan a incrementarse en el futuro.
+
+```{r fig.width=15, fig.height=10, fig.align='center'}
+tab_hm_bq <- BD_Homicidios %>%
+   filter(MUNICIPIO == "BARRANQUILLA") %>%
+   group_by(AÑO) %>%
+   summarise(CANTIDAD_HM_BQ = sum(CANTIDAD), .groups = "drop")
+
+
+tit_hm_bq <- str_wrap("HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA(2018-2025)", width = 45)
+
+
+
+ggplot(tab_hm_bq, aes(x = AÑO, y=  CANTIDAD_HM_BQ )) +
+  geom_line(aes(group = 1), color = "#1C2C4E", size = 4 )+ 
+  geom_point(size = 8, color = "#60A560")+
+  labs(
+    title = tit_hm_bq,
+    x = NULL,
+    y = NULL
+  ) +
+  geom_label_repel(aes( label = label_comma(big.mark = ".", decimal.mark = ",")(CANTIDAD_HM_BQ))
+    ,
+    vjust=-0.5,#se ajusta el texto verticalmente
+    hjust=0.5,#se ajusta el texto horizontalmente
+    size=10,#tamaño de texto
+    fill= "#1C2C4E",#fondo de las etiquetas
+    color ="white") +
+  scale_x_continuous(
+    breaks = unique(BD_Homicidios$AÑO),
+    labels = unique(BD_Homicidios$AÑO)
+  ) +
+  scale_y_continuous(  
+    limits = c(0,200),
+    breaks = seq(0, 200, by = 40),
+    labels = label_comma(big.mark = ".", decimal.mark = ",")
+  ) +
+  theme_minimal()+#un fondo más limpio para el gráfico.
+   
+    theme(
+      plot.title = element_text(size = 35, hjust=0.5),#ajusta el título
+      panel.grid.major = element_blank(),#elimina líneas de cuadrícula
+      panel.grid.minor = element_blank(),
+      axis.line= element_line(color = "black"),#agrega línea negra en los ejes.
+      axis.text.x = element_text(size=25,  color = "#1C2C4E"),#ajusta el texto del eje
+      axis.text.y = element_text(size=25, color = "#1C2C4E"),
+      panel.border = element_blank()#quita el borde del panel
+    )
+```
+
+##### GRÁFICO 23
+
+### 2.4.2. PRONÓSTICO DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA(2018-2024)
+
+En esta gráfica se presenta el pronóstico de homicidios por accidentes de transito en Barranquilla entre 2018 y 2029, elaborado con un modelo ARIMA. Primero, en la parte histórica (2018–2024), se observa un aumento fuerte en 2019 y 2020, cuando los homicidios alcanzaron su punto más alto, por encima de 160 casos. Luego, a partir de 2021, las cifras caen de manera considerable, estabilizándose entre 90 y 110 homicidios anuales. Ahora, en la parte del pronóstico (2025–2029), el modelo proyecta que, , desde 2025 en adelante, los homicidios se mantendrán alrededor de los 90 casos por año, aunque con un intervalo de confianza bastante amplio. Esto significa, como se refleja en las bandas indican que podría presentarse tanto reducciones notables como nuevos aumentos.
+
+```{r fig.width=15, fig.height=8, fig.align='center'}
+
+library(forecast)
+hom_baq=BD_Homicidios%>%
+  group_by(AÑO,MUNICIPIO) %>%
+  summarise(CANTIDAD_HOM= sum(CANTIDAD), .groups = "drop")%>%
+  filter(MUNICIPIO=="BARRANQUILLA",AÑO!=2025)%>%
+  arrange(desc(CANTIDAD_HOM))
+
+serie_hom_baq=ts(hom_baq$CANTIDAD_HOM,start = 2018, frequency = 1)
+modelo=auto.arima(serie_hom_baq)
+summary(modelo)
+pronostico_hom=forecast(modelo,h=5)
+
+df_pronostico = data.frame(
+  AÑO = as.numeric(time(pronostico_hom$mean)),
+  CANTIDAD_HOM = as.numeric(pronostico_hom$mean),
+  Lower.80 = pronostico_hom$lower[, "80%"],
+  Upper.80 = pronostico_hom$upper[, "80%"],
+  Lower.95 = pronostico_hom$lower[, "95%"],
+  Upper.95 = pronostico_hom$upper[, "95%"]
+)
+df_grafico = rbind(
+  data.frame(AÑO = hom_baq$AÑO, CANTIDAD_HOM = hom_baq$CANTIDAD_HOM, Tipo = "Histórico"),
+  data.frame(AÑO = df_pronostico$AÑO, CANTIDAD_HOM = df_pronostico$CANTIDAD_HOM, Tipo = "Pronóstico")
+)
+
+tit_pron <- str_wrap("PRONÓSTICO DE HOMICIDIOS POR ACCIDENTE DE TRÁNSITO  EN BARRANQUILLA(2018-2024)", width = 45)
+
+ggplot(data = df_grafico, aes(x = AÑO, y = CANTIDAD_HOM)) +
+   geom_ribbon(data = df_pronostico, aes(ymin = Lower.95, ymax = Upper.95), fill = "blue", alpha = 0.1) +
+ 
+   geom_ribbon(data = df_pronostico, aes(ymin = Lower.80, ymax = Upper.80), fill = "blue", alpha = 0.2) +
+   geom_line(aes(color = Tipo), linewidth = 1) +
+   geom_point(aes(color = Tipo), size = 2) +
+   geom_text(aes(label = round(CANTIDAD_HOM)), vjust = -1, hjust = 0.5, size = 5) +    theme_minimal() +
+   labs(
+     title = tit_pron,
+     subtitle = "Basado en datos históricos con modelo ARIMA",
+     x = "AÑO", # La etiqueta de la gráfica puede tener la 'A' mayúscula, pero la variable en el dataframe debe ser consistente
+     y = "CANTIDAD DE HOMICIDIOS",
+     color = "Datos"
+   ) +
+   scale_color_manual(values = c("Histórico" = "black", "Pronóstico" = "darkblue")) +
+   scale_x_continuous(breaks = unique(df_grafico$AÑO)) +
+   theme(panel.grid.major = element_blank(),
+         panel.grid.minor = element_blank(),
+         axis.line = element_line(color= "black"),
+         plot.title = element_text(size = 25, hjust= 0.5, color="#1C2C4E"),
+         plot.subtitle = element_text(hjust = 0.5),
+         axis.title.x = element_text( size = 20, color="#1C2C4E"),
+         axis.title.y = element_text(size = 20, color="#1C2C4E"),
+         axis.text.x = element_text(size = 18),
+         axis.text.y = element_text(size = 18))
+```
+
+##### GRÁFICO 24
+
+### 2.4.3. HOMICIDIOS POR ACCIDENTE DE TRÁNSITO, POR GÉNERO Y AGRUPACIÓN DE EDAD EN BARRANQUILLA (2018-2025)
+
+Se puede apreciar que los homicidios por accidentes de tránsito afectan de manera elevada a los hombres, con 722 adultos y 22 menores fallecidos, frente a 112 mujeres adultas y 6 menores, lo que nos muestra una marcada diferencia de género en la siniestralidad vial. Estos datos reflejan que el género masculino representan la gran mayoría de víctimas fatales, quizás por una mayor exposición al riesgo debido a su predominio como conductores de motocicletas y vehículos particulares, así como por conductas de tránsito más asociadas a imprudencias. Aunque la participación femenina es significativamente menor, sigue siendo relevante, ya que indica la necesidad de implementar medidas de prevención que consideren tanto el género como la edad, reforzando la educación vial en jóvenes y campañas de sensibilización especialmente dirigidas a la población masculina.
+
+```{r fig.width=20, fig.height=10, fig.align='center'}
+
+names(BD_Homicidios)[13] <-"Agrupa_edad_persona"
+
+Tab_hm_bq_2 <- BD_Homicidios %>% 
+  filter(GENERO %in% c("FEMENINO", "MASCULINO") 
+         & MUNICIPIO =="BARRANQUILLA")%>%
+  group_by(GENERO,Agrupa_edad_persona ) %>% 
+  summarise(cant_hm_bq  = sum(CANTIDAD), 
+            .groups = "drop")
+
+
+colores_fin_vr <- c("#60A560","#8AD48A")
+
+tit_hm_bq_2 <- str_wrap("HOMICIDIOS POR ACCIDENTE DE TRÁNSITO, POR GÉNERO Y AGRUPACIÓN DE EDAD", width= 40)
+
+ggplot(Tab_hm_bq_2,aes(x = cant_hm_bq  , y =GENERO, fill = Agrupa_edad_persona ))+
+  geom_col(position = "dodge", width = 0.9)+
+labs(title = tit_hm_bq_2,
+       x = NULL,
+       y = NULL,
+     fill= "Agrupación de edad")+
+  geom_text(aes(label = label_comma(big.mark = ".", decimal.mark = ",")(cant_hm_bq)),
+            size=9,
+            position = position_dodge(width = 0.9),
+            vjust= 0.5,
+           hjust = -0.2)+
+  scale_fill_manual(values = colores_fin_vr)+
+  scale_x_continuous(limits = c(0,820),
+                     breaks = seq(0,820, by = 60),
+                     labels = label_comma(big.mark = ".", decimal.mark = "                                 ,"))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color ="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5,  color="#1C2C4E"),
+    axis.line = element_line(color = "black"),
+    legend.text = element_text(size = 25),
+    legend.title = element_text(size=28),
+    legend.key.size = unit(1, "cm")
+  )
+
+
+```
+
+##### GRÁFICO 25
+
+### 2.4.4. PROMEDIO DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA POR MESES(2018-2025)
+
+En la siguiente gráfica, se muestra el promedio de homicidios por accidentes de tránsito en Barranquilla durante el periodo 2018-2025, evidenciando variaciones significativas a lo largo del año. Los meses con mayor promedio de casos son marzo y diciembre, con 12,50 y 12,71 respectivamente, lo que podría relacionarse con festividades, mayor flujo vehicular y consumo de alcohol, factores que incrementan la siniestralidad vial. En contraste, los meses con menores promedios son mayo (7,38) y abril (7,86), reflejando una reducción en la incidencia de fatalidades. El resto de los meses se mantienen con un promedio entre un rango intermedio entre 8,5 y 10 homicidios, mostrando cierta estabilidad relativa. Los datos evidencian que existen periodos críticos en la movilidad donde las autoridades deben reforzar las estrategias de prevención, control y cultura vial para reducir la ocurrencia de muertes por accidentes de tránsito.
+
+```{r fig.width=20, fig.height=10, fig.align='center'}
+
+ orden_meses <- c("ENERO", "FEBRERO", "MARZO", "ABRIL", "MAYO", "JUNIO", 
+                 "JULIO", "AGOSTO", "SEPTIEMBRE", "OCTUBRE", "NOVIEMBRE",  "DICIEMBRE")  
+ 
+tab_hm_bq_3 <- BD_Homicidios %>%
+  filter(MUNICIPIO == "BARRANQUILLA")%>% 
+  group_by(AÑO, NOM_MES) %>%
+  summarise(CANT_HM_BQ_3 = sum(CANTIDAD), .groups = "drop")%>%
+  group_by(NOM_MES)%>%
+  summarise(PROM_HM_BQ_3 =round(mean(CANT_HM_BQ_3),2))%>%
+  mutate(NOM_MES = factor(NOM_MES, levels = orden_meses))
+
+tit_hm_bq_3 <- str_wrap("PROMEDIO DE HOMICIDIOS POR ACCIDENTE DE TRÁNSITO POR MESES EN BARRANQUILLA(2018-2025)", width = 40)
+
+ggplot(tab_hm_bq_3, aes(x = NOM_MES, y = PROM_HM_BQ_3))+
+  geom_line(aes(group = 1), linewidth= 4, color="#60A560")+
+  geom_point(size=8, color = "#1C2C4E") +
+   geom_label(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (PROM_HM_BQ_3 )),
+            size=10,
+            vjust= -0.5,
+            hjust= 0.5,
+            fill = "#1C2C4E",
+            color ="white")+
+  scale_y_continuous(limits = c(3,15),
+                     breaks = seq(3,15, by = 3),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  labs(title = tit_hm_bq_3 ,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1,color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5, color="#1C2C4E"),
+    axis.line = element_line(color="black"))
+
+
+
+  
+
+
+```
+
+##### GRÁFICO 26
+
+### 2.4.5. ACUMULADO DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO OCURRIDOS EN BARRANQUILLA LOS DÍAS DE LA SEMANA(2018-2025)
+
+La gráfica muestra que los homicidios por accidentes de tránsito en Barranquilla se concentran principalmente los fines de semana, siendo el domingo el día con mayor incidencia con 154 casos, seguido del lunes con 141 y el sábado con 137, lo que representa una relación con el aumento de la movilidad, actividades sociales y posibles conductas de riesgo como el consumo de alcohol durante esos días. Por el contrario, los días con niveles de homicidios más bajos se presentan entre semana, especialmente el jueves con 94 casos y el miércoles con 96, cuando la dinámica vehicular suele ser más rutinaria y menos asociada a eventos sociales. Estos patrones reflejan que la siniestralidad fatal en la ciudad se distribuye de forma variada, que se intensifica en periodos de fin de semana y retorno a la actividad laboral, lo cual representa un llamado a las autoridades para reforzar los controles de tránsito y campañas de prevención principalmente durante los fines de semana.
+
+```{r fig.width=20, fig.height=10, fig.align='center'}
+
+names(BD_Homicidios)[6] <- "DIA_SEMANA"
+ orden_dias <- c("LUNES","MARTES","MIÉRCOLES", "JUEVES", "VIERNES","SÁBADO","DOMINGO")
+ 
+tab_hm_bq_4 <- BD_Homicidios%>%
+  filter(MUNICIPIO == "BARRANQUILLA")%>% 
+  group_by(DIA_SEMANA)%>%
+  summarise(ACM_HM_BQ = sum(CANTIDAD), .groups = "drop")%>% 
+  mutate(DIA_SEMANA = factor(DIA_SEMANA, levels = orden_dias))
+
+tit_hm_bq_4 <- str_wrap("ACUMULADO DE HOMICIDIOS POR ACCIDENTES DE TRÁNSITO EN BARRANQUILLA OCURRIDOS LOS DÍAS DE LA SEMANA(2018-2025)", width = 40)
+
+
+colores_fins <- c("#DE403B", "#FFB74D", "#60A560", "#1C2C4E","#8A8080","#F06D69","#3060C7","#36D636","#E38C0B", "#A6514E")
+
+ggplot(tab_hm_bq_4, aes(x = DIA_SEMANA, y = ACM_HM_BQ , fill= DIA_SEMANA))+
+   geom_col()+
+   geom_label(aes(label=label_comma(big.mark = ".", decimal.mark = ",") (ACM_HM_BQ)),
+            size=10,
+            vjust= -0.5,
+            hjust= 0.5,
+            fill = "#1C2C4E",
+            color ="white")+
+  scale_y_continuous(limits = c(0,200),
+                     breaks = seq(0,200, by = 50),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  scale_fill_manual(values=colores_fins)+
+  labs(title = tit_hm_bq_4 ,
+       x = NULL, 
+       y = NULL)+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size=25, angle = 45, hjust= 1,color="#1C2C4E"),
+    axis.text.y = element_text(size = 25,color="#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5, color="#1C2C4E"),
+    axis.line = element_line(color="black"),
+    legend.position = "none")
+
+
+
+  
+
+```
+
+##### GRÁFICO 27
+
+------------------------------------------------------------------------
+
+\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_
+
+## 2.5. COMPARENDOS ELECTRÓNICOS EN BARRANQUILLA(2018-2025)
+
+### 2.5.1. COMPARENDOS ELECTRÓNICOS EN BARRANQUILLA PRESENTADOS POR AÑO(2018-2024)
+
+Para el siguiente gráfico, se puede observar una mayor cantidad de comparendos electrónicos para el año 2019, con un total acumulado de 98.171. Mientras que en los años 2020 y 2021, se presentó una menor cantidad de comparendos con un total acumulado de 59.526 y 56.915 respectivamente. Así mismo, esto nos indica que se presentó una menor cantidad en el año 2021.
+
+Posiblemente estos años presentaron cantidades bajas por corresponder al período del COVID-19, como se ha mencionado anteriormente en otros análisis.
+
+```{python fig.width=14, fig.height=10, fig.align = "center" }
+
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.ticker import FuncFormatter
+
+# Asegurar limpieza de nombres de columnas
+df_comp.columns = df_comp.columns.str.strip()
+
+# Convertir a numérico la columna de infracciones
+df_comp["CANTIDAD INFRACCIONES"] = pd.to_numeric(df_comp["CANTIDAD INFRACCIONES"], errors="coerce")
+
+# Filtrar datos (sin 2025)
+df_filtrado = df_comp[df_comp["AÑO"] != 2025]
+
+# Agrupar por año
+comparendos_anuales = df_filtrado.groupby("AÑO")["CANTIDAD INFRACCIONES"].sum().reset_index()
+
+# Crear gráfico de líneas
+plt.figure(figsize=(10, 6))
+ax = sns.lineplot(
+    data=comparendos_anuales,
+    x="AÑO", 
+    y="CANTIDAD INFRACCIONES",
+    marker="o", 
+    linewidth=2.5,
+    color="#60A560",        # línea verde
+    markerfacecolor="#1C2C4E",  # puntos azul oscuro
+    markeredgecolor="#1C2C4E",
+    markersize=10
+)
+
+# Quitar grilla
+ax.grid(False)
+
+# Formato de miles con punto en eje Y
+formatter = FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", "."))
+ax.yaxis.set_major_formatter(formatter)
+
+# Títulos y etiquetas
+plt.title("COMPARENDOS ELECTRÓNICOS POR AÑO", fontsize=18)
+plt.xlabel("AÑO", fontsize=22)
+plt.ylabel("CANTIDAD DE COMPARENDOS ELECTRÓNICOS", fontsize=14)
+plt.xticks(rotation=45, fontsize=12)
+plt.yticks(fontsize=12)
+
+# Etiquetas de valores encima de cada punto
+for x, y in zip(comparendos_anuales["AÑO"], comparendos_anuales["CANTIDAD INFRACCIONES"]):
+    plt.text(x, y + (y * 0.01), f"{int(y):,}".replace(",", "."), 
+             ha="center", fontsize=14, fontweight="bold")
+
+plt.tight_layout()
+plt.show()
+
+```
+
+##### GRÁFICO 28
+
+### 2.5.2. COMPARENDOS ELECTRÓNICOS EN BARRANQUILLA POR MESES(2018-2025)
+
+A partir del gráfico se puede apreciar que para el mes de marzo, se presentó el mayor número de comparendos electrónicos acumulados, con un total de 55.037; mientras que, el mes en que se presentó una menor cantidad de comparendos, fue en agosto, con un total de 44.350.
+
+Con esta información, se puede notar una inconsistencia con los homicidios por accidentes de tránsito y accidentes presentados en Barranquilla, debido a qué, el mes de diciembre es el que siempre ha presentado una mayor cantidad tanto de accidentes como de homicidios; sin embargo, en el caso de este gráfico, con respecto a los comparendos electrónicos, no es así, y posiblemente la razón sea la ausencia de estas tecnologías en los lugares dónde se han presentado también siniestralidades viales.
+
+```{python fig.width=14, fig.height=8, fig.align = "center" }
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.ticker import FuncFormatter
+
+# Orden correcto de los meses
+orden_meses = ['ENERO', 'FEBRERO', 'MARZO', 'ABRIL', 'MAYO', 'JUNIO',
+               'JULIO', 'AGOSTO', 'SEPTIEMBRE', 'OCTUBRE', 'NOVIEMBRE', 'DICIEMBRE']
+
+df_comp['NOM MES'] = pd.Categorical(df_comp['NOM MES'], categories=orden_meses, ordered=True)
+
+# Agrupar datos
+id_meses = df_comp.groupby("NOM MES")["CANTIDAD INFRACCIONES"].sum().reset_index(name="Cantidad_total")
+
+# Estilo
+sns.set_style("whitegrid")
+
+# Crear gráfico de líneas
+plt.figure(figsize=(12, 8))
+ax = sns.lineplot(x="NOM MES", y="Cantidad_total", data=id_meses, 
+                  marker="o", linewidth=2.5, color="#3060C7")
+
+# Agregar etiquetas con puntos de mil
+for x, y in zip(id_meses["NOM MES"], id_meses["Cantidad_total"]):
+    ax.text(x=x, y=y + (y * 0.01), 
+            s=f"{int(y):,}".replace(",", "."), 
+            ha='center', va='bottom', 
+            fontsize=13, fontweight='bold', color='black')
+
+# Formatear eje Y con puntos de mil
+formatter = FuncFormatter(lambda x, _: f"{int(x):,}".replace(",", "."))
+ax.yaxis.set_major_formatter(formatter)
+ax.grid(False)
+
+# Títulos y ejes
+plt.xlabel("MES", fontsize=14)
+plt.ylabel("TOTAL DE COMPARENDOS", fontsize=14)
+plt.title("CANTIDAD TOTAL DE COMPARENDOS EN BARRANQUILLA POR MESES (2018-2025)", fontsize=18)
+
+# Ejes
+plt.xticks(rotation=45, ha='right', fontsize=12)
+plt.yticks(fontsize=12)
+
+plt.tight_layout()
+ax.set_ylim(44000, 58000)
+plt.show()
+
+
+```
+
+##### GRÁFICO 29
+
+### 2.5.3. COMPARENDOS ELECTRÓNICOS EN BARRANQUILLA POR TIPO DE CÁMARA(2018-2025)
+
+El gráfico muestra la distribución de los comparendos electrónicos según el tipo de cámara utilizada entre 2018 y 2025. Se observa que la mayor proporción corresponde a las cámaras fijas, con 378.064 comparendos, lo que representa más del doble de las infracciones detectadas por cámaras móviles (177.098 comparendos).
+
+Este resultado puede explicarse porque las cámaras fijas están instaladas de manera permanente en puntos estratégicos de alta circulación vehicular, lo que permite un control constante y masivo del tránsito. En contraste, aunque las cámaras móviles también cumplen una función importante, su carácter itinerante hace que registren un menor número de infracciones.
+
+En general, los datos reflejan que las cámaras fijas constituyen el principal mecanismo de detección de infracciones en el departamento, siendo responsables de aproximadamente el 68% del total de comparendos electrónicos, mientras que las cámaras móviles aportan cerca del 32%. Esto evidencia la relevancia de la infraestructura tecnológica fija en los procesos de control vial.
+
+```{python , results= "hide" ,fig.width=30, fig.height=20, fig.align = "center" }
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+from matplotlib.ticker import FuncFormatter
+
+# --- Preprocesamiento ---
+df_comp.columns = df_comp.columns.str.strip().str.replace(r"\s+", " ", regex=True).str.upper()
+df_comp["CANTIDAD INFRACCIONES"] = pd.to_numeric(df_comp["CANTIDAD INFRACCIONES"], errors="coerce")
+df_filtrado = df_comp[df_comp["AÑO"] != 2025]
+
+# Agrupamos SOLO por tipo de cámara
+consulta_camara = df_filtrado.groupby("TIPO DE CAMARA")["CANTIDAD INFRACCIONES"].sum().reset_index()
+
+# Paleta personalizada
+colores_fins = ["#DE403B", "#FFB74D", "#60A560", "#1C2C4E", "#8A8080", "#F06D69", "#3060C7", "#36D636", "#E38C0B", "#A6514E"]
+
+# --- Gráfico ---
+plt.figure(figsize=(10,6))
+ax = sns.barplot(
+    data=consulta_camara,
+    x="TIPO DE CAMARA",
+    y="CANTIDAD INFRACCIONES",
+    palette=colores_fins,
+    errorbar=None
+)
+
+# formato miles con puntos
+def miles_formatter(x, pos):
+    return '{:,.0f}'.format(x).replace(',', '.')
+ax.yaxis.set_major_formatter(FuncFormatter(miles_formatter))
+
+# Etiquetas encima de cada barra
+for bar, height in zip(ax.patches, consulta_camara["CANTIDAD INFRACCIONES"]):
+    ax.text(
+        bar.get_x() + bar.get_width()/2,
+        height + height*0.01,
+        '{:,.0f}'.format(height).replace(',', '.'),
+        ha='center',
+        va='bottom',
+        fontsize=12,
+        fontweight='bold'
+    )
+
+# Títulos y etiquetas
+plt.title("CANTIDAD DE COMPARENDOS ELECTRÓNICOS POR TIPO DE CÁMARA", fontsize=18, fontweight="bold")
+plt.xlabel("TIPO DE CÁMARA", fontsize=14)
+plt.ylabel("CANTIDAD DE COMPARENDOS", fontsize=14)
+plt.xticks(fontsize=12, rotation=0)
+plt.yticks(fontsize=12)
+ax.grid(False)
+
+plt.tight_layout()
+plt.show()
+```
+
+##### GRÁFICO 30
+
+### 2.5.4. COMPARENDOS ELECTRÓNICOS POR TIPO DE INFRACCIÓN EN BARRANQUILLA(2018-2025)
+
+A partir del siguiente gráfico se puede inferir que la infracción mayormente cometida, es la de “Sobrepasar la velocidad máxima permitida”, con un total de 274.971 comparendos electrónicos registrados, posiblemente porque muchos a veces se encuentran yendo tarde a algún lugar, o por el simple afán de la gente. Mientras que el tipo de infracción menormente cometida responde a “Bloquear paso de peatones en espacios públicos” con un total de 3.245 comparendos electrónicos.
+
+```{r fig.width=20 , fig.height=10, fig.align='center'}
+
+names(df_comp)[2] <- "Nom_infraccion"
+names(df_comp)[6] <- "Cantidad_infracciones"
+
+Comp_T_IN <- df_comp %>%
+  group_by(Nom_infraccion)%>%
+  summarise(CANTIDAD_COMPARENDOS = sum(Cantidad_infracciones), .groups = "drop")%>%
+  mutate(CANTIDAD_COMPARENDOS = as.numeric(CANTIDAD_COMPARENDOS),
+         Nom_infraccion = str_wrap(Nom_infraccion, width = 12))
+
+titulo_comp <- str_wrap("CANTIDAD DE COMPARENDOS ELECTRÓNICOS POR TIPO DE INFRACCIÓN EN BARRANQUILLA(2018-2025)", width = 45)
+
+
+  
+
+ggplot(Comp_T_IN, aes(reorder(x = Nom_infraccion, -CANTIDAD_COMPARENDOS), y = CANTIDAD_COMPARENDOS))+
+  geom_col(fill = "#FFB74D" )+
+  geom_label(aes(label = label_comma(big.mark = ".", decimal.mark = ",") (CANTIDAD_COMPARENDOS)),
+                  hjust = 0.5,
+                  vjust = -0.5, 
+                  size = 10,
+                  fill= "#1C2C4E",
+                  color = "white")+
+  labs(title = titulo_comp,
+       x = NULL,
+       y = NULL
+    
+  )+
+  scale_y_continuous(limits = c(0,300000),
+                     breaks = seq(0,300000, by = 30000),
+                     labels = label_comma(big.mark = ".", decimal.mark = ","))+
+  theme_minimal()+
+  theme(
+    panel.grid.major = element_blank(),
+    panel.grid.minor = element_blank(),
+    axis.text.x = element_text(size = 20, color = "#1C2C4E"),
+    axis.text.y = element_text(size = 25, color = "#1C2C4E"),
+    plot.title = element_text(size = 35, hjust = 0.5),
+    axis.line = element_line(color = "black")
+  )
+```
+
+##### GRÁFICO 31
+
+# 3. CONCLUSIONES
+
+El análisis de la siniestralidad vial en Colombia entre 2018 y 2025 evidencia una problemática persistente en torno a los homicidios y accidentes de tránsito, aunque con comportamientos diferenciados según periodos, regiones y condiciones específicas. A nivel nacional, el año 2019 se destacó como el de mayor incidencia, con más de 12.000 muertes, mientras que el 2020 y 2021 mostraron un descenso significativo, fuertemente influenciado por las restricciones de movilidad derivadas de la pandemia de COVID-19. No obstante, a partir de 2022 se observa una estabilización con promedios cercanos a los 7.300 casos anuales. En cuanto a la distribución territorial, la región Andina concentra la mayor cantidad de homicidios, lo cual se asocia tanto con su densidad poblacional como con su relevancia en los corredores de transporte, siendo Bogotá, Medellín y Cali los municipios más críticos.
+
+A nivel temporal, diciembre se posiciona como el mes más riesgoso en todo el periodo analizado, lo que puede relacionarse con festividades, aumento del flujo vehicular y posibles conductas de riesgo como el consumo de alcohol. De manera similar, los fines de semana, particularmente el domingo, concentran la mayor cantidad de homicidios, confirmando la influencia de factores sociales y culturales en la accidentalidad vial. Asimismo, los hombres adultos constituyen el grupo más afectado, especialmente en el rol de conductores de motocicletas y vehículos particulares, lo que refleja un patrón de exposición al riesgo más alto en esta población.
+
+En el caso de Barranquilla y el departamento del Atlántico, la ciudad capital concentra de manera desproporcionada los homicidios y accidentes de tránsito, seguida por los municipios del área metropolitana. Las vías de alto flujo, como la avenida Circunvalar y la calle 110, emergen como puntos críticos de accidentalidad. Si bien los accidentes han mostrado una tendencia decreciente, gracias posiblemente a nuevas políticas de movilidad y mejor infraestructura, los homicidios no han seguido la misma pauta, presentando fluctuaciones significativas entre años. Los pronósticos realizados mediante modelos ARIMA sugieren que, en el mediano plazo, los homicidios podrían estabilizarse en un rango cercano a los 90 casos anuales, aunque persisten márgenes de incertidumbre.
+
+En síntesis, aunque existen avances en la reducción de la accidentalidad vial en términos generales, la mortalidad asociada a los accidentes de tránsito sigue siendo un desafío complejo, condicionado por variables sociodemográficas, culturales y territoriales. Para mejorar estos resultados, es fundamental reforzar las campañas de educación vial, incrementar los controles en periodos y zonas de mayor riesgo (fines de semana, diciembre y vías principales), mejorar la cobertura tecnológica de comparendos electrónicos en puntos críticos y diseñar estrategias focalizadas en poblaciones vulnerables, especialmente motociclistas y peatones. Solo a través de una articulación integral entre infraestructura, control y cultura ciudadana será posible reducir de manera sostenida las muertes por accidentes de tránsito en el país y en ciudades como Barranquilla.
+
+# 4. BIBLIOGRAFÍA
+
+UNIVERSIDAD DE ANTIOQUIA. (s.f.). Covid-19: así se pasó del encierro a la normalidad.
+
+Wikipedia. (s.f.). DISTRIBUCIÓN DE LA POBLACIÓN POR REGIONES . <https://es.wikipedia.org/wiki/Regi%C3%B3n_insular_de_Colombia>
+
+DANE . (s.f.). DISTRIBUCIÓN DE LA POBLACIÓN POR REGIONES.
+
+<https://geoportal.dane.gov.co/servicios/atlas-estadistico/src/Tomo_I_Demografico/2.3.-distribuci%C3%B3n-de-la-poblaci%C3%B3n-por-regiones.html>
+
+POLICIA NACIONAL DE COLOMBIA.
+
+<https://www.policia.gov.co/estadistica-delictiva>
+
+POBLACION EN LA REGION ANDINA
+
+<https://geoportal.dane.gov.co/servicios/atlas-estadistico/src/Tomo_I_Demografico/2.3.1.-poblaci%c3%b3n-en-la-regi%c3%b3n-andina.html>
+
+DATOS DE BOGOTA EL DIA MUNDIAL DE LA POBLACION
+
+<https://saludata.saludcapital.gov.co/osb/celebremos-con-cifras-y-datos-de-bogota-el-dia-mundial-de-la-poblacion/>
+
+CORREGIMIENTOS ANTIOQUIA
+
+<https://corregimientos.antioquia.gov.co/medellin-2/>
+
+DANE. INVESTIGACIONES CALI(PAGINA 13)
+
+<https://www.dane.gov.co/files/investigaciones/planes-departamentos-ciudades/220322-Foro-Cali-en-cifras.pdf>
+
+BUCARAMANGA.GOV
+
+<https://www.bucaramanga.gov.co/otros/mi-ciudad/>
+
+Barranquilla, reconocida a nivel nacional por la reducción de siniestralidad vial en el 2024 <https://barranquilla.gov.co/mi-barranquilla/barranquilla-reconocida-a-nivel-nacional-por-la-reduccion-de-siniestralidad-vial-en-el-2024#:~:text=Desde%20la%20gesti%C3%B3n%20de%20tr%C3%A1nsito,seguros%20para%20la%20comunidad%20estudiantil>
