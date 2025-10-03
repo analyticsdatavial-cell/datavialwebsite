@@ -766,4 +766,61 @@ section.teamsection  {
   .team-card-principios3 {
     width: 80%; /* ocupa todo el ancho disponible */
   }
+
+}
+
+/* Responsive para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .text-box {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .text-box h1 {
+    font-size: 1.5em;
+    text-align: center;
+  }
+
+  .text-box p {
+    font-size: 0.95em;
+    text-align: justify;
+  }
+}
+
+/* Responsive para pantallas medianas (tablets, etc.) */
+@media (min-width: 481px) and (max-width: 1024px) {
+  .text-box {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 90%;
+  }
+
+  .text-box h1 {
+    font-size: 1.8em;
+    text-align: center;
+  }
+
+  .text-box p {
+    font-size: 1em;
+    text-align: justify;
+  }
+}
+
+/* Responsive para pantallas grandes (escritorio) */
+@media (min-width: 1025px) {
+  .text-box {
+    padding: 30px;
+    margin: 40px auto;
+    max-width: 800px;
+  }
+
+  .text-box h1 {
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .text-box p {
+    font-size: 1.1em;
+    text-align: justify;
+  }
 }
