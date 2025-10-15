@@ -1,18 +1,16 @@
-const hero = document.querySelector(".hero-quienes");
+const hero = document.querySelector(".carrusel");
 const images = [
-  "../images/wallpaper.jpg",
-  "../images/wallpaper1.jpeg",
-  "../images/wallpaper2.jpeg",
-  "../images/wallpaper3.jpg",
-  "../images/wallpaper4.jpg",
+  "carrusel/Agencia Nacional de Seguridad Vial - color.png",
+  "carrusel/gob-atl-2024.png",
+  "carrusel/atl2020.png",
 ];
 
 let index = 0;
 
-// Función para cambiar el fondo
+// 🔹 Esta es la función modificada
 function changeBackground(i) {
-  index = (i + images.length) % images.length; // asegura ciclo circular
-  hero.style.backgroundImage = `url(${images[index]})`;
+  index = (i + images.length) % images.length;
+  hero.style.background = `url('${images[index]}') center / cover no-repeat`;
 }
 
 // Botones
