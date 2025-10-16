@@ -146,7 +146,6 @@ nav li:has(.submenu:hover) > .submenu {
   }
 }   
 
-/* ☺☻☺☺☻↓↓↓↓  AQUI EMPIEZA EL CONTENIDO DE ALDAIR MALDONADO  ↓↓↓↓☺☻☺☺☻  */
 /*estilo de la info de analisis descriptivo*/
     .contenido_analisis {
      display: flex;
@@ -166,95 +165,135 @@ nav li:has(.submenu:hover) > .submenu {
   text-align: justify;
 }
 
-    .imagen_analisis {
-      float: left;
-      width: 250px;       /* ajusta tamaño según necesites */
-      height: 300px;
-      margin-right: 35px; /* espacio con el texto */
-      margin-bottom: 35px;
-      border-radius: 12px;
-      
-      box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4);
-      
-    }
+.imagen_analisis {
+  float: left;
+  width: 250px;       /* ajusta tamaño según necesites */
+  height: 300px;
+  margin-right: 35px; /* espacio con el texto */
+  margin-bottom: 35px;
+  border-radius: 12px;
+  box-shadow: 0 25px 35px rgba(0, 0, 0, 0.4);
+}
 
+.titulo_analisis {
+  font-size: 40px;
+  font-weight: bold;
+  text-align: center;
+  color: #60A560;
+}
 
-    .titulo_analisis {
-      
-      font-size: 40px;
-      font-weight: bold;
-      text-align: center;
-      color: #60A560;
-     
-    }
-
-    .texto_analisis {
-      font-size: 20px;
-      text-align: justify;
-    }
-
-    /* Sección general */
-    section {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 500px;
-      padding: 30px;
-      margin: 30px;
-      margin-bottom: 40px;
-      position: relative;
-      overflow: hidden;
-      /* Estilos agregados para bordes y sombra */
-      border-radius: 15px;              /* bordes redondeados */
-      border-radius: 12px;
-      background-color: #FFFFFF;
-     
-      transition: all 0.6s ease;
-    }
-
-    .contenido {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      width: 100%;
-      max-width: 1200px;
-      position: relative;
-      z-index: 2;
-      gap: 30px;
-    }
-
-    /* Ajustar texto más ancho y movido hacia la izquierda */
-.seccion1 .texto {
-  width: 70%;          /* antes 50% */
-  max-width: 650px;    /* más ancho */
-  padding-left: 30px;
+.texto_analisis {
+  font-size: 20px;
+  text-align: justify;
 }
 
 
-    .texto {
-      width: 70%;
-      max-width: 650px;
-      text-align: justify;
-      color: #000000;
-    }
 
-    .texto h2 {
-      font-size: 2rem;
-      color: #60A560;
-      margin-bottom: 15px;
-      text-align: justify;  
-      transition: transform 0.3s;
-    }
+/* ===== SECCIÓN 1: CONSULTAS ===== */
 
-    .texto p {
-      font-size: 1.1rem;
-      margin-bottom: 15px;
-      text-align: justify;  
-      color: #000000;
-      transition: transform 0.3s;
-    }
+.seccion1 {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 60px 5%;
+  margin: 40px auto;
+  max-width: 1400px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
 
+.seccion1:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
 
+.seccion1 .contenedor {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  gap: 40px;
+}
+
+.iframe-wrapper {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.iframe-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  display: block;
+}
+
+.texto-consultas {
+  color: #000;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.texto-consultas h2 {
+  font-size: 1.9rem;
+  color: #60A560;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.texto-consultas p {
+  color: #222;
+  font-weight: 400;
+}
+
+/* === Responsividad === */
+
+/* Tablets */
+@media (max-width: 992px) {
+  .seccion1 .contenedor {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .texto-consultas {
+    text-align: justify;
+    font-size: 1rem;
+  }
+
+  .texto-consultas h2 {
+    text-align: center;
+  }
+}
+
+/* Móviles */
+@media (max-width: 600px) {
+  .seccion1 {
+    padding: 40px 20px;
+    margin: 20px;
+  }
+
+  .iframe-wrapper {
+    aspect-ratio: 4 / 3;
+  }
+
+  .texto-consultas p {
+    font-size: 0.95rem;
+  }
+}
+
+section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 500px;
+  padding: 30px;
+  margin: 30px;
+  margin-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+}
     /* Bloque de descargas dentro de la seccion */
     .descargas-inline {
       align-items: center;
@@ -271,125 +310,6 @@ nav li:has(.submenu:hover) > .submenu {
       font-size: 1.5rem;
       color: #2E4975;
       margin-bottom: 15px;
-    }
-
-    
-
-    .seccion1 .imagen-derecha {
-      width: 60%;
-      height: 100%;
-      margin-left: 40px;
-      transition: 0.5s;
-      cursor: pointer;
-    }
-    /* Ajustar la imagen */
-  .seccion1 .imagen-derecha img {
-    width: 650px;
-    height: 650px;
-    object-fit: contain;  /* evita deformaciones */
-   
-  }
-
-    
-
-    /* ==========================
-       EFECTOS
-    ========================== */
-
-    /* 1. Sección 1 → transición verde esmeralda */
-    .seccion1::before {
-      content: "";
-      position: absolute;
-      top: 0; 
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, #DCFCE7, #DCFCE7);
-      transition: left 0.8s ease;
-      z-index: 1;
-    }
-    .seccion1:hover::before {
-      left: 0;
-    }
-    .seccion1:not(:hover)::before {
-      left: 100%;
-      transition: left 0.8s ease;
-    }
-
-    /* ====== Cambio de color del texto al hacer la transición ====== */
-    .seccion1:hover .texto,
-    .seccion2:hover .texto {
-      color: black;         /* texto blanco al pasar el mouse */
-      transition: color 0.6s ease-in;
-    }
-
-    .seccion1:hover .texto h2,
-    .seccion2:hover .texto h2 {
-      color: #60A560;         /* título también cambia */
-      transition: color 0.6s ease-in;
-    }
-
-    /* ====== Sección 2 (ajustada similar a Sección 1 pero invertida) ====== */
-.seccion2 .contenido {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 30px;
-}
-
-/* Imagen en Sección 2 → fija tamaño */
-.seccion2 .imagen-derecha {
-  width: auto;
-  height: 100%;
-  transition: 0.5s;
-  cursor: pointer;
-}
-
-.seccion2 .imagen-derecha img {
-  width: 650px;
-  height: 650px;
-  object-fit: contain;   /* evita deformaciones */
-  
-}
-
-/* Texto en Sección 2 → más ancho y pegado a la izquierda */
-.seccion2 .texto {
-  width: 70%;          /* antes 50% */
-  max-width: 650px;    /* más ancho */
-  padding-right: 30px;
-}
-
-    /* 2. Sección 2 → transición verde esmeralda izquierda → derecha */
-.seccion2::before {
-  content: "";
-  position: absolute;
-  top: 0; 
-  right: -100%;   /* inicia fuera por la derecha */
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(270deg,  #DCFCE7, #DCFCE7);
-  transition: right 0.8s ease;
-  z-index: 1;
-}
-.seccion2:hover::before {
-  right: 0;       /* entra hacia la izquierda */
-}
-.seccion2:not(:hover)::before {
-  right: 100%;    /* sale de izquierda a derecha */
-  transition: right 0.8s ease;
-}
-
-
-    /* Animación con scroll */
-    .hidden {
-      opacity: 0;
-      transform: translateY(70px);
-      transition: all 1.3s ease-out;
-    }
-
-    .show {
-      opacity: 1;
-      transform: translateY(0);
     }
 
    /* Estilos para la sección de descargas */
@@ -482,8 +402,8 @@ nav li:has(.submenu:hover) > .submenu {
  
   width: 90%;
   max-width: 1200px;          /* elimina margen extra */
-   border-left: 10px solid #4CAF50; /* barra lateral tipo alerta */
-    border-right: 10px solid #4CAF50; /* barra lateral tipo alerta */
+  border-left: 10px solid #4CAF50; /* barra lateral tipo alerta */
+  border-right: 10px solid #4CAF50; /* barra lateral tipo alerta */
   background-color: #DCFCE7;   /* fondo verde claro */
 
   border-radius: 10% / 50%;
@@ -606,16 +526,16 @@ nav li:has(.submenu:hover) > .submenu {
 
 /* Tablets (768px and below) */
 @media (max-width: 768px) {
-  .contenido_analisis {
-    flex-direction: column;
-    padding: 30px 40px;
-  }
+.contenido_analisis {
+  flex-direction: column;
+  padding: 30px 40px;
+}
 
-  .imagen_analisis {
-    width: 200px;
-    height: auto;
-    margin: 0 auto 20px;
-  }
+.imagen_analisis {
+  width: 200px;
+  height: auto;
+  margin: 0 auto 20px;
+}
 
   .titulo_analisis {
     font-size: 30px;
