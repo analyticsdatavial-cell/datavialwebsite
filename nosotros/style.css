@@ -156,18 +156,40 @@ nav li:has(.submenu:hover) > .submenu {
 
 /* --- Sección del Equipo (Team Section) --- */
 .carrusel {
-  background-image: url("carrusel/Agencia Nacional de Seguridad Vial - color.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  position: relative;
   width: 100%;
-  height: 80vh;
-  transition: background-image 0.8s ease-in-out; /* transición suave */
+  aspect-ratio: 16 / 9;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transition: background-image 0.8s ease-in-out;
+}
+
+/* Ajusta la proporción en pantallas pequeñas */
+@media (max-width: 768px) {
+  .carrusel {
+    aspect-ratio: 4 / 3; /* un poco más vertical */
+  }
+
+  .carrusel button {
+    font-size: 1.5rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .carrusel {
+    aspect-ratio: 1 / 1; /* cuadrado en celulares muy pequeños */
+  }
+
+  .carrusel button {
+    font-size: 1.2rem;
+  }
 }
 
 .carrusel button {
-  width: 24px;
-  height: 24px;
+  width: 32px;
+  height: 32px;
   position: relative;
   display: flex;
   align-items: center;
@@ -180,6 +202,21 @@ nav li:has(.submenu:hover) > .submenu {
   border: none;
   color: white;
   font-size: 1.1em;
+}
+
+.carrusel button:first-child{
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+}
+
+
+.carrusel button:last-child{
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
 }
 
 .team-section  {
@@ -417,7 +454,6 @@ nav li:has(.submenu:hover) > .submenu {
 .team-title {
     font-size: 28px;
     font-weight: bold;
-    margin-bottom: 20px;
     color: #333;
     text-align: center;
     width: 100%;

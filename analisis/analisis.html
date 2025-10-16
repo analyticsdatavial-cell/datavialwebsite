@@ -29,9 +29,8 @@
   <li>
     <a href="../nosotros/nosotros.html">QUIENES SOMOS</a>
     <ul class="submenu">
-      <li><a href="../nosotros/nosotros.html#equipo">Equipo del Proyecto</a></li>
-      <li><a href="../nosotros/nosotros.html#front">FRONTEND TEAM</a></li>
-      <li><a href="../nosotros/nosotros.html#end">BACKEND TEAM</a></li>
+      <li><a href="../nosotros/nosotros.html#valores">Valores</a></li>
+      <li><a href="../nosotros/nosotros.html#equipo">Equipo</a></li>
     </ul>
   </li>
   <li>
@@ -69,139 +68,55 @@
       <img src="images/sparky_analizando.png" alt="Análisis Educativo" class="imagen_analisis">
         <div class="texto_contenido_analisis">
           <div class="titulo_analisis">
-            Análisis Descriptivo de la Movilidad en Barranquilla 
+            Análisis Descriptivo de la siniestralidad vial en Barranquilla 
           </div>
             <br>
           <div class="texto_analisis">
-            En esta sección encontrará una visión clara y profunda del análisis realizado sobre la seguridad vial 
-            de la ciudad de Barranquilla (Atlántico), presentado a través de un dashboard en excel y documentos creados con R-Markdown. 
-            Aquí podrá explorar comparaciones, gráficos y resultados detallados obtenidos mediante herramientas estadísticas. 
-            Nuestro objetivo es transformar los datos en decisiones, facilitando la comprensión de las tendencias de los siniestros viales en Barranquilla entre 2018 y 2025.
-          </div>
+            En esta sección encontrará un análisis actualizado sobre la siniestralidad vial en el Atlántico entre 2020 y 2024, con énfasis en Barranquilla. A través de un dashboard en Excel y documentos elaborados con Python y R Markdown, podrá explorar causas, comparaciones y tendencias de los siniestros viales. Este espacio busca facilitar la comprensión de los datos y fortalecer la educación y la cultura vial en la región.          </div>
         </div>
     </div>
 
   <!-- Sección 1 -->
-  <section class="seccion seccion1" id="consultas">
-    <div class="contenido hidden">
-      <div class="texto">
-        <h2>Homicidios presentados por Region (2018-2025)</h2>
-        <p>Se evidencia una alta concentración de homicidios por accidentes de tránsito en la región Andina entre 2018 y 2025,
-         con 32.861 casos, cifra que representa la más alta del país. Este resultado se relaciona con dos factores: 
-         la alta densidad poblacional de la región y la presencia de grandes centros urbanos como Bogotá, Medellín, Cali, 
-         donde confluyen un mayor número de vehículos y peatones, también los principales ejes de transporte nacional. 
-        Por otro lado, la Orinoquía, la Amazonía  y especialmente la región Insular muestra menor incidencia, 
-        lo que se explica por la menor densidad poblacional, menor número de vehículos y características geográficas (donde predominan islas y cayos). 
-        En conclusión, los datos refuerzan la necesidad de que las políticas de seguridad vial se ajusten a las realidades regionales: fortalecer medidas en 
-        zonas urbanas de alta concentración vehicular, mientras que en regiones con menor incidencia se deben mantener controles preventivos y monitoreo.</p>
-            
-       
-          </div>
-      <div class="imagen-derecha">
-        <img src="images/excel/total de homicidios por accidente de transito en colombia2018-2025.png" alt="Imagen derecha">
-      </div>
+<section id="consultas" class="seccion1">
+  <div class="contenedor">
+    <div class="iframe-wrapper">
+      <iframe 
+        src="https://johanangallardo.github.io/GRAPHICS/mi_mapa_leaflet.html"
+        frameborder="0"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
     </div>
-  </section>
 
-  <!-- Sección 2 -->
-<section class="seccion seccion2">
-  <div class="contenido hidden">
-    <div class="imagen-derecha">
-      <img src="images/excel/Cantidad de los accidentes de transito del Atlantico.png" alt="Imagen izquierda">
-    </div>
-    <div class="texto">
-      <h2>Cantidad de los accidentes de transito del Atlantico</h2>
-      <p>Se muestra que Barranquilla concentra la mayor cantidad de homicidios por accidentes de tránsito en el Atlántico, con 862 casos, 
-        cifra que supera al resto de municipios. Esto se explica por su alta densidad poblacional y vehicular, además de su papel como 
-        centro urbano y económico del departamento. En un nivel intermedio se encuentran Soledad, Sabanalarga, Malambo, Baranoa, Puerto Colombia y Galapa, que, aunque con cifras 
-        menores, concentran parte importante de los casos por su cercanía al área metropolitana y su crecimiento urbano. En contraste, municipios 
-        pequeños como Santa Lucía y Usiacurí registran las cifras más bajas (9 casos), lo que se relaciona con menor población, menor parque automotor 
-        y, en consecuencia, menor exposición al riesgo vial.</p>
-      
+    <div class="texto-consultas">
+      <h2>Siniestros viales con víctimas fatales en el Atlántico (2020–2024)</h2>
+      <p>
+        Como se puede apreciar en el siguiente gráfico, en los municipios del departamento del Atlántico donde más ocurren siniestros que resultan en fallecidos son principalmente en Barranquilla, debido a que este es el municipio donde se concentra más la economía del departamento —lo que implica mayor población, empresas y flujo vehicular—, a diferencia de municipios periféricos como Sabanalarga, Palmar de Varela, entre otros, que comparten una característica en común: un panorama socioeconómico significativamente menor en comparación con Barranquilla. La diferencia entre Baranoa y Barranquilla, por ejemplo, es de 554, es decir, que Barranquilla presenta 42.8 veces más siniestros con víctimas fallecidas que Baranoa.
+      </p>
     </div>
   </div>
 </section>
 
-  
-  <!-- Sección 3 -->
- <section class="seccion seccion1">
-    <div class="contenido hidden">
-      <div class="texto">
-        <h2>Direcciones con mayor cantidad de accidentes en Barranquilla</h2>
-        <p>Segun el gráfico, la dirección dónde ocurrieron más accidentes en la ciudad de Barranquilla, 
-          fue en la calle 110 CR 9 G, con un total de 167 accidentes. Asimismo, las 2 direcciones que le siguen, corresponden a la 
-          calle 110, e incluso, esta calle se sigue repitiendo otras veces; pero, con diferente carrera. Esto podría explicarse ya 
-          que la calle 110, se intercepta con la avenida circunvalar. A partir de esta información se infiere que el 
-          flujo de vehículos es mayor, y por lo tanto, las personas son más propensas a ocasionar accidentes. En contraste, la direccción con una menor cantidad de accidentes, es la vía 40 con calle 47, acumulando un total de 67 accidentes de tránsito. 
-          Si nos centramos en la primera dirección, la carrera 9G, es la que se encuentra más cercana a la avenida circunvalar, lo que podría darle explicación al hecho de que sea el lugar dónde se presentan más accidentes.</p>
-         
-          
-          </div>
-      <div class="imagen-derecha">
-        <img src="images/excel/direcciones con mayor cantidad de accidentes2018-2025.png" alt="Imagen derecha">
-      </div>
+<!-- Sección 2 -->
+<section id="consultas2" class="seccion1">
+  <div class="contenedor">
+    <div class="iframe-wrapper">
+      <iframe 
+        src="https://johanangallardo.github.io/GRAPHICS/mi_mapa_leaflet2.html"
+        frameborder="0"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
     </div>
-  </section>
-  
-  <!-- Sección 4 -->
-<section class="seccion seccion2">
-  <div class="contenido hidden">
-    <div class="imagen-derecha">
-      <img src="images/excel/Caantidad comparendos electronicos por tipo infraccion.png" alt="Imagen izquierda">
-    </div>
-    <div class="texto">
-      <h2>Cantidad de comparendos electronicos por tipo de infracciones</h2>
-      <p>A partir del siguiente gráfico se puede inferir que la infracción mayormente cometida, es la de “Sobrepasar la velocidad máxima permitida”, 
-        con un total de 274.971 comparendos electrónicos registrados, posiblemente porque muchos a veces se encuentran yendo tarde a algún lugar, o 
-        por el simple afán de la gente. Mientras que el tipo de infracción menormente cometida responde a “Bloquear paso de peatones en espacios 
-        públicos” con un total de 3.245 comparendos electrónicos.</p>
-    
+
+    <div class="texto-consultas">
+      <h2>Siniestros viales con víctimas lesionadas en el Atlántico (2020–2024)</h2>
+      <p>
+        Con un total de 3,007 casos acumulados en el departamento, la cantidad de siniestros con víctimas lesionadas en el Atlántico es 3.3 veces mayor que la de siniestros con víctimas fallecidas. Como se puede apreciar, los factores socioeconómicos —mayor número de empresas, población y flujo vehicular— mantienen la misma tendencia observada en el gráfico anterior: Barranquilla es el epicentro de los siniestros de tránsito, mientras que los municipios periféricos presentan menor incidencia. Al comparar Barranquilla con Baranoa, la diferencia es de 2,523 casos, lo que significa que en Barranquilla ocurren 53.5 veces más siniestros con víctimas lesionadas que en Baranoa.
+      </p>
     </div>
   </div>
 </section>
-
-<!-- Sección 5 -->
-  <section class="seccion seccion1">
-    <div class="contenido hidden">
-      <div class="texto">
-        <h2>Cantidad de homicidios por accidentes de transito</h2>
-        <p>A partir del gráfico, se puede apreciar cómo se presenta una disminución desde el año 2018, con un total de 11.768 
-          accidentes, hasta el 2020 con un total de 6.474 accidentes; sin embargo, para el año 2021 vuelve a presentarse un 
-          crecimiento con un total de 9.387 accidentes. Finalmente, después de este año, vuelve otra vez a presentarse un 
-          decrecimiento, , terminando el 2024 con un total de 2.769 accidentes; mientras tanto, el 2025 hasta el mes de julio,
-          presentó un total de 866 accidentes. Posiblemente esta notable disminución se debe a realización de nuevas campañas e incluso ampliación de vías.</p>
-         
-            
-           
-          </div>
-      <div class="imagen-derecha">
-        <img src="images/excel/Cantidad de homicidios por accidente de transito.PNG" alt="Imagen derecha">
-      </div>
-    </div>
-  </section>
-
-  <!-- Sección 6 -->
-<section class="seccion seccion2">
-  <div class="contenido hidden">
-    <div class="imagen-derecha">
-      <img src="images/excel/Cantidad de homicidios por municipio.png" alt="Imagen izquierda">
-    </div>
-    <div class="texto">
-      <h2>Cantidad de homicidios por municipio (TOP10) </h2>
-      <p>Segun el gráfico, podemos observar el comportamiento de 10 municipios con mayor cantidad de homicidios por 
-        accidentes de tránsito, presentándose la cantidad más alta, en el municipio de Bogota, con un total de 4.923 homicidios,
-        siguiéndole los de Antioquia y Valle, con un total de 3.060 y 2.495 homicidios. 
-        Estos 3 municipios presentan una mayor incidencia de esta siniestralidad, son de la región Andina; 
-        esta es la que posee una mayor cantidad de habitantes, siendo una de las razones, la emigración por motivos 
-        laborales. Asimismo, la mayor incidencia en el municipio de Bogota, podría 
-        explicarse porque es la ciudad en dónde se presenta una mayor circulación de vehículos, cómo de habitantes. 
-        En contraste, el municipio con menor cantidad de homicidios, es Montería, con un total de 686 homicidios.</p>
-      
-    </div>
-  </div>
-</section>
-
-
 
   <!-- Sección 7: Archivos de Excel - Base de Datos -->
  <section class="seccion6" id="descargas">
@@ -219,11 +134,7 @@
             <span style="display: flex; align-items: center; gap: 10px;"><img src="images/LOGOEXCEL.png" alt="Excel">Base de Datos</span> ▼
           </button>
           <div class="submenu" style="display: none;">
-            <a href="descargas/ACCIDENTALIDAD Y VICTIMAS VIALES (2018-2025).xlsx" download="" target="_blank" rel="noopener noreferrer">Accidentalidad en vial</a>
-            <a href="descargas/COMPARENDOS ELECTRONICOS CONTROL Y REGULACION (2018-2025) .xlsx" download="" target="_blank" rel="noopener noreferrer">Comparendos electronicos</a>
-            <a href="descargas/HOMICIDIOS POR ACCIDENTES DE TRANSITO EN ATLANTICO (2018-2025)   .xlsx" download="" target="_blank" rel="noopener noreferrer">Accidente de transito en Atlantico</a>
-            <a href="descargas/HOMICIDIOS POR ACCIDENTES DE TRANSITO EN COLOMBIA (2018-2025)  .xlsx" download="" target="_blank" rel="noopener noreferrer">Accidente de transito en Colombia</a>
-            <a href="descargas/Vista_Comparendos_Barranquilla 2.0.xlsx" download="" target="_blank" rel="noopener noreferrer">Comparendos Barranquilla</a>
+            <a href="descargas/Siniestros_Atlántico_2020_2024.xlsx" download="" target="_blank" rel="noopener noreferrer">Siniestralidad Vial en el Atlántico</a>
           </div>
         </div>
       </div>
@@ -235,7 +146,6 @@
           </button>
           <div class="submenu" style="display: none;">
             <a href="descargas/Proyecto_TAD9.pdf" download="" target="_blank" rel="noopener noreferrer">Informe General</a>
-            <a href="descargas/INFORMACIÓN GENERAL.pdf" download="" target="_blank" rel="noopener noreferrer"> Datos</a>
             
           </div>
         </div>
@@ -247,7 +157,8 @@
             <span style="display: flex; align-items: center; gap: 10px;"><img src="images/R STUDIO.png" alt="Excel"> R-Markdown</span> ▼
           </button>
           <div class="submenu" style="display: none;">
-            <a href="descargas/HTML-INFORME-ANALITICO-DE-ACCIDENTALIDAD-A-NIVEL-NACIONAL,-ENFOCADO-EN-BARRANQUILLA-2018-2025-.html" download="" target="_blank" rel="noopener noreferrer">Homicidios accidentes de Transito</a>
+            <a href="descargas/Proyecto-siniestralidad-vial.html" download="" target="_blank" rel="noopener noreferrer">Análisis e informe de siniestralidad víal</a>
+            <a href="https://rpubs.com/Johanan/1355936" download="" target="_blank" rel="noopener noreferrer">Informe estadistico Online</a>
           </div>
         </div>
       </div>
@@ -335,14 +246,9 @@
 
   </script>
 
-<!--
-<div id="chat-widget-container" data-user-id="175865737637251973800ywnvX"></div>
-<script src="https://robert-kloepsch.github.io/ultimo-bots-widget/dist/bundle.js" defer></script>
-<a href="https://www.ultimo-bots.com" target="_blank" rel="noopener" style="display: none;">Our website uses intelligent chatbots powered by Ultimo Bots to improve customer service.</a>
-        -->
-<div id="chat-widget-container" data-user-id="175932902574576833838sKoVU"></div>
-<script src="https://robert-kloepsch.github.io/ultimo-bots-widget/dist/bundle.js" defer></script>
-<a href="https://www.ultimo-bots.com" target="_blank" rel="noopener" style="display: none;">Our website uses intelligent chatbots powered by Ultimo Bots to improve customer service.</a>
+<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/10/15/22/20251015221103-V6YM5I2C.js" defer></script>
+
   </main>
  <!--FOOTER-->
   <footer>
