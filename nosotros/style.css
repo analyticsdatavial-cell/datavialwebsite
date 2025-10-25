@@ -158,6 +158,7 @@ nav li:has(.submenu:hover) > .submenu {
 .carrusel {
   position: relative;
   width: 100%;
+  height: 500px;
   aspect-ratio: 16 / 9;
   background-position: center;
   background-size: contain;
@@ -166,7 +167,7 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 /* Ajusta la proporción en pantallas pequeñas */
-@media (max-width: 768px) {
+@media (max-width: 500px) {
   .carrusel {
     aspect-ratio: 4 / 3; /* un poco más vertical */
   }
