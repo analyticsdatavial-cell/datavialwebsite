@@ -86,6 +86,23 @@ footer img.borde {
   justify-content: center; 
 }
 
+/*Flooter del logo*/
+.footer-logo-depa-bar {
+  width: 100%;
+  background: #ffffff;
+  padding: 10px 0;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 0 0 15px 15px; /* Opcional para suavizar borde */
+}
+
+.footer-logo-depa-bar img {
+  height: 70px;
+}
+
+
 /* Phones (≤480px) */
 @media (max-width: 480px) {
   footer {

@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Catálogo: Educación en Movilidad Segura (Transición → 11°)</title>
+
+<!-- Paleta: rojo #C22821, gris #5C6670, amarillo #F7DC00, azul #AAD4E8, verde #48B358 -->
+<style>
+  :root{
+    --rojo: #C22821;
+    --gris: #5C6670;
+    --amarillo: #F7DC00;
+    --azul: #AAD4E8;
+    --verde: #48B358;
+    --fondo: #F8F8F8;
+    --blanco: #ffffff;
+    --card-radius: 12px;
+    --gap: 14px;
+    --shadow: 0 8px 20px rgba(0,0,0,0.12);
+    --maxw: 1200px;
+  }
+
+  /* Reset ligero */
+  *{box-sizing:border-box;margin:0;padding:0;font-family:Inter, "Helvetica Neue", Arial, sans-serif}
+  body{background:var(--fondo);color:var(--gris);line-height:1.35;padding:24px}
+
+  /* Contenedor principal */
+  .wrap{max-width:var(--maxw);margin:0 auto}
+
+  /* Header */
+  header{
+    display:flex;align-items:center;gap:16px;justify-content:space-between;margin-bottom:18px;
+  }
+  .brand{
+    display:flex;align-items:center;gap:12px;
+  }
+  .brand .logo{
+    background:var(--blanco);padding:8px;border-radius:10px;box-shadow:var(--shadow);
+    display:flex;align-items:center;justify-content:center;height:68px;width:145px;
+  }
+  .brand h1{font-size:1.05rem;color:var(--rojo);letter-spacing:0.2px}
+  .controls{display:flex;gap:10px;align-items:center;}
+
+  .select, .search {
+    padding:8px 12px;border-radius:10px;border:1px solid rgba(92,102,112,0.12);
+    background:#fff; font-size:0.95rem;
+  }
+  .search{min-width:220px}
+
+  /* Grid de secciones (cada grado) */
+  .sections{margin-top:16px;display:flex;flex-direction:column;gap:28px}
+
+  .grade-section{
+    background:linear-gradient(180deg, rgba(255,255,255,0.78), rgba(255,255,255,0.9));
+    border-radius:14px;padding:18px;box-shadow:var(--shadow);
+  }
+
+  .grade-head{
+    display:flex;align-items:center;justify-content:space-between;margin-bottom:14px;
+  }
+  .grade-head h2{color:var(--rojo);font-size:1.15rem}
+  .grade-meta{color:var(--gris);font-size:0.9rem}
+
+  /* Row de tarjetas (scroll horizontal on small screens) */
+  .cards-row{
+    display:flex;gap:var(--gap);overflow-x:auto;padding-bottom:8px;
+    -webkit-overflow-scrolling:touch;
+  }
+  .card{
+    min-width:260px;max-width:320px;background:var(--blanco);border-radius:var(--card-radius);
+    padding:14px;box-shadow:0 6px 18px rgba(0,0,0,0.08);flex:0 0 auto;position:relative;
+    display:flex;flex-direction:column;gap:8px;
+  }
+  .badge{
+    position:absolute;right:12px;top:12px;padding:6px 8px;border-radius:999px;font-size:0.75rem;
+    font-weight:700;color:#fff;
+  }
+  .card h3{font-size:1rem;color:var(--gris)}
+  .card p{font-size:0.9rem;color:#555}
+  .card .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+  .btn{
+    display:inline-block;padding:8px 10px;border-radius:10px;border:none;background:var(--rojo);
+    color:#fff;font-weight:700;cursor:pointer;font-size:0.9rem;text-decoration:none;
+  }
+
+  /* Color badges by thematic (uses institutional palette) */
+  .b-yellow{background:var(--amarillo);color:#222}
+  .b-blue{background:var(--azul);color:#1a1a1a}
+  .b-green{background:var(--verde);color:#fff}
+  .b-red{background:var(--rojo)}
+
+  /* Layout responsive: grid on wide screens */
+  @media(min-width:900px){
+    .sections{display:grid;grid-template-columns:1fr;gap:20px}
+    .cards-row{flex-wrap:wrap;overflow:visible}
+    .card{flex:1 1 calc(33.333% - var(--gap));min-width:230px}
+  }
+
+  /* Footer simple */
+  footer{margin-top:26px;padding:14px;border-radius:10px;background:var(--rojo);color:#fff;text-align:center}
+  .muted{color:rgba(255,255,255,0.85);font-size:0.9rem}
+
+  /* Small niceties */
+  .small-muted{font-size:0.85rem;color:#666}
+  .sr-only{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden}
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo" aria-hidden="true">
+          <!-- Placeholder logo; cambia por tu imagen real -->
+          <svg width="120" height="44" viewBox="0 0 240 88" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect width="240" height="88" rx="10" fill="#ffffff"/>
+            <text x="18" y="55" fill="#C22821" font-weight="700" font-size="28">Movilidad</text>
+            <text x="140" y="56" fill="#5C6670" font-size="20">Segura</text>
+          </svg>
+        </div>
+        <div>
+          <h1>Análisis y Propuesta Pedagógica — Movilidad Segura</h1>
+          <div class="small-muted">Currículo transversal — Transición → 11° (Atlántico)</div>
+        </div>
+      </div>
+
+      <div class="controls">
+        <select id="gradeFilter" class="select" aria-label="Filtrar por grado">
+          <option value="all">Ver todos los grados</option>
+          <option value="transicion">Transición</option>
+          <option value="1">1°</option>
+          <option value="2">2°</option>
+          <option value="3">3°</option>
+          <option value="4">4°</option>
+          <option value="5">5°</option>
+          <option value="6">6°</option>
+          <option value="7">7°</option>
+          <option value="8">8°</option>
+          <option value="9">9°</option>
+          <option value="10">10°</option>
+          <option value="11">11°</option>
+        </select>
+
+        <input id="q" class="search" placeholder="Buscar actividad, competencia o palabra clave" aria-label="Buscar en catálogo">
+      </div>
+    </header>
+
+    <main class="sections" id="catalog">
+
+      <!-- Transición -->
+      <section class="grade-section" data-grade="transicion">
+        <div class="grade-head">
+          <h2>Transición</h2>
+          <div class="grade-meta">Competencias: Corresponsabilidad vial · Asumir la regulación</div>
+        </div>
+        <div class="cards-row">
+          <article class="card">
+            <div class="badge b-yellow">Inicial</div>
+            <h3>Mi Sombra Guardiana</h3>
+            <p>Simulación de andenes y cruces para aprender a caminar con un adulto responsable.</p>
+            <div class="tags">
+              <span class="small-muted">Integración: Educación Física · Artes · Socio-afectiva</span>
+            </div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-blue">Juego</div>
+            <h3>Semáforo de Colores y Formas</h3>
+            <p>Actividad lúdica para asociar colores/formas con acciones: detener, prepararse, avanzar.</p>
+            <div class="tags"><span class="small-muted">Integración: Matemáticas · Lenguaje · Arte</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Primaria 1° - 3° -->
+      <section class="grade-section" data-grade="1 2 3">
+        <div class="grade-head">
+          <h2>Primaria — 1° a 3°</h2>
+          <div class="grade-meta">Competencias: Comprensión del entorno · Corresponsabilidad</div>
+        </div>
+        <div class="cards-row">
+          <article class="card">
+            <div class="badge b-green">Mapa</div>
+            <h3>Mapa del Tesoro: Ruta Segura al Colegio</h3>
+            <p>Dibujo colaborativo de rutas seguras y zonas de riesgo en el entorno cercano al colegio.</p>
+            <div class="tags"><span class="small-muted">Integración: Sociales · Lenguaje · Arte</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-yellow">Rol</div>
+            <h3>Escuadrón de los Super-Peatones</h3>
+            <p>Creación de un grupo con lemas y dramatizaciones para promover normas y respeto.</p>
+            <div class="tags"><span class="small-muted">Integración: Formación Ciudadana · Educación Física</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Primaria 4° - 5° -->
+      <section class="grade-section" data-grade="4 5">
+        <div class="grade-head">
+          <h2>Primaria — 4° y 5°</h2>
+          <div class="grade-meta">Competencias: Movilidad en bicicleta · Valoración del riesgo</div>
+        </div>
+        <div class="cards-row">
+          <article class="card">
+            <div class="badge b-green">Práctica</div>
+            <h3>Licencia de Ciclista Experto</h3>
+            <p>Circuito práctico con señales y evaluación simbólica para uso responsable de la bicicleta.</p>
+            <div class="tags"><span class="small-muted">Integración: Educación Física · Tecnología</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-blue">Debate</div>
+            <h3>El Dilema del Cruce</h3>
+            <p>Debate por roles (peatón, ciclista, conductor) para argumentar decisiones seguras.</p>
+            <div class="tags"><span class="small-muted">Integración: Ética · Lenguaje</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Secundaria 6° - 7° -->
+      <section class="grade-section" data-grade="6">
+        <div class="grade-head">
+          <h2>Secundaria — 6° y 7°</h2>
+          <div class="grade-meta">Competencias: Transporte público · Autorregulación emocional</div>
+        </div>
+        <div class="cards-row">
+          <article class="card">
+            <div class="badge b-yellow">Observación</div>
+            <h3>Diario de un Pasajero: Misión Transporte Público</h3>
+            <p>Registro semanal de comportamientos y construcción colectiva de un Manual del Buen Pasajero.</p>
+            <div class="tags"><span class="small-muted">Integración: Sociales · Matemáticas · Lenguaje</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-blue">Campaña</div>
+            <h3>Campaña contra el Estrés Vial</h3>
+            <p>Investigación sobre estrés y diseño de materiales (afiches, videos) para la concientización.</p>
+            <div class="tags"><span class="small-muted">Integración: Ciencias · Arte · Tecnología</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Secundaria 8° - 9° -->
+      <section class="grade-section" data-grade="8 9">
+        <div class="grade-head">
+          <h2>Secundaria — 8° y 9°</h2>
+          <div class="grade-meta">Competencias: Empatía · Análisis forense de siniestros</div>
+        </div>
+        <div class="cards-row">
+          <article class="card">
+            <div class="badge b-green">Simulación</div>
+            <h3>Ponte en mi lugar: Movilidad reducida</h3>
+            <p>Simulaciones de barreras y mapeo de accesibilidad para proponer mejoras reales.</p>
+            <div class="tags"><span class="small-muted">Integración: Física · Sociales · Tecnología</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-red">Forense</div>
+            <h3>Análisis Forense de un Siniestro Vial</h3>
+            <p>Estudio de casos para identificar causas y proponer medidas preventivas concretas.</p>
+            <div class="tags"><span class="small-muted">Integración: Física · Ética · Lenguaje</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Media 10° - 11° -->
+      <section class="grade-section" data-grade="10 11">
+        <div class="grade-head">
+          <h2>Media — 10° y 11°</h2>
+          <div class="grade-meta">Competencias: Liderazgo · Servicio social · Análisis crítico</div>
+        </div>
+        <div class="cards-row">
+          <article class="card">
+            <div class="badge b-blue">Liderazgo</div>
+            <h3>Servicio Social: Tutores de Movilidad Segura</h3>
+            <p>Estudiantes mayores diseñan talleres y enseñan a grados inferiores como parte del servicio social.</p>
+            <div class="tags"><span class="small-muted">Integración: Pedagogía · Liderazgo</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-yellow">Debate</div>
+            <h3>Debate: Libertad individual vs Bienestar colectivo</h3>
+            <p>Debate argumentado sobre límites, normativas y decisiones públicas relacionadas con la movilidad.</p>
+            <div class="tags"><span class="small-muted">Integración: Filosofía · Estadística · Lenguaje</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+
+          <article class="card">
+            <div class="badge b-green">Proyecto</div>
+            <h3>Proyecto Final de Innovación</h3>
+            <p>Proyecto integrador que propone soluciones locales (rutas, campañas, prototipos) con impacto real.</p>
+            <div class="tags"><span class="small-muted">Integración: Proyecto · Emprendimiento · Tecnología</span></div>
+            <div style="margin-top:8px"><a class="btn" href="#">Ver actividad</a></div>
+          </article>
+        </div>
+      </section>
+
+    </main>
+
+    <footer>
+      <div class="muted">Catálogo pedagógico — Movilidad Segura · Currículo transversal (Transición → 11°)</div>
+      <div style="margin-top:6px;font-size:0.85rem;opacity:0.95">Diseñado con la paleta institucional del Atlántico · © 2025</div>
+    </footer>
+  </div>
+
+<script>
+  // Filtro por grado + búsqueda simple
+  (function(){
+    const filter = document.getElementById('gradeFilter');
+    const q = document.getElementById('q');
+    const sections = Array.from(document.querySelectorAll('.grade-section'));
+
+    function matchesQuery(section, term){
+      if(!term) return true;
+      term = term.toLowerCase();
+      return section.textContent.toLowerCase().includes(term);
+    }
+
+    function applyFilter(){
+      const grade = filter.value; // e.g. "6", "transicion", or "all"
+      const term = q.value.trim();
+
+      sections.forEach(sec=>{
+        const grades = sec.getAttribute('data-grade') || '';
+        const gradeMatch = (grade === 'all') ? true : ((' '+grades+' ').indexOf(' '+grade+' ') !== -1);
+        const searchMatch = matchesQuery(sec, term);
+        sec.style.display = (gradeMatch && searchMatch) ? '' : 'none';
+      });
+    }
+
+    filter.addEventListener('change', applyFilter);
+    q.addEventListener('input', function(){ /* debounce simple */
+      clearTimeout(this._t);
+      this._t = setTimeout(applyFilter, 180);
+    });
+
+    // keyboard: "/" focuses search
+    window.addEventListener('keydown', e=>{
+      if(e.key === '/' && document.activeElement !== q){
+        e.preventDefault(); q.focus();
+      }
+    });
+
+    // initial
+    applyFilter();
+  })();
+</script>
+</body>
+</html>
