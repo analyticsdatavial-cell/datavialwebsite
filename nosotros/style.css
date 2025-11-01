@@ -9,7 +9,7 @@
 }
 
 body {
-    color: #2E4975;
+    color: #000;
     line-height: 1.6;
 }
 
@@ -264,7 +264,7 @@ nav li:has(.submenu:hover) > .submenu {
 .team-card-principios3 {
     background: #fff;
     padding: 20px;
-    border: #2e58b3 solid 2px;
+    border: #000 solid 2px;
     border-radius: 15px;
     text-align: center;
     box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
@@ -374,7 +374,7 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .team-flip-card-front {
-    color: #2E4975;
+    color: #000;
 }
 
 .team-flip-card-front img {

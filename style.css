@@ -265,7 +265,7 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .intro p {
-  color: #2E4975;
+  color: #5C6670;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
   font-size: 20px;
 }
