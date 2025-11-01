@@ -10,7 +10,64 @@
       "nombre": "Primero",
       "imagen": "Img/Primero.png",
       "pagina": "Primero.html"
+    },
+    {
+      "nombre": "Segundo",
+      "imagen": "Img/Segundo.png",
+      "pagina": "Segundo.html"
+    },
+
+    {
+      "nombre": "Tercero",
+      "imagen": "Img/Tercero.png",
+      "pagina": "Tercero.html"
+    },
+    {
+     "nombre": "Cuarto",
+      "imagen": "Img/Cuarto.png",
+      "pagina": "Cuarto.html" 
+    },
+    
+    {
+     "nombre": "Quinto",
+      "imagen": "Img/Quinto.png",
+      "pagina": "Quinto.html" 
+    },
+
+    {
+     "nombre": "Sexto",
+      "imagen": "Img/Sexto.png",
+      "pagina": "Sexto.html" 
+    },
+    
+    {
+     "nombre": "Septimo",
+      "imagen": "Img/Septimo.png",
+      "pagina": "Septimo.html" 
+    },
+
+    {
+     "nombre": "Octavo",
+      "imagen": "Img/Octavo.png",
+      "pagina": "Octavo.html" 
+    },
+
+    {
+     "nombre": "Noveno",
+      "imagen": "Img/Noveno.png",
+      "pagina": "Noveno.html" 
+    },
+     {
+     "nombre": "Décimo",
+      "imagen": "Img/Decimo.png",
+      "pagina": "Decimo.html" 
+    },
+     {
+     "nombre": "Once",
+      "imagen": "Img/Once.png",
+      "pagina": "Once.html" 
     }
+
   ]
 }
 

@@ -25,15 +25,14 @@ body {
     margin-bottom: 50px;
 }
 
-.header-titlle {
-    font-size: 6rem;       /* gigante */
-    font-weight: 900;
-    letter-spacing: 5px;
-    font-style: var(--color-dark-text);
+.header-title {
+            font-size: 2.5rem; /* text-4xl */
+            line-height: 1; /* Para que sea compacto */
+            font-weight: 900; /* font-extrabold */
+            color: var(--color-dark-text); /* Texto oscuro por defecto */
+            text-transform: uppercase;
+
 }
-
-
-
 
 .logo {
   width: 90px;
@@ -118,7 +117,7 @@ body {
   font-weight: bold;
   text-align: center;
   color: #fff;
-
+}
 
 /* Botón de descarga */
 .download-button {
@@ -143,7 +142,7 @@ body {
 .footer {
   text-align: center;
   padding: 25px;
-  background: var(--color-light-blue);
+  background: var(--color-red);
   color: var(--color-dark-text);
   font-weight: bold;
   border-top-left-radius: 25px;
