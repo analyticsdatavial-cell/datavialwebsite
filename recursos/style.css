@@ -207,7 +207,7 @@ nav li:has(.submenu:hover) > .submenu {
 
 .recursos-educativos .texto h2 {
   font-size: 2rem;
-  color: #c62828; /* rojo fuerte */
+  color: #C22821; /* rojo fuerte */
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -216,7 +216,7 @@ nav li:has(.submenu:hover) > .submenu {
   font-size: 20px;  
   text-align: justify;
   line-height: 1.6;
-  color: #2E4975;
+  color: #000;
   margin-bottom: 10px;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
 }
@@ -233,7 +233,7 @@ nav li:has(.submenu:hover) > .submenu {
   }
 
   .video-section h2 {
-    color: #dc2626;
+    color: #C22821;
     margin-bottom: 30px;
     font-size: 2rem;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
@@ -241,10 +241,9 @@ nav li:has(.submenu:hover) > .submenu {
   .video-section p{
     font-size: 20px;
     text-align: justify;
-     color: #000000; 
-     text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
-
-    color: #2E4975; 
+    color: #000000; 
+    text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
+    color: #000; 
   }
 
   .video-grid {
@@ -284,7 +283,7 @@ nav li:has(.submenu:hover) > .submenu {
   text-align: center;
   font-weight: bold;
   margin: 30px 0 20px;
-  color: #c62828;
+  color: #C22821;
 }
 
 .texto-seccion {
@@ -292,18 +291,18 @@ nav li:has(.submenu:hover) > .submenu {
   margin: 40px auto;
   text-align: center;
   padding: 20px;
-  color: #2E4975; 
+  color: #000; 
 }
 
 .texto-seccion h1 {
-  color:  #c62828;
+  color:  #C22821;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .texto-seccion h3 {
   font-size: 2rem;
   font-weight: bold;
-  color: #c62828; /* rojo institucional */
+  color: #C22821; /* rojo institucional */
   margin-bottom: 15px;
   margin-top: 0px;
 }
@@ -313,7 +312,7 @@ nav li:has(.submenu:hover) > .submenu {
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: justify;
-  color: #2E4975; 
+  color: #000; 
 }
 
 .intro-senales {
@@ -321,12 +320,12 @@ nav li:has(.submenu:hover) > .submenu {
   margin: 40px auto;
   text-align: center;
   padding: 20px;
-  color: #2E4975; 
+  color: #000; 
 }
 .intro-senales h1 {
   font-size: 2rem;
   font-weight: bold;
-  color: #c62828; /* rojo institucional */
+  color: #C22821; /* rojo institucional */
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -334,7 +333,7 @@ nav li:has(.submenu:hover) > .submenu {
 .intro-senales h2 {
   font-size: 2rem;
   font-weight: bold;
-  color: #c62828; /* rojo institucional */
+  color: #C22821; /* rojo institucional */
   margin-bottom: 15px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
    
@@ -351,7 +350,7 @@ margin-bottom: 1px; /* espacio abajo */
   line-height: 1.6;
   margin-bottom: 10px;
   text-align: justify;
-  color: #2E4975; 
+  color: #000; 
 }
 
 /* ESTILO DE LAS TARJETAS DE SEÑALES DE TRANSITO */
@@ -414,13 +413,13 @@ margin-bottom: 1px; /* espacio abajo */
   margin: 0;
   font-size: 20px;
   font-weight: 700;
-  color: #2E4975; 
+  color: #000; 
 }
 
 .card__description {
   margin: 5px 0 0;
   font-size: 14px;
-  color: #2E4975; 
+  color: #000; 
   line-height: 1.3;
 }
 
@@ -469,7 +468,7 @@ margin-bottom: 1px; /* espacio abajo */
 }
 
 .senales h3, .definiciones h3 {
-  color: #c40000; /* rojo vial */
+  color: #C22821; /* rojo vial */
   margin-bottom: 15px;
   font-size: 30px;
   font-weight: bold;
@@ -486,14 +485,14 @@ margin-bottom: 1px; /* espacio abajo */
 
 .actividades h2 {
   font-size: 2rem;
-  color: #c40000;
+  color: #C22821;
   margin-bottom: 10px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .actividades p {
   font-size: 20px;
-  color: #2E4975; 
+  color: #000; 
   margin-bottom: 30px;
   text-align: justify;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
@@ -502,11 +501,11 @@ margin-bottom: 1px; /* espacio abajo */
   display: block;
   padding: 15px;
   background: linear-gradient(135deg, #ffefef, #fff);
-  border: 2px solid #c40000;
+  border: 2px solid #C22821;
   border-radius: 12px;
   font-size: 16px;
   font-weight: bold;
-  color: #c40000;
+  color: #C22821;
   text-decoration: none;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   transition: transform 0.3s, background 0.3s;

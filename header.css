@@ -1,6 +1,6 @@
 /* ================== HEADER BASE ================== */
 header {
-  background-color: #2E4975;
+  background-color: #c22821;
   color: white;
   height: 15%;          /* fixed proportion */
   display: flex;
@@ -15,6 +15,7 @@ header {
   height: 100px;
   border-radius: 100%;
   margin: 1%;
+  box-shadow:5px 5px 10px #5c6670;
 }
 
 #start {
@@ -80,7 +81,7 @@ nav > ul > li:hover > a {
 
 /* Active page link */
 .active {
-  color: red;
+  color: black;
 }
 
 /* ================== SUBMENU ================== */

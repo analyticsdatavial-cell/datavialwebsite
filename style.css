@@ -118,7 +118,7 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .highlight {
-  background-color: yellow;
+  background-color: #f7dc00;
   font-weight: bold;
 }
 
@@ -157,7 +157,7 @@ nav li:has(.submenu:hover) > .submenu {
   padding: 8px 0px 0px 30px;
   font-size: 40px;
   color: rgb(0, 0, 0);
-  background: linear-gradient(to right, #ffd13b, #ffe17c);
+  background: linear-gradient(to right, #ffb74d, #ffe17c);
   text-shadow: #000;
   font-weight: 500;
   text-shadow: 4px 2px 4px rgba(0,0,0,0.25);
@@ -265,7 +265,7 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .intro p {
-  color: #2E4975;
+  color: #5C6670;
   text-shadow: 2px 3px 4px rgba(0, 0, 0, 0.2);
   font-size: 20px;
 }
@@ -342,8 +342,8 @@ nav li:has(.submenu:hover) > .submenu {
 /* archivo: metodologia.css */
 
 :root {
-  --mtd-amarillo: #ffd166;
-  --mtd-card: #fccc5d;
+  --mtd-amarillo: #ffb74d;
+  --mtd-card: #ffb74d;;
   --mtd-gris: #1e2836;
   --mtd-fondo: #ffffff;
   --mtd-radius: 14px;
@@ -544,13 +544,13 @@ nav li:has(.submenu:hover) > .submenu {
   text-align: center;
   box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
   max-width: 360px;
-  border-top: 8px solid #fccc5d;
+  border-top: 8px solid #ffb74d;
   animation: zoom 0.3s ease;
 }
 
 .popup-content-reducida h3 {
   margin: 0 0 10px;
-  color: #fccc5d;
+  color: #ffb74d;
   font-size: 1.5em;
   text-shadow: none;
 }
@@ -564,7 +564,7 @@ nav li:has(.submenu:hover) > .submenu {
 .close-reducida {
   display: inline-block;
   padding: 10px 20px;
-  background: #fccc5d;
+  background: #ffb74d;
   color: #fff;
   border-radius: 8px;
   text-decoration: none;
@@ -573,7 +573,7 @@ nav li:has(.submenu:hover) > .submenu {
 }
 
 .close-reducida:hover {
-  background: #e6b84f;
+  background: #ffb74d;;
 }
 
 @keyframes zoom {

@@ -1,0 +1,162 @@
+:root {
+  --color-red: #C22821;
+  --color-gray: #5C6670;
+  --color-yellow: #F7DC00;
+  --color-light-blue: #AAD4E8;
+  --color-green: #4BB358;
+  --color-dark-text: #212529;
+  --color-background: #f4f6f8;
+}
+
+body {
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-dark-text);
+}
+
+/* Header */
+.header-container {
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    padding: 40px 60px;
+    text-align: center;
+    border-radius: 0;
+    margin-bottom: 50px;
+}
+
+.header-titlle {
+    font-size: 6rem;       /* gigante */
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-style: var(--color-dark-text);
+}
+
+
+
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  margin: 1%;
+  box-shadow:5px 5px 10px #5c6670;
+}
+
+
+/* Intro */
+.intro {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: var(--color-light-blue);
+  border-radius: 25px;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--color-red);
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark-text);
+}
+
+/* Contenedor de tarjetas */
+.catalogo-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+  padding: 50px;
+  justify-items: center;
+}
+
+/* Tarjetas de grado */
+.card-grado {
+    width: 500px;           /* ancho tipo póster */
+    height: 750px;          /* altura tipo póster */
+    border-radius: 10px;    /* bordes redondeados */
+    overflow: hidden;       /* que no se salga contenido */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra tipo material */
+    transition: transform 0.2s, box-shadow 0.2s; /* efecto hover */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-grado:hover {
+    transform: scale(1.05); /* agranda un poco al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+}
+
+.card-grado img {
+    width: 100%;
+    height: 100%;       /* ahora ocupa toda la tarjeta */
+    object-fit: cover;  /* mantiene proporciones sin deformarse */
+}
+
+
+.card-grado .card-content {
+    padding: 10px;
+    flex: 1;               /* ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-titulo {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+
+
+/* Botón de descarga */
+.download-button {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+}
+
+.download-button:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  filter: brightness(1.1);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: var(--color-light-blue);
+  color: var(--color-dark-text);
+  font-weight: bold;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-top: 50px;
+}
+
+/* Responsividad */
+@media (max-width: 480px) {
+  .intro h2 { font-size: 32px; }
+  .intro p { font-size: 16px; }
+  .card-grado { max-width: 95%; }
+  .card-titulo { font-size: 1.3rem; padding: 15px 8px; }
+  .download-button { padding: 12px 18px; font-size: 0.9rem; }
+}
+}
