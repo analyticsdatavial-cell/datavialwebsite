@@ -1,0 +1,19 @@
+{
+  "TRANSICION": [
+    {
+      "nombre": "El Semáforo de las Reglas",
+      "materia": "Habilidades Socioemocionales",
+      "archivo": "Actividad_Semaforo.pdf"
+    },
+    {
+      "nombre": "Mi Mapa de Caminos Seguros",
+      "materia": "Ciencias/Motor",
+      "archivo": "Mapa_Rutas.pdf"
+    },
+    {
+      "nombre": "Canción de la Seguridad",
+      "materia": "Música/Expresión",
+      "archivo": "Cancion_Seguridad.pdf"
+    }
+  ]
+}

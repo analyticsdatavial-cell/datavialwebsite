@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Transición — Actividades</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <!-- Header con botón volver -->
+  <header class="header">
+    <a href="catalogo.html" style="color: white; text-decoration: none;">← Volver al catálogo</a>
+  </header>
+
+  <!-- Sección de portada grande del grado -->
+  <section style="max-width:1100px;margin:24px auto;padding:0 16px;">
+    <!-- Portada del grado (imagen que ya tienes) -->
+    <div class="card-grado" style="border-radius:14px;overflow:hidden;">
+      <img src="Img/Transicion.png" alt="Portada Transición" style="height:320px;object-fit:cover;">
+      <div class="card-titulo" style="font-size:24px;padding:18px;background:var(--color-light-blue);">
+        Transición
+      </div>
+    </div>
+  </section>
+
+  <!-- Título de la sección de actividades -->
+  <main style="max-width:1100px;margin:20px auto;padding:0 16px;">
+    <h2 style="margin:6px 0 18px 0;">Actividades — Transición</h2>
+
+    <!-- Contenedor donde se inyectan tarjetas de actividades -->
+    <div id="activities-container" class="catalogo-container" aria-live="polite">
+      <!-- JS llenará esto -->
+    </div>
+  </main>
+
+  <!-- Script que carga activities para TRANSICION -->
+  <script src="js/transicion.js"></script>
+</body>
+</html>

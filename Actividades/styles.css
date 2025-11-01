@@ -1,0 +1,115 @@
+/* =========== PALETA DE COLORES =========== */
+:root{
+  --color-red: #C22821;        /* Rojo institucional (botones/títulos) */
+  --color-gray: #5C6670;       /* Gris para bordes y textos secundarios */
+  --color-yellow: #F7DC00;     /* Amarillo de acento (no muy usado) */
+  --color-light-blue: #AAD4E8; /* Azul claro para fondos de título */
+  --color-green: #4BB358;      /* Verde para botones de descarga */
+  --color-dark-text: #212529;  /* Color principal del texto */
+  --color-background: #FFFFFF; /* Fondo general de la página */
+}
+
+/* ===== Estilos globales básicos ===== */
+body{
+  font-family: Arial, sans-serif;      /* Tipografías simples para compatibilidad */
+  background-color: var(--color-background); /* Fondo limpio */
+  margin: 0;                           /* Sin margen del navegador */
+  color: var(--color-dark-text);       /* Color del texto por defecto */
+}
+
+/* ===== Header / Encabezado ===== */
+.header{
+  background-color: var(--color-red);  /* Barra roja */
+  color: #fff;                         /* Texto blanco encima del rojo */
+  padding: 20px;                       /* Espaciado interno */
+  text-align: center;                  /* Centrar el contenido */
+  font-size: 24px;                     /* Tamaño del texto principal */
+  font-weight: bold;                   /* Negrita */
+}
+
+/* ===== Contenedor tipo catálogo (grid responsive) ===== */
+.catalogo-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    padding: 30px;
+    justify-items: center;
+}
+
+/* ===== Tarjeta de grado (usada también para actividades) ===== */
+..card-grado {
+    width: 100%;
+    max-width: 220px;           /* Tamaño fijo tipo poster */
+    aspect-ratio: 2 / 3;        /* Proporción poster de cine */
+    border-radius: 12px;
+    overflow: hidden;
+    background: #000;
+    position: relative;
+    cursor: pointer;
+    transition: transform .25s;
+    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+}
+
+.card-grado:hover {
+    transform: scale(1.06);
+}
+
+/* Imagen centrada, recortada tipo póster */
+.card-grado img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;          /* ✅ Se recorta bonito */
+    object-position: center;
+}
+
+/* Título tipo overlay */
+.card-titulo {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    font-size: 0.95rem;
+    font-weight: bold;
+    text-align: center;
+    background: rgba(0,0,0,0.55);
+    color: #fff;
+    backdrop-filter: blur(3px);
+}
+
+
+.card-titulo {
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.1rem;
+    background-color: var(--color-light-blue);
+}
+
+
+/* Título / Pie de la tarjeta */
+.card-titulo{
+  padding: 12px;                               /* espacio interno */
+  font-weight: bold;                           /* texto en negrita */
+  background-color: var(--color-light-blue);   /* fondo para destacar */
+  color: var(--color-dark-text);               /* color del texto */
+  font-size: 16px;                             /* tamaño de fuente del título */
+}
+
+/* Botón de descarga (estilo básico reutilizable) */
+.download-button{
+  background-color: var(--color-green);        /* verde de acción */
+  color: #fff;                                 /* texto blanco */
+  padding: 10px 14px;                          /* espacio dentro del botón */
+  border-radius: 8px;                          /* bordes redondeados */
+  text-decoration: none;                       /* quitar subrayado de <a> */
+  font-weight: 700;                            /* texto en negrita */
+  display: inline-block;                       /* comportamiento de botón */
+}
+
+/* Pequeñas reglas para responsividad (opcional) */
+@media (max-width: 480px){
+  .card-grado img{ height: 150px; }            /* menos altura en móviles */
+  .card-titulo{ font-size: 14px; padding:10px; }
+  .catalogo-container{ padding:16px; gap:12px; }
+}
+
