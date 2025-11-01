@@ -4,8 +4,13 @@
       "nombre": "Transición",
       "imagen": "Img/Transicion.png",
       "pagina": "Transicion.html"
+    },
+
+    {
+      "nombre": "Primero",
+      "imagen": "Img/Primero.png",
+      "pagina": "Primero.html"
     }
   ]
 }
-
 

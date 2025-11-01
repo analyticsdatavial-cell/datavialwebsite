@@ -1,115 +1,162 @@
-/* =========== PALETA DE COLORES =========== */
-:root{
-  --color-red: #C22821;        /* Rojo institucional (botones/títulos) */
-  --color-gray: #5C6670;       /* Gris para bordes y textos secundarios */
-  --color-yellow: #F7DC00;     /* Amarillo de acento (no muy usado) */
-  --color-light-blue: #AAD4E8; /* Azul claro para fondos de título */
-  --color-green: #4BB358;      /* Verde para botones de descarga */
-  --color-dark-text: #212529;  /* Color principal del texto */
-  --color-background: #FFFFFF; /* Fondo general de la página */
+:root {
+  --color-red: #C22821;
+  --color-gray: #5C6670;
+  --color-yellow: #F7DC00;
+  --color-light-blue: #AAD4E8;
+  --color-green: #4BB358;
+  --color-dark-text: #212529;
+  --color-background: #f4f6f8;
 }
 
-/* ===== Estilos globales básicos ===== */
-body{
-  font-family: Arial, sans-serif;      /* Tipografías simples para compatibilidad */
-  background-color: var(--color-background); /* Fondo limpio */
-  margin: 0;                           /* Sin margen del navegador */
-  color: var(--color-dark-text);       /* Color del texto por defecto */
+body {
+  font-family: 'Fira Sans', sans-serif;
+  margin: 0;
+  background-color: var(--color-background);
+  color: var(--color-dark-text);
 }
 
-/* ===== Header / Encabezado ===== */
-.header{
-  background-color: var(--color-red);  /* Barra roja */
-  color: #fff;                         /* Texto blanco encima del rojo */
-  padding: 20px;                       /* Espaciado interno */
-  text-align: center;                  /* Centrar el contenido */
-  font-size: 24px;                     /* Tamaño del texto principal */
-  font-weight: bold;                   /* Negrita */
+/* Header */
+.header-container {
+    background-color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.3);
+    padding: 40px 60px;
+    text-align: center;
+    border-radius: 0;
+    margin-bottom: 50px;
 }
 
-/* ===== Contenedor tipo catálogo (grid responsive) ===== */
+.header-titlle {
+    font-size: 6rem;       /* gigante */
+    font-weight: 900;
+    letter-spacing: 5px;
+    font-style: var(--color-dark-text);
+}
+
+
+
+
+.logo {
+  width: 90px;
+  height: 90px;
+  border-radius: 100%;
+  margin: 1%;
+  box-shadow:5px 5px 10px #5c6670;
+}
+
+
+/* Intro */
+.intro {
+  max-width: 1000px;
+  margin: 30px auto;
+  background: var(--color-light-blue);
+  border-radius: 25px;
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.intro h2 {
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--color-red);
+  margin-bottom: 15px;
+}
+
+.intro p {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark-text);
+}
+
+/* Contenedor de tarjetas */
 .catalogo-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    padding: 30px;
-    justify-items: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+  padding: 50px;
+  justify-items: center;
 }
 
-/* ===== Tarjeta de grado (usada también para actividades) ===== */
-..card-grado {
-    width: 100%;
-    max-width: 220px;           /* Tamaño fijo tipo poster */
-    aspect-ratio: 2 / 3;        /* Proporción poster de cine */
-    border-radius: 12px;
-    overflow: hidden;
-    background: #000;
-    position: relative;
-    cursor: pointer;
-    transition: transform .25s;
-    box-shadow: 0 6px 16px rgba(0,0,0,0.25);
+/* Tarjetas de grado */
+.card-grado {
+    width: 500px;           /* ancho tipo póster */
+    height: 750px;          /* altura tipo póster */
+    border-radius: 10px;    /* bordes redondeados */
+    overflow: hidden;       /* que no se salga contenido */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra tipo material */
+    transition: transform 0.2s, box-shadow 0.2s; /* efecto hover */
+    background-color: white;
+    display: flex;
+    flex-direction: column;
 }
 
 .card-grado:hover {
-    transform: scale(1.06);
+    transform: scale(1.05); /* agranda un poco al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
-/* Imagen centrada, recortada tipo póster */
 .card-grado img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;          /* ✅ Se recorta bonito */
-    object-position: center;
+    height: 100%;       /* ahora ocupa toda la tarjeta */
+    object-fit: cover;  /* mantiene proporciones sin deformarse */
 }
 
-/* Título tipo overlay */
-.card-titulo {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    padding: 10px 0;
-    font-size: 0.95rem;
-    font-weight: bold;
-    text-align: center;
-    background: rgba(0,0,0,0.55);
-    color: #fff;
-    backdrop-filter: blur(3px);
-}
 
+.card-grado .card-content {
+    padding: 10px;
+    flex: 1;               /* ocupa el espacio restante */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 
 .card-titulo {
-    padding: 12px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.1rem;
-    background-color: var(--color-light-blue);
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 20px 10px;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.65) 100%);
 }
 
-
-/* Título / Pie de la tarjeta */
-.card-titulo{
-  padding: 12px;                               /* espacio interno */
-  font-weight: bold;                           /* texto en negrita */
-  background-color: var(--color-light-blue);   /* fondo para destacar */
-  color: var(--color-dark-text);               /* color del texto */
-  font-size: 16px;                             /* tamaño de fuente del título */
+/* Botón de descarga */
+.download-button {
+  display: inline-block;
+  background-color: var(--color-green);
+  color: #fff;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
-/* Botón de descarga (estilo básico reutilizable) */
-.download-button{
-  background-color: var(--color-green);        /* verde de acción */
-  color: #fff;                                 /* texto blanco */
-  padding: 10px 14px;                          /* espacio dentro del botón */
-  border-radius: 8px;                          /* bordes redondeados */
-  text-decoration: none;                       /* quitar subrayado de <a> */
-  font-weight: 700;                            /* texto en negrita */
-  display: inline-block;                       /* comportamiento de botón */
+.download-button:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
+  filter: brightness(1.1);
 }
 
-/* Pequeñas reglas para responsividad (opcional) */
-@media (max-width: 480px){
-  .card-grado img{ height: 150px; }            /* menos altura en móviles */
-  .card-titulo{ font-size: 14px; padding:10px; }
-  .catalogo-container{ padding:16px; gap:12px; }
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 25px;
+  background: var(--color-light-blue);
+  color: var(--color-dark-text);
+  font-weight: bold;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  margin-top: 50px;
 }
 
+/* Responsividad */
+@media (max-width: 480px) {
+  .intro h2 { font-size: 32px; }
+  .intro p { font-size: 16px; }
+  .card-grado { max-width: 95%; }
+  .card-titulo { font-size: 1.3rem; padding: 15px 8px; }
+  .download-button { padding: 12px 18px; font-size: 0.9rem; }
+}
