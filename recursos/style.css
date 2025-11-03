@@ -670,21 +670,36 @@ footer h2 {
 .btn-acceso-catalogo {
     display: inline-block;
     padding: 15px 40px;
-    background-color: var(--color-primary); /* Color principal rojo */
+    background-color: var(--color-primary);
     color: white;
-    text-decoration: none; /* Elimina el subrayado */
+    text-decoration: none;
     font-weight: 700;
     font-size: 18px;
-    border-radius: 8px; /* Bordes redondeados */
-    transition: background-color 0.3s ease;
-    /* Sombra sutil para darle profundidad */
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4); 
+    border-radius: 8px;
     text-align: center;
+
+    /* 🔹 Transición fluida de color, sombra y escala */
+    transition: all 0.25s cubic-bezier(0.25, 1, 0.5, 1);
+    /* o si quieres más control: 
+       transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease; */
+
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
 }
 
 .btn-acceso-catalogo:hover {
-    background-color: #B22828; /* Rojo más oscuro al pasar el mouse */
-    /* Sombra más intensa al pasar el mouse */
-    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5); 
-    
+    background-color: #B22828;
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5);
+    transform: scale(1.05); /* 💫 leve efecto de elevación */
+}
+
+.btn-acceso-catalogo:active {
+    background-color: #B22828;
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.5);
+    transform: scale(0.95); /* 🔹 se “hundirá” suavemente al presionar */
+}
+
+.boton-actividades {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
