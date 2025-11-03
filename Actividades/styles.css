@@ -1,15 +1,13 @@
 :root {
-  --color-red: #C22821; /* Rojo principal de la marca (Header/Intro) */
+  --color-red: #C22821;
   --color-gray: #5C6670;
   --color-yellow: #F7DC00;
   --color-light-blue: #AAD4E8;
   --color-green: #4BB358;
   --color-dark-text: #212529;
   --color-background: #f4f6f8;
-  --color-primary: #D32F2F; /* Rojo para botones (más vibrante) */
 }
 
-/* --- ESTILOS BASE --- */
 body {
   font-family: 'Fira Sans', sans-serif;
   margin: 0;
@@ -17,7 +15,7 @@ body {
   color: var(--color-dark-text);
 }
 
-/* --- SECCIÓN HEADER (CABECERA) --- */
+/* Header */
 .header-container {
     background-color: white;
     box-shadow: 0 8px 20px rgba(0,0,0,0.3);
@@ -28,11 +26,12 @@ body {
 }
 
 .header-title {
-    font-size: 2.5rem; 
-    line-height: 1; 
-    font-weight: 900; 
-    color: var(--color-dark-text); 
-    text-transform: uppercase;
+            font-size: 2.5rem; /* text-4xl */
+            line-height: 1; /* Para que sea compacto */
+            font-weight: 900; /* font-extrabold */
+            color: var(--color-dark-text); /* Texto oscuro por defecto */
+            text-transform: uppercase;
+
 }
 
 .logo {
@@ -43,92 +42,67 @@ body {
   box-shadow:5px 5px 10px #5c6670;
 }
 
-/* --- SECCIÓN INTRO (NUEVO ESTILO MODERNO Y LIMPIO) --- */
+
+/* Intro */
 .intro {
   max-width: 1000px;
   margin: 30px auto;
-  
-  /* Estilo limpio y profesional */
-  background: white; 
-  border-radius: 12px; 
-  padding: 40px 30px; 
+  background: var(--color-light-blue);
+  border-radius: 25px;
+  padding: 50px 30px;
   text-align: center;
-  
-  /* Borde de Énfasis con color rojo de marca */
-  border: 1px solid #ddd;
-  border-left: 8px solid var(--color-red); 
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05); 
 }
 
 .intro h2 {
-  font-size: 32px; 
-  font-weight: 800; 
-  color: var(--color-dark-text); 
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--color-red);
   margin-bottom: 15px;
-  
-  /* Línea decorativa roja debajo del título */
-  display: inline-block;
-  border-bottom: 3px solid var(--color-red);
-  padding-bottom: 5px;
 }
 
 .intro p {
-  font-size: 18px; 
-  font-weight: 400; 
-  color: var(--color-gray); 
-  margin-top: 20px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--color-dark-text);
 }
 
-/* --- CONTENEDOR DE TARJETAS (Catálogo Principal) --- */
+/* Contenedor de tarjetas */
 .catalogo-container {
   display: grid;
-  /* MODIFICADO: Aumentamos el tamaño mínimo de la columna a 420px. 
-     Esto fuerza a que las tarjetas sean más grandes antes de envolver. */
-  grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
-  
-  /* Separación entre tarjetas */
-  gap: 40px; 
-  
-  /* Centrado y Padding lateral */
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  gap: 40px;
+  padding: 50px;
   justify-items: center;
-  margin: 0 auto;
-  
-  /* Aumentamos el ancho MÁXIMO para usar más espacio del monitor */
-  max-width: 1700px; 
-  padding: 50px 40px; 
 }
 
-/* --- TARJETAS DE GRADO --- */
+/* Tarjetas de grado */
 .card-grado {
-    /* Ocupa el 100% del espacio de su columna grid */
-    width: 100%;           
-    
-    /* Mantiene la proporción de póster */
-    aspect-ratio: 2 / 3;          
-    
-    border-radius: 10px;    
-    overflow: hidden;       
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
-    transition: transform 0.2s, box-shadow 0.2s; 
+    width: 500px;           /* ancho tipo póster */
+    height: 750px;          /* altura tipo póster */
+    border-radius: 10px;    /* bordes redondeados */
+    overflow: hidden;       /* que no se salga contenido */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2); /* sombra tipo material */
+    transition: transform 0.2s, box-shadow 0.2s; /* efecto hover */
     background-color: white;
     display: flex;
     flex-direction: column;
 }
 
 .card-grado:hover {
-    transform: scale(1.03); 
+    transform: scale(1.05); /* agranda un poco al pasar el mouse */
     box-shadow: 0 8px 16px rgba(0,0,0,0.3);
 }
 
 .card-grado img {
     width: 100%;
-    height: 100%;       
-    object-fit: cover;  
+    height: 100%;       /* ahora ocupa toda la tarjeta */
+    object-fit: cover;  /* mantiene proporciones sin deformarse */
 }
+
 
 .card-grado .card-content {
     padding: 10px;
-    flex: 1;               
+    flex: 1;               /* ocupa el espacio restante */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -145,7 +119,7 @@ body {
   color: #fff;
 }
 
-/* --- BOTONES --- */
+/* Botón de descarga */
 .download-button {
   display: inline-block;
   background-color: var(--color-green);
@@ -155,73 +129,57 @@ body {
   font-weight: 700;
   text-align: center;
   transition: transform 0.3s, box-shadow 0.3s, filter 0.3s;
-  box-shadow: 0 0px 10px rgba(0,0,0,0.25);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
 }
 
 .download-button:hover {
-  transform: translateY(-5px); 
-  box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.35);
   filter: brightness(1.1);
 }
 
-/* Botón de Acceso al Catálogo (Página Principal) */
-.btn-acceso-catalogo {
+/* =========================================================================
+   🎒 TARJETAS DE ACTIVIDADES (transicion.html, primero.html…)
+   ========================================================================= */
+.contenedor-actividades {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(310px, 1fr));
+    gap: 24px;
+    padding: 25px;
+}
+
+.card {
+    background: #fff;
+    border-radius: 14px;
+    border: 3px solid #5C6670;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0px 4px 9px rgba(0,0,0,0.15);
+    transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+.badge {
     display: inline-block;
-    padding: 15px 40px;
-    background-color: var(--color-primary); 
-    color: white;
-    text-decoration: none;
-    font-weight: 700;
-    font-size: 18px;
+    background: #F7DC00;
+    padding: 6px 12px;
     border-radius: 8px;
-    transition: background-color 0.3s ease;
-    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4); 
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-bottom: 10px;
 }
 
-.btn-acceso-catalogo:hover {
-    background-color: #B22828; 
-    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5); 
+.btn-descargar {
+    display: inline-block;
+    margin-top: 12px;
+    background: #4BB358;
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    font-weight: bold;
 }
-
-
-/* ================================================================= */
-/* --- CONSULTA DE MEDIOS PARA CELULARES (RESPONSIVIDAD MÓVIL) --- */
-/* ================================================================= */
-@media (max-width: 600px) {
-    
-    /* 1. Header */
-    .header-container {
-        padding: 20px 15px; 
-        margin-bottom: 20px;
-    }
-    
-    .header-title {
-        font-size: 1.8rem;
-    }
-    
-    .logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    /* 2. Intro */
-    .intro {
-        padding: 30px 15px;
-        margin: 20px 10px;
-    }
-    .intro h2 {
-        font-size: 24px;
-    }
-    .intro p {
-        font-size: 16px;
-    }
-    
-    /* 3. Contenedor de Tarjetas (Catálogo principal) */
-    .catalogo-container {
-        /* Fuerza una sola columna para que la tarjeta ocupe más espacio */
-        grid-template-columns: 1fr;
-        /* Reducimos el padding lateral para usar todo el ancho de la pantalla */
-        padding: 20px 10px; 
-        gap: 20px; /* Reducimos la separación vertical */
-    }
 }
