@@ -1,0 +1,262 @@
+
+/* Estilos Globales - Puedes ajustar */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f7f6;
+}
+
+/* --- ESTILOS DE ENCABEZADO CENTRADO Y GRANDE --- */
+
+header {
+    /* Eliminamos justify-content: space-between del intento anterior */
+    display: block; 
+    text-align: center; /* Centra todo el contenido estático dentro del header */
+    padding: 20px 0;
+}
+
+/* Contenedor que agrupa el Logo y el Título */
+.header-main-content {
+    /* Permite centrar el bloque principal (logo/título/link) si tiene ancho limitado,
+       pero para este diseño, text-align: center es suficiente */
+    max-width: 1200px; 
+    margin: 0 auto; 
+}
+
+.logo-title-group {
+    /* Esencial para alinear horizontalmente el logo y el texto */
+    display: flex;
+    align-items: center; /* Alineación vertical */
+    /* Lo centramos dentro de su contenedor (header-main-content) */
+    justify-content: center; 
+    margin-bottom: 5px; /* Pequeña separación del link Volver */
+}
+
+/* Ajuste del Logo */
+.main-logo {
+    width: 70px; /* Aumentamos el tamaño del logo */
+    height: auto;
+    margin-right: 20px; /* Espacio entre el logo y el texto */
+}
+
+/* Ajuste del Título Principal */
+.title-and-subtitle h1 {
+    font-size: 50px; /* ¡Letra GRANDE! (Ajusta este valor si es demasiado) */
+    margin: 0; 
+    text-align: left; /* Alineamos el texto dentro del grupo si es necesario */
+}
+
+/* Ajuste del Subtítulo (Descripción) */
+.title-and-subtitle p {
+    margin-top: 5px;
+    font-size: 18px; /* Letra grande para la descripción también */
+    color: #666; 
+    text-align: left;
+}
+
+/* Estilo del link "Volver a Portadas" */
+.back-link {
+    display: block; /* Para que ocupe su propia línea */
+    font-size: 16px; 
+    margin-top: 10px; /* Espacio debajo del subtítulo */
+    color: #007bff; /* Color azul estándar para links, puedes ajustarlo */
+    text-decoration: none;
+}
+
+/* Estilos de Coloración (ya deben existir, solo para referencia) */
+.app-name {
+    color: #333; 
+    font-weight: bold;
+}
+.red-char {
+    color: #D32F2F; /* Usamos el color rojo principal */
+    font-weight: bold;
+}
+
+/* --- Estilos de Filtros --- */
+.filters-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding: 10px 0 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.filter label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+.filter select {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    min-width: 250px; /* Para que se vean amplios */
+}
+
+/* --- Estilos de Contenedor de Actividades --- */
+.activities-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: flex-start; /* Alinea a la izquierda */
+    padding: 20px;
+    max-width: 1200px; /* Ancho máximo igual al de otros elementos */
+    margin: 0 auto;
+}
+
+/* --- Estilos de Tarjeta (Card) --- */
+.activity-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    width: 350px; /* Ancho fijo para 2-3 columnas */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400px; /* Altura mínima para uniformidad */
+    border-top: 8px solid; /* Borde de color para identificar el tipo de tarjeta */
+}
+
+/* Modificadores de Color de Borde */
+.card-blue {
+    border-top-color: #81b1d4; /* Color de borde de la tarjeta azul */
+}
+
+.card-green {
+    border-top-color: #83c67c; /* Color de borde de la tarjeta verde */
+}
+
+/* Estilos de Etiquetas (Tags) */
+.tag {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: bold;
+    margin-right: 5px;
+    margin-bottom: 8px;
+}
+
+/* Etiquetas de Área Principal */
+.tag-area {
+    background-color: #e0e7ff; /* Fondo más claro */
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+/* Etiquetas de Materia y Ambiente */
+.tags-row {
+    display: flex;
+    margin-bottom: 10px;
+}
+.tag-materia, .tag-ambiente {
+    background-color: #f3f4f6;
+    color: #374151;
+}
+
+.activity-card h3 {
+    font-size: 20px;
+    margin: 5px 0 10px;
+    color: #333;
+    font-weight: bold;
+}
+
+.activity-card .description {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Para empujar el objetivo y el botón hacia abajo */
+}
+
+/* Caja de Objetivo */
+.objective-box {
+    padding: 10px;
+    border-top: 1px solid #eee;
+    margin-top: auto; /* Empuja hacia el final del espacio disponible */
+}
+
+.objective-box strong {
+    font-weight: bold;
+}
+
+/* Botón de Descarga */
+.btn-download {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    margin-top: 15px;
+    text-align: center;
+    background-color: #5cb85c; /* Color verde del ejemplo */
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+    background-color: #4cae4c;
+}
+
+.btn-download .icon {
+    margin-right: 5px;
+}
+
+/* --- Estilos Flujo de Seguimiento --- */
+.flow-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 30px 20px;
+    background-color: #e6ffe6; /* Fondo verde claro */
+    border: 1px solid #c9ecc9;
+    border-radius: 8px;
+}
+
+.flow-title {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.flow-title .flow-icon {
+    font-size: 28px;
+    margin-right: 10px;
+    color: #4CAF50; /* Color del checkmark */
+}
+
+.flow-step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.flow-step .step-icon {
+    font-size: 20px;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.step-inicio { color: #5bc0de; }
+.step-mitad { color: #f0ad4e; }
+.step-entrega { color: #5cb85c; }
+
+.flow-step p {
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* --- Footer --- */
+footer {
+    background-color: #D32F2F; /* Rojo del ejemplo */
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 20px;
+}
