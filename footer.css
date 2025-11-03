@@ -56,8 +56,9 @@ footer img.borde {
 
 /* 🔹 Títulos */
 .footer-col h2 {
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+  font-size: 2rem !important;
+  margin-bottom: 0.5rem !important;
+  font-weight: 600 !important;
 }
 
 /* 🔹 Lista general */

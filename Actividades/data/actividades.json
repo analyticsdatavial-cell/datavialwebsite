@@ -9,21 +9,7 @@
       "materia": "Lenguaje",
       "ambiente": "Aula",
       "colorClase": "azul",
-      "planUrl": "/data/planes/transicion/T001_plan.pdf"
-    },
-    {
-      "id": "T002",
-      "titulo": "Mi Jardín de Historias",
-      "descripcion": "Plantación de semillas; el crecimiento de la planta se usa como metáfora para narrar una historia secuencial.",
-      "objetivo": "Introducir la noción de ciclo de vida y desarrollo narrativo simple.",
-      "areaPrincipal": "Crecimiento",
-      "materia": "Ciencias/Crecimiento",
-      "ambiente": "Exterior",
-      "colorClase": "verde",
-      "planUrl": "/data/planes/transicion/T002_plan.pdf"
-    }
-    
-  ],
-  "PRIMERO": [
-  ]
+      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
+    }   
+  ] 
 }
