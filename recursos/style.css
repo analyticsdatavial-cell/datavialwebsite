@@ -658,3 +658,32 @@ footer h2 {
   margin-top: 0% !important;
   margin-bottom: 0% !important;
 }
+
+
+/* Variable de Color (necesaria para el botón) */
+:root {
+    --color-primary: #D32F2F;
+}
+
+/* Estilo del Botón de Acceso */
+.btn-acceso-catalogo {
+    display: inline-block;
+    padding: 15px 40px;
+    background-color: var(--color-primary); /* Color principal rojo */
+    color: white;
+    text-decoration: none; /* Elimina el subrayado */
+    font-weight: 700;
+    font-size: 18px;
+    border-radius: 8px; /* Bordes redondeados */
+    transition: background-color 0.3s ease;
+    /* Sombra sutil para darle profundidad */
+    box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4); 
+    text-align: center;
+}
+
+.btn-acceso-catalogo:hover {
+    background-color: #B22828; /* Rojo más oscuro al pasar el mouse */
+    /* Sombra más intensa al pasar el mouse */
+    box-shadow: 0 6px 20px rgba(211, 47, 47, 0.5); 
+    
+}

@@ -1,19 +1,29 @@
 {
   "TRANSICION": [
     {
-      "nombre": "El Semáforo de las Reglas",
-      "materia": "Habilidades Socioemocionales",
-      "archivo": "Actividad_Semaforo.pdf"
+      "id": "T001",
+      "titulo": "Misión: Rescate de Letras",
+      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
+      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "areaPrincipal": "Habilidades Básicas",
+      "materia": "Lenguaje",
+      "ambiente": "Aula",
+      "colorClase": "azul",
+      "planUrl": "/data/planes/transicion/T001_plan.pdf"
     },
     {
-      "nombre": "Mi Mapa de Caminos Seguros",
-      "materia": "Ciencias/Motor",
-      "archivo": "Mapa_Rutas.pdf"
-    },
-    {
-      "nombre": "Canción de la Seguridad",
-      "materia": "Música/Expresión",
-      "archivo": "Cancion_Seguridad.pdf"
+      "id": "T002",
+      "titulo": "Mi Jardín de Historias",
+      "descripcion": "Plantación de semillas; el crecimiento de la planta se usa como metáfora para narrar una historia secuencial.",
+      "objetivo": "Introducir la noción de ciclo de vida y desarrollo narrativo simple.",
+      "areaPrincipal": "Crecimiento",
+      "materia": "Ciencias/Crecimiento",
+      "ambiente": "Exterior",
+      "colorClase": "verde",
+      "planUrl": "/data/planes/transicion/T002_plan.pdf"
     }
+    
+  ],
+  "PRIMERO": [
   ]
 }
