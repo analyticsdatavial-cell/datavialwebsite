@@ -1,4 +1,4 @@
-:root {
+::root {
   --color-red: #C22821; /* Rojo principal de la marca (Header/Intro) */
   --color-gray: #5C6670;
   --color-yellow: #F7DC00;
@@ -82,8 +82,7 @@ body {
 /* --- CONTENEDOR DE TARJETAS (Catálogo Principal) --- */
 .catalogo-container {
   display: grid;
-  /* MODIFICADO: Aumentamos el tamaño mínimo de la columna a 420px. 
-     Esto fuerza a que las tarjetas sean más grandes antes de envolver. */
+  /* MODIFICADO: Mantiene el tamaño mínimo de columna a 420px. */
   grid-template-columns: repeat(auto-fit, minmax(420px, 1fr));
   
   /* Separación entre tarjetas */
@@ -98,19 +97,21 @@ body {
   padding: 50px 40px; 
 }
 
-/* --- TARJETAS DE GRADO --- */
+/* --- TARJETAS DE GRADO (MODIFICADO PARA MÁXIMA COMPATIBILIDAD) --- */
 .card-grado {
     /* Ocupa el 100% del espacio de su columna grid */
     width: 100%;           
     
-    /* Mantiene la proporción de póster */
-    aspect-ratio: 2 / 3;          
+    /* CAMBIO CLAVE: Sustituimos aspect-ratio por un alto fijo proporcional (420 * 1.5) 
+       para evitar problemas de compatibilidad en entornos de commit/linter. */
+    height: 630px;          
     
     border-radius: 10px;    
     overflow: hidden;       
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
     transition: transform 0.2s, box-shadow 0.2s; 
     background-color: white;
+    /* Mantenemos Flexbox para estructurar imagen/contenido inferior */
     display: flex;
     flex-direction: column;
 }
@@ -121,14 +122,16 @@ body {
 }
 
 .card-grado img {
+    /* Flex: 1 permite que la imagen ocupe la mayor parte del espacio vertical disponible */
     width: 100%;
-    height: 100%;       
+    flex: 1;
     object-fit: cover;  
 }
 
 .card-grado .card-content {
+    /* Flex: 0 asegura que solo ocupe el espacio necesario */
     padding: 10px;
-    flex: 1;               
+    flex: 0 0 auto;               
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -223,5 +226,10 @@ body {
         /* Reducimos el padding lateral para usar todo el ancho de la pantalla */
         padding: 20px 10px; 
         gap: 20px; /* Reducimos la separación vertical */
+    }
+
+    /* Ajuste de altura de la tarjeta en móvil para que no sea excesivamente larga */
+    .card-grado {
+        height: 400px; /* Tamaño fijo más razonable en móvil */
     }
 }
