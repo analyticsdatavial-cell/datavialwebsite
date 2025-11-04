@@ -1,6 +1,6 @@
 {
-  "TRANSICION": [
-    {
+"TRANSICION": [
+{
       "id": "T001",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
@@ -10,12 +10,11 @@
       "ambiente": "Aula",
       "colorClase": "azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
-    }   
-<<<<<<< Updated upstream
-  ], 
+}   
+], 
 
-  "PRIMERO":[
-    {"id": "T001",
+"PRIMERO":[
+{"id": "T001",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
@@ -32,16 +31,13 @@
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Lenguaje",
       "ambiente": "Aula",
-      "colorClase": "azul",
+      "colorClase": "Azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"}
-=======
->>>>>>> Stashed changes
-  ],
-  
-  "SEGUNDO": [
-    {
+],
+
+"SEGUNDO": [
+      {
       "id": "S001",
-<<<<<<< Updated upstream
       "titulo": "Seguridad vial como parte de la vida cotidiana",
       "descripcion": "Los estudiantes juegan cómo ser un buen peatón y cuidar la vida en las calles",
       "objetivo": "Aprender a reconocer señales, moverte con seguridad, respetar normas y crear mensajes viales con arte.",
@@ -49,20 +45,10 @@
       "materia": "Ciencias Sociales",
       "ambiente": "Aula",
       "colorClase": "Amarillo",
-=======
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Ciencias Sociales",
-      "ambiente": "Aula",
-      "colorClase": "azul",
->>>>>>> Stashed changes
       "planUrl": "GRADOS/SEGUNDO/C. Sociales°.pdf"
-    },
-  {
+},
+{
       "id": "S002",
-<<<<<<< Updated upstream
       "titulo": "Cuidamos nustro cuerpo y el ambiente en la via",
       "descripcion": "Los estudiantes aprenden cómo la seguridad vial protege su salud y promueve el respeto en comunidad.",
       "objetivo": "Aprender a cuidar tu cuerpo y el ambiente usando hábitos saludables y elementos de protección vial.",
@@ -70,61 +56,32 @@
       "materia": "Ciencias Naturales",
       "ambiente": "Aula",
       "colorClase": "Verde",
-=======
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Ciencias Naturales",
-      "ambiente": "Aula",
-      "colorClase": "azul",
->>>>>>> Stashed changes
       "planUrl": "GRADOS/SEGUNDO/C. Naturales2.pdf"
-    },
-    {
+},
+{
       "id": "S003",
-<<<<<<< Updated upstream
       "titulo": "Contamos historias para cuidar la vida",
       "descripcion": "Los estudiantes crean cuentos sobre seguridad vial usando personajes, valores y lenguaje como herramienta educativa.",
-=======
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
->>>>>>> Stashed changes
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Lenguaje",
       "ambiente": "Aula",
-<<<<<<< Updated upstream
       "colorClase": "Rojo",
-=======
-      "colorClase": "azul",
->>>>>>> Stashed changes
       "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
-    },
-    {
+},
+{
       "id": "S004",
-<<<<<<< Updated upstream
       "titulo": "Expresamos la seguridad vial a través del arte",
       "descripcion": "Los estudiantes unen arte y señales de tránsito para expresar emociones y promover la seguridad vial",
       "objetivo": "Aprender a usar el arte para crear señales viales, expresar emociones y promover la seguridad en las calles.",
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Artistica",
       "ambiente": "Aula",
-      "colorClase": "morado",
-=======
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Artistica",
-      "ambiente": "Aula",
-      "colorClase": "azul",
->>>>>>> Stashed changes
+      "colorClase": "Morado",
       "planUrl": "GRADOS/SEGUNDO/Artistica2.pdf"
-    },
-    {
+},
+{
       "id": "S005",
-<<<<<<< Updated upstream
       "titulo": "Las señales también tienen formas",
       "descripcion": "Los estudiantes unen matemáticas y arte para reconocer formas en las señales y crear mensajes seguros.",
       "objetivo": "Aprender a identificar y usar figuras geométricas en señales de tránsito para cuidar la vida.",
@@ -132,17 +89,8 @@
       "materia": "Matematicas",
       "ambiente": "Aula",
       "colorClase": "Naranja",
-=======
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Matematicas",
-      "ambiente": "Aula",
-      "colorClase": "azul",
->>>>>>> Stashed changes
       "planUrl": "GRADOS/SEGUNDO/Matematicas_2.pdf"
-    }
-  ] 
+}
+] 
 
 }
