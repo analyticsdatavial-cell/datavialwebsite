@@ -92,5 +92,30 @@
       "planUrl": "GRADOS/SEGUNDO/Matematicas_2.pdf"
     }
   ] 
+  
+    "SEXTO": [
+    {
+      "id": "T006",
+      "titulo": "Misión: Rescate de Letras",
+      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
+      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "areaPrincipal": "Habilidades Básicas",
+      "materia": "Lenguaje",
+      "ambiente": "Aula",
+      "colorClase": "azul",
+      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
+    },
+    {
+      "id": "T006",
+      "titulo": "Misión: Rescate de Letras",
+      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
+      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "areaPrincipal": "Habilidades Básicas",
+      "materia": "Lenguaje",
+      "ambiente": "Aula",
+      "colorClase": "azul",
+      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
+    }
+  ], 
 
 }
