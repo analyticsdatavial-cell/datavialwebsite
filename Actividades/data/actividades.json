@@ -23,7 +23,7 @@
       "materia": "Lenguaje",
       "ambiente": "Aula",
       "colorClase": "azul",
-      "planUrl": "GRADOS/SEGUNDO/Sociales2.pdf"
+      "planUrl": "GRADOS/PRIMERO/PRIMERO.pdf"
     }
   ],
 
@@ -37,7 +37,7 @@
       "materia": "Ciencias Sociales",
       "ambiente": "Aula",
       "colorClase": "Amarillo",
-      "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Sociales2.pdf"
     },
     {
       "id": "S002",
@@ -48,7 +48,7 @@
       "materia": "Ciencias Naturales",
       "ambiente": "Aula",
       "colorClase": "Verde",
-      "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Naturales2.pdf"
     },
     {
       "id": "S003",
@@ -81,7 +81,7 @@
       "materia": "Matemáticas",
       "ambiente": "Aula",
       "colorClase": "Naranja",
-      "planUrl": "GRADOS/SEGUNDO/Matematicas_2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Matematicas2.pdf"
     }
   ],
 
