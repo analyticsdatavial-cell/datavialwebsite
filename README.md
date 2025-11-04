@@ -35,15 +35,11 @@ Se adoptó la metodología ágil **SCRUM**, organizando el trabajo en sprints y 
 
 ### 1. Recolección de datos
 Se recopilaron y depuraron bases de datos de **fuentes oficiales**:  
-- Policía Nacional  
-- Alcaldía de Barranquilla  
-- Datos Abiertos Colombia  
+- Agencia Nacional de Transporte
 
 Ejemplos de datasets:  
-- Homicidios por accidentes de tránsito en Colombia (2020–2025)  
-- Accidentalidad y víctimas en Barranquilla (2018–2025)  
-- Comparendos electrónicos en Barranquilla (2018–2024)  
-- Accidentes con heridos y fallecidos en Barranquilla (2018–2025)  
+- Lesionados y fallecidos por accidentes de tránsito en el Atlántico (2020–2024)  
+- Fallecidos en Colombia (2018–2025)  
 
 ### 2. Procesamiento y análisis
 - **Excel** → consultas y gráficos dinámicos.  
@@ -78,8 +74,8 @@ El proyecto se apoya en la legislación colombiana sobre tránsito y seguridad v
 
 ## 👥 Equipo de Trabajo
 Proyecto desarrollado en el marco de la formación **SENA – Técnico en Programación para la Analítica de Datos (TAD09)**.  
-- **Instructor:** Miguel Ángel Olivares Rosero  
-- **Equipo:** 21 integrantes distribuidos en áreas de Backend y Frontend
+- **Instructores:** Miguel Ángel Olivares Rosero y Roymer Romero Algarín
+- **Equipo:** 6 integrantes distribuidos en áreas de Backend y Frontend
 
 ---
 
@@ -102,15 +98,11 @@ Proyecto desarrollado en el marco de la formación **SENA – Técnico en Progra
 ---
 
 ## 📎 Referencias
-- [OMS – Road Traffic Injuries](https://www.who.int/es/news-room/fact-sheets/detail/road-traffic-injuries)  
-- [ANSV – Histórico víctimas](https://ansv.gov.co/es/observatorio/estad%C3%ADsticas/historico-victimas)  
-- [Datos Abiertos Colombia](https://www.datos.gov.co/)  
-- Banco Mundial (2018). *Road deaths and injuries hold back economic growth in developing countries*.  
-
+- [ANSV – Histórico víctimas](https://ansv.gov.co/es/observatorio/estad%C3%ADsticas/historico-victimas)
 ---
 
 ## 📌 Licencia
-Este proyecto se distribuye bajo la licencia **MIT**.  
+Este proyecto se distribuye bajo la licencia **CC**.  
 Puedes usar, modificar y compartir el contenido citando la fuente original.  
 
 ---
