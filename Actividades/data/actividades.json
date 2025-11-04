@@ -10,11 +10,12 @@
       "ambiente": "Aula",
       "colorClase": "azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
-    }   
-  ], 
+    }
+  ],
 
-  "PRIMERO":[
-    {"id": "T001",
+  "PRIMERO": [
+    {
+      "id": "T001",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
@@ -22,23 +23,24 @@
       "materia": "Lenguaje",
       "ambiente": "Aula",
       "colorClase": "azul",
-      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"},
+      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
+    }
   ],
-  
+
   "SEGUNDO": [
     {
       "id": "S001",
       "titulo": "Seguridad vial como parte de la vida cotidiana",
-      "descripcion": "Los estudiantes juegan cómo ser un buen peatón y cuidar la vida en las calles",
+      "descripcion": "Los estudiantes juegan cómo ser un buen peatón y cuidar la vida en las calles.",
       "objetivo": "Aprender a reconocer señales, moverte con seguridad, respetar normas y crear mensajes viales con arte.",
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Ciencias Sociales",
       "ambiente": "Aula",
-      "colorClase": "Amarillo",
+      "colorClase": "Amarillo"
     },
-  {
+    {
       "id": "S002",
-      "titulo": "Cuidamos nustro cuerpo y el ambiente en la via",
+      "titulo": "Cuidamos nuestro cuerpo y el ambiente en la vía",
       "descripcion": "Los estudiantes aprenden cómo la seguridad vial protege su salud y promueve el respeto en comunidad.",
       "objetivo": "Aprender a cuidar tu cuerpo y el ambiente usando hábitos saludables y elementos de protección vial.",
       "areaPrincipal": "Habilidades Básicas",
@@ -55,19 +57,18 @@
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Lenguaje",
       "ambiente": "Aula",
-      "colorClase": "Rojo",
-      "colorClase": "azul",
+      "colorClase": "Azul",
       "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
     },
     {
       "id": "S004",
       "titulo": "Expresamos la seguridad vial a través del arte",
-      "descripcion": "Los estudiantes unen arte y señales de tránsito para expresar emociones y promover la seguridad vial",
+      "descripcion": "Los estudiantes unen arte y señales de tránsito para expresar emociones y promover la seguridad vial.",
       "objetivo": "Aprender a usar el arte para crear señales viales, expresar emociones y promover la seguridad en las calles.",
       "areaPrincipal": "Habilidades Básicas",
-      "materia": "Artistica",
+      "materia": "Artística",
       "ambiente": "Aula",
-      "colorClase": "morado",
+      "colorClase": "Morado",
       "planUrl": "GRADOS/SEGUNDO/Artistica2.pdf"
     },
     {
@@ -76,14 +77,14 @@
       "descripcion": "Los estudiantes unen matemáticas y arte para reconocer formas en las señales y crear mensajes seguros.",
       "objetivo": "Aprender a identificar y usar figuras geométricas en señales de tránsito para cuidar la vida.",
       "areaPrincipal": "Habilidades Básicas",
-      "materia": "Matematicas",
+      "materia": "Matemáticas",
       "ambiente": "Aula",
       "colorClase": "Naranja",
       "planUrl": "GRADOS/SEGUNDO/Matematicas_2.pdf"
     }
-  ] 
-  
-    "SEXTO": [
+  ],
+
+  "SEXTO": [
     {
       "id": "T006",
       "titulo": "Misión: Rescate de Letras",
@@ -92,20 +93,19 @@
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Lenguaje",
       "ambiente": "Aula",
-      "colorClase": "azul",
+      "colorClase": "Azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
     },
     {
-      "id": "T006",
+      "id": "T007",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Lenguaje",
       "ambiente": "Aula",
-      "colorClase": "azul",
+      "colorClase": "Azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
     }
-  ], 
-
+  ]
 }
