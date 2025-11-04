@@ -8,7 +8,7 @@
 }
 
 body {
-  color: #2E4975;
+  color: #000;
   line-height: 1.6;
   background-color: #e6e6e6;
 }
@@ -106,7 +106,7 @@ nav ul .submenu a:hover {
 }
 
 .active {
-  color: red !important;
+  color: rgb(0, 0, 0) !important;
 }
 
 .submenu-link {
@@ -196,7 +196,7 @@ nav li:has(.submenu:hover)>.submenu {
 
 .info-body {
     background-color: #f0f0f0;
-    color: #2E4975;
+    color: #000;
     width: 100%; /* El 100% de su contenedor padre (.info-section) */
     padding: 2rem 1rem;
     text-align: justify;
