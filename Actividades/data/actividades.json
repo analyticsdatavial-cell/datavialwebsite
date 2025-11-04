@@ -84,7 +84,7 @@
       "planUrl": "GRADOS/SEGUNDO/Matematicas2.pdf"
     }
   ],
-
+  
   "SEXTO": [
   {
     "id": "CS601",
@@ -140,8 +140,9 @@
     "ambiente": "Aula",
     "colorClase": "Morado",
     "planUrl": "GRADOS/SEXTO/Artistica6.pdf"
-  }
-]
+    }
+  ],
+  
 "SEPTIMO": [
   {
     "id": "CS701",
@@ -233,5 +234,5 @@
   }
 ]
 
- 
+  
 }
