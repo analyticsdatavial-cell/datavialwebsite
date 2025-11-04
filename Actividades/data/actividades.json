@@ -23,7 +23,7 @@
       "materia": "Lenguaje",
       "ambiente": "Aula",
       "colorClase": "azul",
-      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Sociales2.pdf"
     }
   ],
 
@@ -36,7 +36,8 @@
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Ciencias Sociales",
       "ambiente": "Aula",
-      "colorClase": "Amarillo"
+      "colorClase": "Amarillo",
+      "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
     },
     {
       "id": "S002",
