@@ -9,7 +9,7 @@
 
 body {
   background-color: #F0F0F0;
-  color: #2E4975; /* azul más claro */  
+  color: #000; /* azul más claro */  
   line-height: 1.6; 
 }
 
@@ -201,7 +201,7 @@ nav li:has(.submenu:hover) > .submenu {
   transition: transform 0.4s ease, box-shadow 0.4s ease;
 }
 
-.seccion1:hover {
+section:hover:not(:last-of-type) {
   transform: translateY(-4px);
   box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
@@ -611,5 +611,88 @@ section {
   .seccion6 .download-buttons {
     flex-direction: column;
     align-items: center;
+  }
+}
+
+.seccion3, .seccion4 {
+  background-color: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+  padding: 60px 5%;
+  margin: 40px auto;
+  max-width: 1400px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Animación hover */
+.seccion3:hover:not(:last-of-type),
+.seccion4:hover:not(:last-of-type) {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+/* Grid para contenido: imagen 40%, texto 60% */
+.seccion3 .contenedor,
+.seccion4 .contenedor {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  align-items: center;
+  gap: 40px;
+}
+
+/* Para que en la sección 4 la imagen quede a la derecha */
+.seccion4 .contenedor {
+  grid-template-columns: 60% 40%;
+}
+
+/* Imagen */
+.image-wrapper {
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.image-wrapper img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+/* Texto */
+.texto-consultas {
+  color: #000;
+  text-align: justify;
+  line-height: 1.6;
+  font-size: 1.05rem;
+}
+
+.texto-consultas h2 {
+  font-size: 1.9rem;
+  color: #60A560;
+  margin-bottom: 15px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.texto-consultas p {
+  color: #222;
+  font-weight: 400;
+}
+
+/* === Responsividad === */
+@media (max-width: 900px) {
+  .seccion3 .contenedor,
+  .seccion4 .contenedor {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .image-wrapper, .texto-consultas {
+    width: 100%;
+  }
+
+  .image-wrapper img {
+    aspect-ratio: 16 / 9;
   }
 }
