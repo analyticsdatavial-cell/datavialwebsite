@@ -155,7 +155,7 @@ function loadActivities() {
             allActivities = data[currentGradeKey] || []; // Guardamos la data completa
             
             if (allActivities.length === 0) {
-                activitiesGrid.innerHTML = `<p style="width: 100%; text-align: center;">No hay actividades disponibles para el grado ${currentGradeDisplay}.</p>`;
+                activitiesGrid.innerHTML = `<p style="width: 100%; text-align: center; grid-column: 2 / 3;">No hay actividades disponibles para el grado ${currentGradeDisplay}.</p>`;
                 return;
             }
 
@@ -172,7 +172,7 @@ function loadActivities() {
 function renderActivities(activities) {
     activitiesGrid.innerHTML = ''; // Limpia el contenedor
     if (activities.length === 0) {
-         activitiesGrid.innerHTML = `<p style="width: 100%; text-align: center; margin-top: 30px;">No se encontraron actividades que coincidan con los filtros.</p>`;
+         activitiesGrid.innerHTML = `<p style="width: 100%; text-align: center; margin-top: 30px; grid-column: 2 / 3;">No se encontraron actividades que coincidan con los filtros.</p>`;
          return;
     }
 
