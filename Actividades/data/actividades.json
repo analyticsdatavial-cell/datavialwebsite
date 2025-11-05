@@ -14,7 +14,7 @@
   ], 
 
   "PRIMERO":[
-    {"id": "T001",
+    {"id": "P001",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
@@ -24,7 +24,7 @@
       "colorClase": "azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"},
 
-      {"id": "T001",
+      {"id": "P002",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
@@ -56,7 +56,7 @@
       "materia": "Ciencias Naturales",
       "ambiente": "Aula",
       "colorClase": "Verde",
-      "planUrl": "GRADOS/SEGUNDO/C. Naturales2.pdf"
+      "planUrl": "GRADOS/SEGUNDSoy lider de un proyecto, pero al mismo tiempo me encargo de crear cosas en la pagina, porque nadie más esta capacitado, entonces estoy saturadO/C. Naturales2.pdf"
     },
     {
       "id": "S003",
@@ -91,6 +91,42 @@
       "colorClase": "Naranja",
       "planUrl": "GRADOS/SEGUNDO/Matematicas_2.pdf"
     }
-  ] 
+  ], 
 
+   "TERCERO": [
+    {
+      "id": "X001",
+      "titulo": "Misión: Rescate de Letras",
+      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
+      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "areaPrincipal": "Habilidades Básicas",
+      "materia": "Lenguaje",
+      "ambiente": "Aula",
+      "colorClase": "azul",
+      "planUrl": "GRADOS/TERCERO/SOCIALES3.pdf"
+    },
+    {
+      "id": "X002",
+      "titulo": "Misión: Rescate de Letras",
+      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
+      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "areaPrincipal": "Habilidades Básicas",
+      "materia": "Lenguaje",
+      "ambiente": "Aula",
+      "colorClase": "azul",
+      "planUrl": "GRADOS/TERCERO/SOCIALES13.pdf"
+    },{
+      "id": "X001",
+      "titulo": "Misión: Rescate de Letras",
+      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
+      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "areaPrincipal": "Habilidades Básicas",
+      "materia": "Lenguaje",
+      "ambiente": "Aula",
+      "colorClase": "azul",
+      "planUrl": "GRADOS/TERCERO/SOCIALES3.pdf"
+    }
+      ]
+    
+  
 }
