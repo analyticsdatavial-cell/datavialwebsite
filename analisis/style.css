@@ -656,7 +656,6 @@ section {
 .image-wrapper img {
   width: 100%;
   aspect-ratio: 16 / 9;
-  object-fit: cover;
 }
 
 /* Texto */
@@ -695,4 +694,5 @@ section {
   .image-wrapper img {
     aspect-ratio: 16 / 9;
   }
+
 }
