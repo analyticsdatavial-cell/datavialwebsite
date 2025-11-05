@@ -6,6 +6,7 @@
 
 const HEADER_HTML = `
     <header>
+    <link rel="stylesheet" href="../footer.css">
         <div class="header-main-content"> 
             <div class="logo-title-group">
                 <img src="../images/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="main-logo">
