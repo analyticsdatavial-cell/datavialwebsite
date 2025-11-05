@@ -9,7 +9,7 @@ const HEADER_HTML = `
     <link rel="stylesheet" href="../footer.css">
         <div class="header-main-content"> 
             <div class="logo-title-group">
-                <img src="../images/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="main-logo">
+                <img id="logo" src="../images/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="main-logo">
                 <div class="title-and-subtitle">
                     <h1>CATÁLOGO <span class="app-name">DataVial<span class="red-char">A</span>naly<span class="red-char">TIC</span>s</span></h1>
                     <p>Actividades Lúdicas y Creativas por Grado.</p>
