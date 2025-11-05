@@ -130,7 +130,7 @@ footer img.borde {
 .footer-logo-depa-bar img {
   height: 70px; /* ← altura uniforme */
   width: auto;  /* ← mantiene proporción natural */
-  object-fit: contain;
+  object-fit: cover;
 }
 
 /* 🔹 RESPONSIVIDAD COMPLETA */
