@@ -6,9 +6,10 @@
 
 const HEADER_HTML = `
     <header>
+    <link rel="stylesheet" href="../footer.css">
         <div class="header-main-content"> 
             <div class="logo-title-group">
-                <img src="../images/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="main-logo">
+                <img id="logo" src="../images/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="main-logo">
                 <div class="title-and-subtitle">
                     <h1>CATÁLOGO <span class="app-name">DataVial<span class="red-char">A</span>naly<span class="red-char">TIC</span>s</span></h1>
                     <p>Actividades Lúdicas y Creativas por Grado.</p>
@@ -26,10 +27,42 @@ const HEADER_HTML = `
 
 // ... (El resto de tu actividades.js permanece sin cambios)
 const FOOTER_HTML = `
-    <footer>
-        <img src="img/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="footer-logo">
-        <p>© 2025 DATAVIAL ANALYTICS. Todos los derechos reservados. V 1.0. Catálogo Inter-Grado.</p>
-    </footer>
+<!--FOOTER-->
+<div class="footer-logo-depa-bar">
+    <img id="atl" src="../images/LOGOTRANSITO.png" height="160" width="150" alt="FOTO DEL DEPARTAMENTO DEL ATLANTICO">
+    <img src="../logos/sena_black.png" height="90" width="90" alt="Logo Sena" style="margin-top: 0.5rem;">
+    <img id="spr" src="../images/supertransporte_footer.png" height="160" width="150" alt="FOTO DE LA SUPERINTENDENCIA DE TRANSPORTE">
+</div>
+  <footer>
+    <!--BANDA BLANCA*-->
+
+  <!-- 🔹 Column 1: Redes + Sena -->
+  <div class="footer-col">
+    <h2>Síguenos</h2>
+    <ul class="logos">
+      <li><a href="https://www.facebook.com/share/16LubPom5W/" target="_blank"><img src="../logos/facebook.png" height="40" width="40" alt="FACEBOOK"></a></li>
+      <li><a href="https://github.com/analyticsdatavial-cell" target="_blank"><img src="../logos/github.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.instagram.com/data_vialanalytics?igsh=MWx5bmppaHk0czVrag==" target="_blank"><img src="../logos/instagram.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.linkedin.com/in/data-vial-analytics-1b2627382?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSUz6cn9FQRSaJ5VYcaNm%2FA%3D%3D" target="_blank"><img src="../logos/linkedin.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.tiktok.com/@datavial_analytics?_t=ZS-8zjLNM77zkn&_r=1" target="_blank"><img src="../logos/tik-tok.png" height="40" width="40" alt=""></a></li>
+    </ul>
+  </div>
+
+  <!-- 🔹 Column 2: Contactos -->
+  <div class="footer-col">
+    <h1 style="font-size: 32px;">Contacto</h1>
+    <ul class="contact">
+      <li>Correo: analyticsdatavial@gmail.com</li>
+      <li>Dirección: Cra. 54 #68 – 80, Nte. Centro Historico,<br>Barranquilla, Atlántico.</li>
+    </ul>
+  </div>
+
+  <!-- 🔹 Bottom section -->
+  <div class="footer-bottom">
+    <p>© 2025 Data Vial Analytics. Todos los derechos reservados.</p>
+    <a href="#logo"><img src="../images/arrow.svg" alt="INICIO" class="borde"></a>
+  </div>
+</footer>
 `;
 
 const FLOW_HTML = `

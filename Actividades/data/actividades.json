@@ -13,18 +13,10 @@
     }   
   ], 
 
-  "PRIMERO":[
-    {"id": "P001",
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Lenguaje",
-      "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"},
 
-      {"id": "P002",
+  "PRIMERO": [
+    {
+      "id": "T001",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
       "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
@@ -32,31 +24,32 @@
       "materia": "Lenguaje",
       "ambiente": "Aula",
       "colorClase": "azul",
-      "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"}
+      "planUrl": "GRADOS/PRIMERO/PRIMERO.pdf"
+    }
   ],
-  
+
   "SEGUNDO": [
     {
       "id": "S001",
       "titulo": "Seguridad vial como parte de la vida cotidiana",
-      "descripcion": "Los estudiantes juegan cómo ser un buen peatón y cuidar la vida en las calles",
+      "descripcion": "Los estudiantes juegan cómo ser un buen peatón y cuidar la vida en las calles.",
       "objetivo": "Aprender a reconocer señales, moverte con seguridad, respetar normas y crear mensajes viales con arte.",
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Ciencias Sociales",
       "ambiente": "Aula",
       "colorClase": "Amarillo",
-      "planUrl": "GRADOS/SEGUNDO/C. Sociales°.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Sociales2.pdf"
     },
-  {
+    {
       "id": "S002",
-      "titulo": "Cuidamos nustro cuerpo y el ambiente en la via",
+      "titulo": "Cuidamos nuestro cuerpo y el ambiente en la vía",
       "descripcion": "Los estudiantes aprenden cómo la seguridad vial protege su salud y promueve el respeto en comunidad.",
       "objetivo": "Aprender a cuidar tu cuerpo y el ambiente usando hábitos saludables y elementos de protección vial.",
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Ciencias Naturales",
       "ambiente": "Aula",
       "colorClase": "Verde",
-      "planUrl": "GRADOS/SEGUNDSoy lider de un proyecto, pero al mismo tiempo me encargo de crear cosas en la pagina, porque nadie más esta capacitado, entonces estoy saturadO/C. Naturales2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Naturales2.pdf"
     },
     {
       "id": "S003",
@@ -66,18 +59,18 @@
       "areaPrincipal": "Habilidades Básicas",
       "materia": "Lenguaje",
       "ambiente": "Aula",
-      "colorClase": "Rojo",
+      "colorClase": "Azul",
       "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
     },
     {
       "id": "S004",
       "titulo": "Expresamos la seguridad vial a través del arte",
-      "descripcion": "Los estudiantes unen arte y señales de tránsito para expresar emociones y promover la seguridad vial",
+      "descripcion": "Los estudiantes unen arte y señales de tránsito para expresar emociones y promover la seguridad vial.",
       "objetivo": "Aprender a usar el arte para crear señales viales, expresar emociones y promover la seguridad en las calles.",
       "areaPrincipal": "Habilidades Básicas",
-      "materia": "Artistica",
+      "materia": "Artística",
       "ambiente": "Aula",
-      "colorClase": "morado",
+      "colorClase": "Morado",
       "planUrl": "GRADOS/SEGUNDO/Artistica2.pdf"
     },
     {
@@ -86,10 +79,10 @@
       "descripcion": "Los estudiantes unen matemáticas y arte para reconocer formas en las señales y crear mensajes seguros.",
       "objetivo": "Aprender a identificar y usar figuras geométricas en señales de tránsito para cuidar la vida.",
       "areaPrincipal": "Habilidades Básicas",
-      "materia": "Matematicas",
+      "materia": "Matemáticas",
       "ambiente": "Aula",
       "colorClase": "Naranja",
-      "planUrl": "GRADOS/SEGUNDO/Matematicas_2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/Matematicas2.pdf"
     }
   ], 
 
@@ -126,7 +119,156 @@
       "colorClase": "azul",
       "planUrl": "GRADOS/TERCERO/SOCIALES3.pdf"
     }
-      ]
-    
+      ],
+  
+  "SEXTO": [
+  {
+    "id": "CS601",
+    "titulo": "Movámonos con Respeto: Conociendo la Movilidad Segura en Nuestra Ciudad",
+    "descripcion": "Los estudiantes comprenden la importancia de las normas y el respeto en la vía mediante análisis y actividades participativas sobre movilidad segura.",
+    "objetivo": "Reconocer las normas de tránsito como parte del respeto por la vida y la convivencia ciudadana, desarrollando actitudes responsables en la movilidad.",
+    "areaPrincipal": "Ciencias Sociales y Ciudadanas",
+    "materia": "Ciencias Sociales",
+    "ambiente": "Aula",
+    "colorClase": "Amarillo",
+    "planUrl": "GRADOS/SEXTO/Ciencias_Sociales6.pdf"
+  },
+  {
+    "id": "M601",
+    "titulo": "Movilidad con Medida: Comprendiendo Distancias y Tiempos Seguros",
+    "descripcion": "Los estudiantes aplican conceptos básicos de longitud y tiempo para analizar trayectos, distancias y seguridad en la movilidad.",
+    "objetivo": "Fortalecer el pensamiento lógico-matemático a través del uso de medidas reales y la reflexión sobre la seguridad vial.",
+    "areaPrincipal": "Pensamiento Lógico-Matemático",
+    "materia": "Matemáticas",
+    "ambiente": "Aula o patio escolar",
+    "colorClase": "Verde",
+    "planUrl": "GRADOS/SEXTO/Matematicas6.pdf"
+  },
+  {
+    "id": "L601",
+    "titulo": "Leemos las Señales: Comprendiendo Textos y Mensajes Viales",
+    "descripcion": "Los estudiantes interpretan textos informativos y señales de tránsito, relacionando su significado con la comprensión lectora y la convivencia vial.",
+    "objetivo": "Fortalecer la comprensión lectora mediante la interpretación de señales y textos que promuevan la movilidad segura y el respeto ciudadano.",
+    "areaPrincipal": "Comunicación y Lenguaje",
+    "materia": "Lenguaje",
+    "ambiente": "Aula",
+    "colorClase": "Rojo",
+    "planUrl": "GRADOS/SEXTO/Lenguaje6.pdf"
+  },
+  {
+    "id": "EV601",
+    "titulo": "La Humildad también se Mueve: Valores en la Vía",
+    "descripcion": "Los estudiantes reflexionan sobre cómo el respeto, la empatía y la humildad son esenciales para convivir y cumplir normas de tránsito.",
+    "objetivo": "Fomentar la práctica de valores éticos que fortalezcan la responsabilidad y el respeto hacia los demás en los espacios de movilidad.",
+    "areaPrincipal": "Desarrollo Humano y Ético",
+    "materia": "Ética y Valores",
+    "ambiente": "Aula",
+    "colorClase": "Azul",
+    "planUrl": "GRADOS/SEXTO/Etica_Valores6.pdf"
+  },
+  {
+    "id": "A601",
+    "titulo": "Coloreamos la Seguridad: El Semáforo Creativo",
+    "descripcion": "Los estudiantes usan los colores primarios y secundarios para representar las luces del semáforo, comprendiendo su significado y función.",
+    "objetivo": "Relacionar los conceptos básicos del color con las señales viales, desarrollando la creatividad y el sentido de responsabilidad en la movilidad.",
+    "areaPrincipal": "Expresión Artística y Plástica",
+    "materia": "Educación Artística",
+    "ambiente": "Aula",
+    "colorClase": "Morado",
+    "planUrl": "GRADOS/SEXTO/Artistica6.pdf"
+    }
+  ],
+  
+"SEPTIMO": [
+  {
+    "id": "CS701",
+    "titulo": "Construimos Ciudadanía en Movimiento",
+    "descripcion": "Los estudiantes analizan cómo las normas, los derechos y la cultura ciudadana influyen en la movilidad segura y la convivencia social.",
+    "objetivo": "Comprender la relación entre ciudadanía, movilidad y normas, desarrollando actitudes de respeto y corresponsabilidad en la vía.",
+    "areaPrincipal": "Ciencias Sociales y Ciudadanas",
+    "materia": "Ciencias Sociales",
+    "ambiente": "Aula",
+    "colorClase": "Amarillo",
+    "planUrl": "GRADOS/SEPTIMO/Ciencias_Sociales7.pdf"
+  },
+  {
+    "id": "M701",
+    "titulo": "Calculando el Respeto: Distancias, Fracciones y Decisiones Seguras",
+    "descripcion": "Los estudiantes aplican fracciones y medidas para analizar situaciones cotidianas de tránsito, reflexionando sobre decisiones seguras.",
+    "objetivo": "Usar el razonamiento matemático para representar y resolver situaciones reales relacionadas con la movilidad segura y el respeto vial.",
+    "areaPrincipal": "Pensamiento Lógico-Matemático",
+    "materia": "Matemáticas",
+    "ambiente": "Aula",
+    "colorClase": "Verde",
+    "planUrl": "GRADOS/SEPTIMO/Matematicas7.pdf"
+  },
+  {
+    "id": "L701",
+    "titulo": "Textos que Nos Mueven: Comprensión y Comunicación Vial",
+    "descripcion": "Los estudiantes leen textos informativos y reflexivos sobre movilidad y seguridad, promoviendo la comunicación responsable.",
+    "objetivo": "Fortalecer la comprensión lectora y la expresión oral mediante el análisis de textos sobre normas, señales y convivencia en la vía.",
+    "areaPrincipal": "Comunicación y Lenguaje",
+    "materia": "Lenguaje",
+    "ambiente": "Aula",
+    "colorClase": "Rojo",
+    "planUrl": "GRADOS/SEPTIMO/Lenguaje7.pdf"
+  },
+  {
+    "id": "EV701",
+    "titulo": "El Valor de Respetar: Ética y Seguridad en Movimiento",
+    "descripcion": "Los estudiantes reflexionan sobre la humildad, el respeto y la responsabilidad como valores fundamentales en la convivencia vial.",
+    "objetivo": "Promover valores éticos que favorezcan la empatía, el autocontrol y la toma de decisiones justas en los espacios públicos.",
+    "areaPrincipal": "Desarrollo Humano y Ético",
+    "materia": "Ética y Valores",
+    "ambiente": "Aula",
+    "colorClase": "Azul",
+    "planUrl": "GRADOS/SEPTIMO/Etica_Valores7.pdf"
+  },
+  {
+    "id": "CN701",
+    "titulo": "Cuidamos la Vida: Ciencia, Cuerpo y Movilidad Segura",
+    "descripcion": "Los estudiantes analizan cómo la salud, la energía y el cuidado del cuerpo se relacionan con la movilidad y la seguridad vial.",
+    "objetivo": "Comprender los efectos del movimiento y la energía en el cuerpo humano, promoviendo hábitos saludables en la movilidad cotidiana.",
+    "areaPrincipal": "Ciencias Naturales",
+    "materia": "Ciencias Naturales",
+    "ambiente": "Aula o laboratorio",
+    "colorClase": "Celeste",
+    "planUrl": "GRADOS/SEPTIMO/Ciencias_Naturales7.pdf"
+  },
+  {
+    "id": "Q701",
+    "titulo": "La Combustión que Nos Mueve: Ciencia y Cuidado del Aire",
+    "descripcion": "Los estudiantes comprenden la combustión como proceso químico y reflexionan sobre su impacto ambiental y social en la movilidad.",
+    "objetivo": "Analizar las reacciones químicas de combustión y su relación con la contaminación del aire y la responsabilidad ciudadana.",
+    "areaPrincipal": "Ciencias Experimentales",
+    "materia": "Química",
+    "ambiente": "Aula o laboratorio",
+    "colorClase": "Naranja",
+    "planUrl": "GRADOS/SEPTIMO/Quimica7.pdf"
+  },
+  {
+    "id": "F701",
+    "titulo": "Energía en Movimiento: La Física de la Movilidad Segura",
+    "descripcion": "Los estudiantes exploran principios de la fuerza, el movimiento y la energía en el contexto del tránsito y la seguridad vial.",
+    "objetivo": "Aplicar conceptos básicos de física para comprender cómo las fuerzas influyen en el movimiento y en la prevención de accidentes.",
+    "areaPrincipal": "Ciencias Físicas",
+    "materia": "Física",
+    "ambiente": "Aula o patio escolar",
+    "colorClase": "Gris",
+    "planUrl": "GRADOS/SEPTIMO/Fisica7.pdf"
+  },
+  {
+    "id": "EF701",
+    "titulo": "Jugando con Normas: La Ruta Segura del Movimiento",
+    "descripcion": "Los estudiantes participan en un juego de movimiento que refuerza la atención, el respeto por las normas y el trabajo en equipo.",
+    "objetivo": "Desarrollar habilidades motoras, autocontrol y respeto por las normas mediante la recreación y la cooperación en grupo.",
+    "areaPrincipal": "Educación Física y Ciudadanía",
+    "materia": "Educación Física",
+    "ambiente": "Patio o cancha escolar",
+    "colorClase": "Verde Oscuro",
+    "planUrl": "GRADOS/SEPTIMO/Educacion_Fisica7.pdf"
+  }
+]
+
   
 }

@@ -121,7 +121,6 @@ footer img.borde {
   width: 100%;
   background: #ffffff;
   padding: 10px 0;
-  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -131,14 +130,219 @@ footer img.borde {
 .footer-logo-depa-bar img {
   height: 70px; /* ← altura uniforme */
   width: auto;  /* ← mantiene proporción natural */
-  object-fit: contain;
+  object-fit: cover;
 }
 
-/* RESPONSIVIDA */ 
+/* 🔹 RESPONSIVIDAD COMPLETA */
+
+/* 📱 Celulares pequeños (≤ 480px) */
+@media (max-width: 480px) {
+  footer {
+    grid-template-columns: 1fr; /* una sola columna */
+    grid-template-rows: auto auto auto;
+    gap: 0.8rem;
+    padding: 1rem 0.6rem;
+  }
+
+  .footer-col {
+    padding: 0.4rem 0.6rem;
+  }
+
+  .footer-col h2 {
+    font-size: 1.4rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  .footer-col .logos {
+    flex-direction: row;
+    gap: 0.8rem;
+  }
+
+  .footer-col .contact {
+    font-size: 0.85rem;
+  }
+
+  footer img.borde {
+    width: 45px;
+    height: 45px;
+    left: 12%;
+  }
+
+  .footer-bottom {
+    font-size: 0.8rem;
+    padding: 0.4rem 0;
+  }
+
+  /* 🔸 Banda blanca de logos */
+  .footer-logo-depa-bar {
+    flex-direction: column;
+    gap: 12px;
+    padding: 8px 0;
+  }
+
+  .footer-logo-depa-bar img {
+    height: 45px;
+  }
+}
+
+/* 📱 Celulares medianos (481px – 768px) */
+@media (min-width: 481px) and (max-width: 768px) {
+  footer {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding: 1.2rem 1rem;
+    gap: 1rem;
+  }
+
+  .footer-col h2 {
+    font-size: 1.6rem !important;
+  }
+
+  .footer-col .logos {
+    gap: 1.2rem;
+  }
+
+  .footer-col .contact {
+    font-size: 0.9rem;
+  }
+
+  footer img.borde {
+    width: 50px;
+    height: 50px;
+    left: 10%;
+  }
+
+  .footer-bottom {
+    font-size: 0.85rem;
+  }
+
+  /* 🔸 Banda blanca de logos */
+  .footer-logo-depa-bar {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .footer-logo-depa-bar img {
+    height: 50px;
+  }
+}
+
+/* 💻 Tablets (769px – 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.2rem;
+    padding: 1.5rem 1rem;
+  }
+
+  .footer-col h2 {
+    font-size: 1.8rem !important;
+  }
+
+  .footer-col .contact {
+    font-size: 0.95rem;
+  }
+
+  .footer-col .logos {
+    gap: 1.3rem;
+  }
+
+  footer img.borde {
+    width: 55px;
+    height: 55px;
+    left: 8%;
+  }
+
+  .footer-logo-depa-bar {
+    flex-direction: row;
+    gap: 24px;
+  }
+
+  .footer-logo-depa-bar img {
+    height: 60px;
+  }
+}
+
+/* 💻 Laptops (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 1.8rem 2rem;
+    gap: 1.5rem;
+  }
+
+  .footer-col h2 {
+    font-size: 1.9rem !important;
+  }
+
+  .footer-col .contact {
+    font-size: 1rem;
+  }
+
+  .footer-col .logos {
+    gap: 1.6rem;
+  }
+
+  footer img.borde {
+    width: 60px;
+    height: 60px;
+    left: 7%;
+  }
+
+  .footer-logo-depa-bar {
+    flex-direction: row;
+    gap: 32px;
+  }
+
+  .footer-logo-depa-bar img {
+    height: 65px;
+  }
+}
+
+/* 🖥️ Pantallas grandes (+1440px) */
+@media (min-width: 1441px) {
+  footer {
+    grid-template-columns: repeat(2, 1fr);
+    padding: 2rem 3rem;
+    gap: 2rem;
+  }
+
+  .footer-col h2 {
+    font-size: 2rem !important;
+  }
+
+  .footer-col .contact {
+    font-size: 1.05rem;
+  }
+
+  .footer-col .logos {
+    gap: 1.8rem;
+  }
+
+  .footer-logo-depa-bar {
+    flex-direction: row;
+    gap: 40px;
+  }
+
+  .footer-logo-depa-bar img {
+    height: 70px;
+  }
+
+  footer img.borde {
+    width: 65px;
+    height: 65px;
+    left: 7%;
+  }
+
+  .footer-bottom {
+    font-size: 1rem;
+  }
+}
 
 
 
-/* Hidden by default - only shows when you reach bottom */
+
+/* 
 .hide-ads {
     position: fixed;
     bottom: 0;
@@ -146,10 +350,11 @@ footer img.borde {
     height: 15px;
     background-color: #c22821;
     z-index: 9999;
-    display: none;  /* Hidden by default */
+    display: none;
 }
 
-/* Shows when user reaches bottom */
+
 .hide-ads.show-at-bottom {
     display: block;
 }
+*/
