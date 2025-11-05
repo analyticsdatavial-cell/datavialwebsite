@@ -137,6 +137,10 @@ body {
     justify-content: space-between;
 }
 
+.card-titulo {
+  display: none;
+}
+
 /* --- BOTONES --- */
 .download-button {
   display: inline-block;
