@@ -103,7 +103,7 @@ header {
 /* --- Estilos de Contenedor de Actividades --- */
 .activities-container {
     display: grid;
-    grid-template-columns: repeat(1fr, 3);
+    grid-template-columns: repeat(3, 1fr);
     flex-wrap: wrap;
     gap: 30px;
     justify-content: flex-start; /* Alinea a la izquierda */
