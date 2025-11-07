@@ -103,12 +103,8 @@ body {
 /* --- TARJETAS DE GRADO (MODIFICADO PARA MÁXIMA COMPATIBILIDAD) --- */
 .card-grado {
     /* Ocupa el 100% del espacio de su columna grid */
-    width: 100%;           
-    
-    /* CAMBIO CLAVE: Sustituimos aspect-ratio por un alto fijo proporcional (420 * 1.5) 
-       para evitar problemas de compatibilidad en entornos de commit/linter. */
-    height: 630px;          
-    
+    width: 100%;
+    height: 100%;
     border-radius: 10px;    
     overflow: hidden;       
     box-shadow: 0 4px 8px rgba(0,0,0,0.2); 
@@ -127,6 +123,7 @@ body {
 .card-grado img {
     /* Flex: 1 permite que la imagen ocupe la mayor parte del espacio vertical disponible */
     width: 100%;
+    height: 100%
     flex: 1;
     object-fit: cover;  
 }
