@@ -6,23 +6,55 @@
 
 const HEADER_HTML = `
     <header>
-    <link rel="stylesheet" href="../footer.css">
-        <div class="header-main-content"> 
-            <div class="logo-title-group">
-                <img id="logo" src="../images/logo.png" alt="Logo de DATAVIAL ANALYTICS" class="main-logo">
-                <div class="title-and-subtitle">
-                    <h1>CATÁLOGO <span class="app-name">DataVial<span class="red-char">A</span>naly<span class="red-char">TIC</span>s</span></h1>
-                    <p>Actividades Lúdicas y Creativas por Grado.</p>
-                </div>
-            </div>
-            <a href="catalogo.html" class="back-link">← Volver a Portadas</a>
+        <div id="start">
+            <img id="logo" src="../images/favicon.png" alt="LOGO DE DATAVIAL">
+            <h1 id="title">DataVialAnalytics</h1>
         </div>
+    <nav>
+<ul>
+  <li>
+    <a href="../index.html">INICIO</a>
+    <ul class="submenu">
+      <li><a href="../index.html#sobre">Sobre el Proyecto</a></li>
+      <li><a href="../index.html#objetivo">Objetivos</a></li>
+      <li><a href="../index.html#metodologia">Metodología</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../nosotros/nosotros.html" class="active">QUIENES SOMOS</a>
+    <ul class="submenu">
+      <li><a href="../nosotros/nosotros.html#valores">Valores</a></li>
+      <li><a href="../nosotros/nosotros.html#equipo">Equipo</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../analisis/analisis.html">ANALISIS</a>
+    <ul class="submenu">
+      <li><a href="../analisis/analisis.html#consultas">Consultas</a></li>
+      <li><a href="../analisis/analisis.html#descargas">Descargas</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../prevenciones/prevenciones.html">PREVENCIONES</a>
+    <ul class="submenu">
+      <li><a href="../prevenciones/prevenciones.html#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
+      <li class="sub"><img src="../images/conductorV3.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="../prevenciones/prevenciones.html#conductores">Conductores</a></li>
+      <li class="sub"><img src="../images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="../prevenciones/prevenciones.html#peatones">Peatones</a></li>
+      <li class="sub"><img src="../images/bicicleta.png" alt="FOTO DE PASAJERO" width="40px" height="40px"><a href="../prevenciones/prevenciones.html#pasajeros">Pasajeros</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="../recursos/recursos.html">RECURSOS EDUCATIVOS</a>
+    <ul class="submenu">
+      <li><a href="../recursos/recursos.html#videos">Videos</a></li>
+      <li><a href="../recursos/recursos.html#señales">Señales de transito</a></li> 
+      <li><a href="../recursos/recursos.html#interactivo">Sección Interactiva</a></li>
+    </ul>
+  </li>
+  <button id="btn"><img src="../images/lupa.png" alt="BOTON DE BUSQUEDA" hidden></button>
+</ul>
+        </nav>
     </header>
-
-    <section class="grade-header">
-        <h2>📚 GRADO: <span id="current-grade"></span></h2>
-        <hr>
-    </section>
 `;
 
 // ... (El resto de tu actividades.js permanece sin cambios)
