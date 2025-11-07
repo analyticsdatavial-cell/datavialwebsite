@@ -23,7 +23,7 @@ const HEADER_HTML = `
     </ul>
   </li>
   <li>
-    <a href="../nosotros/nosotros.html" class="active">QUIENES SOMOS</a>
+    <a href="../nosotros/nosotros.html">QUIENES SOMOS</a>
     <ul class="submenu">
       <li><a href="../nosotros/nosotros.html#valores">Valores</a></li>
       <li><a href="../nosotros/nosotros.html#equipo">Equipo</a></li>
@@ -56,6 +56,11 @@ const HEADER_HTML = `
   <button id="btn"><img src="../images/lupa.png" alt="BOTON DE BUSQUEDA" hidden></button>
 </ul>
         </nav>
+
+
+    <article class="">
+        <p>Volver al catálogo</p>
+    </article>
     </header>
 `;
 
