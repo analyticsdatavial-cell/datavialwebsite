@@ -59,7 +59,7 @@ const HEADER_HTML = `
 
 
     <article class="">
-        <p>Volver al catálogo</p>
+        <a href="./catalogo.html">Volver al catálogo</a>
     </article>
     </header>
 `;
