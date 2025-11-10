@@ -13,7 +13,6 @@
 }   
 ], 
 
-
   "PRIMERO": [
     {
       "id": "T001",
@@ -86,6 +85,7 @@
     }
   ], 
 
+  
   "TERCERO": [
     {
       "id": "X001",
@@ -118,76 +118,6 @@
       "ambiente": "Aula",
       "colorClase": "azul",
       "planUrl": "GRADOS/TERCERO/SOCIALES3.pdf"
-    }
-      ],
-
-  "CUARTO": [
-    {
-      "id": "XX401",
-      "titulo": "CREANDO EN LA VÍA",
-      "descripcion": "Los estudiantes desarrollarán un afiche, e identificar también el nombre o descripción de algunas señales de tránsito para los ciclistas.",
-      "objetivo": "Fomentar en los estudiantes de primaria la conciencia vial como ciclistas, mediante la expresión artística y la reflexión sobre sus comportamientos en la vía.",
-      "areaPrincipal": "Expresión Artística y Plástica",
-      "materia": "Artes",
-      "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/CUARTO/Artes4.pdf"
-    },
-    {
-      "id": "XY401",
-      "titulo": "PEQUEÑOS CICLISTAS, GRANDES CIUDADANOS",
-      "descripcion": "Los estudiantes trabajarán y competirán en equipo para aprender el orden de prelación de las señales de tránsito. ",
-      "objetivo": "Fortalecer en los estudiantes el conocimiento y la práctica de normas viales como ciclistas y peatones, promoviendo actitudes responsables y solidarias para una movilidad segura.",
-      "areaPrincipal": "Educación Física y Ciudadanía",
-      "materia": "Educación Física",
-      "ambiente": "Patio o cancha escolar",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/CUARTO/Ed.Física4.pdf"
-    },{
-      "id": "XZ401",
-      "titulo": "PEDALEA CON SEGURIDAD",
-      "descripcion": "Los estudiantes identificarán las señales de tránsito para los ciclistas;asimismo reflexionarán acerca de estas mismas, y de la prelación de las señales de tránsito.",
-      "objetivo": "Promover en los estudiantes el respeto, la responsabilidad y la toma de decisiones seguras como ciclistas, reconociendo sus derechos y deberes en la vía.",
-      "areaPrincipal": "Desarrollo Humano y Ético",
-      "materia": "Ética y Valores",
-      "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/CUARTO/Ética4.pdf"
-    }
-      ],
-
-  "QUINTO": [
-    {
-      "id": "XX501",
-      "titulo": "CICLISTAS EN ACCIÓN",
-      "descripcion": "Los estudiantes identificarán las principales señales de tránsito de los ciclistas, asimismo, las dibujarán.",
-      "objetivo": "Desarrollar en los estudiantes la capacidad de identificar conductas viales seguras, reflexionar sobre sus acciones y comunicar mensajes de seguridad vial mediante el arte.",
-      "areaPrincipal": "Expresión Artística y Plástica",
-      "materia": "Artes",
-      "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/QUINTO/Artes5.pdf"
-    },
-    {
-      "id": "XY501",
-      "titulo": "CICLISTAS RESPONSABLES Y EN FORMA",
-      "descripcion": "Los estudiantes reflexionarán con respecto a sus acciones como ciclistas dentro de una vía; asimismo, identificarán algunas señales de tránsito para los ciclistas.",
-      "objetivo": "Fortalecer en los estudiantes las habilidades, conocimientos y actitudes necesarias para una movilidad segura en bicicleta, promoviendo el respeto por las normas de tránsito desde la educación física.",
-      "areaPrincipal": "Educación Física y Ciudadanía",
-      "materia": "Educación Física",
-      "ambiente": "Patio o cancha escolar",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/QUINTO/Edfísica5.pdf"
-    },{
-      "id": "XZ501",
-      "titulo": "LA RUTA DEL BUEN CICLISTA",
-      "descripcion": "Los estudiantes simularán y reflexionarán con respecto a situaciones dentro de una vía, tomando el papel de ciclistas.",
-      "objetivo": "Fomentar en los estudiantes el respeto por las normas de tránsito y la comprensión del rol de los agentes viales, promoviendo decisiones responsables que protejan su vida y la de los demás.",
-      "areaPrincipal": "Desarrollo Humano y Ético",
-      "materia": "Ética y Valores",
-      "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/QUINTO/Etica5.pdf"
     }
       ],
   

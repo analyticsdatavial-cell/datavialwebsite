@@ -196,11 +196,10 @@ nav li:has(.submenu:hover) > .submenu {
   position: relative;
   background-color: rgb(0, 0, 0);
   height: 480px;
-  width: 300px;
+  width: 35s0px;
   margin-left: 25%;
   border-radius: 12px;
   border: none;
-  box-shadow: 5px 3px 10px rgba(0,0,0,0.4);
   overflow: hidden;
 }
 
