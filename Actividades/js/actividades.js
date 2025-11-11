@@ -73,15 +73,16 @@ const FLOW_HTML = `
         </div>
         <div class="flow-step">
             <span class="step-icon step-inicio">📍</span> 
-            <p><strong>Punto de Verificación (Inicio):</strong> El Project Manager (Natalia) valida que los tutores tengan los materiales y el plan de cada actividad.</p>
+            <p><strong>Punto de Verificación (Inicio):</strong> El docente se capacita en el uso del formulario y la plataforma de evidencias.</p>
         </div>
         <div class="flow-step">
             <span class="step-icon step-mitad">📒</span> 
-            <p><strong>Punto de Verificación (Mitad):</strong> El equipo de Calidad y Análisis (Juan) realiza una visita sorpresa a 2 aulas por ciclo para recolectar evidencias fotográficas de la actividad en curso.</p>
+            <p><strong>Punto de Verificación (Mitad):</strong> Se desarrolan las actividades por grado y materia, guiadas por el docente.</p>
         </div>
         <div class="flow-step">
             <span class="step-icon step-entrega">✅</span> 
-            <p><strong>Punto de Verificación (Entrega):</strong> Los estudiantes suben las evidencias finales (videos, reportes, mockups) a una carpeta compartida y el equipo de Investigación (José Daniel) resume los 3 proyectos más exitosos de cada ciclo para presentación.</p>
+            <p><strong>Punto de Verificación (Entrega):</strong> El docente registra las evidencias en el formulario, y el equipo de DataVialAnalytics gestiona su análisis y retroalimentación técnica.
+</p>
         </div>
     </section>
 `;
