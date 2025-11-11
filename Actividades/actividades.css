@@ -253,3 +253,136 @@ header {
     line-height: 1.5;
 }
 
+/* 🌐 --- ESTILOS RESPONSIVE (mínimos y seguros) --- */
+
+/* Tablets medianas y laptops pequeñas */
+@media (max-width: 1024px) {
+  .title-and-subtitle h1 {
+    font-size: 40px;
+  }
+
+  .title-and-subtitle p {
+    font-size: 16px;
+  }
+
+  .filters-container {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .filter select {
+    min-width: 200px;
+  }
+
+  .activities-container {
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}
+
+/* Celulares grandes (768px o menos) */
+@media (max-width: 768px) {
+  header {
+    padding: 15px 10px;
+  }
+
+  .logo-title-group {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .main-logo {
+    margin-right: 0;
+    margin-bottom: 10px;
+    width: 60px;
+  }
+
+  .title-and-subtitle h1 {
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .title-and-subtitle p {
+    text-align: center;
+    font-size: 15px;
+  }
+
+  .back-link {
+    font-size: 15px;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+
+  .filter select {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .activities-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .activity-card {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .flow-container {
+    margin: 30px 10px;
+    padding: 20px;
+  }
+
+  .flow-step {
+    align-items: center;
+  }
+
+  .flow-step p {
+    font-size: 14px;
+  }
+}
+
+/* Celulares pequeños (480px o menos) */
+@media (max-width: 480px) {
+  .title-and-subtitle h1 {
+    font-size: 26px;
+  }
+
+  .title-and-subtitle p {
+    font-size: 14px;
+  }
+
+  .activity-card {
+    padding: 20px;
+    min-height: 350px;
+  }
+
+  .btn-download {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .filters-container {
+    padding: 0 10px 20px;
+  }
+
+  .filter label {
+    font-size: 14px;
+  }
+
+  .flow-container {
+    padding: 15px;
+  }
+
+  .flow-step p {
+    font-size: 13px;
+    line-height: 1.4;
+  }
+}
+
