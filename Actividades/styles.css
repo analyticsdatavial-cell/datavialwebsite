@@ -272,4 +272,8 @@ body {
     font-size: 14px;
     border-radius: 6px;
   }
+
+  .catalogo-container {
+    padding: 0;
+  }
 }
