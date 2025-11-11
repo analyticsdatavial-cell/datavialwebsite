@@ -1,6 +1,6 @@
 {
-  "TRANSICION": [
-    {
+"TRANSICION": [
+{
       "id": "T001",
       "titulo": "Misión: Rescate de Letras",
       "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
@@ -10,9 +10,8 @@
       "ambiente": "Aula",
       "colorClase": "azul",
       "planUrl": "GRADOS/TRANSICION/TRANSICION.pdf"
-    }   
-  ], 
-
+}   
+], 
 
   "PRIMERO": [
     {
@@ -38,7 +37,7 @@
       "materia": "Ciencias Sociales",
       "ambiente": "Aula",
       "colorClase": "Amarillo",
-      "planUrl": "GRADOS/SEGUNDO/Sociales2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/C.Sociales2.pdf"
     },
     {
       "id": "S002",
@@ -49,7 +48,7 @@
       "materia": "Ciencias Naturales",
       "ambiente": "Aula",
       "colorClase": "Verde",
-      "planUrl": "GRADOS/SEGUNDO/Naturales2.pdf"
+      "planUrl": "GRADOS/SEGUNDO/C.Naturales2.pdf"
     },
     {
       "id": "S003",
@@ -61,8 +60,8 @@
       "ambiente": "Aula",
       "colorClase": "Azul",
       "planUrl": "GRADOS/SEGUNDO/Lenguaje2.pdf"
-    },
-    {
+},
+{
       "id": "S004",
       "titulo": "Expresamos la seguridad vial a través del arte",
       "descripcion": "Los estudiantes unen arte y señales de tránsito para expresar emociones y promover la seguridad vial.",
@@ -72,8 +71,8 @@
       "ambiente": "Aula",
       "colorClase": "Morado",
       "planUrl": "GRADOS/SEGUNDO/Artistica2.pdf"
-    },
-    {
+},
+{
       "id": "S005",
       "titulo": "Las señales también tienen formas",
       "descripcion": "Los estudiantes unen matemáticas y arte para reconocer formas en las señales y crear mensajes seguros.",
@@ -86,38 +85,39 @@
     }
   ], 
 
-   "TERCERO": [
+  
+  "TERCERO": [
     {
       "id": "X001",
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Lenguaje",
-      "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/TERCERO/SOCIALES3.pdf"
+      "titulo": "Cuerpo en Movimiento: Seguridad y Coordinación en la Vía",
+      "descripcion": "Los estudiantes desarrollan habilidades motrices y conciencia corporal mientras simulan desplazamientos seguros en espacios públicos, integrando normas viales básicas.",
+      "objetivo": "Fomentar el autocuidado y la coordinación motriz a través de actividades físicas que promuevan la seguridad en la movilidad cotidiana.",
+      "areaPrincipal": "Expresión Corporal y Movimiento",
+      "materia": "Educación Física",
+      "ambiente": "Exterior",
+      "colorClase": "Verde",
+      "planUrl": "GRADOS/TERCERO/Ed.Fisica3.pdf"
     },
     {
       "id": "X002",
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
-      "areaPrincipal": "Habilidades Básicas",
-      "materia": "Lenguaje",
+      "titulo": "Normas que nos Unen: Convivencia y Seguridad Vial",
+      "descripcion": "Los estudiantes identifican normas básicas de convivencia y señales viales que promueven el respeto y la seguridad en su entorno.",
+      "objetivo": "Fomentar el reconocimiento y la práctica de normas sociales que fortalecen la convivencia y el cuidado colectivo.",
+      "areaPrincipal": "Ciudadanía y Convivencia",
+      "materia": "Ciencias Sociales",
       "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/TERCERO/SOCIALES13.pdf"
+      "colorClase": "Amarillo",
+      "planUrl": "GRADOS/TERCERO/C.Sociales3.pdf"
     },{
       "id": "X001",
-      "titulo": "Misión: Rescate de Letras",
-      "descripcion": "Los estudiantes deben \"rescatar\" letras o números siguiendo una secuencia o sonido dado por el profesor.",
-      "objetivo": "Reconocimiento de fonemas y grafías, y seguimiento de instrucciones.",
+      "titulo": "Ambiente y Cuerpo: Cuidamos mientras nos Movemos",
+      "descripcion": "Los estudiantes observan su entorno y reflexionan sobre cómo proteger el cuerpo y el ambiente al desplazarse por espacios públicos.",
+      "objetivo": "Promover el cuidado del cuerpo y del ambiente mediante la observación, el análisis y la acción consciente en la vía pública.",
       "areaPrincipal": "Habilidades Básicas",
-      "materia": "Lenguaje",
+      "materia": "Ciencias Naturales",
       "ambiente": "Aula",
-      "colorClase": "azul",
-      "planUrl": "GRADOS/TERCERO/SOCIALES3.pdf"
+      "colorClase": "Azul",
+      "planUrl": "GRADOS/TERCERO/C.Naturales3.pdf"
     }
       ],
 
