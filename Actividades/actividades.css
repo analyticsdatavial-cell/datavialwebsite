@@ -191,7 +191,6 @@ header {
 /* Botón de Descarga */
 .btn-download {
     display: block;
-    width: 100%;
     padding: 10px;
     margin-top: 15px;
     text-align: center;
