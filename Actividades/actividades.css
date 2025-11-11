@@ -253,3 +253,260 @@ header {
     margin: 0;
     line-height: 1.5;
 }
+
+
+/* ================================================================= */
+/* --- RESPONSIVE: MINI SMARTPHONES (<400px) --- */
+/* ================================================================= */
+@media (max-width: 400px) {
+
+  header {
+    padding: 10px 0;
+  }
+
+  .logo-title-group {
+    flex-direction: column;
+    gap: 5px;
+    margin-bottom: 8px;
+  }
+
+  .main-logo {
+    width: 50px;
+    margin-right: 0;
+  }
+
+  .title-and-subtitle h1 {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .title-and-subtitle p {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .back-link {
+    font-size: 14px;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .filter select {
+    width: 100%;
+    min-width: auto;
+    font-size: 14px;
+  }
+
+  .activities-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px;
+  }
+
+  .activity-card {
+    width: 100%;
+    min-height: 340px;
+    padding: 15px;
+  }
+
+  .activity-card h3 {
+    font-size: 18px;
+  }
+
+  .activity-card .description {
+    font-size: 13px;
+  }
+
+  .btn-download {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .flow-container {
+    padding: 20px 10px;
+    margin: 30px 8px;
+  }
+
+  .flow-title {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .flow-title .flow-icon {
+    font-size: 22px;
+    margin-bottom: 5px;
+  }
+
+  .flow-step {
+    flex-direction: column;
+  }
+
+  .flow-step .step-icon {
+    margin-bottom: 5px;
+  }
+}
+
+
+/* ================================================================= */
+/* --- RESPONSIVE: CELULARES NORMALES (401px – 600px) --- */
+/* ================================================================= */
+@media (min-width: 401px) and (max-width: 600px) {
+
+  .logo-title-group {
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  .main-logo {
+    width: 60px;
+    margin-right: 0;
+  }
+
+  .title-and-subtitle h1 {
+    font-size: 34px;
+    text-align: center;
+  }
+
+  .title-and-subtitle p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .filters-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px 15px;
+  }
+
+  .activities-container {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 15px;
+  }
+
+  .activity-card {
+    width: 100%;
+    min-height: 360px;
+  }
+
+  .flow-container {
+    padding: 25px 15px;
+    margin: 40px 10px;
+  }
+}
+
+
+/* ================================================================= */
+/* --- RESPONSIVE: TABLETS (601px – 1024px) --- */
+/* ================================================================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  header {
+    padding: 25px 0;
+  }
+
+  .main-logo {
+    width: 65px;
+    margin-right: 15px;
+  }
+
+  .title-and-subtitle h1 {
+    font-size: 42px;
+  }
+
+  .title-and-subtitle p {
+    font-size: 17px;
+  }
+
+  .filters-container {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .filter select {
+    min-width: 200px;
+    font-size: 15px;
+  }
+
+  .activities-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    padding: 20px;
+  }
+
+  .activity-card {
+    width: 100%;
+    min-height: 380px;
+  }
+
+  .activity-card h3 {
+    font-size: 19px;
+  }
+
+  .activity-card .description {
+    font-size: 14px;
+  }
+
+  .btn-download {
+    font-size: 15px;
+  }
+
+  .flow-container {
+    padding: 30px 20px;
+    margin: 40px auto;
+  }
+
+  .flow-step {
+    align-items: flex-start;
+  }
+}
+
+
+/* ================================================================= */
+/* --- RESPONSIVE: PANTALLAS GRANDES (>=1600px) --- */
+/* ================================================================= */
+@media (min-width: 1600px) {
+
+  .header-main-content {
+    max-width: 1400px;
+  }
+
+  .activities-container {
+    max-width: 1500px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+  }
+
+  .activity-card {
+    width: 100%;
+    min-height: 420px;
+  }
+
+  .title-and-subtitle h1 {
+    font-size: 56px;
+  }
+
+  .title-and-subtitle p {
+    font-size: 20px;
+  }
+
+  .filter select {
+    min-width: 300px;
+    font-size: 18px;
+  }
+
+  .flow-container {
+    max-width: 1400px;
+    padding: 40px;
+  }
+
+  .flow-title .flow-icon {
+    font-size: 32px;
+  }
+}
