@@ -226,3 +226,157 @@ body {
         height: 400px; /* Tamaño fijo más razonable en móvil */
     }
 }
+
+/* ================================================================= */
+/* --- CONSULTA DE MEDIOS PARA TABLETS (pantallas medianas) --- */
+/* ================================================================= */
+@media (min-width: 601px) and (max-width: 1024px) {
+
+  /* Header */
+  .header-container {
+    padding: 25px 20px;
+    margin-bottom: 35px;
+  }
+
+  .header-title {
+    font-size: 2.1rem;
+  }
+
+  .logo {
+    width: 75px;
+    height: 75px;
+  }
+
+  /* Intro */
+  .intro {
+    max-width: 90%;
+    padding: 35px 25px;
+    margin: 25px auto;
+  }
+
+  .intro h2 {
+    font-size: 28px;
+  }
+
+  .intro p {
+    font-size: 17px;
+  }
+
+  /* Catálogo */
+  .catalogo-container {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .card-grado {
+    height: 600px;
+  }
+
+  .card-grado img {
+    height: 60%;
+  }
+
+  .card-grado .card-content {
+    padding: 15px;
+  }
+
+  .download-button {
+    padding: 12px 18px;
+    font-size: 16px;
+  }
+}
+
+/* ================================================================= */
+/* --- CONSULTA DE MEDIOS PARA PANTALLAS GRANDES (ajustes finos) --- */
+/* ================================================================= */
+@media (min-width: 1600px) {
+  .catalogo-container {
+    max-width: 1900px;
+    gap: 50px;
+    padding: 60px 80px;
+  }
+
+  .card-grado {
+    height: 900px;
+  }
+
+  .intro {
+    max-width: 1100px;
+    padding: 50px 40px;
+  }
+
+  .intro h2 {
+    font-size: 36px;
+  }
+}
+
+/* ================================================================= */
+/* --- CONSULTA DE MEDIOS PARA MINI SMARTPHONES (<400px) --- */
+/* ================================================================= */
+@media (max-width: 400px) {
+
+  /* Header */
+  .header-container {
+    padding: 15px 10px;
+    margin-bottom: 15px;
+  }
+
+  .header-title {
+    font-size: 1.4rem;
+  }
+
+  .logo {
+    width: 50px;
+    height: 50px;
+  }
+
+  /* Intro */
+  .intro {
+    padding: 20px 10px;
+    margin: 15px 8px;
+    border-left: 6px solid var(--color-red);
+  }
+
+  .intro h2 {
+    font-size: 20px;
+  }
+
+  .intro p {
+    font-size: 14px;
+  }
+
+  /* Catálogo */
+  .catalogo-container {
+    grid-template-columns: 1fr;
+    gap: 15px;
+    padding: 10px 5px;
+  }
+
+  .card-grado {
+    height: 340px;
+    border-radius: 8px;
+  }
+
+  .card-grado img {
+    height: 55%;
+  }
+
+  .card-grado .card-content {
+    padding: 8px;
+  }
+
+  /* Botones */
+  .download-button {
+    padding: 10px 14px;
+    font-size: 14px;
+    border-radius: 15px;
+  }
+
+  .btn-acceso-catalogo {
+    padding: 12px 25px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+}
+
