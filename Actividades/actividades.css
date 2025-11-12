@@ -255,6 +255,7 @@ header {
 
 .flow-step a {
   display: inline-block;
+  text-align: center;
   margin-top: 8px;
   padding: 6px 12px;
   background-color: transparent;
