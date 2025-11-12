@@ -255,10 +255,7 @@ header {
 }
 
 .flow-step a {
-  display: inline-block;
-  align-self: end;
-  justify-self: end;
-  margin-top: 8px;
+  margin-left: auto;
   padding: 6px 12px;
   background-color: transparent;
   color: inherit;
@@ -274,9 +271,6 @@ header {
   transform: translateY(-1px);
   text-decoration: underline;
 }
-
-
-
 
 /* 🌐 --- ESTILOS RESPONSIVE (mínimos y seguros) --- */
 
