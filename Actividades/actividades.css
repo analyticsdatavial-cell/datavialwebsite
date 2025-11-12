@@ -90,6 +90,7 @@ header {
     margin-bottom: 5px;
     font-weight: bold;
     color: #555;
+    text-align: center;
 }
 
 .filter select {
@@ -400,6 +401,7 @@ header {
 
   .filter label {
     font-size: 14px;
+    text-align: center;
   }
 
   .flow-container {
