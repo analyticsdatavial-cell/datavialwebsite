@@ -201,7 +201,7 @@
     "materia": "Ciencias Sociales",
     "ambiente": "Aula",
     "colorClase": "Amarillo",
-    "planUrl": "GRADOS/SEXTO/Ciencias.Sociale.pdf"
+    "planUrl": "GRADOS/SEXTO/Ciencias Sociale.pdf"
   },
   {
     "id": "M601",
@@ -212,7 +212,7 @@
     "materia": "Matemáticas",
     "ambiente": "Aula o patio escolar",
     "colorClase": "Verde",
-    "planUrl": "GRADOS/SEXTO/Matematicas.Sexto.pdf"
+    "planUrl": "GRADOS/SEXTO/Matematicas Sexto.pdf"
   },
   {
     "id": "L601",
@@ -223,7 +223,7 @@
     "materia": "Lenguaje",
     "ambiente": "Aula",
     "colorClase": "Rojo",
-    "planUrl": "GRADOS/SEXTO/Lenguaje.sexto.pdf"
+    "planUrl": "GRADOS/SEXTO/Lenguaje sexto.pdf"
   },
   {
     "id": "EV601",
@@ -234,7 +234,7 @@
     "materia": "Ética y Valores",
     "ambiente": "Aula",
     "colorClase": "Azul",
-    "planUrl": "GRADOS/SEXTO/Etica.y.Valores.sexto.pdf"
+    "planUrl": "GRADOS/SEXTO/Etica y Valores Sexto.pdf"
   },
   {
     "id": "A601",
@@ -245,7 +245,7 @@
     "materia": "Educación Artística",
     "ambiente": "Aula",
     "colorClase": "Morado",
-    "planUrl": "GRADOS/SEXTO/Educación.Artistica.sexto.pdf"
+    "planUrl": "GRADOS/SEXTO/Educación Artistica sexto.pdf"
     }
         {
     "id": "EF601",
@@ -256,7 +256,7 @@
     "materia": "Educación Física",
     "ambiente": "Patio o cancha escolar",
     "colorClase": "Verde Oscuro",
-    "planUrl": "GRADOS/SEXTO/Educacion.Fisica.Sexto.pdf"
+    "planUrl": "GRADOS/SEXTO/Educacion Fisica Sexto.pdf"
 }
 
   ],
