@@ -246,7 +246,7 @@
     "ambiente": "Aula",
     "colorClase": "Morado",
     "planUrl": "GRADOS/SEXTO/Educación Artistica sexto.pdf"
-    }
+    },
         {
     "id": "EF601",
     "titulo": "El reto del semáforo humano",
@@ -258,8 +258,7 @@
     "colorClase": "Verde Oscuro",
     "planUrl": "GRADOS/SEXTO/Educacion Fisica Sexto.pdf"
 }
-
-  ],
+  ]
   
 "SEPTIMO": [
   {
