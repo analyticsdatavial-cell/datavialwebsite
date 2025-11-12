@@ -395,6 +395,7 @@ header {
 
   .filters-container {
     padding: 0 10px 20px;
+    margin-top: 20px;
   }
 
   .filter label {
