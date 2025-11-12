@@ -201,18 +201,18 @@
     "materia": "Ciencias Sociales",
     "ambiente": "Aula",
     "colorClase": "Amarillo",
-    "planUrl": "GRADOS/SEXTO/Ciencias_Sociales6.pdf"
+    "planUrl": "GRADOS/SEXTO/Ciencias.Sociales.Sexto.pdf"
   },
   {
     "id": "M601",
-    "titulo": "Movilidad con Medida: Comprendiendo Distancias y Tiempos Seguros",
-    "descripcion": "Los estudiantes aplican conceptos básicos de longitud y tiempo para analizar trayectos, distancias y seguridad en la movilidad.",
+    "titulo": "Misión medida segura",
+    "descripcion": "Los estudiantes aplican conceptos básicos de longitud, distancias y seguridad en la movilidad.",
     "objetivo": "Fortalecer el pensamiento lógico-matemático a través del uso de medidas reales y la reflexión sobre la seguridad vial.",
     "areaPrincipal": "Pensamiento Lógico-Matemático",
     "materia": "Matemáticas",
     "ambiente": "Aula o patio escolar",
     "colorClase": "Verde",
-    "planUrl": "GRADOS/SEXTO/Matematicas6.pdf"
+    "planUrl": "GRADOS/SEXTO/Matematicas.Sexto.pdf"
   },
   {
     "id": "L601",
@@ -223,7 +223,7 @@
     "materia": "Lenguaje",
     "ambiente": "Aula",
     "colorClase": "Rojo",
-    "planUrl": "GRADOS/SEXTO/Lenguaje6.pdf"
+    "planUrl": "GRADOS/SEXTO/Lenguaje.sexto.pdf"
   },
   {
     "id": "EV601",
@@ -234,7 +234,7 @@
     "materia": "Ética y Valores",
     "ambiente": "Aula",
     "colorClase": "Azul",
-    "planUrl": "GRADOS/SEXTO/Etica_Valores6.pdf"
+    "planUrl": "GRADOS/SEXTO/Etica.y.Valores.sexto.pdf"
   },
   {
     "id": "A601",
@@ -245,8 +245,20 @@
     "materia": "Educación Artística",
     "ambiente": "Aula",
     "colorClase": "Morado",
-    "planUrl": "GRADOS/SEXTO/Artistica6.pdf"
+    "planUrl": "GRADOS/SEXTO/Educación.Artistica.sexto.pdf"
     }
+        {
+    "id": "EF601",
+    "titulo": "El reto del semáforo humano",
+    "descripcion": "Los estudiantes participan en un juego físico donde ponen a prueba su atención, autocontrol y trabajo en equipo, aprendiendo a respetar las señales y los momentos de acción o pausa.",
+    "objetivo": "Fomentar la coordinación, la atención y el respeto por las normas a través del movimiento, comprendiendo la importancia de detenerse, avanzar o actuar con precaución.",
+    "areaPrincipal": "Expresión Corporal y Ciudadanía",
+    "materia": "Educación Física",
+    "ambiente": "Patio o cancha escolar",
+    "colorClase": "Verde Oscuro",
+    "planUrl": "GRADOS/SEXTO/Educacion.Fisica.Sexto.pdf"
+}
+
   ],
   
 "SEPTIMO": [
