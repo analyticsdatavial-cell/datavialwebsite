@@ -253,6 +253,23 @@ header {
     line-height: 1.5;
 }
 
+.flow-step a {
+  display: inline-block;
+  margin-top: 6px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s, text-decoration 0.2s;
+}
+
+.flow-step a:hover {
+  color: #000;
+  text-decoration: underline;
+}
+
+
+
 /* 🌐 --- ESTILOS RESPONSIVE (mínimos y seguros) --- */
 
 /* Tablets medianas y laptops pequeñas */
