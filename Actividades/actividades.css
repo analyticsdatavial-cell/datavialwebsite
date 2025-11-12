@@ -304,6 +304,13 @@ header {
   header {
     padding: 15px 10px;
   }
+  
+  .flow-step a {
+    margin-left: 0;
+    align-self: center;
+    text-align: center;
+    margin-top: 10px;
+  }
 
   .logo-title-group {
     flex-direction: column;
