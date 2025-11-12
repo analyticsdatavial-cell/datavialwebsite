@@ -117,6 +117,7 @@ const FLOW_HTML = `
         <div class="flow-step">
             <span class="step-icon step-mitad">📒</span> 
             <p><strong>Punto de Verificación (Mitad):</strong> El equipo de Calidad y Análisis (Juan) realiza una visita sorpresa a 2 aulas por ciclo para recolectar evidencias fotográficas de la actividad en curso.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaaM4tdDM7HIAKuAwGSzbngNP9SlmfaXwgMhTatXKQB4ExRA/viewform?usp=publish-editor">Formulario de envío de actividades</a>
         </div>
         <div class="flow-step">
             <span class="step-icon step-entrega">✅</span> 
