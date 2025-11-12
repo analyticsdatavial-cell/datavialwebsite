@@ -1,8 +1,7 @@
 const hero = document.querySelector(".carrusel");
 const images = [
   "carrusel/Agencia Nacional de Seguridad Vial - color.png",
-  "carrusel/gob-atl-2024.png", "carrusel/transito.png",
-  "carrusel/supertransporte.png","carrusel/supertransporte2.png",
+  "carrusel/gob-atl-2024.png", "carrusel/supertransporte.png",
 ];
 
 let index = 0;
