@@ -237,10 +237,6 @@ header {
     display: flex;
     align-items: flex-start;
     margin-bottom: 15px;
-
-    a {
-        justify-self: end;
-    }
 }
 
 .flow-step .step-icon {
@@ -259,8 +255,7 @@ header {
 }
 
 .flow-step a {
-  display: inline-block;
-  text-align: center;
+  justify-self: end;
   padding: 6px 12px;
   background-color: transparent;
   color: inherit;
