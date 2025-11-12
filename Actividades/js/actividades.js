@@ -117,7 +117,7 @@ const FLOW_HTML = `
         <div class="flow-step">
             <span class="step-icon step-mitad">📒</span> 
             <p><strong>Punto de Verificación (Mitad):</strong> Se desarrolan las actividades por grado y materia, guiadas por el docente.</p>
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfaaM4tdDM7HIAKuAwGSzbngNP9SlmfaXwgMhTatXKQB4ExRA/viewform?usp=publish-editor">Formulario de envío de actividades</a>
+            <a target="_blank" rel="noreferrer noopener" href="https://docs.google.com/forms/d/e/1FAIpQLSfaaM4tdDM7HIAKuAwGSzbngNP9SlmfaXwgMhTatXKQB4ExRA/viewform?usp=publish-editor">Formulario de envío de actividades</a>
         </div>
         <div class="flow-step">
             <span class="step-icon step-entrega">✅</span> 
