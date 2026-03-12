@@ -1,14 +1,269 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<title>Sitio en mantenimiento</title>
-<style>
-  body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="header.css">
+    <title>DataVial</title>
+
+  <!--BASIC SEO TAGS-->
+    <meta name="description" content="">
+    <meta name="keywords" content="data, vial, datavial, transito, movilidad, accidentes, barranquilla, atlantico,
+    colombia, datavial analytics, ">
+    <meta name="author" content="Data Vial">
+    <meta name="robots" content="index, follow">
+
+  <!-- Open Graph (Facebook, WhatsApp, LinkedIn) -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="DataVial Analytics">
+    <meta property="og:description" content="Este proyecto busca identificar factores de riesgo, generando reportes y herramientas interactivas sobre la siniestralidad víal en el Atlántico, Colombia.">
+    <meta property="og:image" content="https://tudominio.com/imagen-preview.jpg">
+    <meta property="og:url" content="https://datavialanalytics.com">
+    <meta property="og:site_name" content="DataVial">
+    <meta property="og:locale" content="es_ES">
+
+  <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="DataVial Analytics">
+    <meta name="twitter:description" content="Este proyecto busca identificar factores de riesgo, generando reportes y herramientas interactivas sobre la siniestralidad víal en el Atlántico, Colombia.">
+    <meta name="twitter:image" content="https://tudominio.com/imagen-preview.jpg">
+    <meta name="twitter:site" content="@datavialanalytics">
+
+  <!-- Favicon -->
+    <link rel="icon" href="/images/favicon.png" type="image/png">
+    <link rel="icon" href="/images/favicon.png" sizes="32x32" type="image/png">
+    <link rel="icon" href="/images/favicon.png" sizes="16x16" type="image/png">
+    <link rel="apple-touch-icon" href="/images/favicon.png">
+
+  <!-- Additional SEO -->
+    <meta name="theme-color" content="#2F5380">
+    <link rel="canonical" href="https://datavialanalytics.com">
+    <meta name="language" content="Spanish">
+    <meta name="revisit-after" content="7 days">
+
+  <!-- Schema.org JSON-LD (para datos estructurados) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Website",
+      "name": "DataVial Analytics",
+      "url": "https://datavialanalytics.com",
+      "description": "Este proyecto busca identificar factores de riesgo, generando reportes y herramientas interactivas sobre la siniestralidad víal en el Atlántico, Colombia.",
+      "author": {
+        "@type": "Company",
+        "name": "DataVial Team"
+      }
+    }
+    </script>
 </head>
+
 <body>
-  <h1>Estamos en mantenimiento</h1>
-  <p>Volvemos pronto 😄</p>
+    <main>
+    <header>
+    <div id="start">
+        <img id="logo" src="images/favicon.png" alt="LOGO DE DATAVIAL">
+        <h1 id="title">DataVialAnalytics</h1>
+    </div>
+<!--NAV-->
+<nav>
+<ul>
+  <li>
+    <a href="index.html" class="active">INICIO</a>
+    <ul class="submenu">
+      <li><a href="index.html#sobre">Sobre el Proyecto</a></li>
+      <li><a href="index.html#objetivo">Objetivos</a></li>
+      <li><a href="index.html#metodologia">Metodología</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="nosotros/nosotros.html">QUIENES SOMOS</a>
+    <ul class="submenu">
+      <li><a href="nosotros/nosotros.html#valores">Valores</a></li>
+      <li><a href="nosotros/nosotros.html#equipo">Equipo</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="analisis/analisis.html">ANALISIS</a>
+    <ul class="submenu">
+      <li><a href="analisis/analisis.html#consultas">Consultas</a></li>
+      <li><a href="analisis/analisis.html#descargas">Descargas</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="prevenciones/prevenciones.html">PREVENCIONES</a>
+    <ul class="submenu">
+      <li><a href="prevenciones/prevenciones.html#cultura" style="text-align: center;">Cultura de Movilidad en Barranquilla</a></li>
+      <li class="sub"><img src="images/conductorV3.png" alt="FOTO DE CONDUCTOR" width="40px" height="40px"><a href="prevenciones/prevenciones.html#conductores">Conductores</a></li>
+      <li class="sub"><img src="images/walk.png" alt="FOTO DE PEATON" width="40px" height="40px"><a href="prevenciones/prevenciones.html#peatones">Peatones</a></li>
+      <li class="sub"><img src="images/bicicleta.png" alt="FOTO DE PASAJERO" width="40px" height="40px"><a href="prevenciones/prevenciones.html#pasajeros">Pasajeros</a></li>
+    </ul>
+  </li>
+  <li>
+    <a href="recursos/recursos.html">RECURSOS EDUCATIVOS</a>
+    <ul class="submenu">
+      <li><a href="recursos/recursos.html#videos">Videos</a></li>
+      <li><a href="recursos/recursos.html#señales">Señales de transito</a></li> 
+      <li><a href="recursos/recursos.html#interactivo">Sección Interactiva</a></li>
+    </ul>
+  </li>
+  <button id="btn">
+    <img src="images/lupa.png" alt="BOTON DE BUSQUEDA" width="20" height="20" hidden>
+  </button>
+
+</ul>
+        </nav>
+    </header>
+<div class="lema-container"><p class="lema">En Colombia, la vida tiene vía.</p></div>
+
+<!--PRIMERA SECCION-->
+
+<section class="intro">
+<div class="video">
+  <div class="video-container">
+    <video class="video-player" src="videos/Transito.mp4" autoplay muted loop playsinline></video>
+    <div class="watermark-cover">
+   
+    </div>
+  </div>
+</div>
+<div class="text" id="sobre">
+<h1>Acompañanos a crear vías seguras</h1> <br>
+<p>Este proyecto analiza la siniestralidad vial en el Atlántico entre 2018 y 2025. Su objetivo es identificar causas de siniestros viales y fallecidos de siniestros viales. Utiliza un enfoque cuantitativo con datos de la Agencia Nacional de Seguridad víal (ANSV), procesados con Excel, Python y R Markdown. Además del análisis técnico, busca un impacto educativo mediante materiales pedagógicos. Los resultados están orientados a mejorar la cultura vial y apoyar a las autoridades en la toma de decisiones.
+</p>
+</div>
+</section>
+<!--OBJETIVO-->
+<section id="objetivo" class="objetivo-general">
+  <div class="text">
+    <h2>🎯 Objetivo General</h2>
+    <p style="text-align: justify;">
+En el contexto del crecimiento urbano y el aumento del parque automotor, la seguridad vial se ha vuelto prioritaria en las ciudades colombianas. Este estudio analiza la siniestralidad vial en el país, con enfasis en el Atlántico entre 2018 y 2025, para identificar factores de riesgo relacionados con prácticas de los actores viales, cumplimiento de normas, tipo de vehículos y el papel de la educación vial. Se integra información estadística y cultural con el fin de aportar a la construcción de entornos urbanos más seguros y responsables.    </p>
+  </div>
+</section>
+
+<!--METODOLOGIA-->
+<!-- archivo: metodologia.html -->
+ <section class="mtd-participacion-wrapper" id="metodologia">
+  <section class="mtd-section" aria-labelledby="mtd-title">
+    <header class="mtd-hero" role="banner">
+      <h2 id="mtd-title">Metodología</h2>
+    </header>
+
+    <section class="mtd-steps" aria-label="Pasos de la metodología">
+      <article class="mtd-step" data-step="1" tabindex="0">
+        <div class="mtd-num mtd-num-1">1</div>
+        <h3>Planteamiento de estudio</h3>
+        <p>
+          La investigación es un análisis cuantitativo que procesa datos sobre siniestros víales y sus victimas fatales para identificar patrones y factores de riesgo.
+          El estudio combina un enfoque analítico para comprender el problema con un componente educativo que transforma los resultados en material pedagógico.
+          Además, se aplicó la metodología SCRUM, que organizó el trabajo en fases iterativas y colaborativas para cumplir los objetivos propuestos.
+        </p>
+      </article>
+      <article class="mtd-step" data-step="2" tabindex="0">
+        <div class="mtd-num mtd-num-2">2</div>
+        <h3>Recolección de datos</h3>
+        <p>
+          Se recopilaron tablas relacionadas con movilidad y tránsito del Atlántico.
+          Las fuentes provienen de la agencia nacional de seguridad víal, abarcando registros de fallecidos por siniestros víales y estadísticas de siniestralidad víal entre 2018 y 2025.
+        </p>
+      </article>
+      <article class="mtd-step" data-step="3" tabindex="0">
+        <div class="mtd-num mtd-num-3">3</div>
+        <h3>Metodología de procesamiento</h3>
+        <p>
+          Se realizó un análisis exploratorio en Excel mediante consultas y gráficos dinámicos para identificar patrones de siniestralidad víal. Posteriormente, los datos fueron procesados en R Markdown y Python, aplicando análisis descriptivos, correlacionales y modelos de regresión para generar predicciones sobre siniestros viales. Los resultados se visualizaron en dashboards interactivos con Power BI, que integran indicadores clave y análisis segmentados por zonas de Barranquilla y el Atlántico.
+        </p>
+      </article>
+      <article class="mtd-step" data-step="4" tabindex="0">
+        <div class="mtd-num mtd-num-4">4</div>
+        <h3>Enfoque educativo y divulgación</h3>
+        <p>
+          Para facilitar el acceso a la información, se diseñó una página web en HTML y CSS, complementada con recursos gráficos (Canva y Photoshop). Este espacio recopila las bases de datos, informes estadísticos y dashboards interactivos, además de recomendaciones sobre seguridad vial. El objetivo fue transformar los hallazgos en herramientas pedagógicas y de comunicación digital que sensibilicen a la comunidad y sirvan de apoyo a las autoridades en la formulación de estrategias de movilidad segura.
+        </p>
+      </article>
+    </section>
+  </section>
+
+  <!-- Participación en línea, con altura igualada -->
+  <section class="participacion-reducida">
+    <h2 style="text-shadow: none;">Espacio de Participación</h2>
+    <p>Queremos conocer tus ideas para mejorar la movilidad y prevenir los siniestros🚦.  
+      ¡Tu opinión puede hacer la diferencia!</p>
+
+    <form action="#gracias" method="get">
+      <label for="nombre">Nombre:</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Escribe tu nombre" required>
+
+      <label for="edad">Edad:</label>
+      <input type="number" id="edad" name="edad" placeholder="Escribe tu edad" min="10" max="100" required>
+
+      <label for="mensaje">Tu idea:</label>
+      <textarea id="mensaje" name="mensaje" placeholder="Escribe tu propuesta..." required></textarea>
+
+      <button type="submit" class="btn-reducido">Enviar mi idea</button>
+    </form>
+  </section>
+</section>
+
+<!-- Popup de agradecimiento -->
+<div id="gracias" class="popup-reducida">
+  <div class="popup-content-reducida">
+    <h3>¡Gracias por participar!</h3>
+    <p>Tu propuesta ha sido registrada.  
+      Juntos podemos hacer de Colombia un país más seguro 🚦.</p>
+    <a href="#" class="close-reducida">Cerrar</a>
+  </div>
+</div>
+        
+<!--SECCION DEL BOT-->
+<script src="https://cdn.botpress.cloud/webchat/v3.3/inject.js"></script>
+<script src="https://files.bpcontent.cloud/2025/10/28/20/20251028204352-9PQ130AA.js" defer></script>
+<!--SECCION DEL BOT-->
+        
+  </main>
+
+<!--FOOTER-->
+<div class="footer-logo-depa-bar">
+    <img id="atl" src="images/LOGOTRANSITO.png" height="160" width="150" alt="FOTO DEL DEPARTAMENTO DEL ATLANTICO">
+    <img src="logos/sena_black.png" height="90" width="90" alt="Logo Sena" style="margin-top: 0.5rem;">
+    <img id="spr" src="images/supertransporte_footer.png" height="160" width="150" alt="FOTO DE LA SUPERINTENDENCIA DE TRANSPORTE">
+</div>
+  <footer>
+    <!--BANDA BLANCA*-->
+
+  <!-- 🔹 Column 1: Redes + Sena -->
+  <div class="footer-col">
+    <h2>Síguenos</h2>
+    <ul class="logos">
+      <li><a href="https://www.facebook.com/share/16LubPom5W/" target="_blank"><img src="logos/facebook.png" height="40" width="40" alt="FACEBOOK"></a></li>
+      <li><a href="https://github.com/analyticsdatavial-cell" target="_blank"><img src="logos/github.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.instagram.com/data_vialanalytics?igsh=MWx5bmppaHk0czVrag==" target="_blank"><img src="logos/instagram.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.linkedin.com/in/data-vial-analytics-1b2627382?lipi=urn%3Ali%3Apage%3Ad_flagship3_profile_view_base_contact_details%3BSUz6cn9FQRSaJ5VYcaNm%2FA%3D%3D" target="_blank"><img src="logos/linkedin.png" height="40" width="40" alt=""></a></li>
+      <li><a href="https://www.tiktok.com/@datavial_analytics?_t=ZS-8zjLNM77zkn&_r=1" target="_blank"><img src="logos/tik-tok.png" height="40" width="40" alt=""></a></li>
+    </ul>
+  </div>
+
+  <!-- 🔹 Column 2: Contactos -->
+  <div class="footer-col">
+    <h1 style="font-size: 32px;">Contacto</h1>
+    <ul class="contact">
+      <li><a href="mailto:analyticsdatavial@gmail.com?subject=Consulta%20desde%20la%20web" class="contact-btn"> analyticsdatavial@gmail.com </a></li>
+      <li>Dirección: Cra. 54 #68 – 80, Nte. Centro Historico,<br>Barranquilla, Atlántico.</li>
+    </ul>
+  </div>
+
+  <!-- 🔹 Bottom section -->
+  <div class="footer-bottom">
+    <p>© 2025 Data Vial Analytics. Todos los derechos reservados.</p>
+    <a href="#logo"><img src="images/arrow.svg" alt="INICIO" class="borde"></a>
+  </div>
+</footer>
+        <script src="script.js"></script>
+<div class="hide-ads" id="blueLine"></div>
 </body>
+
 </html>
+
